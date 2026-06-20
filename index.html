@@ -913,52 +913,71 @@ footer{background:var(--navy);padding:48px}
   <div class="container">
     <div class="text-center reveal">
       <div class="section-badge">✦ Pricing</div>
-      <div class="section-title">Simple, transparent pricing.</div>
-      <div class="section-sub">One price per venue. Unlimited team members. No hidden fees.</div>
+      <div class="section-title">Simple, honest pricing.</div>
+      <div class="section-sub">Try it free for 14 days. No credit card required. Cancel anytime.</div>
     </div>
-    <div class="pricing-grid reveal">
+    <div class="pricing-grid reveal" style="grid-template-columns:1fr 1fr 1fr;max-width:1100px;gap:24px">
+
+      <!-- Starter -->
+      <div class="pricing-card" style="border:1.5px solid var(--line)">
+        <div class="pricing-name">Free Trial</div>
+        <div class="pricing-price" style="font-size:42px">14 days</div>
+        <div class="pricing-per">no card required</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-list">
+          <li><span class="pf-check">✓</span> Full access to everything</li>
+          <li><span class="pf-check">✓</span> Unlimited team logins</li>
+          <li><span class="pf-check">✓</span> All features included</li>
+          <li><span class="pf-check">✓</span> See if it works for your team</li>
+          <li><span class="pf-check">✓</span> No commitment</li>
+        </ul>
+        <a href="#" onclick="goTo('contact')" class="btn-pricing ghost">Start Free Trial →</a>
+      </div>
+
+      <!-- Pro -->
       <div class="pricing-card featured">
         <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-name">Eventi Pro</div>
-        <div class="pricing-price"><sup>$</sup>59<span>/mo</span></div>
+        <div class="pricing-name">Pro</div>
+        <div style="margin-bottom:4px">
+          <span style="font-size:13px;color:var(--ink3);font-weight:500">$99 one-time setup</span>
+        </div>
+        <div class="pricing-price"><sup>$</sup>79<span>/mo</span></div>
         <div class="pricing-per">per venue · billed monthly</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-list">
+          <li><span class="pf-check">✓</span> Onboarding call — we set it up with you</li>
+          <li><span class="pf-check">✓</span> Venue name, currency & details configured</li>
           <li><span class="pf-check">✓</span> Unlimited team logins</li>
-          <li><span class="pf-check">✓</span> Unlimited Event Plans & events</li>
+          <li><span class="pf-check">✓</span> All features: Event Plans, Riders, Finance, Calendar, Notes</li>
           <li><span class="pf-check">✓</span> Live shareable Event Plan links</li>
-          <li><span class="pf-check">✓</span> Artist & rider management</li>
-          <li><span class="pf-check">✓</span> Vendor rental workflow</li>
-          <li><span class="pf-check">✓</span> Event calendar</li>
-          <li><span class="pf-check">✓</span> Meeting notes</li>
           <li><span class="pf-check">✓</span> WhatsApp share</li>
-          <li><span class="pf-check">✓</span> Finance & P&L view</li>
           <li><span class="pf-check">✓</span> 133 languages</li>
-          <li><span class="pf-check">✓</span> File & image uploads</li>
+          <li><span class="pf-check">✓</span> Email support</li>
           <li><span class="pf-check">✓</span> Cancel anytime</li>
         </ul>
-        <a href="#" onclick="goTo('contact')" class="btn-pricing primary">Get in Touch →</a>
+        <a href="#" onclick="goTo('contact')" class="btn-pricing primary">Get Started →</a>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-name">Eventi Custom</div>
-        <div class="pricing-price" style="font-size:36px;padding-top:8px">Let's Talk</div>
-        <div class="pricing-per">tailored to your property</div>
+
+      <!-- Custom -->
+      <div class="pricing-card" style="border:1.5px solid var(--line)">
+        <div class="pricing-name">Custom</div>
+        <div class="pricing-price" style="font-size:32px;padding-top:12px">Let's Talk</div>
+        <div class="pricing-per">tailored to your operation</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-list">
           <li><span class="pf-check">✓</span> Everything in Pro</li>
-          <li><span class="pf-check">✓</span> Your brand, colours & logo</li>
-          <li><span class="pf-check">✓</span> Custom domain</li>
-          <li><span class="pf-check">✓</span> Custom tabs & sections</li>
-          <li><span class="pf-check">✓</span> Built around your workflow</li>
-          <li><span class="pf-check">✓</span> Multi-venue group accounts</li>
-          <li><span class="pf-check">✓</span> Dedicated onboarding</li>
+          <li><span class="pf-check">✓</span> We discuss your specific workflow & needs</li>
+          <li><span class="pf-check">✓</span> We build it around your operation where possible</li>
+          <li><span class="pf-check">✓</span> Bespoke setup fee agreed upfront — no surprises</li>
+          <li><span class="pf-check">✓</span> Then $79/month ongoing</li>
+          <li><span class="pf-check">✓</span> Tweaks & additions available after launch — quoted per request</li>
           <li><span class="pf-check">✓</span> Priority support</li>
-          <li><span class="pf-check">✓</span> Custom feature development</li>
         </ul>
         <a href="#" onclick="goTo('contact')" class="btn-pricing ghost">Get in Touch →</a>
       </div>
+
     </div>
-    <div class="pricing-note">🔒 Secure payments · Cancel anytime · No setup fees</div>
+    <div class="pricing-note">🔒 Secure payments · Cancel anytime · Setup fee covers your onboarding call & configuration</div>
   </div>
 </section>
 
@@ -986,12 +1005,12 @@ footer{background:var(--navy);padding:48px}
         <div class="av-stat-grid">
           <div class="av-stat"><div class="av-stat-val">100+</div><div class="av-stat-lbl">Venues in Bali</div></div>
           <div class="av-stat"><div class="av-stat-val">133</div><div class="av-stat-lbl">Languages</div></div>
-          <div class="av-stat"><div class="av-stat-val">$0</div><div class="av-stat-lbl">Setup Fee</div></div>
+          <div class="av-stat"><div class="av-stat-val">$99</div><div class="av-stat-lbl">Setup Fee</div></div>
           <div class="av-stat"><div class="av-stat-val">∞</div><div class="av-stat-lbl">Team Logins</div></div>
         </div>
         <div class="founder-box">
           <div class="founder-box-title">Founding Member Offer</div>
-          <div class="founder-box-desc">Sign up early and lock in $59/month forever — even when we raise prices.</div>
+          <div class="founder-box-desc">Sign up during our launch period and lock in $79/month forever — even when we raise prices.</div>
         </div>
       </div>
     </div>
