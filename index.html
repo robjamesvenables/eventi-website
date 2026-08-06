@@ -222,10 +222,13 @@ img{max-width:100%;display:block}
 .f-hl-circle:nth-child(1) .f-hl-circle-inner{background:linear-gradient(135deg,#F5D0C5,#E8A597)}
 .f-hl-circle:nth-child(2) .f-hl-circle-inner{background:linear-gradient(135deg,#C9E4DE,#9BC5B8)}
 .f-hl-circle:nth-child(3) .f-hl-circle-inner{background:linear-gradient(135deg,#F5E6B8,#E0C778)}
-.f-hl-photo{border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#F5D0C5,#D88A78);height:150px;position:relative;animation:hlSwap 6s ease infinite}
-.f-hl-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:12px;font-weight:600;padding:10px 12px;transform:translateY(100%);animation:hlCapUp 6s ease infinite}
-@keyframes hlSwap{0%,100%{filter:brightness(1)}50%{filter:brightness(1.04)}}
-@keyframes hlCapUp{0%,15%{transform:translateY(100%)}30%,90%{transform:translateY(0)}100%{transform:translateY(100%)}}
+.f-hl-marquee{overflow:hidden;border-radius:12px;min-width:0}
+.f-hl-track{display:flex;gap:12px;width:fit-content;animation:fHlMarquee 22s linear infinite}
+@keyframes fHlMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.f-hl-photo{border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#F5D0C5,#D88A78);height:180px;width:220px;position:relative;flex-shrink:0}
+.f-hl-photo.two{background:linear-gradient(160deg,#C9E4DE,#8FB8AC)}
+.f-hl-photo.three{background:linear-gradient(160deg,#F5E6B8,#D9BC5E)}
+.f-hl-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:12px;font-weight:600;padding:10px 12px}
 
 /* -- Team Feed mockup -- */
 .f-post{background:var(--cream);border-radius:12px;padding:15px;border:1px solid var(--line)}
@@ -498,8 +501,15 @@ img{max-width:100%;display:block}
           <div class="f-hl-circle"><div class="f-hl-circle-inner"></div></div>
           <div class="f-hl-circle"><div class="f-hl-circle-inner"></div></div>
         </div>
-        <div class="f-hl-photo">
-          <div class="f-hl-photo-cap">🎉 Sarah's 3-year work anniversary!</div>
+        <div class="f-hl-marquee">
+          <div class="f-hl-track">
+            <div class="f-hl-photo"><div class="f-hl-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
+            <div class="f-hl-photo two"><div class="f-hl-photo-cap">🌅 Sunset menu tasting night</div></div>
+            <div class="f-hl-photo three"><div class="f-hl-photo-cap">🍹 New cocktail menu launch</div></div>
+            <div class="f-hl-photo"><div class="f-hl-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
+            <div class="f-hl-photo two"><div class="f-hl-photo-cap">🌅 Sunset menu tasting night</div></div>
+            <div class="f-hl-photo three"><div class="f-hl-photo-cap">🍹 New cocktail menu launch</div></div>
+          </div>
         </div>
       </div>
     </div>
