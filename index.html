@@ -142,7 +142,8 @@ img{max-width:100%;display:block}
 @keyframes cDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
 
 /* kitchen screen */
-.k-photo{height:130px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:12px;position:relative}
+.k-photo{height:130px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B) center/cover;margin-bottom:12px;position:relative;overflow:hidden}
+.k-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .k-badge{position:absolute;top:9px;left:9px;background:var(--teal);color:white;font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px}
 .k-card{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
 .k-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px}
@@ -412,9 +413,9 @@ img{max-width:100%;display:block}
             <!-- 5. Kitchen & Recipes -->
             <div class="dscreen">
               <div class="dscreen-label"><span class="dscreen-label-dot"></span>Kitchen &amp; Recipes</div>
-              <div class="k-photo"><div class="k-badge">LIVE</div></div>
+              <div class="k-photo"><img src="images/kitchen-pasta.jpg" alt="Spaghetti aglio e olio"><div class="k-badge">LIVE</div></div>
               <div class="k-card" style="margin-bottom:8px">
-                <div class="k-name">Grilled Barramundi, Lemon Butter</div>
+                <div class="k-name">Spaghetti Aglio e Olio</div>
                 <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">28%</span></div>
                 <div class="k-cost-track"><div class="k-cost-fill"></div></div>
               </div>
