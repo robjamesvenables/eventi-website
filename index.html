@@ -118,10 +118,14 @@ img{max-width:100%;display:block}
 .h-circle{width:56px;height:56px;border-radius:50%;flex-shrink:0;padding:2.5px;background:linear-gradient(135deg,var(--teal),var(--gold))}
 .h-circle-inner{width:100%;height:100%;border-radius:50%;border:2px solid var(--cream)}
 .h-name{font-size:9px;color:var(--ink2);text-align:center;margin-top:4px;font-weight:600}
-.h-photo-row{display:flex;gap:10px;margin-top:14px}
-.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:150px;position:relative;flex:1}
+.h-photo-marquee{overflow:hidden;margin-top:14px;border-radius:11px}
+.h-photo-track{display:flex;gap:10px;width:fit-content;animation:hMarquee 22s linear infinite}
+@keyframes hMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:230px;width:170px;position:relative;flex-shrink:0}
 .h-photo.two{background:linear-gradient(155deg,#C9E4DE,#8FB8AC)}
-.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:10.5px;font-weight:600;padding:9px 10px;line-height:1.35}
+.h-photo.three{background:linear-gradient(155deg,#F5E6B8,#D9BC5E)}
+.h-photo.four{background:linear-gradient(155deg,#D7CDE8,#A896C4)}
+.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:10.5px;font-weight:600;padding:10px 11px;line-height:1.35}
 
 /* team feed screen */
 .tf-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:8px}
@@ -371,9 +375,17 @@ img{max-width:100%;display:block}
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"><div class="h-circle-inner"></div></div><div class="h-name">Events</div></div>
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"><div class="h-circle-inner"></div></div><div class="h-name">Bar</div></div>
               </div>
-              <div class="h-photo-row">
-                <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
-                <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset menu tasting night</div></div>
+              <div class="h-photo-marquee">
+                <div class="h-photo-track">
+                  <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
+                  <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset menu tasting night</div></div>
+                  <div class="h-photo three"><div class="h-photo-cap">🍹 New cocktail menu launch</div></div>
+                  <div class="h-photo four"><div class="h-photo-cap">🎧 DJ Nova, live on the deck</div></div>
+                  <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
+                  <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset menu tasting night</div></div>
+                  <div class="h-photo three"><div class="h-photo-cap">🍹 New cocktail menu launch</div></div>
+                  <div class="h-photo four"><div class="h-photo-cap">🎧 DJ Nova, live on the deck</div></div>
+                </div>
               </div>
             </div>
 
