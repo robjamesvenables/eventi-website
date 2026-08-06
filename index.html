@@ -87,7 +87,7 @@ img{max-width:100%;display:block}
 .device-dots{display:flex;gap:6px}
 .device-bar-dots{display:flex;gap:6px}
 .device-viewport{background:var(--cream);border-radius:12px;height:400px;overflow:hidden;position:relative}
-.device-track{animation:deviceCycle 12s cubic-bezier(0.65,0,0.35,1) infinite}
+.device-track{animation:deviceCycle 18s cubic-bezier(0.65,0,0.35,1) infinite}
 .dscreen{height:400px;padding:18px;box-sizing:border-box;overflow:hidden}
 @keyframes deviceCycle{
   0%,12%{transform:translateY(0)}
@@ -145,19 +145,19 @@ img{max-width:100%;display:block}
 
 /* task board screen */
 .tb-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:8px 7px;min-height:170px}
+.tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:8px 7px;min-height:230px}
 .tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.5px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
 .tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:7px 8px;font-size:9px;font-weight:600;color:var(--navy);margin-bottom:6px}
-.tb-moving{animation:tbSlide 12s cubic-bezier(0.65,0,0.35,1) infinite}
+.tb-moving{animation:tbSlide 18s cubic-bezier(0.65,0,0.35,1) infinite}
 @keyframes tbSlide{0%,83%{transform:translateX(0)}88%,100%{transform:translateX(calc(100% + 8px))}}
 
-.device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 12s ease infinite}
+.device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 18s ease infinite}
 .device-bar-dots span:nth-child(1){animation-delay:0s}
-.device-bar-dots span:nth-child(2){animation-delay:2s}
-.device-bar-dots span:nth-child(3){animation-delay:4s}
-.device-bar-dots span:nth-child(4){animation-delay:6s}
-.device-bar-dots span:nth-child(5){animation-delay:8s}
-.device-bar-dots span:nth-child(6){animation-delay:10s}
+.device-bar-dots span:nth-child(2){animation-delay:3s}
+.device-bar-dots span:nth-child(3){animation-delay:6s}
+.device-bar-dots span:nth-child(4){animation-delay:9s}
+.device-bar-dots span:nth-child(5){animation-delay:12s}
+.device-bar-dots span:nth-child(6){animation-delay:15s}
 @keyframes dotPulse{0%,4%{background:rgba(255,255,255,0.15)}8%,25%{background:white}29%,100%{background:rgba(255,255,255,0.15)}}
 
 @media(max-width:520px){.device{transform:none}}
@@ -326,13 +326,18 @@ img{max-width:100%;display:block}
                 <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Kitchen Team</div></div>
                 <div class="d-mini-txt">Sunset menu tasting moved to 4pm today</div>
               </div>
-              <div class="d-mini-card" style="margin-bottom:0">
+              <div class="d-mini-card">
                 <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Front of House</div></div>
                 <div class="d-mini-txt">VIP table for 8 confirmed — 7:30pm</div>
+              </div>
+              <div class="d-mini-card" style="margin-bottom:0">
+                <div class="d-mini-hd"><div class="d-mini-avatar" style="background:var(--gold)"></div><div class="d-mini-name">Events Team</div></div>
+                <div class="d-mini-txt">DJ Nova confirmed for Saturday's set 🎧</div>
               </div>
               <div class="d-stat-row">
                 <div class="d-stat"><div class="d-stat-num">12</div><div class="d-stat-lbl">Tasks Today</div></div>
                 <div class="d-stat"><div class="d-stat-num">3</div><div class="d-stat-lbl">New Posts</div></div>
+                <div class="d-stat"><div class="d-stat-num">2</div><div class="d-stat-lbl">Open Roles</div></div>
               </div>
             </div>
 
@@ -345,7 +350,7 @@ img{max-width:100%;display:block}
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"><div class="h-circle-inner"></div></div><div class="h-name">Events</div></div>
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"><div class="h-circle-inner"></div></div><div class="h-name">Bar</div></div>
               </div>
-              <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year work anniversary!</div></div>
+              <div class="h-photo" style="height:210px"><div class="h-photo-cap">🎉 Sarah's 3-year work anniversary!<br><span style="font-weight:400;opacity:0.7;font-size:10px">Posted by John · 2m ago</span></div></div>
             </div>
 
             <!-- 3. Team Feed -->
@@ -354,6 +359,7 @@ img{max-width:100%;display:block}
               <div class="tf-card">
                 <div class="tf-hd"><div class="tf-avatar" style="background:var(--navy3)"></div><div><div class="tf-name">Head Chef</div><div class="tf-time">Just now</div></div></div>
                 <div class="tf-txt">New sunset menu goes live for service tonight 🌅</div>
+                <div style="display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:3px 9px;background:var(--teal-bg);border-radius:20px;font-size:9.5px;font-weight:700;color:var(--teal-d)">❤️ 6</div>
               </div>
               <div class="tf-card">
                 <div class="tf-hd"><div class="tf-avatar" style="background:var(--gold)"></div><div><div class="tf-name">Front of House</div><div class="tf-time">14m ago</div></div></div>
@@ -371,16 +377,23 @@ img{max-width:100%;display:block}
               <div class="c-bubble them">Table 12 asking about the wine pairing</div>
               <div class="c-bubble me">Sending the notes over now</div>
               <div class="c-bubble them">Perfect, thank you! 🙏</div>
+              <div class="c-bubble me">Also — VIP arriving 15 mins early tonight</div>
+              <div class="c-bubble them">Got it, terrace will be ready ✅</div>
             </div>
 
             <!-- 5. Kitchen & Recipes -->
             <div class="dscreen">
               <div class="dscreen-label"><span class="dscreen-label-dot"></span>Kitchen &amp; Recipes</div>
               <div class="k-photo"><div class="k-badge">LIVE</div></div>
-              <div class="k-card">
+              <div class="k-card" style="margin-bottom:8px">
                 <div class="k-name">Grilled Barramundi, Lemon Butter</div>
                 <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">28%</span></div>
                 <div class="k-cost-track"><div class="k-cost-fill"></div></div>
+              </div>
+              <div class="k-card">
+                <div class="k-name">Sunset Sharing Platter</div>
+                <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">31%</span></div>
+                <div class="k-cost-track"><div class="k-cost-fill" style="width:31%"></div></div>
               </div>
             </div>
 
@@ -388,9 +401,9 @@ img{max-width:100%;display:block}
             <div class="dscreen">
               <div class="dscreen-label"><span class="dscreen-label-dot"></span>Task Board</div>
               <div class="tb-board">
-                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div></div>
-                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card tb-moving">Confirm AV load-in</div></div>
-                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div></div>
+                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div><div class="tb-card">Confirm AV load-in</div></div>
+                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card tb-moving">Finalise stage plot</div></div>
+                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div><div class="tb-card">Order welcome drinks</div></div>
               </div>
             </div>
 
