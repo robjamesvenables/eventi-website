@@ -63,8 +63,8 @@ img{max-width:100%;display:block}
 
 /* ===== HERO ===== */
 .hero{padding:76px 0 90px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr;text-align:center}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:56px;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:minmax(0,1fr);text-align:center}}
 .hero-copy h1{font-size:56px;font-weight:900;line-height:1.04;letter-spacing:-1.6px;color:var(--navy);margin:20px 0 22px}
 .hero-copy h1 em{font-style:normal;color:var(--teal-d)}
 @media(max-width:980px){.hero-copy h1{font-size:42px}}
@@ -159,7 +159,7 @@ img{max-width:100%;display:block}
 .k-cost-fill{height:100%;width:28%;background:linear-gradient(90deg,#F59E0B,var(--teal));border-radius:4px}
 
 /* task board screen */
-.tb-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tb-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 8px;min-height:230px}
 .tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.4px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
 .tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:8.5px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3}
@@ -205,10 +205,10 @@ img{max-width:100%;display:block}
 .features-head p{font-size:15.5px;color:var(--ink2);line-height:1.6}
 
 .feature{padding:60px 0}
-.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .feature-grid.rev .feature-copy{order:2}
 .feature-grid.rev .feature-visual{order:1}
-@media(max-width:900px){.feature-grid{grid-template-columns:1fr;gap:36px}.feature-grid.rev .feature-copy{order:1}.feature-grid.rev .feature-visual{order:2}}
+@media(max-width:900px){.feature-grid{grid-template-columns:minmax(0,1fr);gap:36px}.feature-grid.rev .feature-copy{order:1}.feature-grid.rev .feature-visual{order:2}}
 .feature-num{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
 .feature-copy h3{font-size:27px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:13px;line-height:1.18}
 .feature-copy p{font-size:15px;color:var(--ink2);line-height:1.65;max-width:420px}
@@ -266,7 +266,7 @@ img{max-width:100%;display:block}
 .f-cost-num{font-weight:800;color:var(--teal-d)}
 
 /* -- Task Board mockup -- */
-.f-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.f-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .f-col{background:var(--cream);border-radius:9px;padding:9px 8px;min-height:150px}
 .f-col-title{font-size:9px;font-weight:800;letter-spacing:0.6px;color:var(--ink3);text-transform:uppercase;margin-bottom:8px;padding-left:2px}
 .f-task-card{background:var(--w);border:1px solid var(--line);border-radius:7px;padding:8px 9px;font-size:10px;font-weight:600;color:var(--navy);margin-bottom:7px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
@@ -279,8 +279,8 @@ img{max-width:100%;display:block}
 
 /* ===== ADMIN / CONTROL ===== */
 .control{padding:90px 0;background:var(--navy);color:white;overflow:hidden}
-.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-@media(max-width:900px){.control-grid{grid-template-columns:1fr}}
+.control-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
+@media(max-width:900px){.control-grid{grid-template-columns:minmax(0,1fr)}}
 .control-copy .eyebrow{color:var(--gold-lt)}
 .control-copy .eyebrow-dot{background:var(--gold)}
 .control-copy h2{font-size:32px;font-weight:800;letter-spacing:-0.6px;margin:14px 0 14px;line-height:1.18}
@@ -691,7 +691,7 @@ img{max-width:100%;display:block}
       <h2 style="font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-0.6px;margin:14px 0 12px">Let's talk.</h2>
       <p style="font-size:15px;color:var(--ink2);line-height:1.6">Whether you run one venue or several, we'd love to show your team what one shared home feels like.</p>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;max-width:900px;margin:0 auto" id="contact-grid">
+    <div class="reveal" style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:48px;max-width:900px;margin:0 auto" id="contact-grid">
       <div style="display:flex;flex-direction:column;gap:22px">
         <div style="display:flex;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0">💬</div><div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3)">WhatsApp</div><a href="https://wa.me/6282145328784" style="font-size:14px;font-weight:700;color:var(--navy)">+62 821 4532 8784</a><div style="font-size:11.5px;color:var(--ink3)">Usually within the hour</div></div></div>
         <div style="display:flex;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0">✉️</div><div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3)">Email</div><div style="font-size:14px;font-weight:700;color:var(--navy)">hello@mavis.app</div></div></div>
@@ -709,11 +709,11 @@ img{max-width:100%;display:block}
     </div>
   </div>
 </section>
-<style>@media(max-width:720px){#contact-grid{grid-template-columns:1fr!important}}</style>
+<style>@media(max-width:720px){#contact-grid{grid-template-columns:minmax(0,1fr)!important}}</style>
 
 <!-- FOOTER -->
 <footer style="background:var(--navy);padding:56px 0 26px;color:rgba(255,255,255,0.55)">
-  <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08)">
+  <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08)">
     <div>
       <div class="nav-logo" style="color:white;margin-bottom:10px">Mavis</div>
       <div style="font-size:13px;line-height:1.5">One login. One team. One shared home for your whole operation.</div>
