@@ -151,21 +151,24 @@ img{max-width:100%;display:block}
 .k-cost-fill{height:100%;width:28%;background:linear-gradient(90deg,#F59E0B,var(--teal));border-radius:4px}
 
 /* task board screen */
-.tb-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tb-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;position:relative;padding-bottom:34px}
 .tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 8px;min-height:280px}
-.tb-col-title{font-size:8.5px;font-weight:800;letter-spacing:0.5px;color:var(--ink3);text-transform:uppercase;margin-bottom:8px}
-.tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:8px 9px;font-size:9.5px;font-weight:600;color:var(--navy);margin-bottom:7px;line-height:1.35}
-.tb-mover-a{position:relative;z-index:2;animation:tbMoveA 18s cubic-bezier(0.34,1.56,0.64,1) infinite}
-@keyframes tbMoveA{
-  0%,83.5%{transform:translateX(0) scale(1)}
-  86%{transform:translateX(calc(100% + 8px)) scale(1.08)}
-  88.5%,100%{transform:translateX(calc(100% + 8px)) scale(1)}
+.tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.4px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
+.tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:8.5px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.tb-mover{
+  position:absolute;
+  top:70px;
+  width:calc((100% - 16px)/3);
+  background:var(--cream);border:1px solid var(--teal);border-radius:6px;
+  padding:6px 8px;font-size:8.5px;font-weight:600;color:var(--navy);line-height:1.3;
+  box-shadow:0 6px 14px -4px rgba(15,30,46,0.25);
+  box-sizing:border-box;
+  animation:tbMove 18s cubic-bezier(0.34,1.56,0.64,1) infinite;
 }
-.tb-mover-b{position:relative;z-index:2;animation:tbMoveB 18s cubic-bezier(0.34,1.56,0.64,1) infinite}
-@keyframes tbMoveB{
-  0%,90%{transform:translateX(0) scale(1)}
-  92.5%{transform:translateX(calc(100% + 8px)) scale(1.08)}
-  95%,100%{transform:translateX(calc(100% + 8px)) scale(1)}
+@keyframes tbMove{
+  0%,83%{left:0%;transform:scale(1)}
+  86%{left:calc((100% - 16px)/3 + 8px);transform:scale(1.05)}
+  89%,100%{left:calc((100% - 16px)/3 + 8px);transform:scale(1)}
 }
 
 .device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 18s ease infinite}
@@ -426,9 +429,10 @@ img{max-width:100%;display:block}
             <div class="dscreen">
               <div class="dscreen-label"><span class="dscreen-label-dot"></span>Task Board</div>
               <div class="tb-board">
-                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div><div class="tb-card tb-mover-a">Confirm AV load-in</div></div>
-                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card">Order welcome drinks</div><div class="tb-card tb-mover-b">Finalise stage plot</div></div>
+                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div></div>
+                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card">Finalise stage plot</div></div>
                 <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div><div class="tb-card">Confirm florist</div></div>
+                <div class="tb-mover">Confirm AV load-in</div>
               </div>
             </div>
 
