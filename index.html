@@ -118,8 +118,10 @@ img{max-width:100%;display:block}
 .h-circle{width:56px;height:56px;border-radius:50%;flex-shrink:0;padding:2.5px;background:linear-gradient(135deg,var(--teal),var(--gold))}
 .h-circle-inner{width:100%;height:100%;border-radius:50%;border:2px solid var(--cream)}
 .h-name{font-size:9px;color:var(--ink2);text-align:center;margin-top:4px;font-weight:600}
-.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:170px;position:relative;margin-top:14px}
-.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:11.5px;font-weight:600;padding:10px 12px}
+.h-photo-row{display:flex;gap:10px;margin-top:14px}
+.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:150px;position:relative;flex:1}
+.h-photo.two{background:linear-gradient(155deg,#C9E4DE,#8FB8AC)}
+.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:10.5px;font-weight:600;padding:9px 10px;line-height:1.35}
 
 /* team feed screen */
 .tf-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:8px}
@@ -130,9 +132,14 @@ img{max-width:100%;display:block}
 .tf-txt{font-size:10.5px;color:var(--ink2);line-height:1.45}
 
 /* chat screen */
-.c-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:11.5px;line-height:1.45;margin-bottom:9px}
+.c-bubble{max-width:78%;padding:10px 14px;border-radius:14px;font-size:12px;line-height:1.5;margin-bottom:10px}
 .c-bubble.them{background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
 .c-bubble.me{margin-left:auto;background:var(--teal);color:white;border-bottom-right-radius:4px}
+.c-typing{display:flex;gap:4px;padding:11px 14px;background:var(--cream2);border-radius:14px;border-bottom-left-radius:4px;width:fit-content}
+.c-typing span{width:5px;height:5px;border-radius:50%;background:var(--ink3);animation:cDot 1s ease infinite}
+.c-typing span:nth-child(2){animation-delay:0.15s}
+.c-typing span:nth-child(3){animation-delay:0.3s}
+@keyframes cDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
 
 /* kitchen screen */
 .k-photo{height:130px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:12px;position:relative}
@@ -148,8 +155,10 @@ img{max-width:100%;display:block}
 .tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:8px 7px;min-height:230px}
 .tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.5px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
 .tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:7px 8px;font-size:9px;font-weight:600;color:var(--navy);margin-bottom:6px}
-.tb-moving{animation:tbSlide 18s cubic-bezier(0.65,0,0.35,1) infinite}
-@keyframes tbSlide{0%,83%{transform:translateX(0)}88%,100%{transform:translateX(calc(100% + 8px))}}
+.tb-moving{animation:tbSlideRight 18s cubic-bezier(0.34,1.56,0.64,1) infinite;position:relative;z-index:2}
+@keyframes tbSlideRight{0%,80%{transform:translateX(0) scale(1)}86%{transform:translateX(calc(100% + 8px)) scale(1.06)}92%,100%{transform:translateX(calc(100% + 8px)) scale(1)}}
+.tb-moving2{animation:tbSlideLeft 18s cubic-bezier(0.34,1.56,0.64,1) infinite;position:relative;z-index:2}
+@keyframes tbSlideLeft{0%,80%{transform:translateX(0) scale(1)}86%{transform:translateX(calc(-100% - 8px)) scale(1.06)}92%,100%{transform:translateX(calc(-100% - 8px)) scale(1)}}
 
 .device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 18s ease infinite}
 .device-bar-dots span:nth-child(1){animation-delay:0s}
@@ -350,7 +359,10 @@ img{max-width:100%;display:block}
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"><div class="h-circle-inner"></div></div><div class="h-name">Events</div></div>
                 <div><div class="h-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"><div class="h-circle-inner"></div></div><div class="h-name">Bar</div></div>
               </div>
-              <div class="h-photo" style="height:210px"><div class="h-photo-cap">🎉 Sarah's 3-year work anniversary!<br><span style="font-weight:400;opacity:0.7;font-size:10px">Posted by John · 2m ago</span></div></div>
+              <div class="h-photo-row">
+                <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year anniversary!</div></div>
+                <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset menu tasting night</div></div>
+              </div>
             </div>
 
             <!-- 3. Team Feed -->
@@ -369,6 +381,10 @@ img{max-width:100%;display:block}
                 <div class="tf-hd"><div class="tf-avatar" style="background:var(--teal)"></div><div><div class="tf-name">Events Team</div><div class="tf-time">1h ago</div></div></div>
                 <div class="tf-txt">DJ Nova confirmed for Saturday's set 🎧</div>
               </div>
+              <div class="tf-card" style="margin-bottom:0;margin-top:8px">
+                <div class="tf-hd"><div class="tf-avatar" style="background:var(--navy2)"></div><div><div class="tf-name">Management</div><div class="tf-time">2h ago</div></div></div>
+                <div class="tf-txt">Great turnout at last night's tasting — well done team 🙌</div>
+              </div>
             </div>
 
             <!-- 4. Chat -->
@@ -379,6 +395,7 @@ img{max-width:100%;display:block}
               <div class="c-bubble them">Perfect, thank you! 🙏</div>
               <div class="c-bubble me">Also — VIP arriving 15 mins early tonight</div>
               <div class="c-bubble them">Got it, terrace will be ready ✅</div>
+              <div class="c-typing"><span></span><span></span><span></span></div>
             </div>
 
             <!-- 5. Kitchen & Recipes -->
@@ -403,7 +420,7 @@ img{max-width:100%;display:block}
               <div class="tb-board">
                 <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div><div class="tb-card">Confirm AV load-in</div></div>
                 <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card tb-moving">Finalise stage plot</div></div>
-                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div><div class="tb-card">Order welcome drinks</div></div>
+                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div><div class="tb-card tb-moving2">Order welcome drinks</div></div>
               </div>
             </div>
 
