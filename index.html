@@ -82,36 +82,85 @@ img{max-width:100%;display:block}
 /* Signature element: the "everyone, one place" device window */
 .hero-visual{position:relative;display:flex;justify-content:center}
 .device{width:100%;max-width:440px;background:var(--navy);border-radius:20px;box-shadow:0 30px 70px -20px rgba(15,30,46,0.45),0 0 0 1px rgba(15,30,46,0.06);padding:16px;transform:rotate(1.2deg);position:relative}
-.device-bar{display:flex;gap:6px;padding:2px 6px 14px}
+.device-bar{display:flex;align-items:center;justify-content:space-between;padding:2px 6px 14px}
 .device-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.15)}
-.device-screen{background:var(--cream);border-radius:12px;padding:16px;min-height:380px}
+.device-dots{display:flex;gap:6px}
+.device-bar-dots{display:flex;gap:6px}
+.device-viewport{background:var(--cream);border-radius:12px;height:400px;overflow:hidden;position:relative}
+.device-track{animation:deviceCycle 12s cubic-bezier(0.65,0,0.35,1) infinite}
+.dscreen{height:400px;padding:18px;box-sizing:border-box;overflow:hidden}
+@keyframes deviceCycle{
+  0%,12%{transform:translateY(0)}
+  16.67%,29%{transform:translateY(-400px)}
+  33.33%,46%{transform:translateY(-800px)}
+  50%,63%{transform:translateY(-1200px)}
+  66.67%,79%{transform:translateY(-1600px)}
+  83.33%,96%{transform:translateY(-2000px)}
+  100%{transform:translateY(-2000px)}
+}
+.dscreen-label{font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-d);margin-bottom:13px;display:flex;align-items:center;gap:6px}
+.dscreen-label-dot{width:5px;height:5px;border-radius:50%;background:var(--teal)}
 
-.mini-highlights{display:flex;gap:10px;margin-bottom:16px}
-.mini-story{width:52px;height:52px;border-radius:50%;flex-shrink:0;position:relative;padding:2px;background:linear-gradient(135deg,var(--teal),var(--gold))}
-.mini-story-inner{width:100%;height:100%;border-radius:50%;background:var(--line);border:2px solid var(--cream);overflow:hidden}
-.mini-story:nth-child(1) .mini-story-inner{background:linear-gradient(135deg,#F5D0C5,#E8A597)}
-.mini-story:nth-child(2) .mini-story-inner{background:linear-gradient(135deg,#C9E4DE,#9BC5B8)}
-.mini-story:nth-child(3) .mini-story-inner{background:linear-gradient(135deg,#F5E6B8,#E0C778)}
-.mini-story:nth-child(4) .mini-story-inner{background:linear-gradient(135deg,#D7CDE8,#B3A2CE)}
-.mini-story.pulse{animation:storyPulse 3.4s ease-in-out infinite}
-@keyframes storyPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+/* dashboard overview screen */
+.d-hl-row{display:flex;gap:8px;margin-bottom:14px}
+.d-circle{width:34px;height:34px;border-radius:50%;flex-shrink:0;border:2px solid var(--cream)}
+.d-mini-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:9px}
+.d-mini-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.d-mini-avatar{width:20px;height:20px;border-radius:50%;background:var(--navy3);flex-shrink:0}
+.d-mini-name{font-size:10.5px;font-weight:700;color:var(--navy)}
+.d-mini-txt{font-size:10.5px;color:var(--ink2);line-height:1.4}
+.d-stat-row{display:flex;gap:8px;margin-top:12px}
+.d-stat{flex:1;background:var(--teal-bg);border-radius:9px;padding:9px;text-align:center}
+.d-stat-num{font-size:15px;font-weight:800;color:var(--teal-d)}
+.d-stat-lbl{font-size:8.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:0.4px;margin-top:1px}
 
-.mini-card{background:var(--w);border-radius:11px;border:1px solid var(--line);padding:13px 14px;margin-bottom:12px}
-.mini-card-hd{display:flex;align-items:center;gap:8px;margin-bottom:9px}
-.mini-avatar{width:26px;height:26px;border-radius:50%;background:var(--navy3);flex-shrink:0}
-.mini-name{font-size:11.5px;font-weight:700;color:var(--navy)}
-.mini-time{font-size:9.5px;color:var(--ink3)}
-.mini-typeline{font-size:11.5px;color:var(--ink2);line-height:1.5;white-space:nowrap;overflow:hidden;border-right:2px solid transparent;width:0;animation:typeLine 3.5s steps(28,end) 0.6s infinite}
-@keyframes typeLine{0%{width:0}55%{width:15.5em}90%{width:15.5em}100%{width:0}}
-.mini-react{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:4px 10px;background:var(--teal-bg);border-radius:20px;font-size:11px;font-weight:700;color:var(--teal-d);opacity:0;animation:reactPop 3.5s ease 2.3s infinite}
-@keyframes reactPop{0%,60%{opacity:0;transform:scale(0.5)}70%{opacity:1;transform:scale(1.15)}80%{transform:scale(1)}95%{opacity:1}100%{opacity:0}}
+/* highlights screen */
+.h-circle{width:56px;height:56px;border-radius:50%;flex-shrink:0;padding:2.5px;background:linear-gradient(135deg,var(--teal),var(--gold))}
+.h-circle-inner{width:100%;height:100%;border-radius:50%;border:2px solid var(--cream)}
+.h-name{font-size:9px;color:var(--ink2);text-align:center;margin-top:4px;font-weight:600}
+.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:170px;position:relative;margin-top:14px}
+.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:11.5px;font-weight:600;padding:10px 12px}
 
-.mini-chat-toast{position:absolute;bottom:-14px;right:-18px;background:var(--w);border-radius:13px;box-shadow:0 14px 30px -10px rgba(15,30,46,0.35);padding:10px 14px;display:flex;align-items:center;gap:9px;opacity:0;transform:translateY(10px);animation:toastIn 5s ease 1.4s infinite}
-@keyframes toastIn{0%,20%{opacity:0;transform:translateY(10px)}30%,75%{opacity:1;transform:translateY(0)}90%,100%{opacity:0;transform:translateY(10px)}}
-.mini-chat-ico{width:30px;height:30px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.mini-chat-txt div:first-child{font-size:10.5px;font-weight:700;color:var(--navy)}
-.mini-chat-txt div:last-child{font-size:10px;color:var(--ink3)}
-@media(max-width:520px){.device{transform:none}.mini-chat-toast{right:0}}
+/* team feed screen */
+.tf-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:8px}
+.tf-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.tf-avatar{width:22px;height:22px;border-radius:50%;flex-shrink:0}
+.tf-name{font-size:10.5px;font-weight:700;color:var(--navy)}
+.tf-time{font-size:8.5px;color:var(--ink3)}
+.tf-txt{font-size:10.5px;color:var(--ink2);line-height:1.45}
+
+/* chat screen */
+.c-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:11.5px;line-height:1.45;margin-bottom:9px}
+.c-bubble.them{background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
+.c-bubble.me{margin-left:auto;background:var(--teal);color:white;border-bottom-right-radius:4px}
+
+/* kitchen screen */
+.k-photo{height:130px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:12px;position:relative}
+.k-badge{position:absolute;top:9px;left:9px;background:var(--teal);color:white;font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px}
+.k-card{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.k-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.k-cost-row{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink2);margin-bottom:5px}
+.k-cost-track{height:6px;background:var(--line);border-radius:4px;overflow:hidden}
+.k-cost-fill{height:100%;width:28%;background:linear-gradient(90deg,#F59E0B,var(--teal));border-radius:4px}
+
+/* task board screen */
+.tb-board{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:8px 7px;min-height:170px}
+.tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.5px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
+.tb-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:7px 8px;font-size:9px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.tb-moving{animation:tbSlide 12s cubic-bezier(0.65,0,0.35,1) infinite}
+@keyframes tbSlide{0%,83%{transform:translateX(0)}88%,100%{transform:translateX(calc(100% + 8px))}}
+
+.device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 12s ease infinite}
+.device-bar-dots span:nth-child(1){animation-delay:0s}
+.device-bar-dots span:nth-child(2){animation-delay:2s}
+.device-bar-dots span:nth-child(3){animation-delay:4s}
+.device-bar-dots span:nth-child(4){animation-delay:6s}
+.device-bar-dots span:nth-child(5){animation-delay:8s}
+.device-bar-dots span:nth-child(6){animation-delay:10s}
+@keyframes dotPulse{0%,4%{background:rgba(255,255,255,0.15)}8%,25%{background:white}29%,100%{background:rgba(255,255,255,0.15)}}
+
+@media(max-width:520px){.device{transform:none}}
 
 /* ===== CHAOS SECTION ===== */
 .chaos{padding:70px 0;background:var(--w);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -257,27 +306,95 @@ img{max-width:100%;display:block}
     </div>
     <div class="hero-visual">
       <div class="device">
-        <div class="device-bar"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
-        <div class="device-screen">
-          <div class="mini-highlights">
-            <div class="mini-story pulse"><div class="mini-story-inner"></div></div>
-            <div class="mini-story"><div class="mini-story-inner"></div></div>
-            <div class="mini-story"><div class="mini-story-inner"></div></div>
-            <div class="mini-story"><div class="mini-story-inner"></div></div>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-hd"><div class="mini-avatar"></div><div><div class="mini-name">Kitchen Team</div><div class="mini-time">2m ago</div></div></div>
-            <div class="mini-typeline">Sunset menu tasting moved to 4pm today</div>
-            <div class="mini-react">❤️ 6</div>
-          </div>
-          <div class="mini-card" style="margin-bottom:0">
-            <div class="mini-card-hd"><div class="mini-avatar"></div><div><div class="mini-name">Front of House</div><div class="mini-time">18m ago</div></div></div>
-            <div style="font-size:11.5px;color:var(--ink2);line-height:1.5">VIP table for 8 confirmed — 7:30pm, terrace</div>
-          </div>
+        <div class="device-bar">
+          <div class="device-dots"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
+          <div class="device-bar-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         </div>
-        <div class="mini-chat-toast">
-          <div class="mini-chat-ico">💬</div>
-          <div class="mini-chat-txt"><div>Robbie</div><div>Can you check the...</div></div>
+        <div class="device-viewport">
+          <div class="device-track">
+
+            <!-- 1. Dashboard -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Dashboard</div>
+              <div class="d-hl-row">
+                <div class="d-circle" style="background:linear-gradient(135deg,#F5D0C5,#E8A597)"></div>
+                <div class="d-circle" style="background:linear-gradient(135deg,#C9E4DE,#9BC5B8)"></div>
+                <div class="d-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"></div>
+                <div class="d-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"></div>
+              </div>
+              <div class="d-mini-card">
+                <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Kitchen Team</div></div>
+                <div class="d-mini-txt">Sunset menu tasting moved to 4pm today</div>
+              </div>
+              <div class="d-mini-card" style="margin-bottom:0">
+                <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Front of House</div></div>
+                <div class="d-mini-txt">VIP table for 8 confirmed — 7:30pm</div>
+              </div>
+              <div class="d-stat-row">
+                <div class="d-stat"><div class="d-stat-num">12</div><div class="d-stat-lbl">Tasks Today</div></div>
+                <div class="d-stat"><div class="d-stat-num">3</div><div class="d-stat-lbl">New Posts</div></div>
+              </div>
+            </div>
+
+            <!-- 2. Highlights -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Highlights</div>
+              <div class="d-hl-row" style="margin-bottom:0">
+                <div><div class="h-circle" style="background:linear-gradient(135deg,#F5D0C5,#E8A597)"><div class="h-circle-inner"></div></div><div class="h-name">Kitchen</div></div>
+                <div><div class="h-circle" style="background:linear-gradient(135deg,#C9E4DE,#9BC5B8)"><div class="h-circle-inner"></div></div><div class="h-name">Front</div></div>
+                <div><div class="h-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"><div class="h-circle-inner"></div></div><div class="h-name">Events</div></div>
+                <div><div class="h-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"><div class="h-circle-inner"></div></div><div class="h-name">Bar</div></div>
+              </div>
+              <div class="h-photo"><div class="h-photo-cap">🎉 Sarah's 3-year work anniversary!</div></div>
+            </div>
+
+            <!-- 3. Team Feed -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Team Feed</div>
+              <div class="tf-card">
+                <div class="tf-hd"><div class="tf-avatar" style="background:var(--navy3)"></div><div><div class="tf-name">Head Chef</div><div class="tf-time">Just now</div></div></div>
+                <div class="tf-txt">New sunset menu goes live for service tonight 🌅</div>
+              </div>
+              <div class="tf-card">
+                <div class="tf-hd"><div class="tf-avatar" style="background:var(--gold)"></div><div><div class="tf-name">Front of House</div><div class="tf-time">14m ago</div></div></div>
+                <div class="tf-txt">Terrace fully booked for tonight ✅</div>
+              </div>
+              <div class="tf-card" style="margin-bottom:0">
+                <div class="tf-hd"><div class="tf-avatar" style="background:var(--teal)"></div><div><div class="tf-name">Events Team</div><div class="tf-time">1h ago</div></div></div>
+                <div class="tf-txt">DJ Nova confirmed for Saturday's set 🎧</div>
+              </div>
+            </div>
+
+            <!-- 4. Chat -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Chat</div>
+              <div class="c-bubble them">Table 12 asking about the wine pairing</div>
+              <div class="c-bubble me">Sending the notes over now</div>
+              <div class="c-bubble them">Perfect, thank you! 🙏</div>
+            </div>
+
+            <!-- 5. Kitchen & Recipes -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Kitchen &amp; Recipes</div>
+              <div class="k-photo"><div class="k-badge">LIVE</div></div>
+              <div class="k-card">
+                <div class="k-name">Grilled Barramundi, Lemon Butter</div>
+                <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">28%</span></div>
+                <div class="k-cost-track"><div class="k-cost-fill"></div></div>
+              </div>
+            </div>
+
+            <!-- 6. Task Board -->
+            <div class="dscreen">
+              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Task Board</div>
+              <div class="tb-board">
+                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div></div>
+                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card tb-moving">Confirm AV load-in</div></div>
+                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div></div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
