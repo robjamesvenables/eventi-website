@@ -47,9 +47,11 @@ img{max-width:100%;display:block}
 /* ===== NAV ===== */
 .nav{position:sticky;top:0;z-index:300;background:rgba(251,249,244,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-0.3px}
-.nav-logo-mark{width:9px;height:9px;border-radius:50%;background:var(--gold);position:relative}
-.nav-logo-mark::after{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);left:6px;opacity:0.55}
+.nav-logo{display:inline-flex;align-items:baseline;font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-0.3px;text-decoration:none}
+.nav-logo-mark{display:inline-block;position:relative;width:15px;height:10px;margin-left:2px}
+.nav-logo-mark::before,.nav-logo-mark::after{content:'';position:absolute;bottom:1px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.nav-logo-mark::before{left:0}
+.nav-logo-mark::after{left:6px;opacity:0.6}
 .nav-links{display:flex;align-items:center;gap:34px}
 .nav-link{font-size:13.5px;font-weight:600;color:var(--ink2);transition:color 0.15s}
 .nav-link:hover{color:var(--teal-d)}
@@ -308,7 +310,7 @@ img{max-width:100%;display:block}
 
 <nav class="nav">
   <div class="nav-inner">
-    <div class="nav-logo"><span class="nav-logo-mark"></span>Mavis</div>
+    <a href="/" class="nav-logo">Mavis<span class="nav-logo-mark"></span></a>
     <div class="nav-links">
       <a href="#features" class="nav-link">Features</a>
       <a href="#pricing" class="nav-link">Pricing</a>
@@ -473,7 +475,7 @@ img{max-width:100%;display:block}
         <div class="chaos-chip">📋 Printed binders</div>
       </div>
       <div class="chaos-arrow"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="chaos-new"><span class="nav-logo-mark" style="width:8px;height:8px"></span>One login, everything included</div>
+      <div class="chaos-new"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block"></span>One login, everything included</div>
     </div>
   </div>
 </section>
@@ -728,7 +730,7 @@ img{max-width:100%;display:block}
 <footer style="background:var(--navy);padding:56px 0 26px;color:rgba(255,255,255,0.55)">
   <div class="wrap" style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08)">
     <div>
-      <div class="nav-logo" style="color:white;margin-bottom:10px">Mavis</div>
+      <a href="/" class="nav-logo" style="color:white;margin-bottom:10px">Mavis<span class="nav-logo-mark"></span></a>
       <div style="font-size:13px;line-height:1.5">One login. One team. One shared home for your whole operation.</div>
     </div>
     <div>
