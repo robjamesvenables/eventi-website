@@ -237,8 +237,7 @@ img{max-width:100%;display:block}
 .f-post-name{font-size:12.5px;font-weight:700;color:var(--navy)}
 .f-post-time{font-size:10.5px;color:var(--ink3)}
 .f-post-txt{font-size:12.5px;color:var(--ink2);line-height:1.55;margin-bottom:12px}
-.f-post-reply{display:flex;gap:8px;align-items:flex-start;padding-top:11px;border-top:1px solid var(--line);opacity:0;transform:translateY(6px);animation:replyIn 5s ease infinite}
-@keyframes replyIn{0%,35%{opacity:0;transform:translateY(6px)}50%,85%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(6px)}}
+.f-post-reply{display:flex;gap:8px;align-items:flex-start;padding-top:11px;margin-top:12px;border-top:1px solid var(--line)}
 .f-post-reply-avatar{width:22px;height:22px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .f-post-reply-txt{font-size:11.5px;color:var(--ink2);background:var(--w);padding:7px 11px;border-radius:9px}
 
@@ -533,6 +532,15 @@ img{max-width:100%;display:block}
             <div class="f-post-reply-avatar"></div>
             <div class="f-post-reply-txt">On it — printing new menus now 👍</div>
           </div>
+        </div>
+        <div class="f-post" style="margin-top:12px">
+          <div class="f-post-hd"><div class="f-post-avatar" style="background:var(--gold)"></div><div><div class="f-post-name">Front of House</div><div class="f-post-time">18m ago</div></div></div>
+          <div class="f-post-txt">Terrace fully booked for tonight ✅</div>
+        </div>
+        <div class="f-post" style="margin-top:12px">
+          <div class="f-post-hd"><div class="f-post-avatar" style="background:var(--teal)"></div><div><div class="f-post-name">Events Team</div><div class="f-post-time">1h ago</div></div></div>
+          <div class="f-post-txt">DJ Nova confirmed for Saturday's set 🎧</div>
+          <div style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:4px 10px;background:var(--teal-bg);border-radius:20px;font-size:11px;font-weight:700;color:var(--teal-d)">🎉 4</div>
         </div>
       </div>
     </div>
