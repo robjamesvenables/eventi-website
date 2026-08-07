@@ -267,7 +267,7 @@ img{max-width:100%;display:block}
 @keyframes dotBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
 
 /* -- Kitchen mockup -- */
-.f-recipe-photo{height:120px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:13px;position:relative}
+.f-recipe-photo{height:120px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:13px;position:relative;border:1px solid var(--line)}
 .f-recipe-badge{position:absolute;top:10px;left:10px;background:var(--teal);color:white;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px}
 .f-recipe-badge-dot{width:5px;height:5px;border-radius:50%;background:white;animation:livePulse 1.6s ease infinite}
 @keyframes livePulse{0%,100%{opacity:1}50%{opacity:0.3}}
@@ -589,8 +589,8 @@ img{max-width:100%;display:block}
     <div class="feature-visual">
       <div class="fdevice">
         <div class="f-recipe-photo"><div class="f-recipe-badge"><span class="f-recipe-badge-dot"></span>LIVE</div></div>
-        <div class="f-recipe-card" style="border:none;padding:0;margin-bottom:13px">
-          <div class="f-recipe-name">Grilled Barramundi, Lemon Butter</div>
+        <div class="f-recipe-card">
+          <div class="f-recipe-name" style="font-size:13px;margin-bottom:7px">Grilled Barramundi, Lemon Butter</div>
           <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">28%</span></div>
           <div class="f-cost-track"><div class="f-cost-fill" style="width:28%"></div></div>
         </div>
