@@ -200,12 +200,24 @@ img{max-width:100%;display:block}
 .chaos-head{text-align:center;max-width:560px;margin:0 auto 44px}
 .chaos-head h2{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-0.6px;margin:14px 0 12px}
 .chaos-head p{font-size:15px;color:var(--ink2);line-height:1.6}
-.chaos-row{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
-.chaos-old{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:400px}
-.chaos-chip{display:flex;align-items:center;gap:7px;padding:9px 15px;background:var(--cream2);border-radius:20px;font-size:12.5px;font-weight:600;color:var(--ink3);text-decoration:line-through;text-decoration-color:rgba(156,163,175,0.6)}
-.chaos-arrow{color:var(--teal);flex-shrink:0}
-.chaos-new{display:flex;align-items:center;gap:10px;padding:13px 22px;background:var(--navy);border-radius:12px;color:white;font-weight:700;font-size:14.5px}
-@media(max-width:720px){.chaos-row{flex-direction:column}.chaos-arrow{transform:rotate(90deg)}}
+.chaos-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px;max-width:900px;margin:0 auto}
+.chaos-card{border-radius:18px;padding:28px 26px;height:100%;box-sizing:border-box}
+.chaos-card-lbl{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.chaos-old{background:var(--w);border:1.5px solid var(--line)}
+.chaos-old .chaos-card-lbl{color:#B45309}
+.chaos-old-dot{width:7px;height:7px;border-radius:50%;background:#DC2626}
+.chaos-chip{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--cream2);border-radius:11px;font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:9px}
+.chaos-chip:last-child{margin-bottom:0}
+.chaos-chip-x{color:#DC2626;font-weight:800;font-size:13px;flex-shrink:0}
+.chaos-arrow{color:white;background:var(--teal);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px -6px rgba(13,148,136,0.5)}
+.chaos-new{background:linear-gradient(150deg,var(--navy),var(--navy3))}
+.chaos-new .chaos-card-lbl{color:var(--teal-lt)}
+.chaos-new-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.chaos-new-headline{font-size:22px;font-weight:800;color:white;line-height:1.25;margin-bottom:14px}
+.chaos-new-check{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:9px}
+.chaos-new-check:last-child{margin-bottom:0}
+.chaos-new-check-ico{color:var(--teal);flex-shrink:0}
+@media(max-width:720px){.chaos-row{grid-template-columns:1fr;justify-items:center}.chaos-arrow{transform:rotate(90deg)}.chaos-card{width:100%;max-width:400px}}
 
 /* ===== FEATURES ===== */
 .features-head{text-align:center;max-width:600px;margin:90px auto 20px;padding:0 32px}
@@ -478,14 +490,20 @@ img{max-width:100%;display:block}
       <p>The rota's in WhatsApp. The SOPs are a Google Doc nobody can find. Menus live in someone's photos. Mavis puts it all in one place your whole team already knows how to use.</p>
     </div>
     <div class="chaos-row reveal">
-      <div class="chaos-old">
-        <div class="chaos-chip">💬 WhatsApp groups</div>
-        <div class="chaos-chip">📁 Google Drive</div>
-        <div class="chaos-chip">📊 Spreadsheets</div>
-        <div class="chaos-chip">📋 Printed binders</div>
+      <div class="chaos-card chaos-old">
+        <div class="chaos-card-lbl"><span class="chaos-old-dot"></span>Before Mavis</div>
+        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>WhatsApp groups</div>
+        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Google Drive</div>
+        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Spreadsheets</div>
+        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Printed binders</div>
       </div>
-      <div class="chaos-arrow"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="chaos-new"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block"></span>One login, everything included</div>
+      <div class="chaos-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="chaos-card chaos-new">
+        <div class="chaos-card-lbl"><span class="chaos-new-dot"></span>After Mavis</div>
+        <div class="chaos-new-headline">One login. Everything included.</div>
+        <div class="chaos-new-check"><span class="chaos-new-check-ico">✓</span>Every tool, one place</div>
+        <div class="chaos-new-check"><span class="chaos-new-check-ico">✓</span>Everyone always up to date</div>
+      </div>
     </div>
   </div>
 </section>
