@@ -121,8 +121,14 @@ img{max-width:100%;display:block}
 .h-circle-inner{width:100%;height:100%;border-radius:50%;border:2px solid var(--cream)}
 .h-name{font-size:9px;color:var(--ink2);text-align:center;margin-top:4px;font-weight:600}
 .h-photo-marquee{overflow:hidden;margin-top:14px;border-radius:11px}
-.h-photo-track{display:flex;gap:10px;width:fit-content;animation:hMarquee 22s linear infinite}
-@keyframes hMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.h-photo-track{display:flex;gap:10px;width:fit-content;animation:hMarquee 16s cubic-bezier(0.65,0,0.35,1) infinite}
+@keyframes hMarquee{
+  0%,20%{transform:translateX(0)}
+  25%,45%{transform:translateX(-180px)}
+  50%,70%{transform:translateX(-360px)}
+  75%,95%{transform:translateX(-540px)}
+  100%{transform:translateX(-540px)}
+}
 .h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:230px;width:170px;position:relative;flex-shrink:0}
 .h-photo.two{background:linear-gradient(155deg,#C9E4DE,#8FB8AC)}
 .h-photo.three{background:linear-gradient(155deg,#F5E6B8,#D9BC5E)}
@@ -225,8 +231,13 @@ img{max-width:100%;display:block}
 .f-hl-circle:nth-child(2) .f-hl-circle-inner{background:linear-gradient(135deg,#C9E4DE,#9BC5B8)}
 .f-hl-circle:nth-child(3) .f-hl-circle-inner{background:linear-gradient(135deg,#F5E6B8,#E0C778)}
 .f-hl-marquee{overflow:hidden;border-radius:12px;min-width:0}
-.f-hl-track{display:flex;gap:12px;width:fit-content;animation:fHlMarquee 22s linear infinite}
-@keyframes fHlMarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.f-hl-track{display:flex;gap:12px;width:fit-content;animation:fHlMarquee 14s cubic-bezier(0.65,0,0.35,1) infinite}
+@keyframes fHlMarquee{
+  0%,25%{transform:translateX(0)}
+  33%,58%{transform:translateX(-232px)}
+  66%,91%{transform:translateX(-464px)}
+  100%{transform:translateX(-464px)}
+}
 .f-hl-photo{border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#F5D0C5,#D88A78);height:180px;width:220px;position:relative;flex-shrink:0}
 .f-hl-photo.two{background:linear-gradient(160deg,#C9E4DE,#8FB8AC)}
 .f-hl-photo.three{background:linear-gradient(160deg,#F5E6B8,#D9BC5E)}
