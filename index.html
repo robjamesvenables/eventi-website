@@ -280,14 +280,14 @@ img{max-width:100%;display:block}
 
 /* -- Task Board mockup -- */
 .f-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.f-col{background:var(--cream);border-radius:9px;padding:9px 8px;min-height:150px}
+.f-col{background:var(--cream);border-radius:9px;padding:9px 8px;min-height:300px}
 .f-col-title{font-size:9px;font-weight:800;letter-spacing:0.6px;color:var(--ink3);text-transform:uppercase;margin-bottom:8px;padding-left:2px}
 .f-task-card{background:var(--w);border:1px solid var(--line);border-radius:7px;padding:8px 9px;font-size:10px;font-weight:600;color:var(--navy);margin-bottom:7px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-.f-task-moving{position:relative;animation:taskSlide 6s ease infinite}
-@keyframes taskSlide{
-  0%,10%{transform:translateX(0)}
-  35%,55%{transform:translateX(calc(100% + 9px))}
-  80%,100%{transform:translateX(calc(200% + 18px))}
+.f-task-moving{position:relative;z-index:2;animation:fTaskMove 8s cubic-bezier(0.34,1.56,0.64,1) infinite}
+@keyframes fTaskMove{
+  0%,60%{transform:translateX(calc(-100% - 9px)) scale(1)}
+  70%{transform:translateX(0) scale(1.06)}
+  80%,100%{transform:translateX(0) scale(1)}
 }
 
 /* ===== ADMIN / CONTROL ===== */
@@ -609,14 +609,28 @@ img{max-width:100%;display:block}
           <div class="f-col">
             <div class="f-col-title">To Do</div>
             <div class="f-task-card">Print guest list</div>
+            <div class="f-task-card">Restock bar fridge</div>
+            <div class="f-task-card">Update wine list</div>
+            <div class="f-task-card">Deep clean fryers</div>
+            <div class="f-task-card">Order fresh herbs</div>
+            <div class="f-task-card">Polish glassware</div>
           </div>
           <div class="f-col">
             <div class="f-col-title">In Progress</div>
+            <div class="f-task-card">Finalise stage plot</div>
+            <div class="f-task-card">Polish silverware</div>
+            <div class="f-task-card">Taste new cocktail menu</div>
             <div class="f-task-card f-task-moving">Confirm AV load-in</div>
+            <div class="f-task-card">Steam table linens</div>
           </div>
           <div class="f-col">
             <div class="f-col-title">Done</div>
             <div class="f-task-card">Book DJ Nova</div>
+            <div class="f-task-card">Confirm florist</div>
+            <div class="f-task-card">Print menus</div>
+            <div class="f-task-card">Set up terrace</div>
+            <div class="f-task-card">Inspect walk-in fridge</div>
+            <div class="f-task-card">Sanitize prep stations</div>
           </div>
         </div>
       </div>
