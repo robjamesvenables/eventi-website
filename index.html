@@ -274,8 +274,10 @@ img{max-width:100%;display:block}
 .f-recipe-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:9px}
 .f-cost-row{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--ink2);margin-bottom:6px}
 .f-cost-track{height:8px;background:var(--line);border-radius:5px;overflow:hidden}
-.f-cost-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,#F59E0B,var(--teal));width:0%;animation:costFill 4s ease infinite}
-@keyframes costFill{0%,10%{width:0%}55%,90%{width:28%}100%{width:0%}}
+.f-cost-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,#F59E0B,var(--teal))}
+.f-recipe-card{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-bottom:8px}
+.f-mini-row{display:flex;align-items:center;justify-content:space-between;background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-top:8px}
+.f-mini-tag{font-size:9px;font-weight:700;color:var(--teal-d);background:var(--teal-bg);padding:3px 8px;border-radius:20px}
 .f-cost-num{font-weight:800;color:var(--teal-d)}
 
 /* -- Task Board mockup -- */
@@ -587,9 +589,17 @@ img{max-width:100%;display:block}
     <div class="feature-visual">
       <div class="fdevice">
         <div class="f-recipe-photo"><div class="f-recipe-badge"><span class="f-recipe-badge-dot"></span>LIVE</div></div>
-        <div class="f-recipe-name">Grilled Barramundi, Lemon Butter</div>
-        <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">28%</span></div>
-        <div class="f-cost-track"><div class="f-cost-fill"></div></div>
+        <div class="f-recipe-card" style="border:none;padding:0;margin-bottom:13px">
+          <div class="f-recipe-name">Grilled Barramundi, Lemon Butter</div>
+          <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">28%</span></div>
+          <div class="f-cost-track"><div class="f-cost-fill" style="width:28%"></div></div>
+        </div>
+        <div class="f-recipe-card" style="margin-bottom:0">
+          <div class="f-recipe-name" style="font-size:13px;margin-bottom:7px">Sunset Sharing Platter</div>
+          <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">31%</span></div>
+          <div class="f-cost-track"><div class="f-cost-fill" style="width:31%"></div></div>
+        </div>
+        <div class="f-mini-row"><span style="font-size:10.5px;font-weight:700;color:var(--navy)">Sunset Beach Menu</span><span class="f-mini-tag">Draft</span></div>
       </div>
     </div>
   </div>
