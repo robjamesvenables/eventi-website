@@ -256,13 +256,11 @@ img{max-width:100%;display:block}
 
 /* -- Chat mockup -- */
 .f-chat{display:flex;flex-direction:column;gap:10px}
-.f-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:12.5px;line-height:1.45;opacity:0}
-.f-bubble.them{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px;animation:bubbleIn 6s ease 0.2s infinite}
-.f-bubble.me{align-self:flex-end;background:var(--teal);color:white;border-bottom-right-radius:4px;animation:bubbleIn 6s ease 2s infinite}
-.f-bubble.them2{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px;animation:bubbleIn 6s ease 3.8s infinite}
-@keyframes bubbleIn{0%,8%{opacity:0;transform:translateY(8px) scale(0.96)}20%,92%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0}}
-.f-typing{display:flex;gap:4px;align-self:flex-start;padding:10px 13px;background:var(--cream2);border-radius:14px;border-bottom-left-radius:4px;opacity:0;animation:typingShow 6s ease 3.2s infinite}
-@keyframes typingShow{0%,60%{opacity:0}64%,72%{opacity:1}76%,100%{opacity:0}}
+.f-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:12.5px;line-height:1.45}
+.f-bubble.them{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
+.f-bubble.me{align-self:flex-end;background:var(--teal);color:white;border-bottom-right-radius:4px}
+.f-bubble.them2{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
+.f-typing{display:flex;gap:4px;align-self:flex-start;padding:10px 13px;background:var(--cream2);border-radius:14px;border-bottom-left-radius:4px}
 .f-typing-dot{width:5px;height:5px;border-radius:50%;background:var(--ink3);animation:dotBounce 1s ease infinite}
 .f-typing-dot:nth-child(2){animation-delay:0.15s}
 .f-typing-dot:nth-child(3){animation-delay:0.3s}
@@ -570,6 +568,8 @@ img{max-width:100%;display:block}
           <div class="f-bubble me">Sending the notes over now</div>
           <div class="f-typing"><span class="f-typing-dot"></span><span class="f-typing-dot"></span><span class="f-typing-dot"></span></div>
           <div class="f-bubble them2">Perfect, thank you! 🙏</div>
+          <div class="f-bubble me">Also — VIP arriving 15 mins early tonight</div>
+          <div class="f-bubble them">Got it, terrace will be ready ✅</div>
         </div>
       </div>
     </div>
