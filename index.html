@@ -130,7 +130,7 @@ img{max-width:100%;display:block}
 
 /* ===== PEEK STRIP — 3 animated mobile mockups ===== */
 .peek-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:900px;margin:60px auto 0}
-.strip-phone{background:var(--navy);border-radius:20px;padding:6px;margin:0 auto;max-width:230px}
+.strip-phone{background:var(--navy);border-radius:20px;padding:6px;margin:0 auto;width:100%;max-width:230px;box-sizing:border-box}
 .strip-screen{background:var(--cream);border-radius:15px;aspect-ratio:9/18.5;position:relative;overflow:hidden;padding:16px 12px;display:flex;flex-direction:column}
 .strip-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:5px;background:var(--navy);border-radius:4px;z-index:2}
 .strip-label{font-size:9.5px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:var(--teal-d);margin:16px 0 12px;text-align:center}
@@ -151,7 +151,9 @@ img{max-width:100%;display:block}
 @keyframes stripDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}}
 
 /* kitchen mockup */
-.strip-recipe{background:var(--w);border:1px solid var(--line);border-radius:11px;padding:14px;margin-top:auto;margin-bottom:auto}
+.strip-food-photo{height:150px;border-radius:9px;overflow:hidden;margin-bottom:10px}
+.strip-food-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.strip-recipe{background:var(--w);border:1px solid var(--line);border-radius:11px;padding:14px}
 .strip-recipe-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .strip-cost-row{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--ink2);margin-bottom:7px}
 .strip-cost-num{margin-left:auto;font-weight:800;color:var(--teal-d)}
@@ -162,7 +164,7 @@ img{max-width:100%;display:block}
 @keyframes stripThumbsShow{0%,50%{opacity:0;transform:scale(0.4)}65%,90%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0.4)}}
 
 /* team feed mockup */
-.strip-feed{display:flex;flex-direction:column;gap:9px;margin-top:auto;margin-bottom:auto}
+.strip-feed{display:flex;flex-direction:column;gap:8px}
 .strip-post{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px}
 .strip-post-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
 .strip-post-avatar{width:19px;height:19px;border-radius:50%;background:var(--navy3);flex-shrink:0}
@@ -247,10 +249,16 @@ img{max-width:100%;display:block}
         <div class="strip-screen">
           <div class="strip-notch"></div>
           <div class="strip-label">Kitchen &amp; Recipes</div>
+          <div class="strip-food-photo"><img src="images/kitchen-linguine.jpg" alt="Seafood Linguine"></div>
           <div class="strip-recipe">
             <div class="strip-recipe-name">Seafood Linguine</div>
             <div class="strip-cost-row"><span>Food Cost</span><span class="strip-cost-num">32%</span><span class="strip-thumbsup">👍</span></div>
             <div class="strip-cost-track"><div class="strip-cost-fill"></div></div>
+          </div>
+          <div class="strip-recipe" style="margin-top:8px">
+            <div class="strip-recipe-name">Sunset Sharing Platter</div>
+            <div class="strip-cost-row"><span>Food Cost</span><span class="strip-cost-num">31%</span></div>
+            <div class="strip-cost-track"><div class="strip-cost-fill" style="width:31%;animation:none"></div></div>
           </div>
         </div>
       </div>
@@ -267,6 +275,18 @@ img{max-width:100%;display:block}
             <div class="strip-post">
               <div class="strip-post-hd"><div class="strip-post-avatar" style="background:var(--gold)"></div><div><div class="strip-post-name">Head Chef</div><div class="strip-post-time">18m ago</div></div></div>
               <div class="strip-post-txt">New sunset menu goes live tonight 🌅</div>
+            </div>
+            <div class="strip-post">
+              <div class="strip-post-hd"><div class="strip-post-avatar" style="background:var(--teal)"></div><div><div class="strip-post-name">Events Team</div><div class="strip-post-time">1h ago</div></div></div>
+              <div class="strip-post-txt">DJ Nova confirmed for Saturday 🎧</div>
+            </div>
+            <div class="strip-post">
+              <div class="strip-post-hd"><div class="strip-post-avatar" style="background:var(--navy3)"></div><div><div class="strip-post-name">Management</div><div class="strip-post-time">2h ago</div></div></div>
+              <div class="strip-post-txt">Great turnout last night — well done team 🙌</div>
+            </div>
+            <div class="strip-post">
+              <div class="strip-post-hd"><div class="strip-post-avatar" style="background:var(--gold)"></div><div><div class="strip-post-name">Bar Team</div><div class="strip-post-time">3h ago</div></div></div>
+              <div class="strip-post-txt">New cocktail menu launches this weekend 🍹</div>
             </div>
           </div>
         </div>
