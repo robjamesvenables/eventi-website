@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mavis. — One Login. One Team.</title>
-<meta name="description" content="Mavis brings your whole hospitality team into one place — no more chasing updates across WhatsApp, Google Drive, and spreadsheets.">
+<title>Mavis. — Everyone Matters.</title>
+<meta name="description" content="Mavis is the digital home where your whole hospitality team belongs — one login, one team, everyone seen and informed.">
 <link rel="icon" type="image/png" href="brand/mavis-favicon-square.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -81,255 +81,53 @@ img{max-width:100%;display:block}
 .btn-ghost:hover{background:var(--navy);color:white}
 .hero-trust{margin-top:30px;font-size:12.5px;color:var(--ink3);font-weight:500}
 
-/* Signature element: the "everyone, one place" device window */
-.hero-visual{position:relative;display:flex;justify-content:center}
-.device{width:100%;max-width:440px;background:var(--navy);border-radius:20px;box-shadow:0 30px 70px -20px rgba(15,30,46,0.45),0 0 0 1px rgba(15,30,46,0.06);padding:16px;position:relative}
-.device-bar{display:flex;align-items:center;justify-content:space-between;padding:2px 6px 14px}
-.device-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.15)}
-.device-dots{display:flex;gap:6px}
-.device-bar-dots{display:flex;gap:6px}
-.device-viewport{background:var(--cream);border-radius:12px;height:400px;overflow:hidden;position:relative}
-.device-track{animation:deviceCycle 18s cubic-bezier(0.65,0,0.35,1) infinite}
-.dscreen{height:400px;padding:18px;box-sizing:border-box;overflow:hidden}
-@keyframes deviceCycle{
-  0%,12%{transform:translateY(0)}
-  16.67%,29%{transform:translateY(-400px)}
-  33.33%,46%{transform:translateY(-800px)}
-  50%,63%{transform:translateY(-1200px)}
-  66.67%,79%{transform:translateY(-1600px)}
-  83.33%,96%{transform:translateY(-2000px)}
-  100%{transform:translateY(-2000px)}
-}
-.dscreen-label{font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-d);margin-bottom:13px;display:flex;align-items:center;gap:6px}
-.dscreen-label-dot{width:5px;height:5px;border-radius:50%;background:var(--teal)}
+/* ===== HERO (v2 — emotion first, no device mockup) ===== */
+.hero-v2{padding:60px 0 0}
+.hero-v2-inner{max-width:760px;margin:0 auto;text-align:center}
+.hero-v2 h1{font-size:64px;font-weight:900;letter-spacing:-2px;line-height:1.03;color:var(--navy);margin:20px 0 18px}
+.hero-v2 h1 .accent{color:var(--teal-d)}
+.hero-v2-sub{font-size:18px;font-weight:600;color:var(--navy2);margin-bottom:16px}
+.hero-v2-body{font-size:15.5px;color:var(--ink2);line-height:1.7;max-width:520px;margin:0 auto 32px}
+@media(max-width:720px){.hero-v2 h1{font-size:40px}}
 
-/* dashboard overview screen */
-.d-hl-row{display:flex;gap:8px;margin-bottom:14px}
-.d-circle{width:34px;height:34px;border-radius:50%;flex-shrink:0;border:2px solid var(--cream)}
-.d-mini-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:9px}
-.d-mini-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.d-mini-avatar{width:20px;height:20px;border-radius:50%;background:var(--navy3);flex-shrink:0}
-.d-mini-name{font-size:10.5px;font-weight:700;color:var(--navy)}
-.d-mini-txt{font-size:10.5px;color:var(--ink2);line-height:1.4}
-.d-stat-row{display:flex;gap:8px;margin-top:12px}
-.d-stat{flex:1;background:var(--teal-bg);border-radius:9px;padding:9px;text-align:center}
-.d-stat-num{font-size:15px;font-weight:800;color:var(--teal-d)}
-.d-stat-lbl{font-size:8.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:0.4px;margin-top:1px}
+/* ===== THE PEEK ===== */
+.peek{padding:70px 0 100px}
+.peek-head{max-width:600px;margin:0 auto 50px;text-align:center}
+.peek-head h2{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-0.6px;margin:14px 0 12px}
+.peek-head p{font-size:15px;color:var(--ink2);line-height:1.65}
+.peek-main{display:grid;grid-template-columns:1.5fr 0.5fr;gap:40px;align-items:stretch;max-width:1080px;margin:0 auto}
+.laptop-frame{background:var(--navy);border-radius:10px 10px 0 0;padding:8px 8px 0;position:relative;display:flex;flex-direction:column}
+.laptop-screen{background:#DDD8CC;border-radius:3px 3px 0 0;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.laptop-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
+.laptop-base{height:10px;background:linear-gradient(var(--navy2),var(--navy));border-radius:0 0 5px 5px;position:relative}
+.laptop-base::after{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:50px;height:3px;background:var(--navy3);border-radius:0 0 4px 4px}
+.phone-frame{background:var(--navy);border-radius:22px;padding:6px;margin:0 auto;height:100%;display:flex}
+.phone-screen{background:#DDD8CC;border-radius:17px;aspect-ratio:9/19.5;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:46px;height:5px;background:var(--navy);border-radius:4px;z-index:2}
+@media(max-width:860px){.peek-main{grid-template-columns:1fr}.phone-frame{max-width:260px}}
 
-/* highlights screen */
-.h-circle{width:56px;height:56px;border-radius:50%;flex-shrink:0;padding:2.5px;background:linear-gradient(135deg,var(--teal),var(--gold))}
-.h-circle-inner{width:100%;height:100%;border-radius:50%;border:2px solid var(--cream)}
-.h-name{font-size:9px;color:var(--ink2);text-align:center;margin-top:4px;font-weight:600}
-.h-photo-marquee{overflow:hidden;margin-top:14px;border-radius:11px}
-.h-photo-track{display:flex;gap:10px;width:fit-content;animation:hMarquee 16s cubic-bezier(0.65,0,0.35,1) infinite}
-@keyframes hMarquee{
-  0%,20%{transform:translateX(0)}
-  25%,45%{transform:translateX(-191px)}
-  50%,70%{transform:translateX(-382px)}
-  75%,95%{transform:translateX(-573px)}
-  100%{transform:translateX(-573px)}
-}
-.h-photo{border-radius:11px;overflow:hidden;background:linear-gradient(155deg,#F5D0C5,#D88A78);height:230px;width:181px;position:relative;flex-shrink:0}
-.h-photo.two{background:linear-gradient(155deg,#C9E4DE,#8FB8AC)}
-.h-photo.three{background:linear-gradient(155deg,#F5E6B8,#D9BC5E)}
-.h-photo.four{background:linear-gradient(155deg,#D7CDE8,#A896C4)}
-.h-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:10.5px;font-weight:600;padding:10px 11px;line-height:1.35}
+/* ===== PROBLEM (v2 — direct, business-toned) ===== */
+.problem-v2{padding:90px 0;background:var(--w);border-top:1px solid var(--line)}
+.problem-v2-inner{max-width:640px;margin:0 auto;text-align:center}
+.problem-v2 h2{font-size:32px;font-weight:800;color:var(--navy);letter-spacing:-0.7px;line-height:1.2;margin:14px 0 18px}
+.problem-v2 p{font-size:15.5px;color:var(--ink2);line-height:1.75}
+.problem-moments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:50px;max-width:900px;margin-left:auto;margin-right:auto}
+.moment{padding:26px 22px;background:var(--cream);border-radius:16px;border:1px solid var(--line);text-align:left}
+.moment-icon{width:38px;height:38px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.moment h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.moment p{font-size:13px;color:var(--ink2);line-height:1.6}
+@media(max-width:860px){.problem-moments{grid-template-columns:1fr}}
 
-/* team feed screen */
-.tf-card{background:var(--w);border-radius:10px;border:1px solid var(--line);padding:11px 12px;margin-bottom:8px}
-.tf-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.tf-avatar{width:22px;height:22px;border-radius:50%;flex-shrink:0}
-.tf-name{font-size:10.5px;font-weight:700;color:var(--navy)}
-.tf-time{font-size:8.5px;color:var(--ink3)}
-.tf-txt{font-size:10.5px;color:var(--ink2);line-height:1.45}
+/* ===== MAVIS AS HOME ===== */
+.home-v2{padding:90px 0;background:var(--navy);text-align:center}
+.home-v2-inner{max-width:620px;margin:0 auto}
+.home-v2 h2{font-size:36px;font-weight:900;letter-spacing:-1px;color:white;line-height:1.15;margin:14px 0 18px}
+.home-v2 h2 .accent{color:var(--teal-lt)}
+.home-v2 p{font-size:15.5px;color:rgba(255,255,255,0.65);line-height:1.75}
+.home-v2-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.home-v2-pill{padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85)}
 
-/* chat screen */
-.c-bubble{max-width:78%;padding:10px 14px;border-radius:14px;font-size:12px;line-height:1.5;margin-bottom:10px}
-.c-bubble.them{background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
-.c-bubble.me{margin-left:auto;background:var(--teal);color:white;border-bottom-right-radius:4px}
-.c-typing{display:flex;gap:4px;padding:11px 14px;background:var(--cream2);border-radius:14px;border-bottom-left-radius:4px;width:fit-content}
-.c-typing span{width:5px;height:5px;border-radius:50%;background:var(--ink3);animation:cDot 1s ease infinite}
-.c-typing span:nth-child(2){animation-delay:0.15s}
-.c-typing span:nth-child(3){animation-delay:0.3s}
-@keyframes cDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
-
-/* kitchen screen */
-.k-photo{height:130px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B) center/cover;margin-bottom:12px;position:relative;overflow:hidden}
-.k-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.k-badge{position:absolute;top:9px;left:9px;background:var(--teal);color:white;font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px}
-.k-card{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
-.k-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px}
-.k-cost-row{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink2);margin-bottom:5px}
-.k-cost-track{height:6px;background:var(--line);border-radius:4px;overflow:hidden}
-.k-mini-row{display:flex;align-items:center;justify-content:space-between;background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-top:8px}
-.k-mini-name{font-size:10.5px;font-weight:700;color:var(--navy)}
-.k-mini-tag{font-size:9px;font-weight:700;color:var(--teal-d);background:var(--teal-bg);padding:3px 8px;border-radius:20px}
-.k-cost-fill{height:100%;width:28%;background:linear-gradient(90deg,#F59E0B,var(--teal));border-radius:4px}
-
-/* task board screen */
-.tb-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.tb-col{background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 8px;min-height:300px;overflow:hidden}
-.tb-col-title{font-size:8px;font-weight:800;letter-spacing:0.4px;color:var(--ink3);text-transform:uppercase;margin-bottom:7px}
-.tb-card{background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:6px;padding:6px 8px;font-size:8.5px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3;box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-.tb-card:nth-of-type(3n+2){border-left-color:var(--gold)}
-.tb-card:nth-of-type(3n+3){border-left-color:#E8926F}
-.tb-mover{border-left-color:var(--teal)!important;animation:tbPop 9s ease infinite}
-.tb-mover2{border-left-color:var(--gold)!important;animation:tbPop 9s ease 3s infinite}
-.tb-mover3{border-left-color:#E8926F!important;animation:tbPop 9s ease 6s infinite}
-@keyframes tbPop{
-  0%,4%,100%{transform:scale(1);box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-  12%{transform:scale(1.08);box-shadow:0 10px 20px -6px rgba(13,148,136,0.4)}
-  22%,33%{transform:scale(1);box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-}
-
-.device-bar-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.15);display:inline-block;animation:dotPulse 18s ease infinite}
-.device-bar-dots span:nth-child(1){animation-delay:0s}
-.device-bar-dots span:nth-child(2){animation-delay:3s}
-.device-bar-dots span:nth-child(3){animation-delay:6s}
-.device-bar-dots span:nth-child(4){animation-delay:9s}
-.device-bar-dots span:nth-child(5){animation-delay:12s}
-.device-bar-dots span:nth-child(6){animation-delay:15s}
-@keyframes dotPulse{0%,4%{background:rgba(255,255,255,0.15)}8%,25%{background:white}29%,100%{background:rgba(255,255,255,0.15)}}
-
-@media(max-width:520px){.device{transform:none}}
-
-/* ===== CHAOS SECTION ===== */
-.chaos{padding:70px 0;background:var(--w);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.chaos-head{text-align:center;max-width:560px;margin:0 auto 44px}
-.chaos-head h2{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-0.6px;margin:14px 0 12px}
-.chaos-head p{font-size:15px;color:var(--ink2);line-height:1.6}
-.chaos-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:20px;max-width:900px;margin:0 auto}
-.chaos-card{border-radius:18px;padding:28px 26px;height:100%;box-sizing:border-box}
-.chaos-card-lbl{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.chaos-old{background:var(--w);border:1.5px solid var(--line)}
-.chaos-old .chaos-card-lbl{color:#B45309}
-.chaos-old-dot{width:7px;height:7px;border-radius:50%;background:#DC2626}
-.chaos-chip{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--cream2);border-radius:11px;font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:9px}
-.chaos-chip:last-child{margin-bottom:0}
-.chaos-chip-x{color:#DC2626;font-weight:800;font-size:13px;flex-shrink:0}
-.chaos-arrow{color:white;background:var(--teal);width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px -6px rgba(13,148,136,0.5);align-self:center}
-.chaos-new{background:linear-gradient(150deg,var(--navy),var(--navy3))}
-.chaos-new .chaos-card-lbl{color:var(--teal-lt)}
-.chaos-new-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.chaos-new-headline{font-size:22px;font-weight:800;color:white;line-height:1.25;margin-bottom:14px}
-.chaos-new-check{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:9px}
-.chaos-new-check:last-child{margin-bottom:0}
-.chaos-new-check-ico{color:var(--teal);flex-shrink:0}
-@media(max-width:720px){.chaos-row{grid-template-columns:1fr;justify-items:center}.chaos-arrow{transform:rotate(90deg)}.chaos-card{width:100%;max-width:400px}}
-
-/* ===== FEATURES ===== */
-.features-head{text-align:center;max-width:600px;margin:90px auto 20px;padding:0 32px}
-.features-head h2{font-size:34px;font-weight:800;color:var(--navy);letter-spacing:-0.7px;margin:14px 0 12px}
-.features-head p{font-size:15.5px;color:var(--ink2);line-height:1.6}
-
-.feature{padding:60px 0}
-.feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
-.feature-grid.rev .feature-copy{order:2}
-.feature-grid.rev .feature-visual{order:1}
-@media(max-width:900px){.feature-grid{grid-template-columns:minmax(0,1fr);gap:36px}.feature-grid.rev .feature-copy{order:1}.feature-grid.rev .feature-visual{order:2}}
-.feature-num{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--teal-d);text-transform:uppercase;margin-bottom:12px}
-.feature-copy h3{font-size:27px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:13px;line-height:1.18}
-.feature-copy p{font-size:15px;color:var(--ink2);line-height:1.65;max-width:420px}
-.feature-visual{display:flex;justify-content:center}
-.fdevice{width:100%;max-width:400px;height:360px;background:var(--w);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 50px -18px rgba(15,30,46,0.18);padding:20px;overflow:hidden;box-sizing:border-box}
-
-/* -- Highlights mockup -- */
-.f-hl-row{display:flex;gap:12px;margin-bottom:18px}
-.f-hl-circle{width:60px;height:60px;border-radius:50%;flex-shrink:0;padding:2.5px;background:linear-gradient(135deg,var(--teal),var(--gold))}
-.f-hl-circle-inner{width:100%;height:100%;border-radius:50%;border:2.5px solid var(--w);background-size:cover;background-position:center}
-.f-hl-circle:nth-child(1) .f-hl-circle-inner{background:linear-gradient(135deg,#F5D0C5,#E8A597)}
-.f-hl-circle:nth-child(2) .f-hl-circle-inner{background:linear-gradient(135deg,#C9E4DE,#9BC5B8)}
-.f-hl-circle:nth-child(3) .f-hl-circle-inner{background:linear-gradient(135deg,#F5E6B8,#E0C778)}
-.f-hl-marquee{overflow:hidden;border-radius:12px;min-width:0}
-.f-hl-track{display:flex;gap:12px;width:fit-content;animation:fHlMarquee 14s cubic-bezier(0.65,0,0.35,1) infinite}
-@keyframes fHlMarquee{
-  0%,25%{transform:translateX(0)}
-  33%,58%{transform:translateX(-185px)}
-  66%,91%{transform:translateX(-370px)}
-  100%{transform:translateX(-370px)}
-}
-.f-hl-photo{border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#F5D0C5,#D88A78);height:180px;width:173px;position:relative;flex-shrink:0}
-.f-hl-photo.two{background:linear-gradient(160deg,#C9E4DE,#8FB8AC)}
-.f-hl-photo.three{background:linear-gradient(160deg,#F5E6B8,#D9BC5E)}
-.f-hl-photo-cap{position:absolute;bottom:0;left:0;right:0;background:rgba(15,30,46,0.72);color:white;font-size:12px;font-weight:600;padding:10px 12px}
-
-/* -- Team Feed mockup -- */
-.f-post{background:var(--cream);border-radius:12px;padding:15px;border:1px solid var(--line)}
-.f-post-hd{display:flex;align-items:center;gap:9px;margin-bottom:10px}
-.f-post-avatar{width:30px;height:30px;border-radius:50%;background:var(--navy3)}
-.f-post-name{font-size:12.5px;font-weight:700;color:var(--navy)}
-.f-post-time{font-size:10.5px;color:var(--ink3)}
-.f-post-txt{font-size:12.5px;color:var(--ink2);line-height:1.55;margin-bottom:12px}
-.f-post-reply{display:flex;gap:8px;align-items:flex-start;padding-top:11px;margin-top:12px;border-top:1px solid var(--line)}
-.f-post-reply-avatar{width:22px;height:22px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.f-post-reply-txt{font-size:11.5px;color:var(--ink2);background:var(--w);padding:7px 11px;border-radius:9px}
-
-/* -- Chat mockup -- */
-.f-chat{display:flex;flex-direction:column;gap:10px;justify-content:flex-end;height:100%}
-.f-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:12.5px;line-height:1.45}
-.f-bubble.them{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
-.f-bubble.me{align-self:flex-end;background:var(--teal);color:white;border-bottom-right-radius:4px}
-.f-bubble.them2{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:4px}
-.f-typing{display:flex;gap:4px;align-self:flex-start;padding:10px 13px;background:var(--cream2);border-radius:14px;border-bottom-left-radius:4px}
-.f-typing-dot{width:5px;height:5px;border-radius:50%;background:var(--ink3);animation:dotBounce 1s ease infinite}
-.f-typing-dot:nth-child(2){animation-delay:0.15s}
-.f-typing-dot:nth-child(3){animation-delay:0.3s}
-@keyframes dotBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
-
-/* -- Kitchen mockup -- */
-.f-recipe-photo{height:120px;border-radius:11px;background:linear-gradient(150deg,#E8D5A8,#C4973B);margin-bottom:13px;position:relative;border:1px solid var(--line);overflow:hidden}
-.f-recipe-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.f-recipe-badge{position:absolute;top:10px;left:10px;background:var(--teal);color:white;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px}
-.f-recipe-badge-dot{width:5px;height:5px;border-radius:50%;background:white;animation:livePulse 1.6s ease infinite}
-@keyframes livePulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.f-recipe-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:9px}
-.f-cost-row{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--ink2);margin-bottom:6px}
-.f-cost-track{height:8px;background:var(--line);border-radius:5px;overflow:hidden}
-.f-cost-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,#F59E0B,var(--teal))}
-.f-recipe-card{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-bottom:8px}
-.f-mini-row{display:flex;align-items:center;justify-content:space-between;background:var(--w);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-top:8px}
-.f-mini-tag{font-size:9px;font-weight:700;color:var(--teal-d);background:var(--teal-bg);padding:3px 8px;border-radius:20px}
-.f-cost-num{font-weight:800;color:var(--teal-d)}
-
-/* -- Task Board mockup -- */
-.f-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.f-col{background:var(--cream);border-radius:9px;padding:9px 8px;min-height:300px;overflow:hidden}
-.f-col-title{font-size:9px;font-weight:800;letter-spacing:0.6px;color:var(--ink3);text-transform:uppercase;margin-bottom:8px;padding-left:2px}
-.f-task-card{background:var(--w);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:7px;padding:8px 9px;font-size:10px;font-weight:600;color:var(--navy);margin-bottom:7px;box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-.f-task-card:nth-of-type(3n+2){border-left-color:var(--gold)}
-.f-task-card:nth-of-type(3n+3){border-left-color:#E8926F}
-.f-task-moving{border-left-color:var(--teal)!important;animation:fTaskPop 9s ease infinite}
-.f-task-moving2{border-left-color:var(--gold)!important;animation:fTaskPop 9s ease 3s infinite}
-.f-task-moving3{border-left-color:#E8926F!important;animation:fTaskPop 9s ease 6s infinite}
-@keyframes fTaskPop{
-  0%,4%,100%{transform:scale(1);box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-  12%{transform:scale(1.06);box-shadow:0 10px 20px -6px rgba(13,148,136,0.4)}
-  22%,33%{transform:scale(1);box-shadow:0 1px 4px rgba(15,30,46,0.05)}
-}
-
-/* ===== ADMIN / CONTROL ===== */
-.control{padding:90px 0;background:var(--navy);color:white;overflow:hidden}
-.control-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
-@media(max-width:900px){.control-grid{grid-template-columns:minmax(0,1fr)}}
-.control-copy .eyebrow{color:var(--gold-lt)}
-.control-copy .eyebrow-dot{background:var(--gold)}
-.control-copy h2{font-size:32px;font-weight:800;letter-spacing:-0.6px;margin:14px 0 14px;line-height:1.18}
-.control-copy p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.65;max-width:440px;margin-bottom:24px}
-.control-list{display:flex;flex-direction:column;gap:12px}
-.control-item{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,0.8)}
-.control-check{color:var(--teal);flex-shrink:0;margin-top:1px}
-.admin-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px}
-.admin-role-row{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.admin-role-name{font-size:14px;font-weight:700;color:white}
-.admin-role-tag{font-size:10px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:var(--gold);background:rgba(196,151,59,0.15);padding:3px 9px;border-radius:20px}
-.admin-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0}
-.admin-toggle-label{font-size:12.5px;color:rgba(255,255,255,0.7)}
-.admin-toggle{width:34px;height:19px;border-radius:20px;position:relative;flex-shrink:0}
-.admin-toggle.on{background:var(--teal)}
-.admin-toggle.off{background:rgba(255,255,255,0.15)}
-.admin-toggle::after{content:'';position:absolute;top:2px;width:15px;height:15px;border-radius:50%;background:white;transition:left 0.2s}
-.admin-toggle.on::after{left:17px}
-.admin-toggle.off::after{left:2px}
 </style>
 </head>
 <body>
@@ -338,7 +136,7 @@ img{max-width:100%;display:block}
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="brand/mavis-logo-navy-text.png" alt="Mavis" style="height:24px;width:auto;display:block"></a>
     <div class="nav-links">
-      <a href="#features" class="nav-link">Features</a>
+      <a href="#peek" class="nav-link">See it in action</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#contact" class="nav-link">Contact</a>
       <a href="https://wa.me/6282145328784" class="btn-login">Book a Demo</a>
@@ -346,370 +144,85 @@ img{max-width:100%;display:block}
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow"><span class="eyebrow-dot"></span>Built for Hospitality Teams · Southeast Asia</div>
-      <h1>One login.<br>One <em>team.</em></h1>
-      <p class="hero-sub">Stop chasing updates across WhatsApp groups, Google Drive folders and printed binders. Mavis brings your whole team into one shared home — everyone always on the same page.</p>
-      <div class="hero-ctas">
-        <a href="https://wa.me/6282145328784" class="btn-primary">Book a Demo</a>
-      </div>
-      <div class="hero-trust">One flat price · Unlimited team members · Up and running in minutes</div>
+<!-- HERO — emotion first, no device mockup -->
+<header class="hero-v2">
+  <div class="wrap hero-v2-inner">
+    <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>Built for Hospitality Teams · Southeast Asia</div>
+    <h1>Everyone<br>matters<span class="accent">.</span></h1>
+    <div class="hero-v2-sub">One Login. One Team.</div>
+    <p class="hero-v2-body">Every person on your team deserves to feel seen, informed, and part of something — not left out of a group chat, or the last to know. Mavis is the digital home where your whole team belongs.</p>
+    <div class="hero-ctas" style="justify-content:center;margin-bottom:16px">
+      <a href="https://wa.me/6282145328784" class="btn-primary">Book a Demo</a>
+      <a href="#peek" class="btn-ghost">See it in action</a>
     </div>
-    <div class="hero-visual">
-      <div class="device">
-        <div class="device-bar">
-          <div class="device-dots"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
-          <div class="device-bar-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="device-viewport">
-          <div class="device-track">
-
-            <!-- 1. Dashboard -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Dashboard</div>
-              <div class="d-hl-row">
-                <div class="d-circle" style="background:linear-gradient(135deg,#F5D0C5,#E8A597)"></div>
-                <div class="d-circle" style="background:linear-gradient(135deg,#C9E4DE,#9BC5B8)"></div>
-                <div class="d-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"></div>
-                <div class="d-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"></div>
-              </div>
-              <div class="d-mini-card">
-                <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Kitchen Team</div></div>
-                <div class="d-mini-txt">Sunset menu tasting moved to 4pm today</div>
-              </div>
-              <div class="d-mini-card">
-                <div class="d-mini-hd"><div class="d-mini-avatar"></div><div class="d-mini-name">Front of House</div></div>
-                <div class="d-mini-txt">VIP table for 8 confirmed — 7:30pm</div>
-              </div>
-              <div class="d-mini-card" style="margin-bottom:0">
-                <div class="d-mini-hd"><div class="d-mini-avatar" style="background:var(--gold)"></div><div class="d-mini-name">Events Team</div></div>
-                <div class="d-mini-txt">DJ Nova confirmed for Saturday's set 🎧</div>
-              </div>
-              <div class="d-stat-row">
-                <div class="d-stat"><div class="d-stat-num">12</div><div class="d-stat-lbl">Tasks Today</div></div>
-                <div class="d-stat"><div class="d-stat-num">3</div><div class="d-stat-lbl">New Posts</div></div>
-                <div class="d-stat"><div class="d-stat-num">2</div><div class="d-stat-lbl">Open Roles</div></div>
-              </div>
-            </div>
-
-            <!-- 2. Highlights -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Highlights</div>
-              <div class="d-hl-row" style="margin-bottom:0">
-                <div><div class="h-circle" style="background:linear-gradient(135deg,#F5D0C5,#E8A597)"><div class="h-circle-inner"></div></div><div class="h-name">Kitchen</div></div>
-                <div><div class="h-circle" style="background:linear-gradient(135deg,#C9E4DE,#9BC5B8)"><div class="h-circle-inner"></div></div><div class="h-name">Front</div></div>
-                <div><div class="h-circle" style="background:linear-gradient(135deg,#F5E6B8,#E0C778)"><div class="h-circle-inner"></div></div><div class="h-name">Events</div></div>
-                <div><div class="h-circle" style="background:linear-gradient(135deg,#D7CDE8,#B3A2CE)"><div class="h-circle-inner"></div></div><div class="h-name">Bar</div></div>
-              </div>
-              <div class="h-photo-marquee">
-                <div class="h-photo-track">
-                  <div class="h-photo"><div class="h-photo-cap">🎉 Happy 3 years, Sarah!</div></div>
-                  <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset tasting night</div></div>
-                  <div class="h-photo three"><div class="h-photo-cap">🍹 New cocktail launch</div></div>
-                  <div class="h-photo four"><div class="h-photo-cap">🎧 DJ Nova, live on the deck</div></div>
-                  <div class="h-photo"><div class="h-photo-cap">🎉 Happy 3 years, Sarah!</div></div>
-                  <div class="h-photo two"><div class="h-photo-cap">🌅 Sunset tasting night</div></div>
-                  <div class="h-photo three"><div class="h-photo-cap">🍹 New cocktail launch</div></div>
-                  <div class="h-photo four"><div class="h-photo-cap">🎧 DJ Nova, live on the deck</div></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. Team Feed -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Team Feed</div>
-              <div class="tf-card">
-                <div class="tf-hd"><div class="tf-avatar" style="background:var(--navy3)"></div><div><div class="tf-name">Head Chef</div><div class="tf-time">Just now</div></div></div>
-                <div class="tf-txt">New sunset menu goes live for service tonight 🌅</div>
-                <div style="display:inline-flex;align-items:center;gap:4px;margin-top:7px;padding:3px 9px;background:var(--teal-bg);border-radius:20px;font-size:9.5px;font-weight:700;color:var(--teal-d)">❤️ 6</div>
-              </div>
-              <div class="tf-card">
-                <div class="tf-hd"><div class="tf-avatar" style="background:var(--gold)"></div><div><div class="tf-name">Front of House</div><div class="tf-time">14m ago</div></div></div>
-                <div class="tf-txt">Terrace fully booked for tonight ✅</div>
-                <div style="display:inline-flex;align-items:center;gap:4px;margin-top:7px;padding:3px 9px;background:var(--teal-bg);border-radius:20px;font-size:9.5px;font-weight:700;color:var(--teal-d)">✅ 3</div>
-              </div>
-              <div class="tf-card" style="margin-bottom:0">
-                <div class="tf-hd"><div class="tf-avatar" style="background:var(--teal)"></div><div><div class="tf-name">Events Team</div><div class="tf-time">1h ago</div></div></div>
-                <div class="tf-txt">DJ Nova confirmed for Saturday's set 🎧</div>
-                <div style="display:inline-flex;align-items:center;gap:4px;margin-top:7px;padding:3px 9px;background:var(--teal-bg);border-radius:20px;font-size:9.5px;font-weight:700;color:var(--teal-d)">🎉 8</div>
-              </div>
-              <div style="text-align:center;font-size:10px;color:var(--ink3);font-weight:600;margin-top:14px">+ 2 more updates today</div>
-            </div>
-
-            <!-- 4. Chat -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Chat</div>
-              <div style="display:flex;flex-direction:column;justify-content:flex-end;height:calc(100% - 33px)">
-                <div class="c-bubble them">Table 12 asking about the wine pairing</div>
-                <div class="c-bubble me">Sending the notes over now</div>
-                <div class="c-bubble them">Perfect, thank you! 🙏</div>
-                <div class="c-bubble me">Also — VIP arriving 15 mins early tonight</div>
-                <div class="c-bubble them">Got it, terrace will be ready ✅</div>
-                <div class="c-bubble me">Perfect, thank you for the heads up 🙌</div>
-                <div class="c-typing"><span></span><span></span><span></span></div>
-              </div>
-            </div>
-
-            <!-- 5. Kitchen & Recipes -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Kitchen &amp; Recipes</div>
-              <div class="k-photo"><img src="images/kitchen-pasta.jpg" alt="Spaghetti aglio e olio"><div class="k-badge">LIVE</div></div>
-              <div class="k-card" style="margin-bottom:8px">
-                <div class="k-name">Spaghetti Aglio e Olio</div>
-                <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">28%</span></div>
-                <div class="k-cost-track"><div class="k-cost-fill"></div></div>
-              </div>
-              <div class="k-card">
-                <div class="k-name">Sunset Sharing Platter</div>
-                <div class="k-cost-row"><span>Food Cost</span><span style="font-weight:800;color:var(--teal-d)">31%</span></div>
-                <div class="k-cost-track"><div class="k-cost-fill" style="width:31%"></div></div>
-              </div>
-              <div class="k-mini-row"><span class="k-mini-name">Grilled Barramundi</span><span class="k-mini-tag">Draft</span></div>
-            </div>
-
-            <!-- 6. Task Board -->
-            <div class="dscreen">
-              <div class="dscreen-label"><span class="dscreen-label-dot"></span>Task Board</div>
-              <div class="tb-board">
-                <div class="tb-col"><div class="tb-col-title">To Do</div><div class="tb-card">Print guest list</div><div class="tb-card">Restock bar fridge</div><div class="tb-card">Update wine list</div><div class="tb-card">Deep clean fryers</div><div class="tb-card">Order fresh herbs</div><div class="tb-card">Polish glassware</div><div class="tb-card">Check linen stock</div><div class="tb-card">Confirm delivery times</div></div>
-                <div class="tb-col"><div class="tb-col-title">In Progress</div><div class="tb-card">Finalise stage plot</div><div class="tb-card">Polish silverware</div><div class="tb-card">Taste new cocktail menu</div><div class="tb-card tb-mover">Confirm AV load-in</div><div class="tb-card">Steam table linens</div><div class="tb-card">Brief evening shift</div><div class="tb-card">Prep welcome drinks</div><div class="tb-card tb-mover3">Confirm guest count</div></div>
-                <div class="tb-col"><div class="tb-col-title">Done</div><div class="tb-card">Book DJ Nova</div><div class="tb-card">Confirm florist</div><div class="tb-card">Print menus</div><div class="tb-card">Set up terrace</div><div class="tb-card">Inspect walk-in fridge</div><div class="tb-card">Sanitize prep stations</div><div class="tb-card">Brief the door team</div><div class="tb-card tb-mover2">Test sound levels</div></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="hero-trust">Loved by hospitality teams across Bali</div>
   </div>
 </header>
 
-<section class="chaos">
+<!-- THE PEEK — real screenshots, right after the hero -->
+<section class="peek" id="peek">
   <div class="wrap">
-    <div class="chaos-head reveal">
-      <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>The Problem</div>
-      <h2>Everything your team does is scattered everywhere.</h2>
-      <p>The rota's in WhatsApp. The SOPs are a Google Doc nobody can find. Menus live in someone's photos. Mavis puts it all in one place your whole team already knows how to use.</p>
+    <div class="peek-head reveal">
+      <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>A real peek inside</div>
+      <h2>This isn't a mockup. It's what your team opens every day.</h2>
+      <p>No feature tour — just a genuine look at the place your whole team already calls home.</p>
     </div>
-    <div class="chaos-row reveal">
-      <div class="chaos-card chaos-old">
-        <div class="chaos-card-lbl"><span class="chaos-old-dot"></span>Before Mavis</div>
-        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Chat, scattered everywhere</div>
-        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Events, tracked from memory</div>
-        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>SOPs, buried in random docs</div>
-        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Team updates, lost by tomorrow</div>
-        <div class="chaos-chip"><span class="chaos-chip-x">✕</span>Menus &amp; recipes, on someone's phone</div>
-        <div class="chaos-chip" style="opacity:0.75;font-style:italic">+ Plus more, all just as scattered</div>
+
+    <div class="peek-main reveal">
+      <div class="laptop-frame">
+        <div class="laptop-screen">
+          <img src="images/peek-dashboard.jpg" alt="Mavis dashboard">
+        </div>
+        <div class="laptop-base"></div>
       </div>
-      <div class="chaos-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="chaos-card chaos-new" style="display:flex;align-items:center;justify-content:center">
-        <div style="text-align:center">
-          <div class="chaos-card-lbl" style="justify-content:center;margin-bottom:10px"><span class="chaos-new-dot"></span>After Mavis</div>
-          <div class="chaos-new-headline" style="margin-bottom:18px">One login. Everything included.</div>
-          <div style="width:46px;height:46px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 20px -6px rgba(13,148,136,0.5)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <img src="images/peek-mobile.jpg" alt="Mavis mobile — Highlights">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div id="features"></div>
-<div class="features-head reveal">
-  <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>What Everyone Actually Uses</div>
-  <h2>Five reasons your team will actually open the app.</h2>
-  <p>Not another dashboard nobody logs into. These are the things your team checks every single day.</p>
-</div>
+<!-- PROBLEM — direct, business-toned explanation, now that they've already seen it -->
+<section class="problem-v2" id="story">
+  <div class="wrap problem-v2-inner reveal">
+    <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>The problem</div>
+    <h2>Right now, your team runs on five different tools that don't talk to each other.</h2>
+    <p>The rota's in WhatsApp. Procedures live in a Google Doc nobody can find. Updates get missed because not everyone's in the right group chat. It's not a training problem — it's a systems problem, and it costs time every single day.</p>
 
-<!-- 01 Highlights -->
-<section class="feature">
-  <div class="wrap feature-grid reveal">
-    <div class="feature-copy">
-      <div class="feature-num">01 · Highlights</div>
-      <h3>Every win, birthday and shift-change — seen by everyone, instantly.</h3>
-      <p>Photo-first updates that live at the very top of the app, Stories-style. No one misses the new menu launch, the team celebration, or today's VIP arrival.</p>
-    </div>
-    <div class="feature-visual">
-      <div class="fdevice">
-        <div class="f-hl-row">
-          <div class="f-hl-circle"><div class="f-hl-circle-inner"></div></div>
-          <div class="f-hl-circle"><div class="f-hl-circle-inner"></div></div>
-          <div class="f-hl-circle"><div class="f-hl-circle-inner"></div></div>
-        </div>
-        <div class="f-hl-marquee">
-          <div class="f-hl-track">
-            <div class="f-hl-photo"><div class="f-hl-photo-cap">🎉 Happy 3 years, Sarah!</div></div>
-            <div class="f-hl-photo two"><div class="f-hl-photo-cap">🌅 Sunset tasting night</div></div>
-            <div class="f-hl-photo three"><div class="f-hl-photo-cap">🍹 New cocktail launch</div></div>
-            <div class="f-hl-photo"><div class="f-hl-photo-cap">🎉 Happy 3 years, Sarah!</div></div>
-            <div class="f-hl-photo two"><div class="f-hl-photo-cap">🌅 Sunset tasting night</div></div>
-            <div class="f-hl-photo three"><div class="f-hl-photo-cap">🍹 New cocktail launch</div></div>
-          </div>
-        </div>
+    <div class="problem-moments">
+      <div class="moment">
+        <div class="moment-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Updates miss people</h3>
+        <p>Split across chat groups, not everyone gets the same information at the same time.</p>
+      </div>
+      <div class="moment">
+        <div class="moment-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Training is inconsistent</h3>
+        <p>New hires learn procedures from whoever trains them, not from a single source of truth.</p>
+      </div>
+      <div class="moment">
+        <div class="moment-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Good work goes unnoticed</h3>
+        <p>Wins and shoutouts stay with whoever saw them, instead of reaching the wider team.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 Team Feed -->
-<section class="feature" style="background:var(--w);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap feature-grid rev reveal">
-    <div class="feature-copy">
-      <div class="feature-num">02 · Team Feed</div>
-      <h3>One shared feed, instead of five WhatsApp groups.</h3>
-      <p>Post an update once. Everyone sees it, reacts to it, and replies right there — searchable and never lost in a scrolling chat history.</p>
-    </div>
-    <div class="feature-visual">
-      <div class="fdevice">
-        <div class="f-post">
-          <div class="f-post-hd"><div class="f-post-avatar"></div><div><div class="f-post-name">Head Chef</div><div class="f-post-time">Just now</div></div></div>
-          <div class="f-post-txt">New sunset menu goes live for service tonight 🌅</div>
-          <div class="f-post-reply">
-            <div class="f-post-reply-avatar"></div>
-            <div class="f-post-reply-txt">On it — printing new menus now 👍</div>
-          </div>
-        </div>
-        <div class="f-post" style="margin-top:12px">
-          <div class="f-post-hd"><div class="f-post-avatar" style="background:var(--gold)"></div><div><div class="f-post-name">Front of House</div><div class="f-post-time">18m ago</div></div></div>
-          <div class="f-post-txt" style="margin-bottom:0">Terrace fully booked for tonight ✅</div>
-        </div>
-        <div style="margin-top:12px;padding:12px 15px;background:var(--cream);border:1px solid var(--line);border-radius:12px;text-align:center;font-size:11.5px;color:var(--ink3);font-weight:600">+ 3 more updates today</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 03 Chat -->
-<section class="feature">
-  <div class="wrap feature-grid reveal">
-    <div class="feature-copy">
-      <div class="feature-num">03 · Chat</div>
-      <h3>A real team chat — without leaving your business's data in WhatsApp.</h3>
-      <p>Quick one-to-one and group conversations, kept inside the same place as everything else your team already works from.</p>
-    </div>
-    <div class="feature-visual">
-      <div class="fdevice">
-        <div class="f-chat">
-          <div class="f-bubble me">Morning — quick heads up on tonight's reservations</div>
-          <div class="f-bubble them">Table 12 asking about the wine pairing</div>
-          <div class="f-bubble me">Sending the notes over now</div>
-          <div class="f-bubble them2">Perfect, thank you! 🙏</div>
-          <div class="f-bubble me">Also — VIP arriving 15 mins early tonight</div>
-          <div class="f-bubble them">Got it, terrace will be ready ✅</div>
-          <div class="f-typing"><span class="f-typing-dot"></span><span class="f-typing-dot"></span><span class="f-typing-dot"></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 Kitchen -->
-<section class="feature" style="background:var(--w);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap feature-grid rev reveal">
-    <div class="feature-copy">
-      <div class="feature-num">04 · Kitchen &amp; Recipes</div>
-      <h3>Know your food cost before the dish ever hits the menu.</h3>
-      <p>Recipes, allergens and live menus stay in sync — with food cost % calculated automatically as ingredients change.</p>
-    </div>
-    <div class="feature-visual">
-      <div class="fdevice">
-        <div class="f-recipe-photo"><img src="images/kitchen-linguine.jpg" alt="Seafood linguine with shrimp and basil"><div class="f-recipe-badge"><span class="f-recipe-badge-dot"></span>LIVE</div></div>
-        <div class="f-recipe-card">
-          <div class="f-recipe-name" style="font-size:13px;margin-bottom:7px">Seafood Linguine, Shrimp &amp; Basil</div>
-          <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">28%</span></div>
-          <div class="f-cost-track"><div class="f-cost-fill" style="width:28%"></div></div>
-        </div>
-        <div class="f-recipe-card" style="margin-bottom:0">
-          <div class="f-recipe-name" style="font-size:13px;margin-bottom:7px">Sunset Sharing Platter</div>
-          <div class="f-cost-row"><span>Food Cost</span><span class="f-cost-num">31%</span></div>
-          <div class="f-cost-track"><div class="f-cost-fill" style="width:31%"></div></div>
-        </div>
-        <div class="f-mini-row"><span style="font-size:10.5px;font-weight:700;color:var(--navy)">Sunset Beach Menu</span><span class="f-mini-tag">Draft</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 Task Board -->
-<section class="feature">
-  <div class="wrap feature-grid reveal">
-    <div class="feature-copy">
-      <div class="feature-num">05 · Task Board</div>
-      <h3>Every department, one shared board.</h3>
-      <p>Events, maintenance, training, daily operations — drag and drop tasks across your whole team, so nothing falls through the cracks.</p>
-    </div>
-    <div class="feature-visual">
-      <div class="fdevice">
-        <div class="f-board">
-          <div class="f-col">
-            <div class="f-col-title">To Do</div>
-            <div class="f-task-card">Print guest list</div>
-            <div class="f-task-card">Restock bar fridge</div>
-            <div class="f-task-card">Update wine list</div>
-            <div class="f-task-card">Deep clean fryers</div>
-            <div class="f-task-card">Order fresh herbs</div>
-            <div class="f-task-card">Polish glassware</div>
-          </div>
-          <div class="f-col">
-            <div class="f-col-title">In Progress</div>
-            <div class="f-task-card">Finalise stage plot</div>
-            <div class="f-task-card">Polish silverware</div>
-            <div class="f-task-card">Taste new cocktail menu</div>
-            <div class="f-task-card f-task-moving">Confirm AV load-in</div>
-            <div class="f-task-card f-task-moving3">Test sound levels</div>
-          </div>
-          <div class="f-col">
-            <div class="f-col-title">Done</div>
-            <div class="f-task-card">Book DJ Nova</div>
-            <div class="f-task-card">Confirm florist</div>
-            <div class="f-task-card">Print menus</div>
-            <div class="f-task-card">Set up terrace</div>
-            <div class="f-task-card">Inspect walk-in fridge</div>
-            <div class="f-task-card">Sanitize prep stations</div>
-            <div class="f-task-card f-task-moving2">Confirm guest count</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="control">
-  <div class="wrap control-grid">
-    <div class="control-copy reveal">
-      <div class="eyebrow"><span class="eyebrow-dot"></span>Still Under Control</div>
-      <h2>Everyone together — but nobody sees more than they should.</h2>
-      <p>Bringing your whole team into one place doesn't mean flattening it. Set who sees what by role, so daily staff and directors each get exactly the view that's right for them.</p>
-      <div class="control-list">
-        <div class="control-item"><span class="control-check">✓</span>Six role tiers, from Daily Worker to Super Admin</div>
-        <div class="control-item"><span class="control-check">✓</span>Toggle any module on or off, per role</div>
-        <div class="control-item"><span class="control-check">✓</span>Sensitive content stays with managers and above</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="admin-card">
-        <div class="admin-role-row"><span class="admin-role-name">Supervisor</span><span class="admin-role-tag">6 people</span></div>
-        <div class="admin-toggle-row"><span class="admin-toggle-label">Team Feed &amp; Highlights</span><span class="admin-toggle on"></span></div>
-        <div class="admin-toggle-row"><span class="admin-toggle-label">Kitchen &amp; Recipes</span><span class="admin-toggle on"></span></div>
-        <div class="admin-toggle-row"><span class="admin-toggle-label">Vendor Contracts</span><span class="admin-toggle off"></span></div>
-        <div class="admin-toggle-row"><span class="admin-toggle-label">Business Reports</span><span class="admin-toggle off"></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section style="padding:90px 0;background:var(--cream)">
-  <div class="wrap reveal" style="max-width:720px;margin:0 auto;text-align:center">
-    <div style="font-size:52px;color:var(--gold);line-height:1;margin-bottom:8px;font-family:Georgia,serif">"</div>
-    <div style="font-size:21px;font-weight:500;color:var(--navy);line-height:1.55;letter-spacing:-0.2px;margin-bottom:28px">Before Mavis, our whole team lived across WhatsApp, Google Docs and spreadsheets. Now everyone opens one app and everyone's on the same page — instantly.</div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px">
-      <div style="width:42px;height:42px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">E</div>
-      <div style="text-align:left">
-        <div style="font-size:13.5px;font-weight:700;color:var(--navy)">Ella Jones</div>
-        <div style="font-size:12px;color:var(--ink3)">CEO · Sea Salt Beach Club, Bali</div>
-      </div>
+<!-- MAVIS AS THE ANSWER -->
+<section class="home-v2">
+  <div class="wrap home-v2-inner reveal">
+    <div class="eyebrow" style="justify-content:center;color:var(--teal-lt)"><span class="eyebrow-dot" style="background:var(--teal)"></span>One home for your whole team</div>
+    <h2>Mavis is where <span class="accent">everyone</span> belongs.</h2>
+    <p>Not another dashboard. A shared home — where every update reaches everyone, every win gets seen, and every new person feels part of the team from day one.</p>
+    <div class="home-v2-pills">
+      <div class="home-v2-pill">💬 Seen, not scattered</div>
+      <div class="home-v2-pill">🎉 Celebrated, not missed</div>
+      <div class="home-v2-pill">🤝 Included, from day one</div>
     </div>
   </div>
 </section>
@@ -776,7 +289,7 @@ img{max-width:100%;display:block}
     </div>
     <div>
       <div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.35);margin-bottom:14px">Product</div>
-      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px"><a href="#features">Features</a><a href="#pricing">Pricing</a></div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:13px"><a href="#peek">See it in action</a><a href="#pricing">Pricing</a></div>
     </div>
     <div>
       <div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.35);margin-bottom:14px">Company</div>
