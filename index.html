@@ -128,6 +128,50 @@ img{max-width:100%;display:block}
 .home-v2-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 .home-v2-pill{padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85)}
 
+/* ===== PEEK STRIP — 3 animated mobile mockups ===== */
+.peek-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:900px;margin:60px auto 0}
+.strip-phone{background:var(--navy);border-radius:20px;padding:6px;margin:0 auto;max-width:230px}
+.strip-screen{background:var(--cream);border-radius:15px;aspect-ratio:9/18.5;position:relative;overflow:hidden;padding:16px 12px;display:flex;flex-direction:column}
+.strip-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:5px;background:var(--navy);border-radius:4px;z-index:2}
+.strip-label{font-size:9.5px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:var(--teal-d);margin:16px 0 12px;text-align:center}
+@media(max-width:860px){.peek-strip{grid-template-columns:1fr;max-width:230px}}
+
+/* chat mockup */
+.strip-chat{display:flex;flex-direction:column;gap:7px;justify-content:flex-end;flex:1}
+.strip-bubble{max-width:82%;padding:8px 11px;border-radius:12px;font-size:10px;line-height:1.4}
+.strip-bubble.them{align-self:flex-start;background:var(--cream2);color:var(--ink);border-bottom-left-radius:3px}
+.strip-bubble.me{align-self:flex-end;background:var(--teal);color:white;border-bottom-right-radius:3px}
+.strip-bubble.new{opacity:0;animation:stripBubbleIn 6s ease infinite}
+@keyframes stripBubbleIn{0%,55%{opacity:0;transform:translateY(6px)}70%,100%{opacity:1;transform:translateY(0)}}
+.strip-typing{display:flex;gap:3px;align-self:flex-start;padding:8px 11px;background:var(--cream2);border-radius:12px;border-bottom-left-radius:3px;opacity:0;animation:stripTypingShow 6s ease infinite}
+.strip-typing span{width:4px;height:4px;border-radius:50%;background:var(--ink3);animation:stripDot 1s ease infinite}
+.strip-typing span:nth-child(2){animation-delay:0.15s}
+.strip-typing span:nth-child(3){animation-delay:0.3s}
+@keyframes stripTypingShow{0%,15%{opacity:0}25%,50%{opacity:1}60%,100%{opacity:0}}
+@keyframes stripDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}}
+
+/* kitchen mockup */
+.strip-recipe{background:var(--w);border:1px solid var(--line);border-radius:11px;padding:14px;margin-top:auto;margin-bottom:auto}
+.strip-recipe-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.strip-cost-row{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--ink2);margin-bottom:7px}
+.strip-cost-num{margin-left:auto;font-weight:800;color:var(--teal-d)}
+.strip-cost-track{height:7px;background:var(--line);border-radius:5px;overflow:hidden}
+.strip-cost-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,#F59E0B,var(--teal));animation:stripCostFill 6s ease infinite}
+@keyframes stripCostFill{0%,10%{width:0%}55%,100%{width:32%}}
+.strip-thumbsup{opacity:0;transform:scale(0.4);animation:stripThumbsShow 6s ease infinite;display:inline-block}
+@keyframes stripThumbsShow{0%,50%{opacity:0;transform:scale(0.4)}65%,90%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0.4)}}
+
+/* team feed mockup */
+.strip-feed{display:flex;flex-direction:column;gap:9px;margin-top:auto;margin-bottom:auto}
+.strip-post{background:var(--w);border:1px solid var(--line);border-radius:10px;padding:11px}
+.strip-post-hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.strip-post-avatar{width:19px;height:19px;border-radius:50%;background:var(--navy3);flex-shrink:0}
+.strip-post-name{font-size:9.5px;font-weight:700;color:var(--navy)}
+.strip-post-time{font-size:8px;color:var(--ink3)}
+.strip-post-txt{font-size:9.5px;color:var(--ink2);line-height:1.4}
+.strip-post.new{opacity:0;transform:translateY(-10px);animation:stripPostIn 6s ease infinite}
+@keyframes stripPostIn{0%,15%{opacity:0;transform:translateY(-10px)}30%,100%{opacity:1;transform:translateY(0)}}
+
 </style>
 </head>
 <body>
@@ -180,6 +224,51 @@ img{max-width:100%;display:block}
         <div class="phone-screen">
           <div class="phone-notch"></div>
           <img src="images/peek-mobile.jpg" alt="Mavis mobile — Highlights">
+        </div>
+      </div>
+    </div>
+
+    <div class="peek-strip reveal">
+      <div class="strip-phone">
+        <div class="strip-screen">
+          <div class="strip-notch"></div>
+          <div class="strip-label">Chat</div>
+          <div class="strip-chat">
+            <div class="strip-bubble them" style="opacity:1">Table 9 needs the wine list</div>
+            <div class="strip-bubble me" style="opacity:1">On it, bringing it now</div>
+            <div class="strip-bubble them" style="opacity:1">Perfect, thank you! 🙏</div>
+            <div class="strip-typing"><span></span><span></span><span></span></div>
+            <div class="strip-bubble me new">Also — VIP arriving early tonight</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip-phone">
+        <div class="strip-screen">
+          <div class="strip-notch"></div>
+          <div class="strip-label">Kitchen &amp; Recipes</div>
+          <div class="strip-recipe">
+            <div class="strip-recipe-name">Seafood Linguine</div>
+            <div class="strip-cost-row"><span>Food Cost</span><span class="strip-cost-num">32%</span><span class="strip-thumbsup">👍</span></div>
+            <div class="strip-cost-track"><div class="strip-cost-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip-phone">
+        <div class="strip-screen">
+          <div class="strip-notch"></div>
+          <div class="strip-label">Team Feed</div>
+          <div class="strip-feed">
+            <div class="strip-post new">
+              <div class="strip-post-hd"><div class="strip-post-avatar"></div><div><div class="strip-post-name">Front of House</div><div class="strip-post-time">Just now</div></div></div>
+              <div class="strip-post-txt">Terrace fully booked for tonight ✅</div>
+            </div>
+            <div class="strip-post">
+              <div class="strip-post-hd"><div class="strip-post-avatar" style="background:var(--gold)"></div><div><div class="strip-post-name">Head Chef</div><div class="strip-post-time">18m ago</div></div></div>
+              <div class="strip-post-txt">New sunset menu goes live tonight 🌅</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
