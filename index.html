@@ -128,6 +128,23 @@ img{max-width:100%;display:block}
 .home-v2-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 .home-v2-pill{padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85)}
 
+/* ===== DESKTOP SCREENS ROW — 3 moving desktop screenshots ===== */
+.screens-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1180px;margin:36px auto 0}
+.dscreen-frame{background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(15,30,46,0.3)}
+.dscreen-bar{background:var(--navy2);padding:9px 12px;display:flex;gap:5px}
+.dscreen-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25)}
+.dscreen-view{height:260px;overflow:hidden;position:relative;background:#DDD8CC}
+.dscreen-view img{width:100%;height:165%;object-fit:cover;object-position:top;display:block;position:absolute;top:0;left:0;animation:scrollReveal 8s ease-in-out infinite}
+@keyframes scrollReveal{0%,15%{transform:translateY(0)}50%,65%{transform:translateY(var(--scroll-dist,-80px))}100%{transform:translateY(0)}}
+.dscreen-caption{text-align:center;font-size:11.5px;font-weight:700;color:rgba(255,255,255,0.6);padding:10px 0;letter-spacing:0.3px}
+@media(max-width:860px){.screens-row{grid-template-columns:1fr}}
+
+/* SOPs placeholder mockup, until real screenshot is ready */
+.dscreen-placeholder{padding:20px 18px}
+.dscreen-placeholder-inner{background:var(--w);border-radius:8px;padding:16px;height:100%}
+.dscreen-sop-row{height:11px;background:var(--line);border-radius:4px;margin-bottom:12px}
+.dscreen-sop-row.short{width:60%}
+
 /* ===== PEEK STRIP — 3 animated mobile mockups ===== */
 .peek-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:900px;margin:60px auto 0}
 .strip-phone{background:var(--navy);border-radius:20px;padding:6px;margin:0 auto;width:100%;max-width:230px;box-sizing:border-box}
@@ -193,43 +210,45 @@ img{max-width:100%;display:block}
 <!-- HERO — emotion first, no device mockup -->
 <header class="hero-v2">
   <div class="wrap hero-v2-inner">
-    <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>Built for Hospitality Teams · Southeast Asia</div>
-    <h1>Everyone<br>matters<span class="accent">.</span></h1>
-    <div class="hero-v2-sub">One Login. One Team.</div>
-    <p class="hero-v2-body">Every person on your team deserves to feel seen, informed, and part of something — not left out of a group chat, or the last to know. Mavis is the digital home where your whole team belongs.</p>
-    <div class="hero-ctas" style="justify-content:center;margin-bottom:16px">
-      <a href="https://wa.me/6282145328784" class="btn-primary">Book a Demo</a>
-      <a href="#peek" class="btn-ghost">See it in action</a>
-    </div>
-    <div class="hero-trust">Loved by hospitality teams across Bali</div>
+    <h1 style="font-size:52px">One login,<br>one community<span class="accent">.</span></h1>
   </div>
 </header>
 
-<!-- THE PEEK — real screenshots, right after the hero -->
+<!-- THREE DESKTOP SCREENS — moving, straight after the hero -->
 <section class="peek" id="peek">
   <div class="wrap">
-    <div class="peek-head reveal">
-      <div class="eyebrow" style="justify-content:center"><span class="eyebrow-dot"></span>A real peek inside</div>
-      <h2>This isn't a mockup. It's what your team opens every day.</h2>
-      <p>No feature tour — just a genuine look at the place your whole team already calls home.</p>
-    </div>
-
-    <div class="peek-main reveal">
-      <div class="laptop-frame">
-        <div class="laptop-screen">
-          <img src="images/peek-dashboard.jpg" alt="Mavis dashboard">
+    <div class="screens-row reveal">
+      <div class="dscreen-frame">
+        <div class="dscreen-bar"><span class="dscreen-dot"></span><span class="dscreen-dot"></span><span class="dscreen-dot"></span></div>
+        <div class="dscreen-view">
+          <img src="images/peek-dashboard.jpg" alt="Mavis dashboard" style="--scroll-dist:-140px">
         </div>
-        <div class="laptop-base"></div>
+        <div class="dscreen-caption">Dashboard</div>
       </div>
 
-      <div class="phone-frame">
-        <div class="phone-screen">
-          <div class="phone-notch"></div>
-          <img src="images/peek-mobile.jpg" alt="Mavis mobile — Highlights">
+      <div class="dscreen-frame">
+        <div class="dscreen-bar"><span class="dscreen-dot"></span><span class="dscreen-dot"></span><span class="dscreen-dot"></span></div>
+        <div class="dscreen-view">
+          <img src="images/kitchen-linguine.jpg" alt="Kitchen &amp; Recipes" style="--scroll-dist:-140px">
         </div>
+        <div class="dscreen-caption">Kitchen &amp; Recipes</div>
+      </div>
+
+      <div class="dscreen-frame">
+        <div class="dscreen-bar"><span class="dscreen-dot"></span><span class="dscreen-dot"></span><span class="dscreen-dot"></span></div>
+        <div class="dscreen-view dscreen-placeholder">
+          <div class="dscreen-placeholder-inner">
+            <div class="dscreen-sop-row"></div>
+            <div class="dscreen-sop-row"></div>
+            <div class="dscreen-sop-row short"></div>
+            <div class="dscreen-sop-row"></div>
+            <div class="dscreen-sop-row short"></div>
+          </div>
+        </div>
+        <div class="dscreen-caption">SOPs</div>
       </div>
     </div>
-
+  </div>
     <div class="peek-strip reveal">
       <div class="strip-phone">
         <div class="strip-screen">
