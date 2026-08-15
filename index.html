@@ -135,6 +135,7 @@ img{max-width:100%;display:block}
 .annotated-view{position:relative;background:#DDD8CC;overflow:hidden}
 .annotated-view img{width:100%;display:block}
 .annotated-svg-outer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.ann-arrow-halo{fill:none;stroke:white;stroke-width:7;stroke-linecap:round}
 .ann-arrow{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;marker-end:url(#annArrowhead)}
 .ann-label{position:absolute;font-family:'CaveatLocal','Caveat',cursive;font-weight:700;font-size:26px;color:var(--navy);line-height:1.15;max-width:220px}
 .ann-label.right-align{text-align:right}
@@ -145,8 +146,9 @@ img{max-width:100%;display:block}
 
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <marker id="annArrowhead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#0F1E2E"/>
+    <marker id="annArrowhead" markerWidth="14" markerHeight="14" refX="7" refY="4" orient="auto">
+      <path d="M-1,-2 L9,4 L-1,10 Z" fill="white"/>
+      <path d="M0,0 L7,4 L0,8 Z" fill="#0F1E2E"/>
     </marker>
   </defs>
 </svg>
@@ -182,9 +184,14 @@ img{max-width:100%;display:block}
     </div>
 
     <svg class="annotated-svg-outer" viewBox="0 0 1560 640" preserveAspectRatio="none">
-      <path d="M 260 90 C 320 95, 370 100, 415 105" class="ann-arrow"/>
-      <path d="M 260 480 C 320 470, 370 460, 420 445" class="ann-arrow"/>
-      <path d="M 1300 90 C 1240 95, 1190 100, 1145 108" class="ann-arrow"/>
+      <path d="M 260 88 C 285 78, 300 96, 322 90 S 365 108, 390 98 S 405 102, 415 105" class="ann-arrow-halo"/>
+      <path d="M 260 88 C 285 78, 300 96, 322 90 S 365 108, 390 98 S 405 102, 415 105" class="ann-arrow"/>
+
+      <path d="M 258 478 C 288 466, 305 486, 335 472 S 385 452, 405 448 S 415 447, 420 445" class="ann-arrow-halo"/>
+      <path d="M 258 478 C 288 466, 305 486, 335 472 S 385 452, 405 448 S 415 447, 420 445" class="ann-arrow"/>
+
+      <path d="M 1302 88 C 1275 80, 1255 96, 1225 90 S 1180 104, 1160 100 S 1150 103, 1145 108" class="ann-arrow-halo"/>
+      <path d="M 1302 88 C 1275 80, 1255 96, 1225 90 S 1180 104, 1160 100 S 1150 103, 1145 108" class="ann-arrow"/>
     </svg>
 
     <div class="ann-label" style="top:60px;left:20px">Highlights —<br>team wins &amp;<br>celebrations,<br>Stories-style</div>
