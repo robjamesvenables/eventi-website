@@ -134,7 +134,9 @@ img{max-width:100%;display:block}
 .annotated-frame{background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(15,30,46,0.3)}
 .annotated-view{position:relative;background:#DDD8CC;overflow:hidden}
 .annotated-view img{width:100%;display:block}
-.ann-badge{position:absolute;width:30px;height:30px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Inter',sans-serif;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(13,148,136,0.22)}
+.ann-badge{position:absolute;width:30px;height:30px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Inter',sans-serif;transform:translate(-50%,-50%);background:var(--teal)}
+.ann-badge::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:50%;background:var(--teal);animation:annPing 1.8s ease-out infinite;z-index:-1}
+@keyframes annPing{0%{transform:scale(1);opacity:0.55}100%{transform:scale(2.2);opacity:0}}
 .ann-legend{display:flex;gap:40px;justify-content:center;max-width:900px;margin:34px auto 0;flex-wrap:wrap}
 .ann-legend-item{display:flex;gap:11px;align-items:flex-start;max-width:260px}
 .ann-legend-num{width:24px;height:24px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0}
@@ -170,9 +172,9 @@ img{max-width:100%;display:block}
       <div class="dscreen-bar"><span class="dscreen-dot"></span><span class="dscreen-dot"></span><span class="dscreen-dot"></span></div>
       <div class="annotated-view">
         <img src="images/peek-dashboard.jpg" alt="Mavis dashboard annotated">
-        <div class="ann-badge" style="top:8%;left:92%;background:var(--teal)">1</div>
-        <div class="ann-badge" style="top:27%;left:30%;background:var(--gold)">2</div>
-        <div class="ann-badge" style="top:61%;left:11%;background:var(--coral)">3</div>
+        <div class="ann-badge" style="top:7%;left:78%">1</div>
+        <div class="ann-badge" style="top:17%;left:45%">2</div>
+        <div class="ann-badge" style="top:53%;left:45%">3</div>
       </div>
       <div class="dscreen-caption">Dashboard — annotated example</div>
     </div>
@@ -180,8 +182,8 @@ img{max-width:100%;display:block}
 
   <div class="ann-legend reveal">
     <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--teal)">1</div><p><b>Venue switcher</b> — jump between venues instantly</p></div>
-    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--gold)">2</div><p><b>Highlights</b> — team wins &amp; celebrations, Stories-style</p></div>
-    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--coral)">3</div><p><b>Team Feed</b> — real-time updates, replaces WhatsApp groups</p></div>
+    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--teal)">2</div><p><b>Highlights</b> — team wins &amp; celebrations, Stories-style</p></div>
+    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--teal)">3</div><p><b>Team Feed</b> — real-time updates, replaces WhatsApp groups</p></div>
   </div>
 </section>
 
