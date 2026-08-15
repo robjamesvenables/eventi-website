@@ -128,30 +128,21 @@ img{max-width:100%;display:block}
 .home-v2-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 .home-v2-pill{padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85)}
 
-/* ===== ANNOTATED EXAMPLE — arrows/labels callout ===== */
+/* ===== ANNOTATED EXAMPLE — numbered callout badges ===== */
 .annotated{padding:20px 0 100px}
-.annotated-outer{position:relative;max-width:1560px;margin:0 auto;padding:0 40px}
-.annotated-frame{max-width:1100px;margin:0 auto;background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(15,30,46,0.3)}
+.annotated-outer{position:relative;max-width:1100px;margin:0 auto}
+.annotated-frame{background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(15,30,46,0.3)}
 .annotated-view{position:relative;background:#DDD8CC;overflow:hidden}
 .annotated-view img{width:100%;display:block}
-.annotated-svg-outer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
-.ann-arrow-halo{fill:none;stroke:white;stroke-width:7;stroke-linecap:round}
-.ann-arrow{fill:none;stroke:#D62E22;stroke-width:3;stroke-linecap:round;marker-end:url(#annArrowhead)}
-.ann-label{position:absolute;font-family:'CaveatLocal','Caveat',cursive;font-weight:700;font-size:26px;color:#D62E22;line-height:1.15;max-width:220px}
-.ann-label.right-align{text-align:right}
+.ann-badge{position:absolute;width:30px;height:30px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Inter',sans-serif;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(13,148,136,0.22)}
+.ann-legend{display:flex;gap:40px;justify-content:center;max-width:900px;margin:34px auto 0;flex-wrap:wrap}
+.ann-legend-item{display:flex;gap:11px;align-items:flex-start;max-width:260px}
+.ann-legend-num{width:24px;height:24px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0}
+.ann-legend-item p{font-size:13.5px;color:var(--ink2)}
 
 </style>
 </head>
 <body>
-
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <marker id="annArrowhead" markerWidth="14" markerHeight="14" refX="7" refY="4" orient="auto">
-      <path d="M-1,-2 L9,4 L-1,10 Z" fill="white"/>
-      <path d="M0,0 L7,4 L0,8 Z" fill="#D62E22"/>
-    </marker>
-  </defs>
-</svg>
 
 <nav class="nav">
   <div class="nav-inner">
@@ -172,31 +163,25 @@ img{max-width:100%;display:block}
   </div>
 </header>
 
-<!-- ANNOTATED EXAMPLE — arrows/labels callout style, per Robbie's reference -->
+<!-- ANNOTATED EXAMPLE — numbered callout badges -->
 <section class="annotated" id="annotated">
   <div class="annotated-outer reveal">
     <div class="annotated-frame">
       <div class="dscreen-bar"><span class="dscreen-dot"></span><span class="dscreen-dot"></span><span class="dscreen-dot"></span></div>
       <div class="annotated-view">
         <img src="images/peek-dashboard.jpg" alt="Mavis dashboard annotated">
+        <div class="ann-badge" style="top:8%;left:92%;background:var(--teal)">1</div>
+        <div class="ann-badge" style="top:27%;left:30%;background:var(--gold)">2</div>
+        <div class="ann-badge" style="top:61%;left:11%;background:var(--coral)">3</div>
       </div>
       <div class="dscreen-caption">Dashboard — annotated example</div>
     </div>
+  </div>
 
-    <svg class="annotated-svg-outer" viewBox="0 0 1560 640" preserveAspectRatio="none">
-      <path d="M 260 88 C 285 78, 300 96, 322 90 S 365 108, 390 98 S 405 102, 415 105" class="ann-arrow-halo"/>
-      <path d="M 260 88 C 285 78, 300 96, 322 90 S 365 108, 390 98 S 405 102, 415 105" class="ann-arrow"/>
-
-      <path d="M 258 478 C 288 466, 305 486, 335 472 S 385 452, 405 448 S 415 447, 420 445" class="ann-arrow-halo"/>
-      <path d="M 258 478 C 288 466, 305 486, 335 472 S 385 452, 405 448 S 415 447, 420 445" class="ann-arrow"/>
-
-      <path d="M 1302 88 C 1275 80, 1255 96, 1225 90 S 1180 104, 1160 100 S 1150 103, 1145 108" class="ann-arrow-halo"/>
-      <path d="M 1302 88 C 1275 80, 1255 96, 1225 90 S 1180 104, 1160 100 S 1150 103, 1145 108" class="ann-arrow"/>
-    </svg>
-
-    <div class="ann-label" style="top:60px;left:20px">Highlights —<br>team wins &amp;<br>celebrations,<br>Stories-style</div>
-    <div class="ann-label" style="top:440px;left:20px">Team Feed —<br>real-time updates,<br>replaces WhatsApp<br>groups</div>
-    <div class="ann-label right-align" style="top:60px;right:20px">Venue switcher —<br>jump between<br>venues instantly</div>
+  <div class="ann-legend reveal">
+    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--teal)">1</div><p><b>Venue switcher</b> — jump between venues instantly</p></div>
+    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--gold)">2</div><p><b>Highlights</b> — team wins &amp; celebrations, Stories-style</p></div>
+    <div class="ann-legend-item"><div class="ann-legend-num" style="background:var(--coral)">3</div><p><b>Team Feed</b> — real-time updates, replaces WhatsApp groups</p></div>
   </div>
 </section>
 
