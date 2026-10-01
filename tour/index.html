@@ -113,6 +113,18 @@ figure{margin:0}
 .shots.multi .screen.col{width:min(330px,84vw);align-self:flex-start}
 @media (min-width:760px){.mobtb,.mobtbh{display:none !important}}
 .logo em,.foot b em,.wm em{font-style:normal;color:#0E9C8F}.intro .wm{color:#fff}.wm i{font-style:normal;color:var(--gold)}.wm{font-weight:800}
+
+.car{position:relative}
+.carbtn,.carcount{display:none}
+@media (max-width:759px){
+.carbtn{display:flex;position:absolute;top:42%;width:46px;height:46px;border-radius:50%;border:0;background:rgba(15,30,46,.88);color:#fff;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);cursor:pointer;z-index:3;transition:opacity .2s}
+.carbtn.next{right:6px;animation:nudge 1.6s ease-in-out infinite}
+.carbtn.prev{left:6px}
+.carbtn.off{opacity:0;pointer-events:none;animation:none}
+.carcount{display:block;position:absolute;top:12px;right:16px;z-index:3;background:rgba(15,30,46,.88);color:#fff;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px}
+}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.carbtn.next{animation:none}}
 /* talk */
 .talk{margin-top:72px;background:linear-gradient(165deg,#0F1E2E 0%,#112D32 60%,#106D64 100%);color:#fff;padding:72px 0 calc(64px + env(safe-area-inset-bottom,0px))}
 .talk h2{font-size:clamp(48px,13vw,96px);line-height:.95;letter-spacing:-.04em;font-weight:900;margin:0 0 16px}
@@ -163,12 +175,25 @@ figure{margin:0}
 <p class="foot"><img src="/brand/mavis-logo-white-text.png" width="215" height="51" alt="Mavis"><span>One team. One platform.</span></p>
 </div></section>
 </main><script>
+(function(){
+var mq=window.matchMedia('(max-width:759px)');
+var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var chev=function(d){return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="'+(d>0?'9 6 15 12 9 18':'15 6 9 12 15 18')+'"/></svg>';};
 document.querySelectorAll('.shots.multi').forEach(function(s){
-  var h=s.nextElementSibling; if(!h||!h.classList.contains('hint'))return;
-  var dots=h.querySelectorAll('i');
-  s.addEventListener('scroll',function(){
-    var i=Math.round(s.scrollLeft/Math.max(1,(s.scrollWidth-s.clientWidth))*(dots.length-1));
-    dots.forEach(function(d,k){d.classList.toggle('on',k===i)});
-  },{passive:true});
+  var items=s.querySelectorAll('figure'); var n=items.length; if(n<2)return;
+  var h=s.nextElementSibling;
+  var wrap=document.createElement('div'); wrap.className='car'; s.parentNode.insertBefore(wrap,s); wrap.appendChild(s);
+  var prev=document.createElement('button'); prev.className='carbtn prev'; prev.setAttribute('aria-label','Previous screen'); prev.innerHTML=chev(-1);
+  var next=document.createElement('button'); next.className='carbtn next'; next.setAttribute('aria-label','Next screen'); next.innerHTML=chev(1);
+  var count=document.createElement('span'); count.className='carcount';
+  wrap.appendChild(prev); wrap.appendChild(next); wrap.appendChild(count);
+  var dots=(h&&h.classList&&h.classList.contains('hint'))?h.querySelectorAll('i'):[];
+  function idx(){var c=s.scrollLeft+s.clientWidth/2,best=0,bd=1e9;items.forEach(function(f,k){var m=f.offsetLeft+f.offsetWidth/2,d=Math.abs(m-c);if(d<bd){bd=d;best=k}});return best;}
+  function upd(){var i=idx(); count.textContent=(i+1)+' / '+n; prev.classList.toggle('off',i===0); next.classList.toggle('off',i===n-1); for(var k=0;k<dots.length;k++){dots[k].classList.toggle('on',k===i)}}
+  function go(d){var i=Math.max(0,Math.min(n-1,idx()+d)); var f=items[i]; s.scrollTo({left:f.offsetLeft-(s.clientWidth-f.offsetWidth)/2,behavior:reduce?'auto':'smooth'});}
+  prev.onclick=function(){go(-1)}; next.onclick=function(){go(1)};
+  s.addEventListener('scroll',upd,{passive:true}); upd();
+  if(!reduce&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&mq.matches&&s.scrollLeft<5){io.disconnect();setTimeout(function(){s.scrollTo({left:70,behavior:'smooth'});setTimeout(function(){s.scrollTo({left:0,behavior:'smooth'})},650)},400)}})},{threshold:.6});io.observe(s);}
 });
+})();
 </script></body></html>
