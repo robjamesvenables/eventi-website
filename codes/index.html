@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mavis codes</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1E2E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mavis codes">
+<link rel="icon" type="image/png" href="/brand/mavis-favicon-square.png">
+<link rel="apple-touch-icon" href="/brand/mavis-favicon-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0F1E2E;color:#0F1E2E;-webkit-font-smoothing:antialiased;display:flex;align-items:flex-start;justify-content:center;padding:28px 18px 40px}
+.card{width:100%;max-width:420px;background:#fff;border-radius:24px;padding:26px 22px 22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.wm{font-weight:800;font-size:24px;letter-spacing:-.5px}.wm em{font-style:normal;color:#0E9C8F}.wm i{font-style:normal;color:#C4973B}
+h1{font-size:22px;margin:14px 0 4px;letter-spacing:-.02em}
+.sub{color:#55606F;margin:0 0 20px;font-size:15px;line-height:1.5}
+label{display:block;font-size:13px;font-weight:700;color:#55606F;margin:14px 0 6px;letter-spacing:.02em}
+input,select{width:100%;height:52px;border-radius:14px;border:1.5px solid #D5DCE4;font:500 17px Inter,system-ui,sans-serif;padding:0 14px;color:#0F1E2E;background:#fff;outline:none}
+input:focus,select:focus{border-color:#0D9488;box-shadow:0 0 0 4px rgba(13,148,136,.15)}
+.hrs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hrs button{height:46px;border-radius:12px;border:1.5px solid #D5DCE4;background:#fff;font:700 14px Inter,sans-serif;color:#0F1E2E;cursor:pointer}
+.hrs button.on{background:#0F1E2E;border-color:#0F1E2E;color:#fff}
+.main{width:100%;height:54px;margin-top:20px;border:0;border-radius:999px;background:#0D9488;color:#fff;font:700 16px Inter,sans-serif;cursor:pointer}
+.main[disabled]{opacity:.6}
+.err{min-height:20px;color:#DC2626;font-size:14px;margin-top:10px;font-weight:600}
+.out{display:none;margin-top:18px;border-radius:18px;background:#F6F6F3;padding:18px;text-align:center}
+.out.show{display:block}
+.code{font-size:22px;font-weight:800;letter-spacing:.04em;white-space:nowrap;margin:6px 0}
+.exp{color:#55606F;font-size:14px;margin-bottom:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row a,.row button{display:flex;align-items:center;justify-content:center;height:50px;border-radius:999px;font:700 14px Inter,sans-serif;white-space:nowrap;text-decoration:none;cursor:pointer}
+.wa{background:#0D9488;color:#fff;border:0}
+.cp{background:#fff;color:#0F1E2E;border:1.5px solid #D5DCE4}
+.mini{margin-top:18px;font-size:13px;color:#94A3B8;text-align:center}
+.mini a{color:#55606F}
+#login[hidden],#make[hidden]{display:none}
+:focus-visible{outline:3px solid #2DD4BF;outline-offset:3px}
+</style></head><body>
+<div class="card">
+ <div class="wm"><em>M</em>avis<i>.</i></div>
+ <form id="login">
+  <h1>Code maker</h1>
+  <p class="sub">Private. Enter your password to create preview codes.</p>
+  <label for="pw">Password</label>
+  <input id="pw" type="password" autocomplete="current-password">
+  <button class="main" type="submit">Open</button>
+  <div class="err" id="lerr" role="alert"></div>
+ </form>
+ <form id="make" hidden>
+  <h1>New preview code</h1>
+  <p class="sub">Create a code, then send it with the tour link.</p>
+  <label for="nm">Client name</label>
+  <input id="nm" placeholder="e.g. Samsung" autocomplete="off">
+  <label>Valid for</label>
+  <div class="hrs" id="hrs">
+   <button type="button" data-h="24" class="on">24h</button><button type="button" data-h="48">48h</button><button type="button" data-h="72">3 days</button><button type="button" data-h="168">7 days</button>
+  </div>
+  <button class="main" id="mk" type="submit">Create code</button>
+  <div class="err" id="merr" role="alert"></div>
+  <div class="out" id="out" aria-live="polite">
+   <div style="font-size:13px;font-weight:700;color:#55606F">ACCESS CODE</div>
+   <div class="code" id="cd"></div>
+   <div class="exp" id="ex"></div>
+   <div class="row"><a class="wa" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a><button type="button" class="cp" id="cp">Copy</button></div>
+  </div>
+  <div class="mini"><a href="#" id="lo">Lock this page</a></div>
+ </form>
+</div>
+<script>
+(function(){
+  var KEY='mavis_codes_pw', pw=localStorage.getItem(KEY)||'', hours=24;
+  var login=document.getElementById('login'), make=document.getElementById('make');
+  function post(body){ return fetch('/api/make',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})}); }
+  function openMaker(){ login.hidden=true; make.hidden=false; document.getElementById('nm').focus(); }
+  if(pw) openMaker();
+  login.addEventListener('submit',function(e){ e.preventDefault();
+    var p=document.getElementById('pw').value; var le=document.getElementById('lerr'); le.textContent='';
+    post({password:p,name:'CHECK',hours:1}).then(function(r){
+      if(r.ok){ pw=p; try{localStorage.setItem(KEY,p)}catch(e){} openMaker(); }
+      else le.textContent = r.j.reason==='notset' ? 'Not set up yet: add the password and secret in Vercel.' : 'Wrong password.';
+    }).catch(function(){ le.textContent='Connection problem.'; });
+  });
+  document.getElementById('hrs').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b)return;
+    hours=+b.dataset.h; [].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)}); });
+  make.addEventListener('submit',function(e){ e.preventDefault();
+    var me=document.getElementById('merr'), mk=document.getElementById('mk'); me.textContent=''; mk.disabled=true; mk.textContent='Creating…';
+    post({password:pw,name:document.getElementById('nm').value,hours:hours}).then(function(r){
+      mk.disabled=false; mk.textContent='Create code';
+      if(!r.ok){ if(r.j.reason==='password'){ localStorage.removeItem(KEY); location.reload(); } me.textContent='Could not create a code.'; return; }
+      var c=r.j.code, d=new Date(r.j.expiresAt);
+      var when=d.toLocaleString([], {weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+      document.getElementById('cd').textContent=c;
+      document.getElementById('ex').textContent='Works until '+when;
+      var msg='Hi! Here is your private preview of Mavis:\nhttps://getmavis.vercel.app/tour\n\nYour access code: '+c+'\n(valid until '+when+')';
+      document.getElementById('wa').href='https://wa.me/?text='+encodeURIComponent(msg);
+      document.getElementById('cp').onclick=function(){ var b=this; (navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}).catch(function(){prompt('Copy this code:',c)}); };
+      document.getElementById('out').classList.add('show');
+    }).catch(function(){ mk.disabled=false; mk.textContent='Create code'; me.textContent='Connection problem.'; });
+  });
+  document.getElementById('lo').addEventListener('click',function(e){ e.preventDefault(); localStorage.removeItem(KEY); location.reload(); });
+})();
+</script>
+</body></html>
