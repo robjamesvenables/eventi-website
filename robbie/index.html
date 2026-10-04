@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robbie Venables · Marketing, CRM &amp; Data</title>
+<meta name="description" content="Robbie Venables: A-to-Z marketer, CRM and data lead, and founder of Mavis. Based in Bali.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1E2E;--navy2:#16324A;--teal:#0D9488;--gold:#C4973B;--ink:#1F2A37;--mute:#5B6676;--line:#E3E7EC;--paper:#FFFFFF;--soft:#F4F6F8;--tint:#F3FAF9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#E6EBF1;--mute:#A7B3C2;--line:#263646;--paper:#0B1622;--soft:#132232;--tint:#10262B}}
+:root[data-theme="dark"]{--ink:#E6EBF1;--mute:#A7B3C2;--line:#263646;--paper:#0B1622;--soft:#132232;--tint:#10262B}
+:root{box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 44px) 0 34px;position:relative}
+header.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--teal) 0 62%,var(--gold) 62%)}
+.name{font-size:clamp(38px,11vw,60px);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.dots{position:relative;display:inline-block;width:26px;height:15px;margin-left:8px;vertical-align:baseline}
+.dots i{position:absolute;bottom:0;width:15px;height:15px;border-radius:50%;background:var(--gold)}
+.dots i:first-child{left:0;opacity:.7}.dots i:last-child{left:10px}
+.role-line{margin-top:16px;font-size:clamp(17px,4.6vw,21px);font-weight:600;color:#fff;max-width:30ch}
+.loc{margin-top:10px;color:#B9C4D0;font-size:15px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;padding:0 14px}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.wa{background:var(--teal);color:#fff}
+.btn.em{background:#fff;color:var(--navy)}
+.btn.pdf{grid-column:1 / -1;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn:focus-visible,summary:focus-visible,.mlink:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+section{padding:36px 0 6px}
+h2{font-size:24px;font-weight:800;letter-spacing:-.01em;color:var(--ink);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+h2::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--gold);flex:none}
+.lead{font-size:18px;line-height:1.65;margin-bottom:14px;max-width:62ch}
+.lead b{font-weight:700}
+.bridge{background:var(--navy);border-radius:18px;padding:22px 18px 20px;margin-top:24px;color:#fff}
+.bridge h3{font-size:20px;font-weight:800}
+.bridge p.flow{color:var(--gold);font-weight:600;font-size:14px;margin:4px 0 16px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-top:3px solid var(--teal);border-radius:12px;padding:14px 12px}
+.tile b{display:block;font-size:17px;font-weight:800;line-height:1.2}
+.tile span{display:block;font-size:13.5px;color:#C3CDD8;line-height:1.4;margin:6px 0 10px}
+.tile em{font-style:normal;font-size:12px;font-weight:700;color:var(--navy);background:var(--gold);border-radius:20px;padding:3px 10px;display:inline-block}
+.skills{display:grid;grid-template-columns:1fr;gap:10px}
+.sk{background:var(--soft);border-top:3px solid var(--teal);border-radius:12px;padding:14px 16px}
+.sk b{display:block;font-size:17px;margin-bottom:3px}
+.sk p{color:var(--mute);font-size:15.5px;line-height:1.5}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pills span{background:linear-gradient(180deg,#F2FBFA,#DCF1EE);border:1px solid #8FD0C7;color:#0B5F58;font-weight:600;font-size:14.5px;border-radius:20px;padding:6px 13px;box-shadow:0 1px 2px rgba(15,30,46,.14)}
+.pills span:nth-child(4n+3){background:linear-gradient(180deg,#FBF6EC,#F3E6CC);border-color:#D9B677;color:#7A5A1E}
+.mavis{background:var(--tint);border:1px solid #CDEAE6;border-radius:18px;overflow:hidden;margin-bottom:14px}
+.mhead{background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;padding:18px 18px 16px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:3px solid var(--gold)}
+.mhead h3{font-size:19px;font-weight:800;line-height:1.3}
+.mhead p{color:var(--gold);font-weight:700;margin-top:4px}
+.now{background:var(--teal);color:#fff;font-weight:700;font-size:13px;border-radius:20px;padding:4px 12px;flex:none}
+.mavis > ul{padding:16px 18px 4px}
+.mavis h4.sub{color:var(--teal);font-size:16px;font-weight:800;padding:8px 18px 10px}
+.proj{background:var(--paper);border-left:4px solid var(--gold);border-radius:10px;margin:0 14px 12px;padding:14px 14px 6px}
+.proj h4{font-size:16.5px;font-weight:800}
+.proj .pr{color:var(--mute);font-size:14px;margin:2px 0 8px}
+.mlink{display:block;margin:4px 14px 18px;text-align:center;background:var(--navy);color:#fff;font-weight:700;text-decoration:none;border-radius:12px;padding:14px}
+ul{list-style:none}
+li{position:relative;padding-left:20px;margin-bottom:9px;font-size:16px;line-height:1.55}
+li::before{content:"";position:absolute;left:3px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.mavis li::before{background:var(--gold)}
+.role{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--paper)}
+.role summary{list-style:none;cursor:pointer;padding:16px 46px 16px 16px;position:relative;display:block}
+.role summary::-webkit-details-marker{display:none}
+.rt{display:block;font-weight:800;font-size:17.5px;line-height:1.3}
+.ro{display:block;color:var(--teal);font-weight:600;margin-top:2px}
+.rd{display:block;color:var(--mute);font-size:14px;font-weight:600;margin-top:2px}
+.rl{display:block;margin-top:10px;font-size:16px;color:var(--ink)}
+.more{position:absolute;right:16px;top:18px;width:24px;height:24px;border-radius:50%;background:var(--soft)}
+.more::before,.more::after{content:"";position:absolute;left:6px;top:11px;width:12px;height:2px;background:var(--teal);border-radius:2px;transition:transform .2s}
+.more::after{transform:rotate(90deg)}
+.role[open] .more::after{transform:rotate(0deg)}
+.role > ul{padding:0 16px 10px}
+.hint{color:var(--mute);font-size:14px;margin:-6px 0 14px}
+.edu{background:var(--soft);border-radius:14px;padding:16px}
+.edu b{display:block;font-size:17px}.edu span{color:var(--teal);font-weight:600}
+footer{padding:34px 0 40px;color:var(--mute);font-size:14px;text-align:center}
+.cta-end{display:grid;gap:10px;margin-top:20px}
+.cta-end .btn.em{background:var(--navy);color:#fff}
+@media (min-width:700px){.skills{grid-template-columns:1fr 1fr}.tiles{grid-template-columns:repeat(4,1fr)}.actions{grid-template-columns:1fr 1fr 1fr}.btn.pdf{grid-column:auto}}
+body{font-size:15px;line-height:1.55}
+header.hero{padding:calc(env(safe-area-inset-top,0px) + 30px) 0 24px}
+.name{font-size:clamp(30px,8.4vw,46px)}
+.dots{width:20px;height:12px}.dots i{width:12px;height:12px}.dots i:last-child{left:8px}
+.role-line{font-size:16px;margin-top:10px}.loc{font-size:13.5px;margin-top:6px}
+.actions{margin-top:18px;gap:8px}.btn{min-height:42px;font-size:14.5px;border-radius:10px}.btn svg{width:17px;height:17px}
+section{padding:26px 0 4px}
+h2{font-size:19px;margin-bottom:12px}h2::before{width:10px;height:10px}
+.lead{font-size:15px;line-height:1.6;margin-bottom:10px}
+.bridge{padding:16px 14px;border-radius:14px;margin-top:16px}.bridge h3{font-size:16.5px}.bridge p.flow{font-size:12.5px;margin:2px 0 12px}
+.tiles{gap:8px}.tile{padding:11px 10px;border-radius:10px}.tile b{font-size:14.5px}.tile span{font-size:12px;margin:4px 0 8px}.tile em{font-size:10.5px;padding:2px 8px}
+.skills{grid-template-columns:1fr 1fr;gap:8px}.sk{padding:10px 11px;border-radius:10px}.sk b{font-size:14px}.sk p{font-size:12.5px;line-height:1.45}
+.pills{gap:6px;margin-top:12px}.pills span{font-size:12px;padding:4px 10px}
+.mavis{border-radius:14px}.mhead{padding:13px 14px 12px}.mhead h3{font-size:15.5px}.mhead p{font-size:13.5px;margin-top:2px}.now{font-size:11.5px;padding:3px 10px}
+.mavis > ul{padding:12px 14px 2px}.mavis h4.sub{font-size:14px;padding:4px 14px 8px}
+.proj{margin:0 10px 10px;padding:11px 11px 4px}.proj h4{font-size:14px}.proj .pr{font-size:12px;margin:1px 0 6px}
+.mlink{margin:2px 10px 14px;padding:11px;font-size:14px;border-radius:10px}
+li{font-size:14px;line-height:1.5;margin-bottom:6px;padding-left:16px}li::before{width:6px;height:6px;left:2px;top:.6em}
+.role{border-radius:12px;margin-bottom:10px;padding:13px 14px 6px}
+.rh{border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:9px}
+.rt{display:block;font-weight:800;font-size:15px;line-height:1.3}
+.ro{display:block;color:var(--teal);font-weight:600;font-size:13.5px;margin-top:1px}
+.rd{display:block;color:var(--mute);font-size:12px;font-weight:600;margin-top:1px}
+.edu{padding:12px 14px;border-radius:12px}.edu b{font-size:15px}.edu span{font-size:13.5px}
+footer{font-size:12.5px}
+@media (min-width:700px){.skills{grid-template-columns:repeat(3,1fr)}}
+.dots{width:13px;margin-left:3px}.dots i:first-child{display:none}.dots i:last-child{left:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body>
+<header class="hero"><div class="wrap">
+ <h1 class="name">Robbie <span style="white-space:nowrap">Venables<span class="dots" aria-hidden="true"><i></i><i></i></span></span></h1>
+ <p class="role-line">Marketing, CRM and data analysis. Founder of Mavis.</p>
+ <p class="loc">Bali, Indonesia &nbsp;|&nbsp; Native British English</p>
+ <div class="actions">
+  <a class="btn wa" href="https://wa.me/6282145328784"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20z"/></svg>WhatsApp</a>
+  <a class="btn em" href="mailto:robjamesvenables@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+  <a class="btn pdf" href="Robbie-Venables-CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Download PDF CV</a>
+ </div>
+</div></header>
+<main class="wrap">
+<section><h2>Profile</h2>
+<p class="lead">I'm an <b>A-to-Z marketer and business founder</b> who understands customers, consumers and the numbers behind them. I start with <b>branding and USPs</b>, then build everything around them: website, social media, content, SEO, paid ads, email and e-commerce, all measured against what people actually spend.</p>
+<p class="lead">I read <b>patterns in sales, spending and the market</b>, and turn them into decisions. I've run marketing for brands selling on Amazon at two partner agencies, delivered <b>CRM and ERP projects including Salesforce at Potato Head</b>, and founded <b>Mavis</b>, where I own the brand, marketing, sales and product.</p>
+<div class="bridge"><h3>The bridge I build</h3><p class="flow">Marketing, then sales, data, CRM and ERP, working as one</p><div class="tiles"><div class="tile"><b>Marketing A–Z</b><span>Branding and USPs, website, social media, content, SEO and paid ads</span><em>Team lead</em></div><div class="tile"><b>Sales &amp; data</b><span>Sales patterns, consumer spend and one set of numbers</span><em>Excel to dashboards</em></div><div class="tile"><b>CRM</b><span>Salesforce, guest data, segmentation and email</span><em>Hands-on</em></div><div class="tile"><b>ERP &amp; back office</b><span>Systems, suppliers and processes</span><em>PM and founder</em></div></div></div>
+</section>
+<section><h2>Core skills</h2>
+<div class="skills"><div class="sk"><b>Marketing A–Z</b><p>Branding and USPs first, then website, social media, content, campaigns, email and SEO.</p></div><div class="sk"><b>Paid ads &amp; e-commerce</b><p>Amazon and online advertising, listings and conversion, measured against spend and sales.</p></div><div class="sk"><b>Customers &amp; consumers</b><p>Understanding who buys, why, how they spend, and what brings them back.</p></div><div class="sk"><b>Data &amp; sales analysis</b><p>Excel, reporting and dashboards. Spotting patterns in sales, spend and campaigns.</p></div><div class="sk"><b>CRM</b><p>Hands-on Salesforce, guest data, segmentation and email marketing.</p></div><div class="sk"><b>ERP &amp; back office</b><p>Project-managed ERP builds; founded a back-office platform for hospitality.</p></div></div>
+<div class="pills"><span>Branding</span><span>USPs</span><span>Social media</span><span>Content</span><span>SEO</span><span>Paid ads</span><span>Amazon marketing</span><span>Email marketing</span><span>E-commerce</span><span>Salesforce</span><span>CRM</span><span>ERP</span><span>Microsoft Excel</span><span>Data analysis</span><span>Dashboards</span><span>Reporting</span><span>Market research</span><span>Go-to-market</span><span>Google Workspace</span><span>Project management</span></div>
+</section>
+<section><h2>Experience</h2>
+<article class="mavis">
+<div class="mhead"><div><h3>Founder &amp; Owner · Marketing, Product &amp; Sales</h3><p>Mavis, Bali</p></div><span class="now">Present</span></div>
+<ul><li>Founded Mavis, a hospitality technology company, and built its flagship platform: a back office with CRM, supplier management, sales reporting and team tools in one place.</li><li>Own all marketing end to end: brand, USPs, positioning, messaging and the motto &#x27;One team. One platform.&#x27;</li><li>Researched the market directly with venue owners and staff, studying how they work, what they pay for and what frustrates them, and used it to shape the product and pitch.</li><li>Repositioned the brand around &#x27;Everyone Matters&#x27; after testing which message resonated most with buyers.</li><li>Designed and launched the marketing website, including a guided product tour page built to turn visitors into demo bookings.</li><li>Run sales from first contact to close: discovery, demos and follow-up. My first two sales calls both ended in a yes, and six venues are lined up to go live.</li><li>Planned the go-to-market and launch sequence, so new venues are onboarded smoothly and become references.</li><li>Built sales reporting that imports venue sales data, so owners can see revenue patterns and performance without spreadsheets.</li><li>Designed the CRM side, including guest feedback surveys, with membership and repeat-guest rewards on the roadmap.</li><li>Built a Vendor Directory and 25+ modules covering SOPs, tasks, recipes with menu costing, recruitment and team communication.</li></ul>
+<h4 class="sub">Mavis projects</h4><div class="proj"><h4>Sundari Wellness · Booking system</h4><p class="pr">Co-founder with the spa owner · In progress</p><ul><li>Co-founding a smarter spa booking product after the owner found existing tools too limited.</li><li>Mapped how customers book, pay and are allocated to rooms, times and staff, and built the first working version.</li><li>Designing customer and booking data so revenue, history and repeat visits can be tracked at a glance.</li></ul></div><div class="proj"><h4>Sundari Wellness · Website &amp; SEO</h4><p class="pr">Design, content &amp; SEO · Live demo</p><ul><li>Redesigned the spa&#x27;s website as a single-page site built to convert, with treatment pop-ups, WhatsApp and Book Now actions.</li><li>Moved gift vouchers in-house to keep revenue and customer data on the spa&#x27;s own site.</li><li>Now running SEO with the client: structure, metadata and content to rank and convert.</li></ul></div><div class="proj"><h4>Dashbox · Data &amp; analytics platform</h4><p class="pr">Founder &amp; builder · Paused</p><ul><li>Built a platform that turns large volumes of market data into clear rankings, trends and alerts.</li><li>Designed filters that combine multiple timeframes and indicators to separate real patterns from noise.</li></ul></div>
+<a class="mlink" href="https://getmavis.vercel.app" target="_blank" rel="noopener">Visit the Mavis website</a>
+</article>
+<article class="role"><div class="rh"><span class="rt">Technical Director</span><span class="ro">Luna Beach Club, Bali</span><span class="rd">Feb 2023 – Present</span></div>
+<ul><li>Joined pre-opening to lead the venue&#x27;s technical setup, from specification through installation to live operation.</li><li>Ran the marketing team in the opening phase, end to end: branding, USPs, website, social media, content and launch campaigns.</li><li>Own the venue&#x27;s technical systems and infrastructure, keeping the guest experience running smoothly every day.</li><li>Work daily with management, operations, marketing and sales teams, turning what they need into practical systems.</li><li>Source, brief and manage suppliers and contractors, holding them to scope, quality, cost and timelines.</li><li>Coordinate multiple projects and priorities at once in a busy, guest-facing environment.</li><li>Act as first-line escalation for technical issues during live service, resolving them quickly with minimal guest impact.</li><li>Write clear procedures and train staff on systems, so operations don&#x27;t depend on one person.</li><li>Evaluate and introduce software tools that remove manual work and spreadsheets for the management team.</li><li>Replaced a spreadsheet-based schedule with a purpose-built, database-backed tool now used every week.</li><li>Report to senior management with structured updates on status, risks, costs and recommendations.</li><li>Bridge management, operations, marketing and sales on systems, data and back-office processes.</li></ul></article><article class="role"><div class="rh"><span class="rt">Senior Project Manager · Head of Marketing &amp; Products</span><span class="ro">Split Dragon (Amazon partner agency), Bali</span><span class="rd">Aug 2022 – Aug 2023</span></div>
+<ul><li>Led marketing and products at an e-commerce agency and Amazon partner, managing brands selling on Amazon.</li><li>Spoke with US clients daily, owning the relationship and the results across time zones.</li><li>Ran Amazon marketing for client brands: product listings, content, imagery and brand stores built to convert.</li><li>Managed Amazon advertising campaigns, balancing ad spend against sales and return on spend.</li><li>Used sales, traffic and advertising data to find what was working and shift budget to it.</li><li>Produced regular performance reports for clients on sales, ad spend, conversion and growth.</li><li>Planned product launches and promotions with clients, from listing set-up to launch campaigns.</li><li>Briefed and coordinated designers, copywriters and specialists to deliver on time.</li><li>Agreed scope, targets and priorities with each client, and managed changes formally.</li><li>Bridged clients&#x27; commercial goals with the marketing team delivering them.</li></ul></article><article class="role"><div class="rh"><span class="rt">CRM &amp; ERP Project Manager · Marketing</span><span class="ro">Potato Head Family, Bali</span><span class="rd">Apr 2019 – Dec 2020</span></div>
+<ul><li>Sat within the marketing department, working day to day with the marketing team on guest data, CRM and campaigns.</li><li>Delivered CRM and ERP projects for one of Asia&#x27;s best-known hospitality and lifestyle brands, including hands-on work with Salesforce.</li><li>Project-managed the ERP build from requirements through configuration, testing and rollout.</li><li>Worked closely with the marketing team on CRM and guest data, including email campaigns and email blasts.</li><li>Helped turn guest data into segmented marketing, so the right message reached the right guests.</li><li>Gathered requirements from marketing, sales, guest services, F&amp;B and IT, and mapped how each team used guest data.</li><li>Translated business needs into CRM requirements: guest profiles, data fields, workflows and reports.</li><li>Supported cleansing and migration of customer data from legacy tools and spreadsheets into the new systems.</li><li>Coordinated vendors, internal IT and department heads through configuration, integration and testing.</li><li>Ran user acceptance testing and supported go-live across multiple venues, with staff training on the floor.</li><li>Reported progress, risks and decisions to senior leadership in clear, structured updates.</li><li>Acted as the bridge between marketing, sales, operations and IT, so guest data served revenue, not just storage.</li></ul></article><article class="role"><div class="rh"><span class="rt">Products &amp; Marketing Manager</span><span class="ro">Schone Digital (Amazon partner agency), Singapore</span><span class="rd">Nov 2017 – Apr 2019</span></div>
+<ul><li>Led products and marketing at a Singapore e-commerce agency and Amazon partner.</li><li>Ran Amazon and e-commerce marketing for client brands, from listings and content to brand stores.</li><li>Managed online advertising and promotions, measured against sales and return on spend.</li><li>Ran e-commerce platforms and the customer journey from first visit through checkout.</li><li>Worked with clients on campaigns, email marketing and promotions across channels.</li><li>Oversaw analytics and tracking, so campaign and sales performance could be measured, not guessed.</li><li>Used customer and sales data to find drop-off points and improve conversion.</li><li>Built reporting so clients and leadership could see what was working and where to spend.</li><li>Managed designers, developers and external partners through delivery.</li><li>Worked agency-side, so I know how to brief, measure and get the best out of a marketing agency.</li></ul></article><article class="role"><div class="rh"><span class="rt">Digital Project Manager · Mobile App &amp; Web Design</span><span class="ro">DMI (Digital Management, LLC), Phnom Penh</span><span class="rd">Sep 2013 – Jan 2018</span></div>
+<ul><li>Managed mobile app and website design projects for over four years, client-facing throughout, with a focus on user experience and brand.</li><li>Ran discovery and requirements workshops directly with clients to define goals, users and scope.</li><li>Designed user journeys with clients, including sign-up, account and engagement features.</li><li>Turned client goals into specifications and acceptance criteria for engineering teams.</li><li>Coordinated designers and remote engineering teams across locations and time zones.</li><li>Presented designs and working builds back to clients and gathered structured feedback.</li><li>Ran agile delivery with sprint planning, backlogs, stand-ups and reviews.</li><li>Managed QA and user acceptance testing across devices and browsers.</li><li>Handled change requests and kept scope, budget and timelines under control.</li><li>Owned post-launch support, keeping clients informed until issues were closed.</li><li>Bridged clients&#x27; marketing and business goals with the engineering teams building their products.</li></ul></article><article class="role"><div class="rh"><span class="rt">Commercial Project Manager</span><span class="ro">Cellcard (CamGSM), Phnom Penh</span><span class="rd">Sep 2012 – Sep 2013</span></div>
+<ul><li>Delivered commercial and customer-facing projects for Cambodia&#x27;s leading mobile operator, working across marketing, sales, customer care and IT.</li><li>Worked closely with marketing and sales on launches of new customer services and offers.</li><li>Gathered requirements from commercial teams and turned them into delivery plans.</li><li>Managed vendors and technology partners against scope, timelines and commitments.</li><li>Planned testing and cutovers to protect the customer experience.</li><li>Coordinated launch readiness with customer-facing teams.</li><li>Tracked risks, issues and dependencies across multiple teams.</li><li>Produced structured status reports for management.</li><li>Bridged marketing, sales, customer care and IT on customer-facing launches.</li></ul></article><article class="role"><div class="rh"><span class="rt">Customer Service → Project Manager → Technical Project Manager</span><span class="ro">Bank of America, Chester, UK</span><span class="rd">Sep 2001 – Nov 2011</span></div>
+<ul><li>Started in customer service, dealing directly with customers and learning what keeps them loyal.</li><li>Progressed from customer service to Project Manager, then to Technical Project Manager in 2005.</li><li>Delivered technology change for customer-facing systems in a heavily regulated banking environment.</li><li>Gathered requirements from business users and translated them for technical teams.</li><li>Worked within formal change control, with every change documented, approved and traceable.</li><li>Planned and ran rigorous test cycles before changes reached customers.</li><li>Coordinated stakeholders across business, technology and operations.</li><li>Built detailed Excel trackers and management information reports, turning numbers into decisions.</li><li>Maintained project documentation, RAID logs and governance reporting.</li><li>Built the customer focus and delivery discipline that still shapes how I work.</li></ul></article>
+</section>
+<section><h2>Education</h2>
+<div class="edu"><b>Business and Tourism</b><span>West Cheshire College, UK</span></div>
+</section>
+<section><h2>Let's talk</h2>
+<p class="lead">I'm based in Bali and available to meet in person.</p>
+<div class="cta-end">
+ <a class="btn wa" href="https://wa.me/6282145328784">WhatsApp +62 821 4532 8784</a>
+ <a class="btn em" href="mailto:robjamesvenables@gmail.com">robjamesvenables@gmail.com</a>
+</div>
+</section>
+</main>
+<footer>Robbie Venables · Bali, Indonesia</footer>
+</body></html>
