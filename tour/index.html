@@ -50,7 +50,7 @@ button[disabled]{opacity:.6}
   <div class="or">Don't have a code?</div>
   <div class="shy">Don't be shy, we'll send you one right away!</div>
   <a class="wa" href="https://wa.me/6282145328784?text=Hi%20Mavis%21%20Give%20me%20a%20code%2C%20let%27s%20go%21"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>Request access on WhatsApp</a>
-  <div class="fine">Access codes are personal and expire.</div>
+  <div class="fine">Access codes are personal, work on one device only, and expire.</div>
  </form>
 </div>
 <script>
@@ -63,6 +63,8 @@ button[disabled]{opacity:.6}
       return r.json().catch(function(){return {}}).then(function(j){
         wait.hidden=true; gate.hidden=false;
         if(!first && j.reason==='expired') err.textContent='This code has expired. Request a new one below.';
+        if(j.reason==='claimed' && !first) err.textContent='This code has already been used on another device. Request your own access below.';
+        if(j.reason==='busy') err.textContent='Something went wrong on our side. Please try again in a moment.';
         if(j.reason==='notset') err.textContent='Previews are not switched on yet.';
         document.getElementById('code').focus();
       });
@@ -75,6 +77,8 @@ button[disabled]{opacity:.6}
       if(r.ok) return load(false);
       go.disabled=false; go.textContent='Unlock preview';
       err.textContent = j.reason==='expired' ? 'This code has expired. Request a new one below.'
+        : j.reason==='claimed' ? 'This code has already been used on another device. Request your own access below.'
+        : j.reason==='busy' ? 'Something went wrong on our side. Please try again in a moment.'
         : j.reason==='notset' ? 'Previews are not switched on yet.'
         : "That code doesn't look right. Please check it and try again.";
     });}).catch(function(){ go.disabled=false; go.textContent='Unlock preview'; err.textContent='Connection problem. Please try again.'; });

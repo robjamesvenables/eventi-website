@@ -20,7 +20,7 @@ h1{font-size:22px;margin:14px 0 4px;letter-spacing:-.02em}
 label{display:block;font-size:13px;font-weight:700;color:#55606F;margin:14px 0 6px;letter-spacing:.02em}
 input,select{width:100%;height:52px;border-radius:14px;border:1.5px solid #D5DCE4;font:500 17px Inter,system-ui,sans-serif;padding:0 14px;color:#0F1E2E;background:#fff;outline:none}
 input:focus,select:focus{border-color:#0D9488;box-shadow:0 0 0 4px rgba(13,148,136,.15)}
-.hrs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hrs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .hrs button{height:46px;border-radius:12px;border:1.5px solid #D5DCE4;background:#fff;font:700 14px Inter,sans-serif;color:#0F1E2E;cursor:pointer}
 .hrs button.on{background:#0F1E2E;border-color:#0F1E2E;color:#fff}
 .main{width:100%;height:54px;margin-top:20px;border:0;border-radius:999px;background:#0D9488;color:#fff;font:700 16px Inter,sans-serif;cursor:pointer}
@@ -56,7 +56,7 @@ input:focus,select:focus{border-color:#0D9488;box-shadow:0 0 0 4px rgba(13,148,1
   <input id="nm" placeholder="e.g. Samsung" autocomplete="off">
   <label>Valid for</label>
   <div class="hrs" id="hrs">
-   <button type="button" data-h="24" class="on">24h</button><button type="button" data-h="48">48h</button><button type="button" data-h="72">3 days</button><button type="button" data-h="168">7 days</button>
+   <button type="button" data-h="1">1h</button><button type="button" data-h="24" class="on">24h</button><button type="button" data-h="48">48h</button><button type="button" data-h="72">3 days</button><button type="button" data-h="168">7 days</button>
   </div>
   <button class="main" id="mk" type="submit">Create code</button>
   <div class="err" id="merr" role="alert"></div>
