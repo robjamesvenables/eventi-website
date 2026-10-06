@@ -1,0 +1,386 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex"><link rel="icon" type="image/png" href="/brand/mavis-favicon-v6.png"><meta property="og:title" content="Mavis · Weekly marketing report (sample)"><meta property="og:description" content="Your week in marketing: score, results, paid ads and what to do next."><meta property="og:image" content="https://getmavis.vercel.app/brand/mavis-icon-1080.png?v=6"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mavis — Weekly marketing report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1E2E;--teal:#0D9488;--teal-l:#2DD4BF;--gold:#C4973B;--bg:#F4F4F2;--card:#fff;--line:#E2E6EC;--muted:#64748B;--ink:#0F1E2E;--up:#059669;--down:#DC2626;
+--ig:#E1306C;--fb:#1877F2;--gg:#34A853;--tt:#111;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A27;--card:#16263A;--line:#24364A;--muted:#9AA8B8;--ink:#EEF2F6;--tt:#EEF2F6}}
+:root[data-theme="dark"]{--bg:#0E1A27;--card:#16263A;--line:#24364A;--muted:#9AA8B8;--ink:#EEF2F6;--tt:#EEF2F6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid #2DD4BF;outline-offset:2px;border-radius:8px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:12px}
+.wm{font-weight:800;font-size:20px;letter-spacing:-.4px}.wm em{font-style:normal;color:#14A396}.wm i{font-style:normal;color:var(--gold)}
+.tag{margin-left:auto;font-size:12px;font-weight:700;color:var(--gold);border:1px solid rgba(196,151,59,.5);padding:4px 10px;border-radius:999px}
+.wrap{max-width:1100px;margin:0 auto;padding:18px 16px 60px}
+.head{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:14px}
+h1{margin:0;font-size:26px;letter-spacing:-.02em}
+.sub{margin:4px 0 0;color:var(--muted);font-size:14px}
+.weeks{display:flex;align-items:center;gap:6px;background:var(--card);border-radius:999px;padding:4px;box-shadow:inset 0 0 0 1px var(--line)}
+.weeks button{border:0;background:transparent;color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:18px}
+.weeks b{font-size:14px;padding:0 6px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{background:var(--card);border-radius:20px;box-shadow:0 0 0 1px var(--line);padding:16px}
+.span12{grid-column:span 12}.span8{grid-column:span 8}.span4{grid-column:span 4}.span6{grid-column:span 6}
+@media (max-width:860px){.span8,.span4,.span6{grid-column:span 12}}
+.hero{background:linear-gradient(135deg,#0F1E2E 0%,#123447 55%,#0E5C58 100%);color:#fff;border-radius:22px;padding:20px;position:relative;overflow:hidden}
+.sbar{margin-bottom:16px}
+.srow{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sl{font-size:12px;font-weight:800;letter-spacing:.12em;color:rgba(255,255,255,.7)}
+.sv{font-size:44px;font-weight:900;line-height:1;letter-spacing:-.02em}
+.sv small{font-size:18px;font-weight:700;opacity:.6;margin-left:2px}
+.sd{font-size:13px;font-weight:800;color:#6EE7B7;background:rgba(110,231,183,.12);padding:4px 10px;border-radius:999px}
+.track{position:relative;height:12px;border-radius:999px;margin-top:12px;background:linear-gradient(90deg,#EF4444 0%,#F59E0B 45%,#10B981 75%,#2DD4BF 100%)}
+.mk{position:absolute;top:50%;width:24px;height:24px;border-radius:50%;background:#fff;border:4px solid #0F1E2E;transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+.scale{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:rgba(255,255,255,.55);margin-top:6px}
+.hero .k{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--teal-l)}
+.hero h2{margin:8px 0 6px;font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.hero p{margin:0;color:rgba(255,255,255,.8);line-height:1.5;font-size:15px;max-width:44em}
+.score{position:absolute;right:18px;top:18px;width:84px;height:84px}
+.score b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px;font-weight:900}
+.score small{font-size:10px;font-weight:700;opacity:.8;letter-spacing:.06em}
+@media (max-width:520px){.score{position:static;margin-bottom:6px}}
+.todo{margin-top:14px;display:grid;gap:8px}
+.todo label{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.08);border-radius:14px;padding:12px;cursor:pointer;font-size:14.5px;line-height:1.45}
+.todo input{width:20px;height:20px;accent-color:#2DD4BF;flex:none;margin-top:1px}
+.okc{flex:none;width:22px;height:22px;border-radius:50%;background:#10B981;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.todo label.done span{text-decoration:line-through;opacity:.55}
+.todo .ch{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:rgba(45,212,191,.16);color:#5EEAD4;margin-right:8px;vertical-align:-7px}
+.ups{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.upl{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:0 14px;height:40px;font-weight:700;font-size:13.5px;background:#fff;color:#0F1E2E}
+.upl .ic{color:#0D9488}.upt{align-self:center;font-size:13px;font-weight:700;color:rgba(255,255,255,.7);margin-right:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{border-radius:16px;padding:14px;background:var(--bg);position:relative;overflow:hidden}
+.kpi .s{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted)}
+.si{display:inline-flex;width:24px;height:24px;border-radius:7px;background:#E3F3F1;color:#0B7A70;align-items:center;justify-content:center}
+.kpi .v{font-size:26px;font-weight:900;margin:6px 0 2px;letter-spacing:-.02em}
+.kpi .d{font-size:13px;font-weight:800}
+.d.up{color:var(--up)}.d.down{color:var(--down)}
+.kpi > svg{position:absolute;right:8px;bottom:8px;width:70px;height:28px;opacity:.9}
+.sect{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.sect h3{margin:0;font-size:16px}
+.sect small{color:var(--muted);font-size:12.5px}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:4px;border-radius:2px;margin-right:6px;vertical-align:2px}
+.post{display:flex;gap:12px;align-items:center}
+.thumb{width:84px;height:84px;border-radius:16px;flex:none;background:linear-gradient(135deg,#0F1E2E,#0D9488);display:flex;align-items:center;justify-content:center;color:#fff}
+.thumb svg{width:34px;height:34px}
+.post b{display:block;font-size:15px}.post small{color:var(--muted);font-size:13px;line-height:1.5}
+.pill{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;background:#D1FAE5;color:#065F46;margin-top:6px}
+.best{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:6px}
+.best div{text-align:center;font-size:11px;color:var(--muted);font-weight:700}
+.best span{display:block;height:46px;border-radius:10px;margin-top:4px}
+.chs{display:grid;gap:10px}
+.cn{display:inline-flex;align-items:center;gap:8px}.chr{display:grid;grid-template-columns:130px 1fr 56px;gap:10px;align-items:center;font-size:14px}
+.chr .bar{height:12px;border-radius:999px;background:var(--line);overflow:hidden}
+.chr .bar i{display:block;height:100%;border-radius:999px}
+.chr b{text-align:right}
+.rev{display:flex;align-items:center;gap:14px}
+.stars{font-size:22px;color:#F59E0B;letter-spacing:2px}
+.big{font-size:34px;font-weight:900}
+.more{display:flex;flex-wrap:wrap;gap:8px}
+.more span{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700}
+.more span em{font-style:normal;font-size:11px;color:var(--muted);font-weight:600}
+.wrow{display:grid;grid-template-columns:280px 1fr;gap:20px}
+@media (max-width:760px){.wrow{grid-template-columns:1fr}}
+.wscore .sv{color:var(--ink)}
+.wscore .track{height:10px}
+.wurl{display:flex;gap:8px;margin-top:16px}
+.wurl input{flex:1;min-width:0;height:40px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:0 14px;font-size:14px}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:760px){.checks{grid-template-columns:1fr}}
+.checks li{background:var(--bg);border-radius:14px;padding:10px 12px 10px 40px;position:relative;font-size:13.5px;line-height:1.4}
+.checks li b{display:block;font-size:14px}
+.checks li span{color:var(--muted)}
+.checks li:before{position:absolute;left:12px;top:11px;width:20px;height:20px;border-radius:50%;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.checks .ok:before{content:"✓";background:#10B981}.checks .warn:before{content:"!";background:#F59E0B}.checks .bad:before{content:"✕";background:#EF4444}
+.cl .clbar{height:10px;border-radius:999px;background:var(--line);overflow:hidden;margin-bottom:12px}
+.cl .clbar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#0D9488,#10B981);transition:width .3s}
+.clist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+@media (max-width:860px){.clist{grid-template-columns:1fr}}
+.clist label{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border-radius:14px;padding:12px;cursor:pointer}
+.clist input{width:22px;height:22px;accent-color:#10B981;flex:none;margin-top:1px}
+.clist b{display:block;font-size:14px}.clist small{color:var(--muted);font-size:12.5px}
+.clist label.on{background:#ECFDF5}.clist label.on b{text-decoration:line-through;opacity:.6}
+.cldone{display:flex;gap:12px;align-items:center;background:#10B981;color:#fff;border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.cldone[hidden]{display:none}
+.cldone span{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900}
+.cldone small{opacity:.9}
+.rvgrp{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:10px 0 8px}
+.rvgrp.bad{color:var(--down)}.rvgrp.good{color:var(--up)}
+.rv{background:var(--bg);border-radius:16px;padding:14px;margin-bottom:10px;transition:opacity .2s}
+.rv.rvdone{opacity:.45}
+.rvh{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.rvh small{color:var(--muted);margin-left:auto;font-size:12px}
+.st{color:#F59E0B;letter-spacing:1px}
+.rv p{margin:6px 0 10px;font-size:14.5px;line-height:1.5}
+.draft{background:var(--card);border-left:4px solid var(--teal);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.5}
+.draft small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--teal);margin-bottom:4px}
+.rva{display:flex;gap:8px;margin-top:10px}.rva .btn{height:40px;font-size:14px}
+.comp{display:grid;gap:8px}
+.crow{display:grid;grid-template-columns:1.4fr .8fr 1fr 1fr;gap:10px;align-items:center;background:var(--bg);border-radius:14px;padding:12px 14px;font-size:14px}
+.crow.me{background:#E3F3F1;color:#0F1E2E}
+.cr{font-weight:800}.cn2{color:var(--muted)}.crow.me .cn2{color:#475569}
+.cd{font-weight:700;color:var(--muted);text-align:right}.cd.up{color:var(--up)}
+@media (max-width:600px){
+ .wrap{padding:14px 12px 50px}
+ .grid{gap:12px}
+ .card{padding:14px;border-radius:18px}
+ .hero{padding:18px 16px;border-radius:20px}
+ .hero h2{font-size:21px}
+ .sv{font-size:40px}
+ .sect{flex-wrap:wrap;gap:4px 10px}
+ .sect h3{font-size:16px}
+ .sect>small{width:100%;order:3}
+ .sect>.btn{width:100%;order:3;margin-top:6px}
+ .ups{display:grid;grid-template-columns:1fr;gap:8px}
+ .upt{margin:0 0 2px}
+ .upl{justify-content:center;width:100%;height:44px}
+ .todo label{padding:12px 12px}
+ .head{gap:10px}.head>div:first-child{width:100%}
+ .weeks{width:100%;justify-content:space-between}
+ .kpi{padding:12px}.kpi .v{font-size:23px}
+ .kpi > svg{width:56px;height:24px}
+ .clist label{padding:11px 12px}
+ .chr{grid-template-columns:104px 1fr 48px}
+ .rva .btn{flex:1}
+ .wurl .btn{padding:0 14px}
+ .more span{font-size:12.5px}
+}
+html,body{overflow-x:hidden}
+.grid>*,.wrow>*,.kpis>*,.checks>*,.clist>*{min-width:0}
+.todo label>span{display:flex;gap:10px;align-items:flex-start;min-width:0}
+.todo label>span>.ch{flex:none;margin:0;vertical-align:0}
+.todo label>input{margin-top:3px}
+.checks li{overflow-wrap:anywhere}
+.wurl{min-width:0}.wurl .btn{flex:none}
+.chr{min-width:0}.chr>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rvh b{min-width:0}
+.si{flex:none;width:24px;height:24px}
+.chr>span{overflow:visible;white-space:nowrap}
+.cn{min-width:0;overflow:hidden}
+.cn>span:last-child,.cn{text-overflow:clip}
+.rev2{display:flex;align-items:center;gap:14px}
+.rev2 .big{font-size:44px;line-height:1}
+.waitpill{display:inline-block;margin-top:12px;background:#FEE2E2;color:#991B1B;font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px}
+.mm{margin-top:14px}
+.mml{display:block;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:8px}
+.chipsr{display:flex;flex-wrap:wrap;gap:6px}
+.chipsr span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+.cg{background:#D1FAE5;color:#065F46}.cb{background:#FEE2E2;color:#991B1B}
+@media (max-width:600px){.chr{grid-template-columns:118px 1fr 46px;font-size:13.5px}.cn{gap:7px}}
+.tdl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tdl li{display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:14px;padding:10px 10px 10px 12px}
+.tdn{cursor:pointer;flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.tdt{flex:1;min-width:0}.tdt b{display:block;font-size:14.5px}.tdt small{color:var(--muted);font-size:12.5px}
+.tdb{flex:none;height:38px;padding:0 16px;border-radius:999px;border:0;background:var(--teal);color:#fff;font-weight:800;font-size:13.5px}
+.tdl li.on{background:#ECFDF5}.tdl li.on .tdn{background:#10B981}.tdl li.on .tdt b{color:#065F46}.tdl li.on .tdb{background:#D1FAE5;color:#065F46}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tdl li.on{background:rgba(16,185,129,.14)}:root:not([data-theme="light"]) .tdl li.on .tdt b{color:#6EE7B7}}
+.aw{margin-top:8px}.aw h3{margin:0;font-size:18px}.aw .sub{margin:2px 0 0}
+.toast{max-width:min(90vw,360px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;font-size:14px;padding:10px 16px}
+.rk{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--teal);margin-bottom:4px}
+.pdfbtn{cursor:pointer;background:transparent;font-family:inherit}
+.tdl.rep li{padding:12px}
+.okc{flex:none;width:22px;height:22px;border-radius:50%;background:#10B981;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.todo label.done span{text-decoration:none!important;opacity:1!important}
+.todo input:disabled{opacity:1}
+.waitpill.ok{background:#D1FAE5;color:#065F46}
+.foot2{text-align:center;color:var(--muted);font-size:13px;margin:24px 0 0}
+@media print{.top{position:static}.pdfbtn{display:none}body{background:#fff}.card,.hero{break-inside:avoid}}
+.ov{position:fixed;inset:0;z-index:20;background:rgba(15,30,46,.55);display:none;align-items:flex-end;justify-content:center}
+.ov.show{display:flex}
+@media (min-width:760px){.ov{align-items:center;padding:20px}}
+.sheet{background:var(--card);color:var(--ink);width:100%;max-width:520px;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+@media (min-width:760px){.sheet{border-radius:22px}}
+.drop{border:2px dashed var(--line);border-radius:16px;padding:26px;text-align:center;color:var(--muted);margin:14px 0}
+.read{background:var(--bg);border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.8}
+.read b{float:right}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 18px;border-radius:999px;border:0;font-weight:800;font-size:15px}
+.btn.pri{background:var(--teal);color:#fff}.btn.sec{background:var(--bg);color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:#0F1E2E;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:14px;opacity:0;transition:.25s;z-index:30;max-width:calc(100vw - 32px);width:max-content;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.35);pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.tdbs{display:flex;gap:6px;flex:none}.tdno{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}.tdno[hidden]{display:none}
+@media (max-width:600px){.tdl li[data-k="ads"]{flex-wrap:wrap}.tdl li[data-k="ads"] .tdbs{width:100%;padding-left:42px}.tdl li[data-k="ads"] .tdbs .tdb{flex:1}}
+.adtop{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adtop>div{border-radius:16px;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:4px;min-width:0}
+.adl{font-size:12px;font-weight:700;color:var(--muted)}
+.adv{font-size:28px;font-weight:900;letter-spacing:-.02em}.adv.g{color:var(--up)}
+.adsplit{font-size:12.5px;color:var(--muted)}
+.adgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.adgrid div{background:var(--bg);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.adgrid span{font-size:12px;color:var(--muted);font-weight:700}.adgrid b{font-size:19px}
+.adtip{margin-top:10px;background:#E3F3F1;color:#0F1E2E;border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.55}
+@media (max-width:600px){.adtop{grid-template-columns:1fr}.adgrid{grid-template-columns:1fr 1fr}.adv{font-size:26px}}
+</style></head><body>
+<div class="top"><div class="wm"><em>M</em>avis<i>.</i></div><button class="tag pdfbtn" onclick="window.print()">Download PDF</button></div>
+<main class="wrap">
+ <div class="head">
+  <div><div class="rk">WEEKLY MARKETING REPORT · SAMPLE</div><h1>Week 40 · 29 Sep – 5 Oct</h1><p class="sub">Sol Cantina · Mexican kitchen &amp; bar · prepared by Mavis on Fri 5 Oct</p></div>
+ </div>
+ <div class="grid">
+  <section class="card span12" aria-label="Checklist this week">
+   <div class="sect"><h3>Daily checklist this week</h3><small>7 of 7 days complete</small></div>
+   <div class="clbar"><i style="width:100%"></i></div>
+   <ul class="tdl rep">
+    <li class="on"><span class="tdn">✓</span><div class="tdt"><b>Google reviews uploaded</b><small>Every day · 14 reviews</small></div></li>
+    <li class="on"><span class="tdn">✓</span><div class="tdt"><b>Reviews replied to</b><small>14 of 14 replied</small></div></li>
+    <li class="on"><span class="tdn">✓</span><div class="tdt"><b>Instagram &amp; Facebook added</b><small>Every day</small></div></li>
+    <li class="on"><span class="tdn">✓</span><div class="tdt"><b>Google &amp; SEO added</b><small>Every day</small></div></li>
+    <li class="on"><span class="tdn">✓</span><div class="tdt"><b>Paid ads added</b><small>Meta &amp; Google · Rp 3.5M spent</small></div></li>
+   </ul>
+  </section>
+  <section class="hero span12" aria-label="This week's summary">
+   <div class="sbar">
+    <div class="srow"><span class="sl">MARKETING SCORE</span><span class="sv">78<small>/100</small></span><span class="sd">▲ 6 vs last week</span></div>
+    <div class="track"><div class="mk" style="left:78%"></div></div>
+    <div class="scale"><span>Needs work</span><span>OK</span><span>Great</span></div>
+   </div>
+
+   <div class="k">MAVIS SAYS</div>
+   <h2>Good week. Reels are working, Google is slipping.</h2>
+   <p>Instagram reach is up 24% thanks to the sunset DJ Reel. Google profile views dipped 11%, so the team replied to every review and added fresh terrace photos. All three actions for the week were completed:</p>
+   <div class="todo" id="todo">
+    <label class="done"><span class="okc">✓</span><span><em class="ch"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></em>Post 2 more Reels before Friday. Short sunset clips get 3× your normal reach.</span></label>
+    <label class="done"><span class="okc">✓</span><span><em class="ch"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></em>Reply to the 4 new Google reviews and add 5 fresh photos of the terrace.</span></label>
+    <label class="done"><span class="okc">✓</span><span><em class="ch"><svg class="ic" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v11"/><path d="M15 5.9 14 10h5.8a2 2 0 0 1 1.9 2.6l-2.3 7A2 2 0 0 1 17.5 21H7V10l4.3-7.1A1.9 1.9 0 0 1 15 4.6z"/><rect x="2" y="10" width="5" height="11" rx="1"/></svg></em>Share Saturday's line-up on Thursday at 6pm, your best time this month.</span></label>
+   </div>
+   
+  </section>
+
+  <section class="card span12" aria-label="Key numbers">
+   <div class="sect"><h3>This week at a glance</h3><small>vs last week</small></div>
+   <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="card span12" id="ads" aria-label="Paid ads">
+   <div class="sect"><h3>Paid ads</h3><small>Meta &amp; Google · last 7 days</small></div>
+   <div class="adtop">
+    <div class="adspend"><span class="adl">Spent this week</span><span class="adv">Rp 3.5M</span><span class="adsplit">Meta Rp 2.6M · Google Rp 0.9M</span></div>
+    <div class="adroi"><span class="adl">Was it worth it?</span><span class="adv g">6× return</span><span class="adsplit">Every Rp 1 brought back about Rp 6</span></div>
+   </div>
+   <div class="adgrid">
+    <div><span>Reached</span><b>38.4k</b></div>
+    <div><span>Clicks</span><b>1,240</b></div>
+    <div><span>Bookings</span><b>40</b></div>
+    <div><span>Cost per booking</span><b>Rp 87.5k</b></div>
+   </div>
+   <div class="adtip"><b>Best ad:</b> Sunset DJ night (Meta) · 31 bookings for Rp 1.4M.<br><b>Tip:</b> Stop the brunch ad (0 bookings for Rp 800k) and move that budget to the DJ night ad.</div>
+  </section>
+  <section class="card span8" aria-label="Marketing versus revenue">
+   <div class="sect"><h3>Does marketing bring in money?</h3><small>Last 8 weeks</small></div>
+   <svg class="chart" id="chart" viewBox="0 0 640 220" role="img" aria-label="Instagram reach and revenue over 8 weeks rising together"></svg>
+   <div class="legend"><span><i style="background:#C4973B"></i>Instagram reach</span><span><i style="background:#0D9488"></i>Revenue (from Mavis Analytics)</span></div>
+   <p class="sub" style="margin-top:10px">Weeks with more Reels had <b style="color:var(--ink)">+12% revenue</b> on average. Mavis links your marketing to your real sales.</p>
+  </section>
+
+  <section class="card span4" aria-label="Best post">
+   <div class="sect"><h3>Best post this week</h3></div>
+   <div class="post"><div class="thumb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+    <div><b>Sunset DJ set Reel</b><small>18.4k reach · 1,120 likes<br>212 shares · 96 saves</small><br><span class="pill">3.1× your average</span></div></div>
+   <div class="sect" style="margin-top:18px"><h3>Best days to post</h3></div>
+   <div class="best" id="best"></div>
+  </section>
+
+  <section class="card span6" aria-label="Where people find you">
+   <div class="sect"><h3>Where people find you</h3><small>Reach by channel</small></div>
+   <div class="chs" id="chs"></div>
+  </section>
+
+  <section class="card span6" aria-label="Reviews">
+   <div class="sect"><h3>Reviews</h3><small>Google · TripAdvisor</small></div>
+   <div class="rev2">
+    <div class="big">4.6</div>
+    <div><div class="stars" aria-label="4.6 out of 5">★★★★★</div><div class="sub" style="margin:2px 0 0">312 reviews</div></div>
+   </div>
+   <div class="waitpill ok">All reviews replied ✓</div>
+   <div class="mm"><span class="mml">Most mentioned this week</span>
+    <div class="chipsr"><span class="cg">sunset</span><span class="cg">cocktails</span><span class="cb">slow service ×2</span></div></div>
+  </section>
+
+  <section class="card span12" id="rh" aria-label="Review helper">
+   <div class="sect"><h3>Review replies</h3><small>All replied this week</small></div>
+   <div class="rvgrp bad">Needs attention · 1–3 stars</div>
+   <div class="rv"><div class="rvh"><b>Maria G.</b><span class="st">★★☆☆☆</span><small>Google · yesterday</small></div><p>"Great tacos but we waited 40 minutes for drinks on Saturday night."</p>
+    <div class="draft"><small>REPLY SENT ✓</small>Hi Maria, thank you for the kind words about our tacos, and we're really sorry about the wait for drinks on Saturday. That's not the experience we want for you. We've added an extra bartender on weekends, and we'd love to welcome you back. Please message us and the first round is on us.</div>
+    </div>
+   <div class="rvgrp good">Say thanks · 4–5 stars</div>
+   <div class="rv"><div class="rvh"><b>James T.</b><span class="st">★★★★★</span><small>Google · yesterday</small></div><p>"Best margaritas in town and such a friendly team!"</p>
+    <div class="draft"><small>REPLY SENT ✓</small>Thank you James! We'll pass your kind words on to the bar team. See you again soon for another margarita! 🍹</div>
+    </div>
+  </section>
+  
+  <section class="card span12" aria-label="Website check">
+   <div class="sect"><h3 style="display:flex;align-items:center;gap:8px"><span class="si"><svg class="ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg></span>Website check</h3><small>solcantina.com · last checked 2 Sep</small></div>
+   <div class="wrow">
+    <div class="wscore"><div class="sv" style="font-size:38px">64<small>/100</small></div>
+     <div class="track" style="margin-top:8px"><div class="mk" style="left:64%"></div></div>
+     <div class="scale" style="color:var(--muted)"><span>Needs work</span><span>OK</span><span>Great</span></div>
+     
+    </div>
+    <ul class="checks">
+     <li class="ok"><b>Page titles</b><span>Every page has a clear title</span></li>
+     <li class="bad"><b>Keywords</b><span>"Mexican restaurant Seminyak" and "tacos Bali" missing from the homepage</span></li>
+     <li class="warn"><b>Descriptions</b><span>3 pages have no Google description</span></li>
+     <li class="ok"><b>Mobile friendly</b><span>Looks good on phones</span></li>
+     <li class="warn"><b>Speed</b><span>Loads in 4.2s. Compress the large photos</span></li>
+     <li class="bad"><b>Image labels</b><span>18 photos have no description for Google</span></li>
+     <li class="warn"><b>Links from other sites</b><span>About 12 sites link to you. Get listed on TripAdvisor and Bali guides</span></li>
+     <li class="ok"><b>Google Maps link</b><span>Website linked to your Google profile</span></li>
+    </ul>
+   </div>
+  </section>
+  
+ </div>
+<p class="foot2">Made with <b>Mavis</b> · One team. One platform.</p></main>
+
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const IC={"ig": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1\" fill=\"currentColor\"/>", "fb": "<path d=\"M7 10v11\"/><path d=\"M15 5.9 14 10h5.8a2 2 0 0 1 1.9 2.6l-2.3 7A2 2 0 0 1 17.5 21H7V10l4.3-7.1A1.9 1.9 0 0 1 15 4.6z\"/><rect x=\"2\" y=\"10\" width=\"5\" height=\"11\" rx=\"1\"/>", "gg": "<path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>", "tt": "<path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/>", "web": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18\"/><path d=\"M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z\"/>", "link": "<path d=\"M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7\"/><path d=\"M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7\"/>"};
+function icn(k){return `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;}
+const K=[
+ {s:'Instagram reach',i:'ig',c:'#E1306C',v:'42.8k',d:+24,t:[20,22,21,26,25,30,34,43]},
+ {s:'New followers',i:'ig',c:'#E1306C',v:'+318',d:+9,t:[200,240,220,260,250,280,290,318]},
+ {s:'Facebook reach',i:'fb',c:'#1877F2',v:'11.2k',d:-6,t:[13,12,12.5,11,12,12.4,11.9,11.2]},
+ {s:'Link clicks',i:'link',c:'#7C3AED',v:'624',d:+15,t:[400,420,480,460,500,520,540,624]},
+ {s:'Google views',i:'gg',c:'#34A853',v:'8.9k',d:-11,t:[10,10.2,9.8,10.1,9.9,10,10,8.9]},
+ {s:'Calls from Google',i:'gg',c:'#34A853',v:'47',d:+4,t:[38,40,41,39,44,43,45,47]},
+ {s:'Directions',i:'gg',c:'#34A853',v:'386',d:+2,t:[350,360,370,365,372,378,380,386]},
+ {s:'TikTok views',i:'tt',c:'#111111',v:'23.5k',d:+41,t:[8,9,11,10,13,15,16.7,23.5]},
+];
+function spark(t,c){const mx=Math.max(...t),mn=Math.min(...t),r=mx-mn||1;return `<svg viewBox="0 0 70 28"><polyline fill="none" stroke="${c}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${t.map((v,i)=>`${i*10},${26-(v-mn)/r*22}`).join(' ')}"/></svg>`;}
+document.getElementById('kpis').innerHTML=K.map(k=>`<div class="kpi"><div class="s"><span class="si">${icn(k.i)}</span>${k.s}</div><div class="v">${k.v}</div><div class="d ${k.d>=0?'up':'down'}">${k.d>=0?'▲':'▼'} ${Math.abs(k.d)}%</div>${spark(k.t,'#0D9488')}</div>`).join('');
+const reach=[22,24,21,27,26,31,35,43], rev=[1.42,1.50,1.38,1.61,1.58,1.70,1.79,1.92];
+function drawChart(){const el=document.getElementById('chart');const W=Math.max(300,Math.round(el.parentNode.clientWidth-28));const H=W<500?240:220,P=W<500?26:34;el.setAttribute('viewBox','0 0 '+W+' '+H);
+const x=i=>P+i*(W-2*P)/7;const yr=v=>H-P-(v-18)/(45-18)*(H-2*P);const yv=v=>H-P-(v-1.3)/(2-1.3)*(H-2*P);
+let g='';for(let i=0;i<4;i++){const y=P+i*(H-2*P)/3;g+=`<line x1="${P}" x2="${W-P}" y1="${y}" y2="${y}" stroke="currentColor" opacity=".1"/>`;}
+const area=`<path d="M${x(0)},${yr(reach[0])} ${reach.map((v,i)=>`L${x(i)},${yr(v)}`).join(' ')} L${x(7)},${H-P} L${x(0)},${H-P}Z" fill="#C4973B" opacity=".10"/>`;
+const l1=`<polyline fill="none" stroke="#C4973B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="${reach.map((v,i)=>`${x(i)},${yr(v)}`).join(' ')}"/>`;
+const l2=`<polyline fill="none" stroke="#0D9488" stroke-width="3.5" stroke-dasharray="7 6" stroke-linecap="round" stroke-linejoin="round" points="${rev.map((v,i)=>`${x(i)},${yv(v)}`).join(' ')}"/>`;
+const dots=reach.map((v,i)=>`<circle cx="${x(i)}" cy="${yr(v)}" r="4.5" fill="#C4973B"/>`).join('');
+const lbl=['W1','W2','W3','W4','W5','W6','W7','Now'].map((t,i)=>`<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="12" fill="currentColor" opacity=".55" font-family="Inter">${t}</text>`).join('');
+el.innerHTML=g+area+l1+l2+dots+lbl;}
+drawChart();let _rt;addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(drawChart,150);});
+const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],heat=[.25,.3,.45,.95,.8,.6,.4];
+document.getElementById('best').innerHTML=days.map((d,i)=>`<div>${d}<span style="background:rgba(13,148,136,${heat[i]})"></span></div>`).join('');
+const C=[['Instagram','ig',42.8],['TikTok','tt',23.5],['Facebook','fb',11.2],['Google','gg',8.9]];
+document.getElementById('chs').innerHTML=C.map(([n,k,v])=>`<div class="chr"><span class="cn"><span class="si">${icn(k)}</span>${n}</span><div class="bar"><i style="width:${v/42.8*100}%;background:linear-gradient(90deg,#0D9488,#2DD4BF)"></i></div><b>${v}k</b></div>`).join('');
+document.getElementById('todo').addEventListener('change',e=>{const l=e.target.closest('label');l.classList.toggle('done',e.target.checked);});
+const R={'Google reviews':[['Reviews found','2'],['Needs attention (1–3★)','1'],['Say thanks (4–5★)','1']],'Instagram / Facebook':[['Instagram reach','42,812'],['New followers','318'],['Profile visits','5,906'],['Link clicks','624'],['Facebook reach','11,204']],'Google Business Profile':[['Profile views','8,912'],['Calls','47'],['Direction requests','386'],['New reviews','6']],'TikTok':[['Video views','23,540'],['New followers','211'],['Likes','3,890']]};
+let curKey='';function openUp(src,k){curKey=k||'';document.getElementById('ovS').textContent=src;document.getElementById('read').innerHTML=R[src].map(([a,b])=>`${a} <b>${b}</b>`).join('<br>');document.getElementById('ov').classList.add('show');}
+function openRv(){document.getElementById('ovr').classList.add('show');}
+function closeRv(){document.getElementById('ovr').classList.remove('show');}
+document.addEventListener('click',e=>{if(e.target.id==='ovr')closeRv();});
+function closeUp(){document.getElementById('ov').classList.remove('show');}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeUp();closeRv();}});
+
+const done=new Set();function tick(k){done.add(k);const items=[...document.querySelectorAll('.tdl li')];items.forEach(li=>{const on=done.has(li.dataset.k);li.classList.toggle('on',on);li.querySelector('.tdn').textContent=on?'✓':(items.indexOf(li)+1);const b=li.querySelector('.tdb');b.textContent=on?'Done':(li.dataset.k==='reply'?'Go':'Upload');});const n=[...done].filter(x=>x!=='__none').length;document.getElementById('clc').textContent=n+' of '+items.length+' done';document.getElementById('clfill').style.width=(n/items.length*100)+'%';document.getElementById('cldone').hidden=n!==items.length;}
+function untick(k){done.delete(k);tick('__none');done.delete('__none');}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1600);}
+</script></body></html>
