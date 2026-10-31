@@ -144,6 +144,18 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   .ticks li{font-size:15px}
   .swap .wrap{gap:12px}
 }
+
+/* Laptop: every phone the same size (as Maintenance / Your workspace). Sections with 3 phones put the text on top and the phones in a row underneath */
+@media(min-width:981px){
+  .feat.wide .wrap,.feat.wide.flip .wrap{grid-template-columns:minmax(0,1fr);gap:48px}
+  .feat.wide .copy,.feat.wide.flip .copy{order:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;align-items:center}
+  .feat.wide .c2 > :first-child{margin-top:0}
+  .feat.wide .phones > div,.phones.two > div{width:250px}
+  .feat.wide .phones{gap:36px}
+  .mem.wide .visual > div{width:250px}
+  .mem.wide .visual{gap:36px}
+  .mem.wide .key{width:200px}
+}
 </style>
 </head>
 <body>
@@ -173,16 +185,18 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 </div></section>
 
 <!-- TEAM -->
-<section class="feat" id="inside"><div class="wrap">
-  <div class="copy">
+<section class="feat wide" id="inside"><div class="wrap">
+  <div class="copy"><div class="c1">
     <div class="kick">Your team</div>
     <h2>Everyone on the same page. Finally.</h2>
     <p class="lead">News, chat and shout-outs in one place - so the right people hear it, and nothing gets buried in a group chat.</p>
-    <ul class="ticks">
+    </div>
+    <div class="c2"><ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Team Feed</b> - announcements, polls and replies everyone actually sees</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Chat</b> - by department or one to one, with read receipts</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Highlights</b> - staff of the month, new faces, big nights</span></li>
     </ul>
+    </div>
   </div>
   <div class="phones">
     <div><div class="phone scroll"><img src="/img/feed-tall.jpg" alt="Team Feed"></div><span class="cap">Team Feed</span></div>
@@ -192,13 +206,14 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 </div></section>
 
 <!-- MEMBERSHIP -->
-<section class="feat mem navy flip" id="membership"><div class="wrap">
-  <div class="copy">
+<section class="feat mem navy flip wide" id="membership"><div class="wrap">
+  <div class="copy"><div class="c1">
     <span class="badge">NEW</span>
     <div class="kick">Membership</div>
     <h2>Turn your regulars into members.</h2>
     <p class="lead">A wooden keyring with their own QR code. One scan at the door and your team knows who they are - and your guests know what's on.</p>
-    <div class="steps">
+    </div>
+    <div class="c2"><div class="steps">
       <div class="step"><b>1</b><span>Hand over a keyring</span></div>
       <div class="step"><b>2</b><span>Scan - sign up in seconds</span></div>
       <div class="step"><b>3</b><span>Checked in across every venue</span></div>
@@ -208,6 +223,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Birthdays, VIPs and notes</b> - "corner table, allergic to nuts" travels with them</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Their own page</b> - tonight's DJ, this week, rewards, menus and book a table</span></li>
     </ul>
+    </div>
   </div>
   <div class="visual">
     <img class="key" src="/img/keyring.png" alt="Wooden membership keyring">
@@ -234,17 +250,19 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 </div></section>
 
 <!-- EVENTS -->
-<section class="feat navy flip" id="events"><div class="wrap">
-  <div class="copy">
+<section class="feat navy flip wide" id="events"><div class="wrap">
+  <div class="copy"><div class="c1">
     <div class="kick">Events</div>
     <h2>Every event, planned to the last detail.</h2>
     <p class="lead">From the first enquiry to the final invoice. Event plans, the numbers and one calendar for every venue - shared with your team and your client.</p>
-    <ul class="ticks">
+    </div>
+    <div class="c2"><ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Event plans</b> - timings, menus, guests and set-up in one place</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>P&amp;L built in</b> - revenue, costs and profit as you plan</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>One calendar</b> - every event, deposit and holiday at a glance</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Share it</b> - with the team, or a clean PDF for the client</span></li>
     </ul>
+    </div>
   </div>
   <div class="phones">
     <div><div class="phone"><img src="/img/events.jpg" alt="Current events"></div><span class="cap">Current events</span></div>
@@ -271,16 +289,18 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 </div></section>
 
 <!-- KNOW-HOW -->
-<section class="feat"><div class="wrap">
-  <div class="copy">
+<section class="feat wide"><div class="wrap">
+  <div class="copy"><div class="c1">
     <div class="kick">Know-how</div>
     <h2>How we do things here. In everyone's pocket.</h2>
     <p class="lead">SOPs, answers to everyday questions and every supplier's details - by department, searchable, always up to date.</p>
-    <ul class="ticks">
+    </div>
+    <div class="c2"><ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>SOPs</b> with manager approval and PDF</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Knowledge Base</b> - "what's the wifi?" answered once, for good</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Vendor Directory</b> - tap to call or WhatsApp a supplier</span></li>
     </ul>
+    </div>
   </div>
   <div class="phones">
     <div><div class="phone"><img src="/img/sop.jpg" alt="SOPs"></div><span class="cap">SOPs</span></div>
@@ -307,15 +327,17 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 </div></section>
 
 <!-- NUMBERS -->
-<section class="feat navy flip"><div class="wrap">
-  <div class="copy">
+<section class="feat navy flip wide"><div class="wrap">
+  <div class="copy"><div class="c1">
     <div class="kick">Your numbers</div>
     <h2>Know how today will go. Before it starts.</h2>
     <p class="lead">Revenue and covers at a glance, a plain-English forecast for the week, and what your guests really think.</p>
-    <ul class="ticks">
+    </div>
+    <div class="c2"><ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Forecast</b> from your history, weather and holidays</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Customer Survey</b> by QR or logged by your team</span></li>
     </ul>
+    </div>
   </div>
   <div class="phones">
     <div><div class="phone"><img src="/img/analytics.jpg" alt="Analytics"></div><span class="cap">Analytics</span></div>
