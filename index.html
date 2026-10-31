@@ -52,6 +52,14 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .laptop .scr img{width:100%;height:100%;object-fit:cover;object-position:top}
 .phone{border:7px solid #0B1622;border-radius:30px;overflow:hidden;background:white;box-shadow:0 20px 50px rgba(15,30,46,.28);aspect-ratio:9/18.6;flex:none}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone.scroll{container-type:size;background:#EEF1F6}
+.phone.scroll img{height:auto;object-fit:initial;animation:feedScroll 16s ease-in-out infinite}
+@keyframes feedScroll{0%,14%{transform:translateY(0)}48%,62%{transform:translateY(calc(-100% + 100cqh))}96%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.phone.scroll img{animation:none}}
+.cards{display:flex;gap:18px;justify-content:center;align-items:flex-start}
+.cards > div{flex:none}
+.shot{border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(15,30,46,.2);background:white}
+.shot img{width:100%}
 .stage .phone{position:absolute;width:30%;right:-6px;bottom:-40px;border-color:#0B1622;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 /* replaces */
 .swap{padding:40px 0;background:white;border-bottom:1px solid var(--line)}
@@ -64,6 +72,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .feat{padding:110px 0}
 .feat .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:60px;align-items:center}
 .feat.flip .copy{order:2}
+.feat.flip .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
 .ticks{list-style:none;margin-top:26px;display:grid;gap:14px}
 .ticks li{display:flex;gap:13px;align-items:flex-start;font-size:16px;line-height:1.5;color:var(--ink)}
 .navy .ticks li{color:#E2E8F0}
@@ -114,7 +123,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .foot a{text-decoration:none;font-weight:700}
 .center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
 @media(max-width:980px){
-  .hero .wrap,.feat .wrap{grid-template-columns:minmax(0,1fr);gap:44px}
+  .hero .wrap,.feat .wrap,.feat.flip .wrap{grid-template-columns:minmax(0,1fr);gap:44px}
   .feat.flip .copy{order:0}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .why .grid{grid-template-columns:minmax(0,1fr)}
@@ -178,7 +187,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
     </ul>
   </div>
   <div class="phones">
-    <div><div class="phone"><img src="/img/feed.jpg" alt="Team Feed"></div><span class="cap">Team Feed</span></div>
+    <div><div class="phone scroll"><img src="/img/feed-tall.jpg" alt="Team Feed"></div><span class="cap">Team Feed</span></div>
     <div><div class="phone"><img src="/img/highlight.jpg" alt="Highlights"></div><span class="cap">Highlights</span></div>
     <div><div class="phone"><img src="/img/chat.jpg" alt="Chat"></div><span class="cap">Chat</span></div>
   </div>
@@ -220,9 +229,29 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Recipes</b> with method, photos and a one-tap PDF</span></li>
     </ul>
   </div>
-  <div class="phones two">
-    <div><div class="phone"><img src="/img/kitchen.jpg" alt="Kitchen menus"></div><span class="cap">Every menu, every venue</span></div>
-    <div><div class="phone"><img src="/img/menu.jpg" alt="Menu with allergens and food cost"></div><span class="cap">Allergens &amp; food cost</span></div>
+  <div class="cards">
+    <div style="width:min(52%,300px)"><div class="shot"><img src="/img/menu.jpg" alt="Menu with allergens and food cost"></div><span class="cap">Allergens &amp; food cost on every dish</span></div>
+    <div style="width:min(44%,260px);margin-top:70px"><div class="shot"><img src="/img/dish.jpg" alt="Dish with photo"></div><span class="cap">Tap a dish for the full card</span></div>
+  </div>
+</div></section>
+
+<!-- EVENTS -->
+<section class="feat navy flip" id="events"><div class="wrap">
+  <div class="copy">
+    <div class="kick">Events</div>
+    <h2>Every event, planned to the last detail.</h2>
+    <p class="lead">From the first enquiry to the final invoice. Event plans, the numbers and one calendar for every venue - shared with your team and your client.</p>
+    <ul class="ticks">
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Event plans</b> - timings, menus, guests and set-up in one place</span></li>
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>P&amp;L built in</b> - revenue, costs and profit as you plan</span></li>
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>One calendar</b> - every event, deposit and holiday at a glance</span></li>
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Share it</b> - with the team, or a clean PDF for the client</span></li>
+    </ul>
+  </div>
+  <div class="phones">
+    <div><div class="phone"><img src="/img/events.jpg" alt="Current events"></div><span class="cap">Current events</span></div>
+    <div><div class="phone"><img src="/img/event-plan.jpg" alt="Event plan"></div><span class="cap">Event plan &amp; P&amp;L</span></div>
+    <div><div class="phone"><img src="/img/calendar.jpg" alt="Event calendar"></div><span class="cap">Calendar</span></div>
   </div>
 </div></section>
 
@@ -262,6 +291,23 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   </div>
 </div></section>
 
+<!-- WORKSPACE -->
+<section class="feat flip" style="background:white"><div class="wrap">
+  <div class="copy">
+    <div class="kick">Your workspace</div>
+    <h2>Notes and to-dos. Off the fridge, into your pocket.</h2>
+    <p class="lead">Quick sticky notes for yourself, and project boards the whole team can tick off.</p>
+    <ul class="ticks">
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Sticky Notes</b> - jot it down, colour it, move it around</span></li>
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Task Board</b> - to do, in progress, done - with who's on it and when it's due</span></li>
+    </ul>
+  </div>
+  <div class="phones two">
+    <div><div class="phone"><img src="/img/sticky.jpg" alt="Sticky Notes"></div><span class="cap">Sticky Notes</span></div>
+    <div><div class="phone"><img src="/img/tasks.jpg" alt="Task Board"></div><span class="cap">Task Board</span></div>
+  </div>
+</div></section>
+
 <!-- NUMBERS -->
 <section class="feat navy flip"><div class="wrap">
   <div class="copy">
@@ -285,8 +331,8 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   <div class="kick">And more</div>
   <h2>Everything else your venue needs.</h2>
   <div class="tiles" style="text-align:left">
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></i><b>Task Board</b><span>Projects your team can see and tick off</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></i><b>Events &amp; Calendar</b><span>Event plans, P&amp;L and one calendar</span></div>
+    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></i><b>Link Drop</b><span>Useful links for the whole team</span></div>
+    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></i><b>My Drive</b><span>Your own folders and links</span></div>
     <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></i><b>Entertainment</b><span>DJ and live music schedule</span></div>
     <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></i><b>Meeting Notes</b><span>Who was there and what happens next</span></div>
     <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></i><b>Job Vacancies</b><span>Share roles on WhatsApp in one tap</span></div>
