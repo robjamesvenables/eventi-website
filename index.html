@@ -90,9 +90,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .mem .step{background:white}
 .mem .visual{flex-wrap:wrap}
 .mem .keys{position:relative;width:100%;margin:0 0 18px;aspect-ratio:1100/700}
-.mem .keys:before{content:'';position:absolute;left:50%;top:50%;width:86%;aspect-ratio:1;max-height:118%;transform:translate(-50%,-50%);border-radius:50%;background:var(--teal)}
-.mem .keys:after{content:'';position:absolute;left:6%;bottom:2%;width:13%;aspect-ratio:1;border-radius:50%;background:var(--gold)}
-.mem .keys img{position:relative;z-index:1;display:block;width:100%;height:auto;transform-origin:50% 8%;animation:sway 5s ease-in-out infinite alternate}
+.mem .keys img{position:relative;z-index:1;display:block;width:100%;height:auto;transform-origin:50% 8%;filter:drop-shadow(0 22px 26px rgba(43,29,7,.28));animation:sway 5s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
 @media(prefers-reduced-motion:reduce){.mem .keys img{animation:none}}
 .mem .visual > div{width:min(34%,240px);flex:none}
@@ -163,7 +161,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   .mem.wide .visual > div{width:250px}
   .mem.wide .visual{gap:36px}
   .mem.wide .visual{flex-wrap:nowrap;align-items:center}
-  .mem.wide .keys{width:500px;flex:none;margin:0 10px 0 0}
+  .mem.wide .keys{width:540px;flex:none;margin:0 0 0 -20px}
   .mem.wide .visual > div + div{margin-top:60px;align-self:flex-start}
   .mem.wide .visual > div:first-of-type{align-self:flex-start}
 }
