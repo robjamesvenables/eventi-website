@@ -90,10 +90,8 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .mem{background:#F3E9DA}
 .mem .step{background:white}
 .mem .visual{flex-wrap:wrap}
-.mem .keys{position:relative;width:100%;margin:0 0 18px;aspect-ratio:1100/700}
-.mem .keys img{position:relative;z-index:1;display:block;width:100%;height:auto;transform-origin:50% 8%;filter:drop-shadow(0 22px 26px rgba(43,29,7,.28));animation:sway 5s ease-in-out infinite alternate}
-@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
-@media(prefers-reduced-motion:reduce){.mem .keys img{animation:none}}
+.mem .keys{position:relative;width:100%;margin:0 0 18px}
+.mem .keys img{display:block;width:100%;height:auto;border-radius:50% 50% 22px 22px / 42% 42% 22px 22px;box-shadow:0 24px 50px rgba(43,29,7,.28)}
 .mem .visual > div{width:min(34%,240px);flex:none}
 .mem .visual > div + div{margin-top:60px}
 .badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#2B1D07;font-weight:900;font-size:12px;letter-spacing:1px;border-radius:30px;padding:6px 12px;margin-bottom:14px}
@@ -162,7 +160,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   .mem.wide .visual > div{width:250px}
   .mem.wide .visual{gap:36px}
   .mem.wide .visual{flex-wrap:nowrap;align-items:center}
-  .mem.wide .keys{width:540px;flex:none;margin:0 0 0 -20px}
+  .mem.wide .keys{width:520px;flex:none;margin:0}
   .mem.wide .visual > div + div{margin-top:60px;align-self:flex-start}
   .mem.wide .visual > div:first-of-type{align-self:flex-start}
 }
@@ -236,7 +234,7 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
     </div>
   </div>
   <div class="visual">
-    <figure class="keys"><img src="/img/keyrings.webp" alt="Three branded wooden membership keyrings" width="1100" height="676"></figure>
+    <figure class="keys"><img src="/img/keyrings-real.jpg" alt="Three branded wooden guest keyrings with QR codes" width="900" height="753"></figure>
     <div><div class="phone"><img src="/img/m-profile.jpg" alt="Member checked in"></div><span class="cap">What your team sees</span></div>
     <div><div class="phone"><img src="/img/m-guest.jpg" alt="Guest member page"></div><span class="cap">What your guest sees</span></div>
   </div>
