@@ -52,10 +52,8 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .laptop .scr img{width:100%;height:100%;object-fit:cover;object-position:top}
 .phone{border:7px solid #0B1622;border-radius:30px;overflow:hidden;background:white;box-shadow:0 20px 50px rgba(15,30,46,.28);aspect-ratio:9/18.6;flex:none}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone.scroll{container-type:size;background:#EEF1F6}
-.phone.scroll img{height:auto;object-fit:initial;animation:feedScroll 16s ease-in-out infinite}
-@keyframes feedScroll{0%,14%{transform:translateY(0)}48%,62%{transform:translateY(calc(-100% + 100cqh))}96%,100%{transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.phone.scroll img{animation:none}}
+.phone.scroll{background:#EEF1F6}
+.phone.scroll img{height:auto;object-fit:initial;will-change:transform}
 .cards{display:flex;gap:18px;justify-content:center;align-items:flex-start}
 .cards > div{flex:none}
 .shot{border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(15,30,46,.2);background:white}
@@ -363,4 +361,4 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 <div class="foot"><div class="wrap"><img src="/brand/mavis-logo-white-text.png" alt="Mavis"><span>One team. One platform.</span><span>&copy; 2026 Mavis</span></div></div>
 </section>
 
-</body></html>
+<script>(function(){var still=matchMedia('(prefers-reduced-motion:reduce)').matches;function go(){document.querySelectorAll('.phone.scroll').forEach(function(p){var i=p.querySelector('img');if(!i.complete||!i.offsetHeight){i.addEventListener('load',go,{once:true});return}var d=p.clientHeight-i.offsetHeight;if(d>=0||still)return;if(i._a)i._a.cancel();i._a=i.animate([{transform:'translateY(0)',offset:0},{transform:'translateY(0)',offset:.12},{transform:'translateY('+d+'px)',offset:.5},{transform:'translateY('+d+'px)',offset:.62},{transform:'translateY(0)',offset:.96},{transform:'translateY(0)',offset:1}],{duration:18000,iterations:Infinity,easing:'ease-in-out'})})}var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(go,200)});if(document.readyState==='complete')go();else addEventListener('load',go)})();</script></body></html>
