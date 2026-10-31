@@ -47,7 +47,6 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
 .hero .cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
 .hero .proof{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;color:var(--mute);font-size:13.5px;font-weight:700}
 .hero .proof b{display:block;color:var(--navy);font-size:22px;font-weight:900;letter-spacing:-.5px}
-@media(min-width:981px){.hero .wrap > div:first-child{padding-bottom:84px}}
 .stage{position:relative;padding:20px 0 0;min-height:480px}
 .laptop{background:#1E2D3D;border-radius:16px 16px 0 0;padding:10px 10px 0;box-shadow:0 30px 70px rgba(43,29,7,.25);border:1px solid rgba(255,255,255,.08)}
 .laptop .scr{border-radius:8px 8px 0 0;overflow:hidden;aspect-ratio:16/10;background:white}
@@ -165,6 +164,31 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
   .mem.wide .visual > div + div{margin-top:60px;align-self:flex-start}
   .mem.wide .visual > div:first-of-type{align-self:flex-start}
 }
+/* hero: fan of five phones */
+.hero{padding-bottom:70px}
+.fan{position:relative;width:100%;aspect-ratio:1/.86}
+.fan .ph{position:absolute;border:7px solid #0B1622;border-radius:30px;overflow:hidden;background:white;aspect-ratio:9/18.6;box-shadow:0 30px 60px rgba(43,29,7,.3)}
+.fan .ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.fan .p1{left:0;bottom:3%;width:25%;transform:rotate(-12deg)}
+.fan .p2{left:17%;bottom:7%;width:27%;transform:rotate(-6deg)}
+.fan .p3{left:35%;bottom:10%;width:31%;z-index:3}
+.fan .p4{left:56%;bottom:7%;width:27%;transform:rotate(6deg);z-index:2}
+.fan .p5{left:75%;bottom:3%;width:25%;transform:rotate(12deg);z-index:1}
+.chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;background:white;border-radius:16px;padding:11px 14px;box-shadow:0 14px 34px rgba(43,29,7,.18);white-space:nowrap}
+.chip i{width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:none;color:white;background:var(--teal)}
+.chip i.g{background:var(--gold)}.chip i.n{background:var(--navy)}
+.chip b{display:block;color:var(--navy);font-weight:800;font-size:13.5px}.chip span{display:block;color:var(--mute);font-weight:600;font-size:12px}
+.fan .c1{left:0;top:0}.fan .c2{right:0;top:9%}.fan .c3{left:34%;bottom:-4%}
+@media(min-width:981px){.hero .wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr)}.hero .wrap > div:first-child{padding-bottom:0}.hero h1{font-size:76px;letter-spacing:-2.5px}}
+@media(max-width:980px){.fan{max-width:620px;margin:10px auto 0}}
+@media(max-width:600px){
+  .hero{padding-bottom:56px}
+  .fan .ph{border-width:4px;border-radius:16px;box-shadow:0 16px 30px rgba(43,29,7,.28)}
+  .chip{gap:7px;padding:7px 9px;border-radius:12px}
+  .chip i{width:22px;height:22px;border-radius:7px}.chip i svg{width:11px;height:11px}
+  .chip b{font-size:11px}.chip span{font-size:9.5px}
+  .fan .c2{display:none}.fan .c3{left:30%;bottom:-6%}
+}
 </style>
 </head>
 <body>
@@ -182,9 +206,15 @@ h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-
     <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo" target="_blank" rel="noopener">Book a demo</a><a class="btn btn-line" href="#inside">See what's inside</a></div>
     <div class="proof"><div><b>1 app</b>instead of 10</div><div><b>Every role</b>sees what they need</div><div><b>Every venue</b>in one login</div></div>
   </div>
-  <div class="stage">
-    <div class="laptop"><div class="scr"><img src="/img/desk.jpg" alt="Mavis dashboard"></div></div>
-    <div class="phone"><img src="/img/dash.jpg" alt="Mavis on a phone"></div>
+  <div class="fan" aria-label="Mavis on five phones: chat, forecast, dashboard, guest page and bar">
+    <div class="ph p1"><img src="/img/chat.jpg" alt=""></div>
+    <div class="ph p2"><img src="/img/forecast.jpg" alt=""></div>
+    <div class="ph p5"><img src="/img/bar1.jpg" alt=""></div>
+    <div class="ph p4"><img src="/img/m-guest.jpg" alt=""></div>
+    <div class="ph p3"><img src="/img/dash.jpg" alt="Mavis dashboard on a phone"></div>
+    <div class="chip c1"><i class="g"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Sarah A. checked in</b><span>VIP · Rooftop · 42 visits</span></div></div>
+    <div class="chip c2"><i class=""><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Cold room fixed</b><span>Maintenance · 2 min ago</span></div></div>
+    <div class="chip c3"><i class="n"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>New post from Maya</b><span>Team Feed · 12 reactions</span></div></div>
   </div>
 </div></header>
 
