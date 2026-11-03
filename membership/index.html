@@ -95,6 +95,9 @@ h2{font-size:clamp(32px,4.4vw,52px);line-height:1.04;letter-spacing:-1.6px;font-
 .krow .photo img{width:100%;height:auto}
 .krow .tag{background:white;border-radius:26px;padding:22px 16px 10px;box-shadow:0 24px 50px rgba(43,29,7,.18)}
 .krow .tag img{width:72%;margin:0 auto}
+.cardpic{margin-top:18px;border-radius:26px;overflow:hidden;box-shadow:0 24px 50px rgba(43,29,7,.22);position:relative;background:#E9E6E1}
+.cardpic img{width:100%;height:auto}
+.cardpic span{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);color:var(--navy);font-size:12.5px;font-weight:800;border-radius:20px;padding:7px 12px}
 .krow .tag span{display:block;text-align:center;font-size:12.5px;font-weight:800;color:var(--mute);margin:8px 0 6px}
 /* review card */
 .quote{margin-top:28px;background:white;border-radius:18px;padding:18px 20px;border-left:4px solid var(--gold);font-size:14.5px;color:var(--ink);line-height:1.55;box-shadow:0 1px 3px rgba(15,30,46,.06)}
@@ -235,21 +238,25 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- KEYRING -->
-<section class="feat sand"><div class="wrap">
+<section class="feat sand" id="keyring"><div class="wrap">
   <div class="copy">
-    <div class="kick">The keyring</div>
+    <div class="kick">The keyring - or card</div>
     <h2>Something they actually keep.</h2>
-    <p class="lead">Cards get lost in wallets. Apps get deleted. A beautiful wooden keyring lives on their keys - and goes everywhere with them.</p>
+    <p class="lead">Plastic cards get thrown away. Apps get deleted. Real wood, engraved with your logo, is something people are proud to carry - on their keys or in their wallet.</p>
     <ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Your logo, engraved.</b> Real wood and a leather strap - it feels like your brand, not a gimmick.</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Every one is unique.</b> Its own QR code and short code, so your team can also type it in.</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Works with any phone camera.</b> No app for guests, ever.</span></li>
+      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Keyring or card.</b> Prefer something for the wallet? The same in a wooden card.</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>We do the design.</b> We lay out your keyrings with your logo and send them for engraving.</span></li>
     </ul>
   </div>
-  <div class="krow rv">
-    <div class="photo"><img src="/img/keyrings-real2.jpg" alt="Engraved wooden keyrings" width="896" height="747" loading="lazy"></div>
-    <div class="tag"><img src="/img/keyring.png" alt="A Tide &amp; Ember members club keyring design" loading="lazy"><span>Your design</span></div>
+  <div class="rv">
+    <div class="krow">
+      <div class="photo"><img src="/img/keyrings-real2.jpg" alt="Engraved wooden keyrings" width="896" height="747" loading="lazy"></div>
+      <div class="tag"><img src="/img/keyring.png" alt="A Tide &amp; Ember members club keyring design" loading="lazy"><span>Your design</span></div>
+    </div>
+    <div class="cardpic"><img src="/img/mem/wood-card.jpg" alt="A wooden Tide &amp; Ember members club card with QR code" width="1110" height="692" loading="lazy"><span>Or a wooden card - wallet size, same QR</span></div>
   </div>
 </div></section>
 
