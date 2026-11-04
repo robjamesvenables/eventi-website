@@ -3,7 +3,7 @@ const L = require('./_claims');
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'private, no-store');
   // Open to everyone for now (no code needed). To bring the code back, set OPEN to false.
-  const OPEN = true;
+  const OPEN = false;
   if (OPEN) { res.setHeader('Content-Type', 'text/html; charset=utf-8'); return res.status(200).send(require('./_tourhtml')); }
   const code = readCookie(req);
   const r = checkCode(code);
