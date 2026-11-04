@@ -1,483 +1,238 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8">
+<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mavis - One team. One platform.</title>
-<meta name="description" content="The operations app for restaurants, bars and beach clubs. Team, scheduling, kitchen, maintenance, members and numbers - in one place, on every phone.">
-<meta property="og:title" content="Mavis - One team. One platform.">
-<meta property="og:description" content="Team, scheduling, kitchen, maintenance, members and numbers - in one place, on every phone.">
-<meta property="og:image" content="https://getmavis.co/img/desk.jpg">
-<meta name="theme-color" content="#0F1E2E">
-<link rel="icon" type="image/png" href="/brand/mavis-favicon-v6.png">
+<title>Mavis — one team, one platform</title>
+<meta name="description" content="One connected platform for running a hospitality venue."><link rel="icon" type="image/png" href="/brand/mavis-favicon-v6.png"><meta property="og:title" content="Mavis — one team, one platform"><meta property="og:description" content="Team, scheduling, kitchen, maintenance, members and numbers - in one place, on every phone."><meta property="og:image" content="https://getmavis.vercel.app/brand/mavis-icon-1080.png?v=6"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0F1E2E;--teal:#0D9488;--teal2:#5EEAD4;--gold:#C4973B;--cream:#F5F4F0;--ink:#334155;--mute:#64748B;--line:#E7E5E0}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;overflow-x:hidden}
-img{display:block;max-width:100%}
+:root{--navy:#0F1E2E;--teal:#0D9488;--teal-l:#2DD4BF;--gold:#C4973B;
+--paper:#F6F6F3;--card:#FFFFFF;--ink:#0F1E2E;--muted:#55606F;--line:#E2E6EC;--tile:#E3F3F1;--tile-ink:#0B7A70;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:14px;padding:15px 24px;font-weight:800;font-size:15.5px;text-decoration:none;white-space:nowrap;transition:transform .15s,filter .15s}
-.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
-.btn-gold{background:var(--gold);color:#2B1D07}
-.btn-teal{background:var(--teal);color:white}
-.btn-line{border:1.5px solid rgba(255,255,255,.28);color:white}
-.btn-navy{background:var(--navy);color:white}
-.kick{font-size:12px;font-weight:900;letter-spacing:2.2px;color:var(--teal);text-transform:uppercase}
-.navy .kick{color:var(--teal2)}
-h1{font-size:clamp(44px,7.4vw,92px);line-height:.98;letter-spacing:-3px;font-weight:900}
-h2{font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-1.6px;font-weight:900;margin-top:10px}
-.lead{font-size:clamp(16.5px,1.6vw,19px);line-height:1.55;color:var(--ink);margin-top:16px;max-width:540px}
-.navy{background:var(--navy);color:white}.navy .lead{color:#CBD5E1}
-/* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(15,30,46,.96);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.nav img{height:30px;width:auto}
-.nav .links{display:flex;align-items:center;gap:26px}
-.nav .links a{color:#CBD5E1;text-decoration:none;font-weight:700;font-size:14.5px}
-.nav .links a:hover{color:white}
-.nav .btn{padding:11px 18px;font-size:14px}
+:focus-visible{outline:3px solid var(--teal-l);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(15,30,46,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo img{height:32px;margin-left:-8px;width:auto;display:block}.foot img{height:24px;width:auto;display:inline-block;vertical-align:middle;margin-right:12px}.logo{font-weight:800;font-size:22px;letter-spacing:-.5px;text-decoration:none} .logo i{font-style:normal;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer}
+.btn svg{width:18px;height:18px}
+.btn.wa{background:var(--teal);color:#fff} .btn.wa:hover{background:#0b8077}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.bar .btn{min-height:40px;padding:0 16px;font-size:14px}
 /* hero */
-.hero{padding:76px 0 0;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:center}
-.hero h1 span{color:var(--teal)}
-.hero .btn-line{border-color:rgba(15,30,46,.22);color:var(--navy)}
-.hero .lead{font-size:clamp(17px,1.8vw,20px)}
-.hero .cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-.hero .proof{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;color:var(--mute);font-size:13.5px;font-weight:700}
-.hero .proof b{display:block;color:var(--navy);font-size:22px;font-weight:900;letter-spacing:-.5px}
-.stage{position:relative;padding:20px 0 0;min-height:480px}
-.laptop{background:#1E2D3D;border-radius:16px 16px 0 0;padding:10px 10px 0;box-shadow:0 30px 70px rgba(43,29,7,.25);border:1px solid rgba(255,255,255,.08)}
-.laptop .scr{border-radius:8px 8px 0 0;overflow:hidden;aspect-ratio:16/10;background:white}
-.laptop .scr img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone{border:7px solid #0B1622;border-radius:30px;overflow:hidden;background:white;box-shadow:0 20px 50px rgba(15,30,46,.28);aspect-ratio:9/18.6;flex:none}
-.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
-.phone.scroll{background:#EEF1F6}
-.phone.scroll img{height:auto;object-fit:initial;will-change:transform}
-.cards{display:flex;gap:18px;justify-content:center;align-items:flex-start}
-.cards > div{flex:none}
-.shot{border-radius:22px;overflow:hidden;box-shadow:0 22px 50px rgba(15,30,46,.2);background:white}
-.shot img{width:100%}
-.stage .phone{position:absolute;width:30%;right:-6px;bottom:-40px;border-color:#0B1622;box-shadow:0 24px 50px rgba(43,29,7,.3)}
-/* replaces */
-.swap{padding:40px 0;background:white;border-bottom:1px solid var(--line)}
-.swap .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
-.swap .old{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.swap .old span{font-weight:700;font-size:14.5px;color:var(--mute);background:var(--cream);border-radius:30px;padding:9px 15px;text-decoration:line-through;text-decoration-color:rgba(220,38,38,.55);text-decoration-thickness:2px}
-.swap .arrow{color:var(--teal);font-weight:900;font-size:22px}
-.swap .new{font-weight:900;font-size:17px;background:var(--navy);color:white;border-radius:30px;padding:10px 18px}
-/* feature blocks */
-.feat{padding:110px 0}
-.feat .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:60px;align-items:center}
-.feat.flip .copy{order:2}
-.feat.flip .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
-.ticks{list-style:none;margin-top:26px;display:grid;gap:14px}
-.ticks li{display:flex;gap:13px;align-items:flex-start;font-size:16px;line-height:1.5;color:var(--ink)}
-.navy .ticks li{color:#E2E8F0}
-.ticks li i{width:26px;height:26px;border-radius:8px;background:#E0F5F2;color:var(--teal);display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px}
-.navy .ticks li i{background:rgba(94,234,212,.14);color:var(--teal2)}
-.ticks b{color:var(--navy)}.navy .ticks b{color:white}
-.phones{display:flex;gap:20px;justify-content:center;align-items:flex-start}
-.phones > div{width:min(31%,230px);flex:none}
-.phones > div:nth-child(2){margin-top:46px}
-.phones.two > div{width:min(44%,250px)}
-.phones .phone,.mem .phone{width:100%}
-.cap{display:block;text-align:center;font-size:12.5px;font-weight:800;color:var(--mute);margin-top:12px}
-.navy .cap{color:#94A3B8}
-/* membership */
-.mem .visual{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:20px}
-.mem,.sand{background:#F3E9DA}
-.mem .step{background:white}
-.mem .visual{flex-wrap:wrap}
-.mem .keys{position:relative;width:100%;margin:0 0 18px}
-.mem .keys img{display:block;width:100%;height:auto;border-radius:50% 50% 22px 22px / 42% 42% 22px 22px;box-shadow:0 24px 50px rgba(43,29,7,.28)}
-.mem .visual > div{width:min(34%,240px);flex:none}
-.mem .visual > div + div{margin-top:60px}
-.badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#2B1D07;font-weight:900;font-size:12px;letter-spacing:1px;border-radius:30px;padding:6px 12px;margin-bottom:14px}
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
-.step{background:rgba(255,255,255,.06);border-radius:16px;padding:16px}
-.step b{display:flex;width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;align-items:center;justify-content:center;font-size:13px;margin-bottom:10px}
-.step span{font-size:14px;font-weight:700;line-height:1.35;display:block}
-/* more tiles */
-.more{padding:100px 0;background:white}
-.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
-.tile{background:var(--cream);border-radius:18px;padding:20px}
-.tile i{width:42px;height:42px;border-radius:12px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center}
-.tile b{display:block;font-size:16px;margin-top:14px}
-.tile span{display:block;font-size:13.5px;color:var(--mute);margin-top:4px;line-height:1.45}
+.hero{background:#0F1E2E;color:#fff;padding:56px 0 64px}
+.tag{display:inline-block;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.06em;border:1px solid rgba(196,151,59,.55);background:rgba(196,151,59,.09);border-radius:999px;padding:7px 14px}
+.hero h1{font-size:clamp(64px,19vw,148px);line-height:.92;letter-spacing:-.045em;font-weight:900;margin:22px 0 18px}
+.hero .lim{font-size:clamp(22px,5.6vw,34px);font-weight:800;color:var(--teal-l);letter-spacing:-.02em;margin:0 0 18px}
+.hero .offer{font-size:17px;line-height:1.6;color:rgba(255,255,255,.8);max-width:34em;margin:0 0 28px}
+.hero .offer b{color:#fff}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.intro{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:6px;max-width:36em}
+.intro strong{font-size:18px} .intro span{color:rgba(255,255,255,.65);line-height:1.6}
+.heroph{display:none}
+@media (min-width:900px){.hgrid{display:grid;grid-template-columns:1fr 330px;gap:56px;align-items:center}.heroph{display:block;width:320px}}
 /* why */
-.why{padding:100px 0}
-.why .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
-.why .card{background:white;border-radius:20px;padding:26px;box-shadow:0 1px 3px rgba(15,30,46,.06)}
-.why .card i{width:48px;height:48px;border-radius:14px;background:#E0F5F2;color:var(--teal);display:flex;align-items:center;justify-content:center}
-.why .card b{display:block;font-size:19px;margin-top:16px;letter-spacing:-.3px}
-.why .card p{font-size:15px;color:var(--mute);margin-top:6px;line-height:1.55}
-/* cta */
-.cta-band{padding:100px 0 0;text-align:center}
-.cta-band .wrap:first-child{padding-bottom:90px}
-.cta-band h2{max-width:760px;margin:10px auto 0}
-.cta-band .lead{margin:16px auto 0;text-align:center}
-.cta-band .cta{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-.foot{padding:30px 0 40px;border-top:1px solid rgba(255,255,255,.08)}
-.foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:#94A3B8;font-size:13.5px}
-.foot img{height:24px;width:auto}
-.foot a{text-decoration:none;font-weight:700}
-.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
-@media(max-width:980px){
-  .hero .wrap,.feat .wrap,.feat.flip .wrap{grid-template-columns:minmax(0,1fr);gap:44px}
-  .feat.flip .copy{order:0}
-  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .why .grid{grid-template-columns:minmax(0,1fr)}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stage{min-height:0;padding-bottom:30px}
+.why{padding:64px 0 24px}
+.why h2{font-size:clamp(40px,10vw,72px);line-height:.98;letter-spacing:-.035em;font-weight:900;margin:0 0 14px}
+.why h2 em{font-style:normal;color:var(--teal)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .why h2 em{color:var(--teal-l)}}
+.why .lede{max-width:34em}
+.why ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;grid-template-columns:1fr}
+.why li{display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.why h3{margin:2px 0 4px;font-size:18px;letter-spacing:-.01em} .why li p{margin:0;color:var(--muted);line-height:1.5}
+@media (min-width:760px){.why ul{grid-template-columns:1fr 1fr;column-gap:40px}}
+.tile{flex:none;width:44px;height:44px;border-radius:12px;background:var(--tile);color:var(--tile-ink);display:inline-flex;align-items:center;justify-content:center}
+.tile svg{width:22px;height:22px} .tile.sm{width:32px;height:32px;border-radius:9px} .tile.sm svg{width:17px;height:17px}
+.lede{font-size:17px;line-height:1.6;color:var(--muted);margin:0}
+/* index */
+.index{padding:28px 0 8px}
+.index h2{font-size:15px;font-weight:700;color:var(--muted);margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;font-weight:600;font-size:14px}
+.chip svg{width:16px;height:16px;color:var(--tile-ink)} .chip:hover{box-shadow:inset 0 0 0 1.5px var(--teal)}
+/* features */
+.feat{padding:56px 0 8px;border-top:1px solid var(--line);margin-top:48px}
+.feat:first-of-type{border-top:0;margin-top:24px}
+.fname{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tile-ink);margin:0 0 12px;font-size:15px}
+.feat h2{font-size:clamp(30px,7.4vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:850;font-weight:800;margin:0 0 12px}
+.ftext{max-width:36em}
+.shots{margin-top:28px}
+.shots.single{display:flex;justify-content:center}
+.shots.single .phone{width:min(340px,84vw)}
+.shots.multi{display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 18px;margin:28px -22px 0;scrollbar-width:none}
+.shots.multi::-webkit-scrollbar{display:none}
+.shots.multi figure{flex:none;scroll-snap-align:center}
+.shots.multi .phone{width:min(340px,84vw)}
+.shots.multi .screen{width:min(560px,90vw);align-self:center}
+@media (min-width:760px){.shots.multi{overflow:visible;justify-content:center;margin:28px 0 0;padding:0;gap:32px}.shots.single .phone{width:320px}.shots.multi .phone{width:320px}.shots.multi .screen{width:calc(50% - 16px)}}
+figure{margin:0}
+.phone{border:5px solid #141416;border-radius:30px;overflow:hidden;background:#141416;box-shadow:0 18px 40px -18px rgba(15,30,46,.45)}
+.phone img{border-radius:25px;width:100%}
+.screen{border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 0 0 1px var(--line),0 18px 40px -20px rgba(15,30,46,.35)}
+.screen img{width:100%}
+.hint{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:var(--tile-ink);margin:6px 0 0}.hint i{width:7px;height:7px;border-radius:50%;background:var(--tile-ink)}.hint i{opacity:.3;transition:opacity .2s}.hint i.on{opacity:1}
+@media (min-width:760px){.hint{display:none}}
+@media (min-width:760px){.mobonly{display:none}.shots.multi .screen.wide{width:min(820px,100%)}}
+.pts{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}.pts li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5}.pts svg{flex:none;width:20px;height:20px;margin-top:2px;color:var(--tile-ink)}
+
+.btn{white-space:nowrap}
+@media (max-width:520px){.cta .btn,.card2 .btn{flex:1 1 100%;width:100%}}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.chip{justify-content:flex-start;padding:0 12px;font-size:14px;white-space:nowrap;overflow:hidden}
+.chip span{overflow:hidden;text-overflow:ellipsis}
+@media (min-width:760px){.chips{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.shots.stack{display:flex;flex-direction:column;align-items:center;gap:20px}
+.shots.stack .phone{width:min(340px,84vw)}
+.shots.stack .screen{width:100%}
+.deskonly{display:none}
+@media (min-width:760px){.deskonly{display:block}.shots.stack{flex-direction:row;justify-content:center;align-items:center;gap:32px}.shots.stack .phone{width:320px}.shots.stack .screen{width:calc(50% - 16px)}.shots.stack .screen.wide{width:min(820px,100%)}}
+
+.hold{width:100%;max-width:820px;margin:0 auto;aspect-ratio:16/10;border:2px dashed var(--line);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);background:var(--card)}
+.hold span{width:52px;height:52px;border-radius:14px;background:var(--tile);color:var(--tile-ink);display:flex;align-items:center;justify-content:center}.hold svg{width:26px;height:26px}
+.hold b{color:var(--ink);font-size:16px}
+.more{padding:72px 0 0}
+.more h2{font-size:clamp(34px,8.5vw,56px);line-height:1;letter-spacing:-.035em;font-weight:900;margin:0 0 12px}
+.tiles{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tiles li{background:var(--card);box-shadow:inset 0 0 0 1px var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.tiles h3{margin:0 0 4px;font-size:16px;letter-spacing:-.01em}.tiles p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.tiles .andmore{grid-column:1/-1;background:var(--navy);color:#fff;box-shadow:none}
+.tiles .andmore p{color:rgba(255,255,255,.75);margin-bottom:14px}.tiles .andmore .tile{background:rgba(45,212,191,.15);color:var(--teal-l)}
+@media (min-width:760px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.tiles li{padding:20px}.tiles .andmore{flex-direction:row;align-items:center;gap:18px}.tiles .andmore div{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.tiles .andmore p{margin:0;max-width:34em}}
+.shots.stack .screen.full{width:100%;max-width:960px}
+@media (min-width:760px){.shots.stack{flex-wrap:wrap}.shots.stack .screen.full{flex:0 0 100%}.shots.stack .screen.full+.screen{width:min(520px,60%)}}
+.deskwrap{display:none !important}@media (min-width:760px){.deskwrap{display:flex !important}}
+.shots.multi .screen.col{width:min(330px,84vw);align-self:flex-start}
+@media (min-width:760px){.mobtb,.mobtbh{display:none !important}}
+.logo em,.foot b em,.wm em{font-style:normal;color:#0E9C8F}.intro .wm{color:#fff}.wm i{font-style:normal;color:var(--gold)}.wm{font-weight:800}
+
+.car{position:relative}
+.carbtn,.carcount{display:none}
+@media (max-width:759px){
+.carbtn{display:flex;position:absolute;top:42%;width:46px;height:46px;border-radius:50%;border:0;background:rgba(15,30,46,.88);color:#fff;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);cursor:pointer;z-index:3;transition:opacity .2s}
+.carbtn.next{right:6px;animation:nudge 1.6s ease-in-out infinite}
+.carbtn.prev{left:6px}
+.carbtn.off{opacity:0;pointer-events:none;animation:none}
+.carcount{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;margin-right:4px}
 }
-@media(max-width:700px){
-  .wrap{padding:0 18px}
-  .nav .links a.hide-m{display:none}
-  .nav .links{gap:14px}
-  .hero{padding-top:44px}
-  h1{letter-spacing:-2px}
-  .hero .cta .btn{flex:1 1 auto}
-  .stage .phone{width:34%;right:-4px;bottom:-24px;border-width:5px;border-radius:22px}
-  .feat{padding:72px 0}.more,.why,.cta-band{padding:72px 0}
-  .phones{gap:10px}.phones .phone{border-width:5px;border-radius:22px}
-  .phones > div:nth-child(2){margin-top:28px}
-  .mem .visual{gap:10px}.mem .phone{border-width:5px;border-radius:22px}
-  .tiles{gap:10px}.tile{padding:16px}
-  .ticks li{font-size:15px}
-  .swap .wrap{gap:12px}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.carbtn.next{animation:none}}
+@media (min-width:760px){.shots.multi.n4{gap:20px}.shots.multi.n4 .phone{width:calc(25% - 15px)}}
+/* talk */
+.talk{margin-top:72px;background:#0F1E2E;color:#fff;padding:72px 0 calc(64px + env(safe-area-inset-bottom,0px))}
+.talk h2{font-size:clamp(48px,13vw,96px);line-height:.95;letter-spacing:-.04em;font-weight:900;margin:0 0 16px}
+.talk p{color:rgba(255,255,255,.78);font-size:17px;line-height:1.6;max-width:32em;margin:0 0 26px}
+.card2{border-radius:18px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);padding:22px;max-width:420px}
+.card2 .who{font-size:20px;font-weight:800;margin:0 0 4px} .card2 .num{color:var(--teal-l);font-weight:700;font-size:17px;margin:0 0 18px;text-decoration:none;display:inline-block}
+.foot{margin-top:48px;color:rgba(255,255,255,.5);font-size:14px} .foot b{color:#fff;font-size:20px;font-weight:800;margin-right:10px} .foot b i{font-style:normal;color:var(--gold)}
+.fname{font-size:24px;font-weight:800;gap:14px;margin-bottom:14px;letter-spacing:-.2px}.fname .tile.sm{width:48px;height:48px;border-radius:13px}.fname .tile.sm svg{width:25px;height:25px}@media(max-width:640px){.fname{font-size:20px;gap:12px}.fname .tile.sm{width:42px;height:42px;border-radius:11px}.fname .tile.sm svg{width:22px;height:22px}}
+.newtag{margin-left:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#2B1D07;background:var(--gold);border-radius:999px;padding:3px 9px}
+
+.newstrip{padding:28px 0 0}.ns-k{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--gold);margin:0 0 10px}
+.ns-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ns-row a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
+@media (min-width:760px){.ns-row{grid-template-columns:repeat(4,1fr)}}
+.links{padding:72px 0 0}.links h2{font-size:clamp(36px,9vw,60px);line-height:1;letter-spacing:-.035em;font-weight:900;margin:0 0 12px}.links h2 em{font-style:normal;color:var(--teal)}
+.links ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0;grid-template-columns:1fr}.links li{display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.links h3{margin:2px 0 4px;font-size:18px}.links li p{margin:0;color:var(--muted);line-height:1.5}
+@media (min-width:760px){.links ul{grid-template-columns:1fr 1fr;column-gap:40px}.shots.multi.n3 .phone{width:calc(33.3% - 22px);max-width:300px}}
+
+.phone.scroll{aspect-ratio:1/2;position:relative}
+.phone.scroll img{will-change:transform}
+.krphoto{display:block;width:100%;max-width:520px;height:auto;margin:22px auto 0;border-radius:50% 50% 20px 20px / 42% 42% 20px 20px;box-shadow:0 20px 44px rgba(0,0,0,.35)}
+.scanwrap{position:relative;overflow:hidden;border-radius:25px}
+.scanl{position:absolute;left:14.5%;right:14.5%;top:31%;height:3px;border-radius:2px;background:#2DD4BF;box-shadow:0 0 16px 2px #2DD4BF;animation:scanl 2.4s ease-in-out infinite alternate}
+@keyframes scanl{from{top:31%}to{top:58%}}
+.ns-row{grid-template-columns:repeat(2,minmax(0,1fr))}.ns-row a{min-width:0}.ns-row a span{min-width:0;overflow-wrap:anywhere}@media(max-width:360px){.ns-row a{font-size:13px;padding:10px;gap:8px}}
+@media (min-width:760px){.shots.multi.n5{gap:16px}.shots.multi.n5 .phone{width:calc(20% - 13px)}}
+
+/* laptop: light hero. phone: the darker look */
+@media (min-width:760px){
+.hero{background:#F3E9DA;color:#0F1E2E}
+.hero .offer{color:#334155}.hero .offer b{color:#0F1E2E}
+.hero .btn.ghost{color:#0F1E2E;box-shadow:inset 0 0 0 1.5px rgba(15,30,46,.25)}
+.hero .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #0F1E2E}
+.hero .tag{color:#8A6421;border-color:rgba(196,151,59,.6);background:rgba(196,151,59,.12)}
+.hero .intro{border-top-color:rgba(15,30,46,.12)}.hero .intro span{color:#475569}.hero .intro .wm{color:#0F1E2E}
 }
-
-/* Laptop: every phone the same size (as Maintenance / Your workspace). Sections with 3 phones put the text on top and the phones in a row underneath */
-@media(min-width:981px){
-  .feat.wide .wrap,.feat.wide.flip .wrap{grid-template-columns:minmax(0,1fr);gap:48px}
-  .feat.wide .copy,.feat.wide.flip .copy{order:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;align-items:center}
-  .feat.wide .c2 > :first-child{margin-top:0}
-  .feat.wide .phones > div,.phones.two > div{width:250px}
-  .feat.wide .phones{gap:36px}
-  .mem.wide .visual > div{width:250px}
-  .mem.wide .visual{gap:36px}
-  .mem.wide .visual{flex-wrap:nowrap;align-items:center}
-  .mem.wide .keys{width:520px;flex:none;margin:0}
-  .mem.wide .visual > div + div{margin-top:60px;align-self:flex-start}
-  .mem.wide .visual > div:first-of-type{align-self:flex-start}
-}
-/* hero: fan of five phones */
-.hero{padding-bottom:70px}
-.fan{position:relative;width:100%;aspect-ratio:1/.86}
-.fan .ph{position:absolute;border:7px solid #0B1622;border-radius:30px;overflow:hidden;background:white;aspect-ratio:9/18.6;box-shadow:0 30px 60px rgba(43,29,7,.3)}
-.fan .ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
-.fan .p1{left:0;bottom:3%;width:25%;transform:rotate(-12deg)}
-.fan .p2{left:17%;bottom:7%;width:27%;transform:rotate(-6deg)}
-.fan .p3{left:35%;bottom:10%;width:31%;z-index:3}
-.fan .p4{left:56%;bottom:7%;width:27%;transform:rotate(6deg);z-index:2}
-.fan .p5{left:75%;bottom:3%;width:25%;transform:rotate(12deg);z-index:1}
-.chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;background:white;border-radius:16px;padding:11px 14px;box-shadow:0 14px 34px rgba(43,29,7,.18);white-space:nowrap}
-.chip i{width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:none;color:white;background:var(--teal)}
-.chip i.g{background:var(--gold)}.chip i.n{background:var(--navy)}
-.chip b{display:block;color:var(--navy);font-weight:800;font-size:13.5px}.chip span{display:block;color:var(--mute);font-weight:600;font-size:12px}
-.fan .c1{left:0;top:0}.fan .c2{right:0;top:9%}.fan .c3{left:34%;bottom:-4%}
-@media(min-width:981px){.hero .wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr)}.hero .wrap > div:first-child{padding-bottom:0}.hero h1{font-size:76px;letter-spacing:-2.5px}}
-@media(max-width:980px){.fan{max-width:620px;margin:10px auto 0}}
-@media(max-width:600px){
-  .hero{padding-bottom:56px}
-  .fan .ph{border-width:4px;border-radius:16px;box-shadow:0 16px 30px rgba(43,29,7,.28)}
-  .chip{gap:7px;padding:7px 9px;border-radius:12px}
-  .chip i{width:22px;height:22px;border-radius:7px}.chip i svg{width:11px;height:11px}
-  .chip b{font-size:11px}.chip span{font-size:9.5px}
-  .fan .c2{display:none}.fan .c3{left:30%;bottom:-6%}
-}
-/* phone and tablet: the darker look (laptop stays light) */
-@media(max-width:980px){
-  .mdark{background:var(--navy);color:white}
-  .mdark .kick{color:var(--teal2)}
-  .mdark .lead{color:#CBD5E1}
-  .mdark .ticks li{color:#E2E8F0}
-  .mdark .ticks li i{background:rgba(94,234,212,.14);color:var(--teal2)}
-  .mdark .ticks b{color:white}
-  .mdark .cap{color:#94A3B8}
-  .hero.mdark h1 span{color:var(--teal2)}
-  .hero.mdark .btn-line{border-color:rgba(255,255,255,.28);color:white}
-  .hero.mdark .proof{color:#94A3B8}.hero.mdark .proof b{color:white}
-  .mdark .fan .ph{border-color:#2A3B4E;box-shadow:0 16px 30px rgba(0,0,0,.45)}
-}
-</style>
-</head>
-<body>
-
-<nav class="nav"><div class="wrap">
-  <a href="/" aria-label="Mavis"><img src="/brand/mavis-logo-white-text.png" alt="Mavis"></a>
-  <div class="links"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo" target="_blank" rel="noopener">Book a demo</a></div>
-</div></nav>
-
-<header class="hero sand mdark"><div class="wrap">
-  <div>
-    <div class="kick">For restaurants, bars &amp; beach clubs</div>
-    <h1 style="margin-top:16px">One team.<br><span>One platform.</span></h1>
-    <p class="lead">Everything your venue runs on - your team, schedules, kitchen, maintenance, members and numbers - in one simple app. On every phone, from day one.</p>
-    <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo" target="_blank" rel="noopener">Book a demo</a><a class="btn btn-line" href="#inside">See what's inside</a></div>
-    <div class="proof"><div><b>1 app</b>instead of 10</div><div><b>Every role</b>sees what they need</div><div><b>Every venue</b>in one login</div></div>
-  </div>
-  <div class="fan" aria-label="Mavis on five phones: chat, forecast, dashboard, guest page and bar">
-    <div class="ph p1"><img src="/img/chat.jpg" alt=""></div>
-    <div class="ph p2"><img src="/img/forecast.jpg" alt=""></div>
-    <div class="ph p5"><img src="/img/bar1.jpg" alt=""></div>
-    <div class="ph p4"><img src="/img/m-guest.jpg" alt=""></div>
-    <div class="ph p3"><img src="/img/dash.jpg" alt="Mavis dashboard on a phone"></div>
-    <div class="chip c1"><i class="g"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Sarah A. checked in</b><span>VIP · Rooftop · 42 visits</span></div></div>
-    <div class="chip c2"><i class=""><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>Cold room fixed</b><span>Maintenance · 2 min ago</span></div></div>
-    <div class="chip c3"><i class="n"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><div><b>New post from Maya</b><span>Team Feed · 12 reactions</span></div></div>
-  </div>
-</div></header>
-
-<section class="swap"><div class="wrap">
-  <div class="old"><span>12 WhatsApp groups</span><span>Paper SOPs</span><span>Roster spreadsheets</span><span>Lost requests</span><span>"Who's fixing that?"</span></div>
-  <div class="arrow">&rarr;</div><div class="new">Mavis</div>
+@media (max-width:759px){:root{--paper:#101C29;--card:#16263A;--ink:#EEF2F6;--muted:#9AA8B8;--line:#24364A;--tile:#143A3A;--tile-ink:#5EEAD4}.hero h1 span{color:#5EEAD4!important}}
+</style></head><body>
+<header class="bar"><div class="wrap"><a class="logo" href="#top"><img src="/brand/mavis-logo-white-text.png" width="215" height="51" alt="Mavis"></a><a class="btn wa" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo">Get in touch</a></div></header>
+<main id="top">
+<section class="hero"><div class="wrap hgrid"><div>
+<span class="tag">For restaurants, bars &amp; beach clubs</span>
+<h1 style="font-size:clamp(46px,7vw,86px);line-height:1;letter-spacing:-2px">One team.<br><span style="color:#0D9488">One platform.</span></h1>
+<p class="offer">For hospitality and F&amp;B groups, from one venue to many. Everything your venue runs on, in one simple app. Ask us for a demo.</p>
+<div class="cta"><a class="btn wa" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>Contact Mavis on WhatsApp</a><a class="btn ghost" href="#inside">See what's inside</a></div>
+<div class="intro"><strong><span class="wm"><em>M</em>avis<i>.</i></span> One team, one platform.</strong><span>One connected platform for running every venue you have, from the kitchen pass to the front door, from tonight's forecast to next month's numbers.</span></div>
+</div></div></section>
+<section class="why"><div class="wrap">
+<h2>Everything<br><em>under one roof.</em></h2>
+<p class="lede">Stop running your venue across WhatsApp groups, shared drives and spreadsheets. Mavis brings it all together.</p>
+<ul><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><div><h3>Everyone's part of the team</h3><p>Highlights, shoutouts and announcements in one feed. Open the app and you're in the loop.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span><div><h3>Every conversation, one place</h3><p>No more updates lost in 15 WhatsApp groups.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span><div><h3>Menus and recipes together</h3><p>Every dish with its recipe, allergens and food cost. No more hunting through shared drives.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div><h3>Every procedure, one tap away</h3><p>New staff know the standard from day one.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><div><h3>The numbers, not the spreadsheets</h3><p>Revenue, forecasts and events, updated as you go.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><h3>Every venue, one login</h3><p>Switch venues in a tap. From the GM to the daily worker, everyone sees exactly what they need.</p></div></li></ul></div></section>
+<section class="index" id="inside"><div class="wrap"><h2>What's inside. Tap to jump.</h2><div class="chips"><a class="chip" href="#f0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Dashboard</span></a><a class="chip" href="#f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg><span>Highlights</span></a><a class="chip" href="#f2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Team Feed</span></a><a class="chip" href="#f3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg><span>Chat</span></a><a class="chip" href="#f4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Forecast</span></a><a class="chip" href="#f5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg><span>Analytics</span></a><a class="chip" href="#fm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h3"/></svg><span>Membership</span></a><a class="chip" href="#f6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg><span>Kitchen</span></a><a class="chip" href="#fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 7a6 6 0 0 1-12 0Z"/></svg><span>Bar</span></a><a class="chip" href="#f7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg><span>Recipes</span></a><a class="chip" href="#f8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg><span>Task Board</span></a><a class="chip" href="#fs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4M8 14h2M14 14h2M8 18h2"/></svg><span>Scheduling</span></a><a class="chip" href="#fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg><span>Maintenance</span></a><a class="chip" href="#f10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Admin Console</span></a><a class="chip" href="#f11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 8h8M8 12h5"/></svg><span>Customer Survey</span></a><a class="chip" href="#f12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>SOPs</span></a><a class="chip" href="#fk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg><span>Knowledge Base</span></a><a class="chip" href="#fv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-5h-15z"/><path d="M5 9v11h14V9M9 20v-6h6v6"/></svg><span>Vendor Directory</span></a><a class="chip" href="#f13"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Suggestion Box</span></a><a class="chip" href="#f14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span>Job Vacancies</span></a><a class="chip" href="#f15"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg><span>Smart Notetaker</span></a><a class="chip" href="#f16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><path d="M14 2v6h6"/></svg><span>Meeting Notes</span></a></div></div></section>
+<div class="wrap"><section class="feat" id="f0"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>Dashboard</p><h2>One screen, the whole day</h2><p class="lede">Switch venues in a tap, see local news and weather, and reach every tool from one home screen.</p></div>
+<div class="shots single n1 deskwrap"><figure class="screen wide deskonly"><img src="/tour/m-59d87189054d/t9_deskdash.jpg" width="2172" height="2591" alt="Mavis dashboard on a laptop"></figure></div><div class="shots multi mobtb"><figure class="phone"><img src="/tour/m-59d87189054d/t9_dsh2.jpg" width="820" height="1640" alt="Switching between venues"></figure><figure class="phone"><img src="/tour/m-59d87189054d/dsh4.jpg" width="820" height="1640" alt="Industry news and weather"></figure><figure class="phone"><img src="/tour/m-59d87189054d/dsh5.jpg" width="820" height="1640" alt="My Drive, Quick Links and menu sections"></figure></div><p class="hint mobtbh"><i class="on"></i><i></i><i></i><span>Swipe through the dashboard</span></p></section><section class="feat" id="f1"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg></span>Highlights</p><h2>Every win, seen by everyone</h2><p class="lede">Birthdays, shoutouts, local tips and reminders. Posted once, swiped through Instagram-style by the whole team.</p></div>
+<div class="shots multi n5"><figure class="phone"><img src="/tour/m-59d87189054d/t5_hl1.jpg" width="820" height="1640" alt="A well-done highlight for the kitchen team" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_hl2.jpg" width="820" height="1640" alt="Staff party highlight" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_hl3.jpg" width="820" height="1640" alt="New menu tasting highlight" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_hl4.jpg" width="820" height="1640" alt="Safety reminder highlight" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_hl5.jpg" width="820" height="1640" alt="Team lunch highlight" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f2"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>Team Feed</p><h2>Post once, everyone sees it</h2><p class="lede">Announcements, photos, polls and replies - pinned right where the whole team looks first, with reactions so you know it landed.</p></div>
+<div class="shots multi n3"><figure class="phone scroll"><img src="/tour/m-59d87189054d/t3_feed-tall.jpg" width="756" height="4018" alt="Team Feed scrolling with posts, photos and a poll"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_feed2.jpg" width="820" height="1640" alt="A post with photo, reactions and replies" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t3_feed3.jpg" width="820" height="1640" alt="Posting to the team feed" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f3"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span>Chat</p><h2>Every conversation, one place</h2><p class="lede">Direct messages and department groups with no personal numbers. Tag someone's department and they're in the group, with nothing to update when staff change.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/t5_chat1.jpg" width="820" height="1640" alt="Chat groups list"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_chat2.jpg" width="820" height="1640" alt="A department group conversation"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f4"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>Forecast</p><h2>Know what's coming</h2><p class="lede">Built from real holidays, weather, currency and your own history, so you can plan staff and stock before the rush.</p></div>
+<div class="shots multi n4"><figure class="phone"><img src="/tour/m-59d87189054d/t5_fc1.jpg" width="820" height="1640" alt="Forecast summary for today" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_fc2.jpg" width="820" height="1640" alt="This week against past years, day by day" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_fc3.jpg" width="820" height="1640" alt="Spike, rain and season warnings, and who's likely to travel" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_fc4.jpg" width="820" height="1640" alt="The season ahead and what to do this week" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f5"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span>Analytics</p><h2>Real revenue, real history</h2><p class="lede">Enter yesterday's figures in seconds. Every day turns green or red against your guide, with month-to-date, year-to-date and last year side by side.</p></div>
+<div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/t5_an1.jpg" width="820" height="1640" alt="Yesterday, week, month and year to date, and every day against your guide" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_an2.jpg" width="820" height="1640" alt="Against last month and last year, revenue by month" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t5_an3.jpg" width="820" height="1640" alt="Guests and average spend per guest" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="fm"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h3"/></svg></span>Membership</p><h2>One keyring, every venue</h2><p class="lede">Give your regulars a QR keyring. Staff scan it and the guest's profile pops up: visits, favourite venue and perks, across all your venues.</p><p style="margin:18px 0 6px"><a class="btn wa" href="/membership/">See everything in Membership<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></p><img class="krphoto" src="/tour/m-59d87189054d/t9_keyrings.jpg" width="896" height="747" alt="Wooden guest keyrings with QR codes"></div>
+<div class="shots multi n3"><figure class="phone"><div class="scanwrap"><img src="/tour/m-59d87189054d/t3_mb2.jpg" width="820" height="1640" alt="Scanning a member keyring" loading="lazy"><i class="scanl"></i></div></figure><figure class="phone"><img src="/tour/m-59d87189054d/mb3.jpg" width="820" height="1640" alt="A member profile with visits and perks" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/mb1.jpg" width="820" height="1640" alt="All members across four venues" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f6"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>Kitchen</p><h2>Menus and recipes, under one roof</h2><p class="lede">Live, in-progress and upcoming menus for every venue. Tap a menu to see each dish with its photo, price, allergens and food cost.</p></div>
+<div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/t4_kt1.jpg" width="820" height="1640" alt="Live menus across four venues" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_kt2.jpg" width="820" height="1640" alt="A live menu with dishes, allergens and food cost" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_kt3.jpg" width="820" height="1640" alt="A dish with its photo, allergens and food cost" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="fb"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 3h14l-1 7a6 6 0 0 1-12 0Z"/></svg></span>Bar</p><h2>Every bar, every drink, one list</h2><p class="lede">Live drinks menus for every bar, with photos, prices, allergens and beverage cost. Plus the recipes, so the Espresso Martini tastes the same at every venue.</p></div><div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/t4_bar1.jpg" width="820" height="1640" alt="Live drinks menus across the bars" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t8_bar2.jpg" width="820" height="1640" alt="A cocktail list with prices and beverage cost" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t8_bar3.jpg" width="820" height="1640" alt="A cocktail with its photo and allergens" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f7"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>Recipes</p><h2>Recipe to menu in one tap</h2><p class="lede">Full ingredients and method for every dish, with food cost on each. Move a recipe onto any menu when it's ready.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/t3_rec1.jpg" width="820" height="1640" alt="Truffle tagliatelle recipe"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t3_rec2.jpg" width="820" height="1640" alt="Grilled barramundi recipe"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f8"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg></span>Task Board</p><h2>Like Trello, built in</h2><p class="lede">Give a task a due date and a person, and they get a notification on their phone. Share a project with chosen people or whole departments, and only they can see it.</p></div>
+<div class="shots stack n1 deskwrap"><figure class="screen full deskonly"><img src="/tour/m-59d87189054d/dtb.jpg" width="2080" height="1240" alt="A shared team project on a laptop" loading="lazy"></figure></div><div class="shots multi n4"><figure class="phone"><img src="/tour/m-59d87189054d/tb1.jpg" width="820" height="1640" alt="Team projects, each shared with the right people" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/tb2.jpg" width="820" height="1640" alt="A project board with due dates" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/tb3.jpg" width="820" height="1640" alt="A task with who it is for and when it is due" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/tb4.jpg" width="820" height="1640" alt="Choosing who can see a project" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="fs"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4M8 14h2M14 14h2M8 18h2"/></svg></span>Scheduling</p><h2>Who works when, one live link</h2><p class="lede">Build the week in a few taps - Morning, Evening, Split or any times. Split a team into areas and move people between them day to day. Share one live link with no login: when a shift changes, everyone sees it.</p></div>
+<div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/sc1.jpg" width="820" height="1640" alt="The week, split into areas" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/sc2.jpg" width="820" height="1640" alt="One tap to pick a shift and where" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/sc3.jpg" width="820" height="1640" alt="The live roster link on a staff phone" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section>
+<section class="feat" id="fx"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg></span>Maintenance</p><h2>Spot it, snap it, sorted</h2><p class="lede">Anyone can report a problem with a photo in seconds. A manager sorts it to the right team in one tap, someone takes it on, and everyone can see who's on it - right up to done.</p></div>
+<div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/mx1b.jpg?v=2" width="820" height="1640" alt="Everything that needs fixing, in one list" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/mx2b.jpg?v=2" width="820" height="1640" alt="Reporting a problem with a photo" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/mx3b.jpg?v=2" width="820" height="1640" alt="A job with who is on it" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f10"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Admin Console</p><h2>Every role, exactly the access it needs</h2><p class="lede">Six tiers from Super Admin to Daily Worker. Set your departments up once, with their icons, and they flow into every part of Mavis.</p></div>
+<div class="shots multi n4"><figure class="phone"><img src="/tour/m-59d87189054d/n_ad1.jpg" width="820" height="1640" alt="Roles and permissions overview" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/n_ad2.jpg" width="820" height="1640" alt="Super Admin permission toggles" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/ad3.jpg" width="820" height="1640" alt="Your departments with staff counts" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/ad4.jpg" width="820" height="1640" alt="Adding a department - its icon comes with it" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f11"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 8h8M8 12h5"/></svg></span>Customer Survey</p><h2>Real guest feedback, no chasing</h2><p class="lede">Guests scan a QR code and rate their visit in seconds. See the score for today, this week or this month, and share it with the team.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/t4_sv1.jpg" width="820" height="1640" alt="Today's guest score with food, drinks, service and music" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_sv2.jpg" width="820" height="1640" alt="Every response, low scores shown first" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f12"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>SOPs</p><h2>The same standard, in every venue</h2><p class="lede">Every procedure by department, searchable. Managers write them, the GM approves them, and anyone can send one in Chat or download it as a PDF.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/sp1.jpg" width="820" height="1640" alt="SOPs by department with approval status" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/sp2.jpg" width="820" height="1640" alt="An approved SOP" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="fk"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>Knowledge Base</p><h2>Answers, before anyone has to ask</h2><p class="lede">Quick answers by department. Search finds the answers and the matching SOPs together, and if nothing comes up, staff can ask a manager in one tap.</p></div>
+<div class="shots multi n3"><figure class="phone"><img src="/tour/m-59d87189054d/kb1.jpg" width="820" height="1640" alt="Knowledge Base by department" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/kb2.jpg" width="820" height="1640" alt="Search finds the answer" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/kb3.jpg" width="820" height="1640" alt="Nothing found? Ask a manager" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="fv"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-5h-15z"/><path d="M5 9v11h14V9M9 20v-6h6v6"/></svg></span>Vendor Directory</p><h2>Every supplier, one tap away</h2><p class="lede">Suppliers by department with the contact person, notes and order cut-offs. Tap to call or WhatsApp them.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/vd1.jpg" width="820" height="1640" alt="Suppliers for the kitchen" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/vd2.jpg" width="820" height="1640" alt="A supplier with call and WhatsApp" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f13"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>Suggestion Box</p><h2>Honest feedback, unsigned</h2><p class="lede">A fully anonymous channel for the team's ideas. No names collected, ever.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/t4_sug1.jpg" width="820" height="1640" alt="Sharing an idea anonymously" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_sug2.jpg" width="820" height="1640" alt="What managers see - ideas, fixes and shout-outs" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f14"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Job Vacancies</p><h2>Open roles, visible to everyone</h2><p class="lede">See how soon each role is needed. Share it to WhatsApp or Chat in one tap, so the team can refer friends.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/vac3.jpg" width="820" height="1640" alt="Open roles with how soon they are needed" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/n_vac2.jpg" width="820" height="1640" alt="Filled vacancies" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f15"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span>Smart Notetaker</p><h2>Drop it on the table, get a clean report</h2><p class="lede">One tap to record a meeting. Mavis summarises it into key points, decisions and action items.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/t4_note.jpg" width="820" height="1640" alt="Smart Notetaker record screen" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/t4_report.jpg" width="820" height="1640" alt="A finished meeting summary with key points, decisions and action items" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section><section class="feat" id="f16"><div class="ftext"><p class="fname"><span class="tile sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><path d="M14 2v6h6"/></svg></span>Meeting Notes</p><h2>Who was there, what was said, who does what</h2><p class="lede">Several meetings a day, with attendees and action points for named people. Send the notes to a department group in one tap.</p></div>
+<div class="shots multi n2"><figure class="phone"><img src="/tour/m-59d87189054d/mn1.jpg" width="820" height="1640" alt="Today's meetings" loading="lazy"></figure><figure class="phone"><img src="/tour/m-59d87189054d/mn2.jpg" width="820" height="1640" alt="Meeting notes with action points" loading="lazy"></figure></div><p class="hint"><i class="on"></i><i></i><span>Swipe to see the next screen</span></p></section></div>
+<section class="links"><div class="wrap"><h2>Everything talks<br><em>to each other.</em></h2>
+<p class="lede">Ten separate apps don't share anything. Mavis does.</p>
+<ul><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><div><h3>Set up once, used everywhere</h3><p>Add a department in the Admin Console and it appears in SOPs, Chat, Vacancies, Maintenance and Suppliers.</p></div></li>
+<li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span><div><h3>Send in Chat, from anywhere</h3><p>Meeting notes, SOPs, vacancies, suppliers and answers go to a person or a whole department in one tap.</p></div></li>
+<li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><div><h3>One search, the right answer</h3><p>Look something up in the Knowledge Base and the matching SOPs come up too.</p></div></li>
+<li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><div><h3>The right person, straight away</h3><p>Phone notifications for messages, tasks and maintenance requests, with quiet hours for days off.</p></div></li></ul></div></section>
+<section class="more"><div class="wrap"><h2>And that's not all.</h2><p class="lede">A few more tools built into Mavis, ready when your team needs them.</p>
+<ul class="tiles"><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5z"/><path d="M15 3v6h6"/></svg></span><div><h3>Sticky Notes</h3><p>Quick reminders that stay right where you left them.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><h3>Event Calendar</h3><p>Every booking and event at a glance.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><div><h3>Entertainment Schedule</h3><p>DJs, bands and performers, booked and confirmed.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><div><h3>Inventory</h3><p>Stock levels checked and updated by the team.</p></div></li><li><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><div><h3>Events &amp; deposits</h3><p>Private events, guest counts and payments tracked in one place.</p></div></li><li class="andmore"><span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><div><h3>And more</h3><p>Ordering, CRM, custom modules and features built around your venues. Ask us what else Mavis can do.</p><a class="btn wa" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>Ask us</a></div></li></ul></div></section>
+<section class="talk" id="talk"><div class="wrap">
+<h2>Let's talk.</h2>
+<p>Mavis is built by people who run venues, for people who run venues. If you'd like a walkthrough, we'd love to show you around.</p>
+<div class="card2"><p class="who">The Mavis team</p><a class="num" href="tel:+6282145328784">+62 821 4532 8784</a><br><a class="btn wa" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>Message on WhatsApp</a></div>
+<p class="foot"><img src="/brand/mavis-logo-white-text.png" width="215" height="51" alt="Mavis"><span>One team. One platform.</span></p>
 </div></section>
-
-<!-- TEAM -->
-<section class="feat wide" id="inside"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Your team</div>
-    <h2>Everyone on the same page. Finally.</h2>
-    <p class="lead">News, chat and shout-outs in one place - so the right people hear it, and nothing gets buried in a group chat.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Team Feed</b> - announcements, polls and replies everyone actually sees</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Chat</b> - by department or one to one, with read receipts</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Highlights</b> - staff of the month, new faces, big nights</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone scroll"><img src="/img/feed-tall2.jpg" alt="Team Feed"></div><span class="cap">Team Feed</span></div>
-    <div><div class="phone"><img src="/img/highlight.jpg" alt="Highlights"></div><span class="cap">Highlights</span></div>
-    <div><div class="phone"><img src="/img/chat.jpg" alt="Chat"></div><span class="cap">Chat</span></div>
-  </div>
-</div></section>
-
-<!-- SCHEDULING -->
-<section class="feat flip wide" id="scheduling" style="background:white"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Scheduling</div>
-    <h2>Who works when. One link, always up to date.</h2>
-    <p class="lead">Build the week in a few taps, like a spreadsheet but simpler. Share one live link with the team - when a shift changes, everyone sees it. No more photos of the roster in the group chat.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Your shifts, one tap</b> - Morning, Evening, Split, or any times you like</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Split areas</b> - Beach Club, Sunset Bar, Pool Deck: staff can move between them day to day</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>A live link</b> - no login, on any phone, always the latest. Or send a picture to WhatsApp</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Daily workers</b> - add someone for a day with just their name</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone"><img src="/img/sch-week.jpg" alt="The week's roster for Front of House, split into areas" loading="lazy"></div><span class="cap">The week, by area</span></div>
-    <div><div class="phone"><img src="/img/sch-pick.jpg" alt="Picking a shift and where they work" loading="lazy"></div><span class="cap">One tap per shift</span></div>
-    <div><div class="phone"><img src="/img/sch-live.jpg" alt="The live roster link on a staff phone" loading="lazy"></div><span class="cap">What your team sees</span></div>
-  </div>
-</div></section>
-
-<!-- MEMBERSHIP -->
-<section class="feat mem flip wide" id="membership"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Membership</div>
-    <h2>Turn your regulars into members.</h2>
-    <p class="lead">A wooden keyring with their own QR code. One scan at the door and your team knows who they are - and your guests know what's on.</p>
-    </div>
-    <div class="c2"><div class="steps">
-      <div class="step"><b>1</b><span>Hand over a keyring</span></div>
-      <div class="step"><b>2</b><span>Scan - sign up in seconds</span></div>
-      <div class="step"><b>3</b><span>Checked in across every venue</span></div>
-      <div class="step"><b>4</b><span>They see perks, events &amp; what's on</span></div>
-    </div>
-    <ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Birthdays, VIPs and notes</b> - "corner table, allergic to nuts" travels with them</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Their own page</b> - tonight's DJ, events, rewards, Google reviews and book a table</span></li>
-    </ul>
-    <a class="btn btn-navy" href="/membership/" style="margin-top:26px">See everything in Membership <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
-    </div>
-  </div>
-  <div class="visual">
-    <figure class="keys"><img src="/img/keyrings-real2.jpg" alt="Three branded wooden guest keyrings with QR codes" width="896" height="747"></figure>
-    <div><div class="phone"><img src="/img/mem/s-390-member.jpg" alt="Member profile in Mavis"></div><span class="cap">What your team sees</span></div>
-    <div><div class="phone"><img src="/img/mem/g-home.jpg" alt="Guest member page"></div><span class="cap">What your guest sees</span></div>
-  </div>
-</div></section>
-
-<!-- KITCHEN -->
-<section class="feat"><div class="wrap">
-  <div class="copy">
-    <div class="kick">Kitchen</div>
-    <h2>Menus, recipes and allergens. Sorted.</h2>
-    <p class="lead">Live menus, what's in progress and what's coming up - for every venue. With photos, prices, allergens and food cost on every dish.</p>
-    <ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Allergen table</b> the floor team can check in seconds</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Recipes</b> with method, photos and a one-tap PDF</span></li>
-    </ul>
-  </div>
-  <div class="cards">
-    <div style="width:min(52%,300px)"><div class="shot"><img src="/img/menu.jpg" alt="Menu with allergens and food cost"></div><span class="cap">Allergens &amp; food cost on every dish</span></div>
-    <div style="width:min(44%,260px);margin-top:70px"><div class="shot"><img src="/img/dish.jpg" alt="Dish with photo"></div><span class="cap">Tap a dish for the full card</span></div>
-  </div>
-</div></section>
-
-<!-- BAR -->
-<section class="feat wide" id="bar" style="background:white"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Bar</div>
-    <h2>Every bar, every drink. One list.</h2>
-    <p class="lead">Live drinks menus for every bar, with photos, prices, allergens and beverage cost. Plus the recipes, so the Espresso Martini tastes the same at every venue.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Live, draft and planned</b> - see what's on now and what's coming next</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Beverage cost</b> next to every price, so margins stay healthy</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Drink recipes</b> with method and photo - same pour at every bar</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone"><img src="/img/bar1.jpg" alt="Drinks menus for every bar - live, draft and planned" loading="lazy"></div><span class="cap">Every bar's menus</span></div>
-    <div><div class="phone"><img src="/img/bar2.jpg?v=4" alt="Cocktail list with prices and beverage cost" loading="lazy"></div><span class="cap">Prices &amp; beverage cost</span></div>
-    <div><div class="phone"><img src="/img/bar3.jpg?v=4" alt="Espresso Martini recipe card" loading="lazy"></div><span class="cap">The recipe, every time</span></div>
-  </div>
-</div></section>
-
-<!-- EVENTS -->
-<section class="feat sand flip wide mdark" id="events"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Events</div>
-    <h2>Every event, planned to the last detail.</h2>
-    <p class="lead">From the first enquiry to the final invoice. Event plans, the numbers and one calendar for every venue - shared with your team and your client.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Event plans</b> - timings, menus, guests and set-up in one place</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>P&amp;L built in</b> - revenue, costs and profit as you plan</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>One calendar</b> - every event, deposit and holiday at a glance</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Share it</b> - with the team, or a clean PDF for the client</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone"><img src="/img/events.jpg" alt="Current events"></div><span class="cap">Current events</span></div>
-    <div><div class="phone"><img src="/img/event-plan.jpg" alt="Event plan"></div><span class="cap">Event plan &amp; P&amp;L</span></div>
-    <div><div class="phone"><img src="/img/calendar.jpg" alt="Event calendar"></div><span class="cap">Calendar</span></div>
-  </div>
-</div></section>
-
-<!-- MAINTENANCE -->
-<section class="feat flip" style="background:white"><div class="wrap">
-  <div class="copy">
-    <div class="kick">Maintenance</div>
-    <h2>Snap it. Send it. Fixed.</h2>
-    <p class="lead">Broken fridge, flickering light, wobbly table. Anyone snaps a photo and sends it. A manager sorts it to the right team, and everyone can see who's on it - right up to done.</p>
-    <ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Sorted in one tap</b> - to Engineering, Housekeeping or any team. Urgent jobs go to the top</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Sent, on it, done</b> - updates along the way, and a photo when it's fixed</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Phone notifications</b> to the team that fixes it</span></li>
-    </ul>
-  </div>
-  <div class="phones two">
-    <div><div class="phone"><img src="/img/maint-list.jpg?v=3" alt="Maintenance list: to sort, waiting and in progress" loading="lazy"></div><span class="cap">Everything in one list</span></div>
-    <div><div class="phone"><img src="/img/maint-detail.jpg?v=3" alt="A request with who's on it" loading="lazy"></div><span class="cap">Who's on it</span></div>
-  </div>
-</div></section>
-
-<!-- KNOW-HOW -->
-<section class="feat wide"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Know-how</div>
-    <h2>How we do things here. In everyone's pocket.</h2>
-    <p class="lead">SOPs, answers to everyday questions and every supplier's details - by department, searchable, always up to date.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>SOPs</b> with manager approval and PDF</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Knowledge Base</b> - "what's the wifi?" answered once, for good</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Vendor Directory</b> - tap to call or WhatsApp a supplier</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone"><img src="/img/sop.jpg" alt="SOPs"></div><span class="cap">SOPs</span></div>
-    <div><div class="phone"><img src="/img/kb.jpg" alt="Knowledge Base"></div><span class="cap">Knowledge Base</span></div>
-    <div><div class="phone"><img src="/img/vendors.jpg" alt="Vendor Directory"></div><span class="cap">Vendors</span></div>
-  </div>
-</div></section>
-
-<!-- WORKSPACE -->
-<section class="feat flip" style="background:white"><div class="wrap">
-  <div class="copy">
-    <div class="kick">Your workspace</div>
-    <h2>Notes and to-dos. Off the fridge, into your pocket.</h2>
-    <p class="lead">Quick sticky notes for yourself, and project boards the whole team can tick off.</p>
-    <ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Sticky Notes</b> - jot it down, colour it, move it around</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Task Board</b> - to do, in progress, done - with who's on it and when it's due</span></li>
-    </ul>
-  </div>
-  <div class="phones two">
-    <div><div class="phone"><img src="/img/sticky.jpg" alt="Sticky Notes"></div><span class="cap">Sticky Notes</span></div>
-    <div><div class="phone"><img src="/img/tasks.jpg" alt="Task Board"></div><span class="cap">Task Board</span></div>
-  </div>
-</div></section>
-
-<!-- NUMBERS -->
-<section class="feat sand flip wide mdark"><div class="wrap">
-  <div class="copy"><div class="c1">
-    <div class="kick">Your numbers</div>
-    <h2>Know how today will go. Before it starts.</h2>
-    <p class="lead">Revenue and covers at a glance, a plain-English forecast for the week, and what your guests really think.</p>
-    </div>
-    <div class="c2"><ul class="ticks">
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Forecast</b> from your history, weather and holidays</span></li>
-      <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Customer Survey</b> by QR or logged by your team</span></li>
-    </ul>
-    </div>
-  </div>
-  <div class="phones">
-    <div><div class="phone"><img src="/img/analytics.jpg" alt="Analytics"></div><span class="cap">Analytics</span></div>
-    <div><div class="phone"><img src="/img/forecast.jpg" alt="Forecast"></div><span class="cap">Forecast</span></div>
-    <div><div class="phone"><img src="/img/survey.jpg" alt="Customer Survey"></div><span class="cap">Guest feedback</span></div>
-  </div>
-</div></section>
-
-<!-- AND MORE -->
-<section class="more"><div class="wrap center">
-  <div class="kick">And more</div>
-  <h2>Everything else your venue needs.</h2>
-  <div class="tiles" style="text-align:left">
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></i><b>Link Drop</b><span>Useful links for the whole team</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></i><b>My Drive</b><span>Your own folders and links</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></i><b>Entertainment</b><span>DJ and live music schedule</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></i><b>Meeting Notes</b><span>Who was there and what happens next</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></i><b>Job Vacancies</b><span>Share roles on WhatsApp in one tap</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></i><b>Suggestion Box</b><span>Honest ideas - 100% anonymous</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></i><b>Asset Library</b><span>Logos, menus and photos in one place</span></div>
-    <div class="tile"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i><b>Roles &amp; permissions</b><span>Everyone sees exactly what they need</span></div>
-  </div>
-</div></section>
-
-<!-- WHY -->
-<section class="why"><div class="wrap center">
-  <div class="kick">Why venues choose Mavis</div>
-  <h2>Simple enough for every shift.</h2>
-  <div class="grid" style="text-align:left">
-    <div class="card"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></i><b>Made for phones</b><p>Install it like an app in seconds. No training day - if your team can use WhatsApp, they can use Mavis.</p></div>
-    <div class="card"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></i><b>One login, every venue</b><p>Switch between your venues in one tap. Group-wide, or just your own team - you decide.</p></div>
-    <div class="card"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></i><b>Set up around you</b><p>Your departments, your roles, your way of working. We set it up with you and keep it running.</p></div>
-  </div>
-</div></section>
-
-<!-- CTA -->
-<section class="cta-band navy" id="contact"><div class="wrap">
-  <div class="kick">Let's talk</div>
-  <h2>See Mavis running in your venue.</h2>
-  <p class="lead">A 20-minute demo, set up with your own departments. No pressure, no long contract talk.</p>
-  <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20a%20demo" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>Book a demo on WhatsApp</a></div>
-</div>
-<div class="foot"><div class="wrap"><img src="/brand/mavis-logo-white-text.png" alt="Mavis"><span>One team. One platform.</span><span>&copy; 2026 Mavis</span></div></div>
-</section>
-
-<script>(function(){var still=matchMedia('(prefers-reduced-motion:reduce)').matches;function setup(p){var i=p.querySelector('img');if(!i.complete||!i.offsetHeight){i.addEventListener('load',function(){setup(p)},{once:true});return}var d=p.clientHeight-i.offsetHeight;if(d>=0||still)return;if(i._a)i._a.cancel();var down=Math.max(9000,-d*14),up=down*0.45,hold=1800,T=400+down+hold+up;i._a=i.animate([{transform:'translateY(0)',offset:0,easing:'linear'},{transform:'translateY(0)',offset:400/T,easing:'cubic-bezier(.2,0,.4,1)'},{transform:'translateY('+d+'px)',offset:(400+down)/T,easing:'linear'},{transform:'translateY('+d+'px)',offset:(400+hold+down)/T,easing:'cubic-bezier(.45,0,.55,1)'},{transform:'translateY(0)',offset:1}],{duration:T,iterations:Infinity});i._a.pause();if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){i._a.currentTime=0;i._a.play()}else i._a.pause()})},{threshold:.2}).observe(p)}else i._a.play()}function go(){document.querySelectorAll('.phone.scroll').forEach(setup)}var w=innerWidth,t;addEventListener('resize',function(){if(innerWidth===w)return;w=innerWidth;clearTimeout(t);t=setTimeout(go,200)});if(document.readyState==='complete')go();else addEventListener('load',go)})();</script></body></html>
+</main><script>
+(function(){
+var mq=window.matchMedia('(max-width:759px)');
+var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var chev=function(d){return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="'+(d>0?'9 6 15 12 9 18':'15 6 9 12 15 18')+'"/></svg>';};
+document.querySelectorAll('.shots.multi').forEach(function(s){
+  var items=s.querySelectorAll('figure'); var n=items.length; if(n<2)return;
+  var h=s.nextElementSibling;
+  var wrap=document.createElement('div'); wrap.className='car'; s.parentNode.insertBefore(wrap,s); wrap.appendChild(s);
+  var prev=document.createElement('button'); prev.className='carbtn prev'; prev.setAttribute('aria-label','Previous screen'); prev.innerHTML=chev(-1);
+  var next=document.createElement('button'); next.className='carbtn next'; next.setAttribute('aria-label','Next screen'); next.innerHTML=chev(1);
+  var count=document.createElement('span'); count.className='carcount';
+  wrap.appendChild(prev); wrap.appendChild(next); if(h&&h.classList&&h.classList.contains('hint')){h.insertBefore(count,h.firstChild)}else{wrap.appendChild(count)}
+  var dots=(h&&h.classList&&h.classList.contains('hint'))?h.querySelectorAll('i'):[];
+  function idx(){var c=s.scrollLeft+s.clientWidth/2,best=0,bd=1e9;items.forEach(function(f,k){var m=f.offsetLeft+f.offsetWidth/2,d=Math.abs(m-c);if(d<bd){bd=d;best=k}});return best;}
+  function upd(){var i=idx(); count.textContent=(i+1)+' / '+n; prev.classList.toggle('off',i===0); next.classList.toggle('off',i===n-1); for(var k=0;k<dots.length;k++){dots[k].classList.toggle('on',k===i)}}
+  function go(d){var i=Math.max(0,Math.min(n-1,idx()+d)); var f=items[i]; s.scrollTo({left:f.offsetLeft-(s.clientWidth-f.offsetWidth)/2,behavior:reduce?'auto':'smooth'});}
+  prev.onclick=function(){go(-1)}; next.onclick=function(){go(1)};
+  s.addEventListener('scroll',upd,{passive:true}); upd();
+  if(!reduce&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&mq.matches&&s.scrollLeft<5){io.disconnect();setTimeout(function(){s.scrollTo({left:70,behavior:'smooth'});setTimeout(function(){s.scrollTo({left:0,behavior:'smooth'})},650)},400)}})},{threshold:.6});io.observe(s);}
+});
+})();
+</script><script>(function(){var still=matchMedia('(prefers-reduced-motion:reduce)').matches;function setup(p){var i=p.querySelector('img');if(!i.complete||!i.offsetHeight){i.addEventListener('load',function(){setup(p)},{once:true});return}var d=p.clientHeight-i.offsetHeight;if(d>=0||still)return;if(i._a)i._a.cancel();var down=Math.max(9000,-d*14),up=down*0.45,hold=1800,T=400+down+hold+up;i._a=i.animate([{transform:'translateY(0)',offset:0,easing:'linear'},{transform:'translateY(0)',offset:400/T,easing:'cubic-bezier(.2,0,.4,1)'},{transform:'translateY('+d+'px)',offset:(400+down)/T,easing:'linear'},{transform:'translateY('+d+'px)',offset:(400+hold+down)/T,easing:'cubic-bezier(.45,0,.55,1)'},{transform:'translateY(0)',offset:1}],{duration:T,iterations:Infinity});i._a.pause();if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){i._a.currentTime=0;i._a.play()}else i._a.pause()})},{threshold:.2}).observe(p)}else i._a.play()}function go(){document.querySelectorAll('.phone.scroll').forEach(setup)}var w=innerWidth,t;addEventListener('resize',function(){if(innerWidth===w)return;w=innerWidth;clearTimeout(t);t=setTimeout(go,200)});if(document.readyState==='complete')go();else addEventListener('load',go)})();</script></body></html>

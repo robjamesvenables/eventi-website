@@ -94,7 +94,7 @@ input:focus,select:focus{border-color:#0D9488;box-shadow:0 0 0 4px rgba(13,148,1
       var when=d.toLocaleString([], {weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
       document.getElementById('cd').textContent=c;
       document.getElementById('ex').textContent='Works until '+when;
-      var msg='Hi! Here is your private preview of Mavis:\nhttps://getmavis.vercel.app/tour\n\nYour access code: '+c+'\n(valid until '+when+')';
+      var msg='Hi! Here is your private preview of Mavis:\nhttps://getmavis.vercel.app/\n\nYour access code: '+c+'\n(valid until '+when+')';
       document.getElementById('wa').href='https://wa.me/?text='+encodeURIComponent(msg);
       document.getElementById('cp').onclick=function(){ var b=this; (navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}).catch(function(){prompt('Copy this code:',c)}); };
       document.getElementById('out').classList.add('show');
