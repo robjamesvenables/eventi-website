@@ -173,6 +173,24 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .hero h1{font-size:clamp(38px,4.3vw,62px)!important}
 .hero .lead{font-size:17px}
 .hero .hduo>div{width:min(48%,350px)}
+.hero .scanl{left:26%;right:29%;animation-name:scanlh}@keyframes scanlh{from{top:55%}to{top:77%}}
+@media(min-width:701px){
+.phones.fan{position:relative;height:700px;display:block;width:100%;max-width:1160px;margin:0 auto}
+.phones.fan > div{position:absolute;width:270px!important;margin:0!important;transition:transform .35s}
+.phones.fan > div:nth-child(1){left:25%;top:0;transform:rotate(-2deg) scale(1.08);z-index:5}
+.phones.fan > div:nth-child(2){left:2%;top:60px;transform:rotate(-8deg);z-index:3}
+.phones.fan > div:nth-child(3){left:49%;top:30px;transform:rotate(3deg);z-index:4}
+.phones.fan > div:nth-child(4){left:72%;top:80px;transform:rotate(9deg);z-index:2}
+.phones.fan > div:hover{transform:translateY(-14px) rotate(0) scale(1.06);z-index:6}
+.phones.fan > div:nth-child(1):hover{transform:translateY(-14px) scale(1.1)}
+.phones.fan .cap{display:inline-block;background:var(--navy);color:#fff;padding:7px 14px;border-radius:99px;margin-top:14px;font-size:13px}
+.phones.fan > div{text-align:center}
+.phones.fan > div:nth-child(1) .cap{background:var(--teal)}
+.phones.fan > div:nth-child(2) .cap{background:#1D6FA3}
+.phones.fan > div:nth-child(3) .cap{background:#8E2A1E}
+.phones.fan > div:nth-child(4) .cap{background:#C4973B;color:var(--navy)}
+}
+@media(prefers-reduced-motion:reduce){.phones.fan > div{transition:none}}
 /* phones first: big screens, little text */
 .feat .wrap{grid-template-columns:minmax(0,1fr)!important;gap:46px;max-width:1280px}
 .feat .copy{text-align:center;max-width:760px;margin:0 auto}
@@ -268,7 +286,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Just one venue?</b> Then it's simply one page with everything on it.</span></li>
     </ul>
   </div>
-  <div class="phones four rv">
+  <div class="phones four fan rv">
     <div><div class="phone"><img src="/img/mem/g-places.jpg" alt="Main page with four venues" loading="lazy"></div><span class="cap">All your venues</span></div>
     <div><div class="phone"><img src="/img/mem/g-v-ombak.jpg" alt="Ombak Beach Club's own page" loading="lazy"></div><span class="cap">Ombak Beach Club</span></div>
     <div><div class="phone"><img src="/img/mem/g-v-saffron.jpg" alt="Saffron &amp; Salt's own page" loading="lazy"></div><span class="cap">Saffron &amp; Salt</span></div>
@@ -302,8 +320,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Never out of date.</b> We remind you when a menu hasn't been changed in three months.</span></li>
     </ul>
   </div>
-  <div class="phones rv">
-    <div><div class="phone"><img src="/img/mem/g-menus.jpg" alt="A venue page with Food menu and Drinks menu buttons" loading="lazy"></div><span class="cap">Menu buttons on each venue</span></div>
+  <div class="phones two rv">
     <div><div class="phone"><img src="/img/mem/g-menu-food.jpg" alt="The food menu opened on a phone" loading="lazy"></div><span class="cap">Food menu</span></div>
     <div><div class="phone"><img src="/img/mem/g-menu-drinks.jpg" alt="The drinks menu opened on a phone" loading="lazy"></div><span class="cap">Drinks menu</span></div>
   </div>
