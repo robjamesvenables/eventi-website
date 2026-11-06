@@ -158,6 +158,11 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .kick .mki{width:15px;height:15px;vertical-align:-3px;margin-right:6px}
 .foot .mk{font-size:20px;color:white}
 @media(max-width:380px){.nav .mk{font-size:19px;gap:6px}.nav .btn{padding-left:14px;padding-right:14px}}
+.hero .hduo{display:flex;gap:22px;justify-content:center;align-items:flex-start}
+.hero .hduo>div{width:min(47%,300px)}
+.hero .hduo>div:nth-child(2){margin-top:60px}
+.hero .hduo .phone{position:static;width:100%}
+.scanl{animation-name:scanl2}@keyframes scanl2{from{top:33%}to{top:56%}}
 /* phones first: big screens, little text */
 .feat .wrap{grid-template-columns:minmax(0,1fr)!important;gap:46px;max-width:1280px}
 .feat .copy{text-align:center;max-width:760px;margin:0 auto}
@@ -218,8 +223,10 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
     <div class="proof"><div><b>No app</b>for your guests</div><div><b>1 scan</b>at the door</div><div><b>1 day</b>to set up</div></div>
   </div>
   <div class="vis">
-    <div class="keys"><img src="/img/keyrings-real2.jpg" alt="Wooden membership keyrings engraved with venue logos and QR codes" width="896" height="747"></div>
-    <div class="phone"><img src="/img/mem/g-place.jpg" alt="A venue's own page with Book a table and what's on"></div>
+    <div class="hduo">
+      <div><div class="phone"><div class="scanwrap"><img src="/img/mem/k-scan.jpg" alt="Staff scanning a guest's Mavis Key"><i class="scanl"></i></div></div><span class="cap">Your team scans their key</span></div>
+      <div><div class="phone"><img src="/img/mem/g-place.jpg" alt="The guest's phone opens straight into your venue"></div><span class="cap">Their phone opens your venue</span></div>
+    </div>
   </div>
 </div></header>
 
@@ -337,7 +344,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
     </ul>
   </div>
   <div class="phones rv">
-    <div><div class="phone"><div class="scanwrap"><img src="/tour/m-59d87189054d/t3_mb2.jpg" alt="Scanning a member keyring" loading="lazy"><i class="scanl"></i></div></div><span class="cap">Scan the keyring</span></div>
+    <div><div class="phone"><img src="/img/mem/s-390-list.jpg" alt="Your members list" loading="lazy"></div><span class="cap">Your members</span></div>
     <div><div class="phone"><img src="/img/mem/s-390-member.jpg" alt="Member profile" loading="lazy"></div><span class="cap">Their profile</span></div>
     <div><div class="phone"><img src="/img/mem/s-390-signup.jpg" alt="Sign up a new member" loading="lazy"></div><span class="cap">Sign up</span></div>
   </div>
@@ -420,7 +427,6 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
   </div>
   <div class="phones two rv">
     <div><div class="phone"><img src="/img/mem/s-390-email.jpg" alt="Download members for emails" loading="lazy"></div><span class="cap">Download the list</span></div>
-    <div><div class="phone"><img src="/img/mem/s-390-list.jpg" alt="Your members list" loading="lazy"></div><span class="cap">Your members list</span></div>
   </div>
   <div class="swipe">SWIPE FOR MORE &rarr;</div>
 </div></section>
