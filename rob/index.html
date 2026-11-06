@@ -57,8 +57,9 @@ h2::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--
 h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .lead{font-size:15.5px;margin-bottom:10px}
 .lead b,li b{font-weight:700;color:var(--navy)}
-.entry{margin-bottom:18px;padding:14px 16px 8px;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;background:#fff}
-.current .entry{border-left-color:var(--gold);background:linear-gradient(180deg,#FFFCF6,#fff)}
+.entry{margin-bottom:20px;padding:0 0 14px;border-bottom:1px solid var(--line)}
+.entry:last-child{border-bottom:none}
+
 .eh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
 .eh h3{font-size:16.5px;font-weight:800;color:var(--navy);line-height:1.3}
 .org{font-size:13.5px;color:var(--teal);font-weight:600;margin-top:1px}
@@ -72,11 +73,10 @@ ul{list-style:none}
 .grp{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--navy);padding:4px 12px;border-radius:999px;margin:6px 0 12px}
 .pbs{display:grid;grid-template-columns:1fr;gap:10px}
 @media (min-width:560px){.pbs{grid-template-columns:1fr 1fr}}
-.pb{background:var(--navy);color:#fff;border-radius:10px;padding:13px 14px;border-top:3px solid var(--gold)}
-.pb:nth-child(3n+2){border-top-color:var(--teal)}
+.pb{background:var(--navy);color:#fff;border-radius:10px;padding:13px 14px}
 .pb b{display:block;font-size:15px;font-weight:800;margin-bottom:4px}
 .pb p{font-size:13.5px;color:#D3DCE5;line-height:1.5}
-.ex{margin-bottom:12px;padding-left:12px;border-left:3px solid var(--gold)}
+.ex{margin-bottom:12px}
 .ex b{display:block;font-size:14px;color:var(--navy)}
 .ex span{display:block;font-size:13px;color:var(--mute);line-height:1.5}
 .sg{margin-bottom:16px}
@@ -93,7 +93,7 @@ footer{text-align:center;color:var(--mute);font-size:12.5px;padding:22px 0 calc(
  header{padding:9mm 9mm 7mm}h1{font-size:28pt}.title{font-size:11.5pt}.title.big{font-size:14pt}.tag{font-size:9.6pt}.contact{font-size:8.6pt}.stats{margin-top:12px}.st b{font-size:15pt}.st span{font-size:7.6pt}
  .grid{display:grid;grid-template-columns:minmax(0,1fr) 55mm}main{padding:0 7mm 0 0}aside{padding:0 0 0 6mm;border-left:1px solid var(--line);border-top:none}
  section{padding-top:14px}h2{font-size:8.6pt;margin-bottom:9px}.lead{font-size:9.8pt}
- .entry{padding:8px 10px 4px;margin-bottom:9px}.eh h3{font-size:10.4pt}.org{font-size:8.6pt}.date,.badge{font-size:7.8pt}.entry li{font-size:9.1pt;margin-bottom:2px;break-inside:avoid}.eh{break-after:avoid}
+ .entry{padding:0 0 6px;margin-bottom:9px}.eh h3{font-size:10.4pt}.org{font-size:8.6pt}.date,.badge{font-size:7.8pt}.entry li{font-size:9.1pt;margin-bottom:2px;break-inside:avoid}.eh{break-after:avoid}
  .pbs{grid-template-columns:1fr 1fr;gap:6px}.pb{padding:7px 9px;break-inside:avoid}.pb b{font-size:9.4pt}.pb p{font-size:8.4pt}
  .grp{font-size:8pt;margin:4px 0 8px}.ex b,.sg h4,.edu b{font-size:9pt}.ex span,.edu span,.lang{font-size:8.4pt}.chips span{font-size:7.6pt;padding:2px 7px}}
 </style></head>
@@ -119,7 +119,7 @@ footer{text-align:center;color:var(--mute);font-size:12.5px;padding:22px 0 calc(
 </main>
 <aside>
 <section><h2>Expertise</h2><div class="ex"><b>Brand &amp; positioning</b><span>Identity, USPs and a clear reason to choose you, carried across every channel.</span></div><div class="ex"><b>Amazon &amp; e-commerce</b><span>PPC within budget, page-one listings, launches and sales reporting.</span></div><div class="ex"><b>Digital marketing</b><span>Websites, social, content, SEO, paid ads and email.</span></div><div class="ex"><b>Marketing intelligence</b><span>Reading sales, POS and guest data to decide what to sell, to whom and when.</span></div><div class="ex"><b>CRM &amp; loyalty</b><span>Guest databases, segmentation, memberships and QR keyring programmes.</span></div><div class="ex"><b>Team leadership</b><span>Leading marketing, creative and sales teams to deliver on time and on brand.</span></div><div class="ex"><b>Agency management</b><span>Briefing, managing and holding agencies to clear KPIs.</span></div><div class="ex"><b>Paid media &amp; budgets</b><span>Channel budgets, ROAS and cost-per-booking targets, test and scale.</span></div></section>
-<section><h2>Skills</h2><div class="sg"><h4>Leadership</h4><div class="chips"><span>Team leadership</span><span>Agency management</span><span>Budget planning</span><span>KPI setting</span><span>Paid media strategy</span><span>Sales leadership</span><span>Stakeholder reporting</span></div></div><div class="sg"><h4>Amazon &amp; e-commerce</h4><div class="chips"><span>Amazon PPC</span><span>Listing optimisation</span><span>A+ content</span><span>Brand stores</span><span>Product launches</span><span>Sales &amp; ad reporting</span></div></div><div class="sg"><h4>Marketing</h4><div class="chips"><span>Branding &amp; USPs</span><span>Social media</span><span>Content</span><span>Websites</span><span>SEO</span><span>Paid ads</span><span>Email marketing</span><span>Launch campaigns</span><span>Agency management</span></div></div><div class="sg"><h4>Guests &amp; data</h4><div class="chips"><span>CRM &amp; Salesforce</span><span>Loyalty &amp; membership</span><span>Marketing intelligence</span><span>Sales reporting</span><span>Menu costing</span><span>Excel</span></div></div><div class="sg"><h4>Systems</h4><div class="chips"><span>Guest databases</span><span>Booking systems</span><span>ERP</span><span>Project management</span></div></div></section>
+<section><h2>Skills</h2><div class="sg"><h4>Leadership</h4><div class="chips"><span>Team leadership</span><span>Agency management</span><span>Budget planning</span><span>KPI setting</span><span>Paid media strategy</span><span>Sales leadership</span><span>Stakeholder reporting</span></div></div><div class="sg"><h4>Amazon &amp; e-commerce</h4><div class="chips"><span>Amazon PPC</span><span>Listing optimisation</span><span>A+ content</span><span>Brand stores</span><span>Product launches</span><span>Sales &amp; ad reporting</span></div></div><div class="sg"><h4>Marketing</h4><div class="chips"><span>Branding &amp; USPs</span><span>Social media</span><span>Content</span><span>Websites</span><span>SEO</span><span>Paid ads</span><span>Email marketing</span><span>Launch campaigns</span></div></div><div class="sg"><h4>Guests &amp; data</h4><div class="chips"><span>CRM &amp; Salesforce</span><span>Loyalty &amp; membership</span><span>Marketing intelligence</span><span>Sales reporting</span><span>Menu costing</span><span>Excel</span></div></div><div class="sg"><h4>Systems</h4><div class="chips"><span>Guest databases</span><span>Booking systems</span><span>ERP</span><span>Project management</span></div></div></section>
 <section><h2>Education</h2><div class="edu"><b>Business and Tourism</b><span>West Cheshire College, UK</span></div></section>
 <section><h2>Languages</h2><p class="lang">English (native)<br>Bahasa Indonesia (basic)</p></section>
 <section><h2>Visa</h2><p class="lang">KITAP holder, based in Bali</p></section>
