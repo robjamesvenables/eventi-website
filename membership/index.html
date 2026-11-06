@@ -164,6 +164,8 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .hero .hduo>div:nth-child(2){margin-top:60px}
 .hero .hduo .phone{position:static;width:100%}
 .scanl{animation-name:scanl2}@keyframes scanl2{from{top:33%}to{top:56%}}
+.phones.four{gap:24px}.phones.four > div{width:min(23%,290px)}.phones.four > div:nth-child(2n){margin-top:60px}
+.feat .copy .lead{display:none}
 /* phones first: big screens, little text */
 .feat .wrap{grid-template-columns:minmax(0,1fr)!important;gap:46px;max-width:1280px}
 .feat .copy{text-align:center;max-width:760px;margin:0 auto}
@@ -244,7 +246,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
   <h2>Four steps. Nothing to download.</h2>
   <p class="lead">Real wood, your logo engraved, a leather strap. Something they actually keep on their keys.</p>
   <div class="steps">
-    <div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="3"/><path d="M12 7V2"/><circle cx="12" cy="11" r="1.2"/></svg></i><b>Hand over a keyring</b><p>Wooden, engraved with your logo, each with its own QR code.</p></div>
+    <div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="3"/><path d="M12 7V2"/><circle cx="12" cy="11" r="1.2"/></svg></i><b>Hand over your keyring</b><p>Wooden, engraved with your logo, each with its own QR code.</p></div>
     <div class="step rv"><span class="n">2</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></i><b>Scan at the door</b><p>Your team scans it with their phone. First time, sign them up in 30 seconds.</p></div>
     <div class="step rv"><span class="n">3</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i><b>They get their own page</b><p>Their keyring opens a page with their card, perks, what's on and how to book.</p></div>
     <div class="step rv"><span class="n">4</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></i><b>They keep coming back</b><p>Every visit counts towards their reward. You see who your regulars really are.</p></div>
@@ -264,8 +266,22 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Just one venue?</b> Then it's simply one page with everything on it.</span></li>
     </ul>
   </div>
-  <div class="phones rv">
+  <div class="phones four rv">
     <div><div class="phone"><img src="/img/mem/g-places.jpg" alt="Main page with four venues" loading="lazy"></div><span class="cap">All your venues</span></div>
+    <div><div class="phone"><img src="/img/mem/g-v-ombak.jpg" alt="Ombak Beach Club's own page" loading="lazy"></div><span class="cap">Ombak Beach Club</span></div>
+    <div><div class="phone"><img src="/img/mem/g-v-saffron.jpg" alt="Saffron &amp; Salt's own page" loading="lazy"></div><span class="cap">Saffron &amp; Salt</span></div>
+    <div><div class="phone"><img src="/img/mem/g-v-kopi.jpg" alt="Kopi Pagi's own page" loading="lazy"></div><span class="cap">Kopi Pagi</span></div>
+  </div>
+  <div class="swipe">SWIPE FOR MORE &rarr;</div>
+</div></section>
+
+<!-- EVENTS -->
+<section class="feat sand" id="events"><div class="wrap">
+  <div class="copy">
+    <div class="kick">What's on</div>
+    <h2>Tonight, this week, every event.</h2>
+  </div>
+  <div class="phones two rv">
     <div><div class="phone"><img src="/img/mem/g-tonight.jpg" alt="What's on tonight and this week" loading="lazy"></div><span class="cap">Tonight and this week</span></div>
     <div><div class="phone"><img src="/img/mem/g-event.jpg" alt="Event details with Get tickets" loading="lazy"></div><span class="cap">Events that sell tickets</span></div>
   </div>
@@ -273,7 +289,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- MENUS -->
-<section class="feat sand" id="menus"><div class="wrap">
+<section class="feat white" id="menus"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Food and drinks menus</div>
     <h2>The menu, one tap away.</h2>
@@ -293,7 +309,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- GALLERY + INSTAGRAM -->
-<section class="feat white"><div class="wrap">
+<section class="feat sand"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Photos that make them come back</div>
     <h2>It feels like Instagram.</h2>
@@ -313,7 +329,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- GOOGLE REVIEWS -->
-<section class="feat sand"><div class="wrap">
+<section class="feat white"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Google reviews</div>
     <h2>More 5-star reviews. On autopilot.</h2>
@@ -333,7 +349,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- STAFF SIDE -->
-<section class="feat white"><div class="wrap">
+<section class="feat sand"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>For your team</div>
     <h2>Know every regular by name.</h2>
@@ -353,7 +369,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- MAVIS KEY CLUB -->
-<section class="feat sand" id="key"><div class="wrap">
+<section class="feat white" id="key"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>The Mavis Key club</div>
     <h2>Already a Key holder? Even better.</h2>
@@ -374,7 +390,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- EDITOR -->
-<section class="feat white"><div class="wrap">
+<section class="feat sand"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>You're the editor</div>
     <h2>Change it in a minute. No designer needed.</h2>
@@ -395,7 +411,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- COLOURS -->
-<section class="feat sand" id="colours"><div class="wrap">
+<section class="feat white" id="colours"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Your brand</div>
     <h2>Your colours, in three taps.</h2>
@@ -415,7 +431,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- EMAIL LIST -->
-<section class="feat white"><div class="wrap">
+<section class="feat sand"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Your email list</div>
     <h2>A list you can actually use - legally.</h2>
@@ -433,7 +449,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 </div></section>
 
 <!-- EVERYTHING INCLUDED -->
-<section class="more sand"><div class="wrap center">
+<section class="more white"><div class="wrap center">
   <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Everything included</div>
   <h2>All of this, from day one.</h2>
   <div class="tiles">
