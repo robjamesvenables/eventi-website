@@ -150,6 +150,14 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .scanl{position:absolute;left:14.5%;right:14.5%;top:31%;height:3px;border-radius:2px;background:#2DD4BF;box-shadow:0 0 16px 2px #2DD4BF;animation:scanl 2.4s ease-in-out infinite alternate}
 @keyframes scanl{from{top:31%}to{top:58%}}
 @media (prefers-reduced-motion:reduce){.scanl{animation:none;top:45%}}
+.mk{display:inline-flex;align-items:center;gap:9px;font-weight:900;letter-spacing:-.4px;text-decoration:none;color:inherit;line-height:1}
+.mk .mki{width:1.25em;height:1.25em;color:var(--teal)}
+.mk b{font-weight:900}.mk em{font-style:normal;color:var(--gold,#C4973B)}
+.nav .mk{font-size:24px;color:white}
+.hero .mk{font-size:30px;color:var(--navy);margin-bottom:6px}
+.kick .mki{width:15px;height:15px;vertical-align:-3px;margin-right:6px}
+.foot .mk{font-size:20px;color:white}
+@media(max-width:380px){.nav .mk{font-size:19px;gap:6px}.nav .btn{padding-left:14px;padding-right:14px}}
 /* phones first: big screens, little text */
 .feat .wrap{grid-template-columns:minmax(0,1fr)!important;gap:46px;max-width:1280px}
 .feat .copy{text-align:center;max-width:760px;margin:0 auto}
@@ -196,14 +204,14 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <body>
 
 <nav class="nav"><div class="wrap">
-  <a href="/" aria-label="Mavis"><img src="/brand/mavis-logo-white-text.png" alt="Mavis"></a>
+  <a class="mk" href="#" aria-label="Mavis Key"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg><span><b>Mavis</b> <em>Key</em></span></a>
   <div class="links"><a class="t" href="#how">How it works</a><a class="t" href="#guest">Members' page</a><a class="t" href="#faq">Questions</a><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20to%20see%20Mavis%20Key" target="_blank" rel="noopener">Book a demo</a></div>
 </div></nav>
 
 <!-- HERO -->
 <header class="hero sand"><div class="wrap">
   <div class="copy">
-    <div class="kick">Mavis Key</div>
+    <div class="mk"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg><span><b>Mavis</b> <em>Key</em></span></div>
     <h1>Your venue, <span>on their keys.</span></h1>
     <p class="lead">A wooden keyring with your logo and their own QR code. One scan opens your venue on their phone - what's on tonight, the menus, their perks and a button to book. Your team knows them by name.</p>
     <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20to%20see%20Mavis%20Key" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>Book a demo</a><a class="btn btn-line" href="#how">See how it works</a></div>
@@ -224,7 +232,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how"><div class="wrap center">
-  <div class="kick">How it works</div>
+  <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>How it works</div>
   <h2>Four steps. Nothing to download.</h2>
   <div class="steps">
     <div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="3"/><path d="M12 7V2"/><circle cx="12" cy="11" r="1.2"/></svg></i><b>Hand over a keyring</b><p>Wooden, engraved with your logo, each with its own QR code.</p></div>
@@ -237,7 +245,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- ALL YOUR VENUES -->
 <section class="feat white" id="venues"><div class="wrap">
   <div class="copy">
-    <div class="kick">One keyring, every venue</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>One keyring, every venue</div>
     <h2>Four venues? One main page.</h2>
     <p class="lead">Members open their page and see all your venues - with a photo, the area and whether it's open right now. They tap one, and they're on that venue's own page.</p>
     <ul class="ticks">
@@ -258,7 +266,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- MENUS -->
 <section class="feat sand" id="menus"><div class="wrap">
   <div class="copy">
-    <div class="kick">Food and drinks menus</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Food and drinks menus</div>
     <h2>The menu, one tap away.</h2>
     <p class="lead">Every venue gets its own Food menu and Drinks menu buttons. Guests check what to order before they arrive - and come back hungry.</p>
     <ul class="ticks">
@@ -278,7 +286,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- KEYRING -->
 <section class="feat white" id="keyring"><div class="wrap">
   <div class="copy">
-    <div class="kick">The keyring</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>The keyring</div>
     <h2>Something they actually keep.</h2>
     <p class="lead">Plastic cards get thrown away. Apps get deleted. Real wood, engraved with your logo, is something people are proud to carry on their keys.</p>
     <ul class="ticks">
@@ -298,7 +306,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- GUEST PAGE -->
 <section class="feat" id="guest"><div class="wrap">
   <div class="copy">
-    <div class="kick">Their own page</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Their own page</div>
     <h2>Your best marketing, in their pocket.</h2>
     <p class="lead">Every time a member scans their keyring, they see a page made for them - and everything you want to sell.</p>
     <ul class="ticks">
@@ -321,7 +329,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- GALLERY + INSTAGRAM -->
 <section class="feat sand"><div class="wrap">
   <div class="copy">
-    <div class="kick">Photos that make them come back</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Photos that make them come back</div>
     <h2>It feels like Instagram. It works like a menu.</h2>
     <p class="lead">A gallery of your sunsets, plates and parties. Tap a photo, see it big, then tap "Go to Senja Rooftop" - and they're on that venue's page.</p>
     <ul class="ticks">
@@ -341,7 +349,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- GOOGLE REVIEWS -->
 <section class="feat white"><div class="wrap">
   <div class="copy">
-    <div class="kick">Google reviews</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Google reviews</div>
     <h2>More 5-star reviews. On autopilot.</h2>
     <p class="lead">Your members are your happiest guests. The day after a visit, their page asks: "How was Senja Rooftop last night?" - one tap and they're on your Google review page.</p>
     <ul class="ticks">
@@ -361,7 +369,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- STAFF SIDE -->
 <section class="feat sand"><div class="wrap">
   <div class="copy">
-    <div class="kick">For your team</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>For your team</div>
     <h2>Know every regular by name.</h2>
     <p class="lead">Scan the keyring and their profile opens: visits, favourite venue, birthday, perks and notes like "corner table, espresso martini". Then one tap to check them in.</p>
     <ul class="ticks">
@@ -381,7 +389,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- MAVIS KEY CLUB -->
 <section class="feat white" id="key"><div class="wrap">
   <div class="copy">
-    <div class="kick">The Mavis Key club</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>The Mavis Key club</div>
     <h2>Already a Key holder? Even better.</h2>
     <p class="lead">Some guests will walk in already carrying a Mavis Key from another venue. They're proven regulars somewhere good - and now they're at yours.</p>
     <ul class="ticks">
@@ -402,7 +410,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- EDITOR -->
 <section class="feat"><div class="wrap">
   <div class="copy">
-    <div class="kick">You're the editor</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>You're the editor</div>
     <h2>Change it in a minute. No designer needed.</h2>
     <p class="lead">Your marketing team adds a highlight, a deal, an event or a photo from their phone. Members see it straight away.</p>
     <ul class="ticks">
@@ -423,7 +431,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- COLOURS -->
 <section class="feat sand" id="colours"><div class="wrap">
   <div class="copy">
-    <div class="kick">Your brand</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Your brand</div>
     <h2>Your colours, in three taps.</h2>
     <p class="lead">Keep the clean Mavis look - or open the editor, choose "Our own colours" and tap a colour for the banner, the buttons and the background. Members see it straight away.</p>
     <ul class="ticks">
@@ -443,7 +451,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- EMAIL LIST -->
 <section class="feat white"><div class="wrap">
   <div class="copy">
-    <div class="kick">Your email list</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Your email list</div>
     <h2>A list you can actually use - legally.</h2>
     <p class="lead">At sign-up your team asks one question: "Happy for us to send you offers?" Members can change their answer on their own page at any time.</p>
     <ul class="ticks">
@@ -461,7 +469,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 
 <!-- EVERYTHING INCLUDED -->
 <section class="more sand"><div class="wrap center">
-  <div class="kick">Everything included</div>
+  <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Everything included</div>
   <h2>All of this, from day one.</h2>
   <div class="tiles">
     <div class="tile rv"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 18 2-12 5 5 3-7 3 7 5-5 2 12z"/><path d="M4 22h16"/></svg></i><b>Member and VIP tiers</b><span>Different perks for each, set by you.</span></div>
@@ -478,7 +486,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <!-- ALONE OR WITH MAVIS -->
 <section class="feat white"><div class="wrap">
   <div class="copy">
-    <div class="kick">On its own, or with Mavis</div>
+    <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>On its own, or with Mavis</div>
     <h2>Start with Mavis Key. Grow when you're ready.</h2>
     <p class="lead">Mavis Key works perfectly on its own. When you want the rest of Mavis - events, team chat, tasks, kitchen - we switch it on. Your members are already there.</p>
     <div class="plans" style="grid-template-columns:minmax(0,1fr);gap:12px;margin-top:26px">
@@ -491,7 +499,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 
 <!-- FAQ -->
 <section class="faq sand" id="faq"><div class="wrap center">
-  <div class="kick">Questions</div>
+  <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Questions</div>
   <h2>Good to know.</h2>
   <div class="qs">
     <details><summary>Do my guests need to download an app?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. They point their phone camera at the keyring and their page opens. That's it.</p></details>
@@ -509,12 +517,12 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 
 <!-- CTA -->
 <section class="cta-band navy" id="contact"><div class="wrap">
-  <div class="kick">Let's talk</div>
+  <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>Let's talk</div>
   <h2>Give your regulars something to keep.</h2>
   <p class="lead" style="margin-left:auto;margin-right:auto">A 20-minute demo, with your own venues and logo. Scan a keyring yourself and see.</p>
   <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20to%20see%20Mavis%20Key" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>Book a demo on WhatsApp</a><a class="btn btn-line" href="/">See all of Mavis</a></div>
 </div>
-<div class="foot"><div class="wrap"><a href="/"><img src="/brand/mavis-logo-white-text.png" alt="Mavis"></a><span>Mavis Key, powered by Mavis</span><span>&copy; 2026 Mavis</span></div></div>
+<div class="foot"><div class="wrap"><span class="mk"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg><span><b>Mavis</b> <em>Key</em></span></span><span>Powered by <a href="/" style="color:#fff;font-weight:800;text-decoration:none">Mavis</a></span><span>&copy; 2026 Mavis</span></div></div>
 </section>
 
 <script>
