@@ -191,6 +191,8 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 .phones.fan > div:nth-child(4) .cap{background:#C4973B;color:var(--navy)}
 }
 @media(prefers-reduced-motion:reduce){.phones.fan > div{transition:none}}
+.krshow{aspect-ratio:390/806;border-radius:32px;background:radial-gradient(circle at 50% 45%,#34404C,#0F141A 75%);display:flex;align-items:center;justify-content:center;box-shadow:0 22px 50px rgba(15,30,46,.28)}
+.krshow img{width:70%;height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
 /* phones first: big screens, little text */
 .feat .wrap{grid-template-columns:minmax(0,1fr)!important;gap:46px;max-width:1280px}
 .feat .copy{text-align:center;max-width:760px;margin:0 auto}
@@ -391,8 +393,8 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 <section class="feat white" id="key"><div class="wrap">
   <div class="copy">
     <div class="kick"><svg class="mki" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M34 30a14 14 0 0 0-6 26.6L23 82h22l-5-25.4A14 14 0 0 0 34 30z"/><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M58 36a20 20 0 0 1 0 28"/><path d="M70 26a34 34 0 0 1 0 48"/><path d="M82 16a48 48 0 0 1 0 68"/></g></svg>The Mavis Key club</div>
-    <h2>Already a Key holder? Even better.</h2>
-    <p class="lead">Guests who already carry a Mavis Key join you in one scan. No forms, no second keyring, and your page and members stay yours.</p>
+    <h2>Already got a Mavis Key? Add your venue to it.</h2>
+    <p class="lead" style="display:block">No problem either way. Add your venue to the key they carry, or hand them your own keyring.</p>
     <ul class="ticks">
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>One scan adds you to their key.</b> No forms, no second keyring. Instant VIP.</span></li>
       <li><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span><b>Still 100% yours.</b> Your page, your perks, your members list. No other venue ever sees them.</span></li>
@@ -401,9 +403,9 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
     </ul>
   </div>
   <div class="phones rv">
-    <div><div class="phone"><img src="/img/mem/k-staff.jpg" alt="Staff scan: this guest already has a Mavis Key" loading="lazy"></div><span class="cap">Your team scans their key</span></div>
-    <div><div class="phone"><img src="/img/mem/k-guest.jpg" alt="The guest's key now opens two venues" loading="lazy"></div><span class="cap">One key, two venues</span></div>
-    <div><div class="phone"><img src="/img/mem/g-pink-place.jpg" alt="Your venue's own page in your colours" loading="lazy"></div><span class="cap">Tap yours: your page, your colours</span></div>
+    <div><div class="phone"><img src="/img/mem/k-staff.jpg" alt="Staff scan: this guest already has a Mavis Key" loading="lazy"></div><span class="cap">Add your venue in one scan</span></div>
+    <div><div class="phone"><img src="/img/mem/k-guest.jpg" alt="The guest's key now opens two venues" loading="lazy"></div><span class="cap">One key, both venues</span></div>
+    <div><div class="krshow"><img src="/img/mem/k-keyring-real.png" alt="Your own wooden keyring with your logo" loading="lazy"></div><span class="cap">Or give them your own keyring</span></div>
   </div>
   <div class="swipe">SWIPE FOR MORE &rarr;</div>
 </div></section>
