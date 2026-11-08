@@ -238,6 +238,27 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 }
 
 /* Members Club page (Nov 2026) */
+.ds-sec{padding:100px 0}.ds-head{text-align:center;max-width:760px;margin:0 auto}.ds-head .lead{margin-left:auto;margin-right:auto}
+.ds{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:44px;align-items:stretch}
+.ds-s{background:var(--cream);border-radius:22px;padding:18px;display:flex;flex-direction:column;position:relative}
+.ds-s:not(:last-child)::after{content:'';position:absolute;right:-12px;top:50%;width:10px;height:10px;border-top:3px solid #CBD5E1;border-right:3px solid #CBD5E1;transform:translateY(-50%) rotate(45deg);z-index:2}
+.ds-h{display:flex;align-items:center;gap:10px}.ds-h .n{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none}.ds-h b{font-size:16.5px;letter-spacing:-.2px;line-height:1.2}
+.ds-scr{background:#fff;border-radius:14px;margin-top:14px;padding:12px;flex:1;min-height:170px;box-shadow:0 1px 3px rgba(15,30,46,.06);display:flex;flex-direction:column;gap:7px}
+.ds-s p{font-size:14px;color:var(--mute);margin-top:12px;line-height:1.45}
+.ds-cam{background:#1E2A36;align-items:center;justify-content:center}.ds-cam small{color:#CBD5E1;font-size:11.5px;font-weight:700}
+.ds-qr{width:96px;height:96px;position:relative;display:flex;align-items:center;justify-content:center}.ds-qr i{position:absolute;width:22px;height:22px;border:4px solid #2DD4BF}.ds-qr i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0;border-radius:6px 0 0 0}.ds-qr i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0;border-radius:0 6px 0 0}.ds-qr i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0;border-radius:0 0 0 6px}.ds-qr i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0;border-radius:0 0 6px 0}
+.ds-qr span{width:58px;height:58px;background:repeating-conic-gradient(#fff 0 25%,#9CA3AF 0 50%) 0 0/14px 14px;border-radius:4px;opacity:.9}
+.ds-f{border:1.5px solid #E2E8F0;border-radius:9px;padding:6px 9px;font-size:13px;font-weight:700;color:var(--navy)}.ds-f em{display:block;font-style:normal;font-size:9.5px;letter-spacing:.1em;color:#94A3B8;font-weight:800}
+.ds-yn{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ds-yn span{border:1.5px solid #E2E8F0;border-radius:9px;padding:6px 4px;text-align:center;font-size:11.5px;font-weight:800;color:var(--navy)}.ds-yn .on{border-color:var(--teal);background:#F0FDFA;color:#0F766E}
+.ds-mid{justify-content:center}
+.ds-wab{display:flex;align-items:center;gap:9px;background:#16A34A;color:#fff;border-radius:12px;padding:12px;box-shadow:0 6px 16px rgba(22,163,74,.3)}.ds-wab b{display:block;font-size:13.5px}.ds-wab small{font-size:11.5px;opacity:.85}
+.ds-chat{background:#EFE7DE;justify-content:center}.ds-bub{background:#fff;border-radius:0 12px 12px 12px;padding:9px 10px;font-size:12.5px;line-height:1.4;color:#111;box-shadow:0 1px 1px rgba(0,0,0,.08)}.ds-bub u{color:#027EB5;text-decoration:none;font-weight:700}
+.ds-done{background:#F0FDF4;align-items:center;justify-content:center;text-align:center;border:2px solid #BBF7D0}
+.ds-tick{width:96px;height:96px;border-radius:50%;background:#16A34A;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(22,163,74,.35)}
+.ds-done b{display:block;font-size:22px;margin-top:16px;letter-spacing:-.4px}.ds-done p{color:#166534}.ds-done strong{color:#14532D}
+@media(max-width:1100px){.ds{grid-template-columns:repeat(3,minmax(0,1fr))}.ds-s::after{display:none}}
+@media(max-width:700px){.ds-sec{padding:76px 0}.ds{grid-template-columns:minmax(0,1fr);gap:22px}.ds-scr{min-height:0}.ds-s:not(:last-child)::after{display:block;right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%) rotate(135deg)}.ds-cam{padding:18px}}
+
 .hs-ph:not(.play) .hs-open,.hs-ph:not(.play) .hs-tap,.hs-ph:not(.play) .hs-me i{animation:none!important}.hs-ph:not(.play) .hs-open{opacity:0;transform:scale(.1)}
 
 .phones.five{gap:16px}.phones.five > div{width:min(18.5%,230px)}.phones.five > div:nth-child(2n){margin-top:46px}
@@ -409,10 +430,24 @@ h2{letter-spacing:-1px;line-height:1.1}
   <div class="steps"><div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></i><b>Give them a keyring</b><p>Real wood, your logo, its own QR code.</p></div><div class="step rv"><span class="n">2</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></i><b>Scan it at the door</b><p>Sign them up in 30 seconds. Every visit counts.</p></div><div class="step rv"><span class="n">3</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i><b>Your app is on their phone</b><p>Perks, rewards, events and booking. Saved to their home screen.</p></div><div class="step rv"><span class="n">4</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></i><b>They keep coming back</b><p>You know every guest, and reach them in one tap.</p></div></div>
 </div></section>
 
-<section class="feat white door" id="door"><div class="wrap">
-  <div class="copy"><div class="kick">At the door</div><h2>Sign up a guest in 30 seconds.</h2><p class="lead">Your guest relations team does it on their phone. Here's the whole thing.</p></div>
-  <div class="phones five rv"><div><div class="phone"><img src="/img/club/f-scan.jpg" alt="Staff scan a new keyring with their phone" loading="lazy"></div><span class="cap">1. Scan the keyring</span></div><div><div class="phone"><img src="/img/club/f-signup.jpg" alt="The sign-up form: name, WhatsApp, birthday, which place, happy to get offers" loading="lazy"></div><span class="cap">2. Name, WhatsApp, birthday</span></div><div><div class="phone"><img src="/img/club/f-member.jpg" alt="The new member, checked in, with the Send welcome WhatsApp button" loading="lazy"></div><span class="cap">3. One tap: welcome WhatsApp</span></div><div><div class="phone"><img src="/img/club/f-wa.jpg" alt="The guest gets their member card on WhatsApp" loading="lazy"></div><span class="cap">4. It lands on their WhatsApp</span></div><div><div class="phone"><img src="/img/club/f-ask.jpg" alt="Staff confirm the WhatsApp arrived, so the number is right" loading="lazy"></div><span class="cap">5. "Did it arrive?" Got it</span></div></div>
-  <div class="swipe">SWIPE FOR MORE &rarr;</div>
+<section class="ds-sec white" id="door"><div class="wrap">
+  <div class="ds-head"><div class="kick">At the door</div><h2>Sign up a guest in 30 seconds.</h2><p class="lead">So easy, anyone on your team can do it.</p></div>
+  <div class="ds">
+    <div class="ds-s rv"><div class="ds-h"><span class="n">1</span><b>Scan the keyring</b></div>
+      <div class="ds-scr ds-cam"><div class="ds-qr"><i></i><i></i><i></i><i></i><span></span></div><small>Point your phone at the QR</small></div>
+      <p>New keyring? Mavis asks for a few details.</p></div>
+    <div class="ds-s rv"><div class="ds-h"><span class="n">2</span><b>Type 3 things</b></div>
+      <div class="ds-scr"><div class="ds-f"><em>NAME</em>Sarah Mitchell</div><div class="ds-f"><em>WHATSAPP</em>+62 812 3456 7890</div><div class="ds-f"><em>BIRTHDAY</em>14 June</div><div class="ds-yn"><span class="on">Yes, offers</span><span>No thanks</span></div></div>
+      <p>Then tap Sign up.</p></div>
+    <div class="ds-s rv"><div class="ds-h"><span class="n">3</span><b>Tap one button</b></div>
+      <div class="ds-scr ds-mid"><div class="ds-wab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg><span><b>Send welcome WhatsApp</b><small>With their member card</small></span></div></div>
+      <p>The message is already written for you.</p></div>
+    <div class="ds-s rv"><div class="ds-h"><span class="n">4</span><b>It lands on their phone</b></div>
+      <div class="ds-scr ds-chat"><div class="ds-bub">Hi Sarah! Welcome to The Trans Resort Bali members club 🥂<br><u>Your member card</u></div></div>
+      <p>Their app, with their perks, is one tap away.</p></div>
+    <div class="ds-s ds-done rv"><div class="ds-tick"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <b>Got it? Done.</b><p>Ask "Did it arrive?" and tap <strong>Got it</strong>. Sarah's a member.</p></div>
+  </div>
 </div></section>
 
 <section class="feat white"><div class="wrap">
