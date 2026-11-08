@@ -238,6 +238,13 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 }
 
 /* Members Club page (Nov 2026) */
+.hscan .scanwrap{position:relative;width:100%;height:100%}.hscan img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hscan .scanbox{position:absolute;left:14.9%;top:57.8%;width:58%;height:26.8%;transform:rotate(6deg);border-radius:14px;box-shadow:0 0 0 2px rgba(45,212,191,.0);animation:scanbox 2.4s ease-in-out infinite}
+@keyframes scanbox{0%,100%{box-shadow:0 0 0 0 rgba(45,212,191,0),inset 0 0 0 0 rgba(45,212,191,0)}50%{box-shadow:0 0 18px 2px rgba(45,212,191,.45),inset 0 0 22px rgba(45,212,191,.25)}}
+.hero .hscan .scanl{left:17.5%!important;right:27.5%!important;height:3px;transform:rotate(6deg);animation:scanh 1.6s ease-in-out infinite alternate!important}
+@keyframes scanh{from{top:59.5%}to{top:82.5%}}
+@media (prefers-reduced-motion:reduce){.hscan .scanl,.hscan .scanbox{animation:none!important}}
+
 .ds-sec{padding:100px 0}.ds-head{text-align:center;max-width:760px;margin:0 auto}.ds-head .lead{margin-left:auto;margin-right:auto}
 .ds{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:44px;align-items:stretch}
 .ds-s{background:var(--cream);border-radius:22px;padding:18px;display:flex;flex-direction:column;position:relative}
@@ -390,7 +397,7 @@ h2{letter-spacing:-1px;line-height:1.1}
   </div>
   <div class="vis">
     <div class="hduo">
-      <div><div class="krshow"><div class="scanwrap"><img src="/img/club/k-trans.jpg" alt="A wooden Trans keyring with the logo and QR code"><i class="scanl"></i></div></div><span class="cap">Their keyring</span></div>
+      <div><div class="phone hscan"><div class="scanwrap"><img src="/img/club/f-scan.jpg" alt="Staff scan a Trans keyring with their phone"><i class="scanl"></i><i class="scanbox"></i></div></div><span class="cap">Scan their keyring</span></div>
       <div><div class="phone pscroll"><img src="/img/club/g-long.jpg" alt="The guest's own page: welcome, member card, highlights, rewards, perks and places"></div><span class="cap">Your app, on their phone</span></div>
     </div>
   </div>
