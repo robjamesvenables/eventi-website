@@ -238,6 +238,8 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 }
 
 /* Members Club page (Nov 2026) */
+.hs-ph:not(.play) .hs-open,.hs-ph:not(.play) .hs-tap,.hs-ph:not(.play) .hs-me i{animation:none!important}.hs-ph:not(.play) .hs-open{opacity:0;transform:scale(.1)}
+
 .phones.five{gap:16px}.phones.five > div{width:min(18.5%,230px)}.phones.five > div:nth-child(2n){margin-top:46px}
 .door .cap{font-size:14px}
 .kr{padding:110px 0}.kr .copy{max-width:760px;margin:0 auto;text-align:center}.kr .lead{margin-left:auto;margin-right:auto}
@@ -508,6 +510,8 @@ h2{letter-spacing:-1px;line-height:1.1}
     var x = ((b.left + b.width / 2 - a.left) / a.width * 100).toFixed(1) + '%', y = ((b.top + b.height / 2 - a.top) / a.height * 100).toFixed(1) + '%';
     var t = hs.querySelector('.hs-tap'); t.style.left = x; t.style.top = y; hs.querySelector('.hs-open').style.transformOrigin = x + ' ' + y; };
   place(); window.addEventListener('resize', place); window.addEventListener('load', place);
+  // the home-screen demo starts from the home screen every time it comes into view: home screen, the icon is tapped, the app pops up
+  if (hs && 'IntersectionObserver' in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { hs.classList.remove('play'); void hs.offsetWidth; hs.classList.add('play'); } else hs.classList.remove('play'); }); }, { threshold: .5 }).observe(hs); } else if (hs) hs.classList.add('play');
   // clips play only while on screen (saves phones' data and battery)
   var vs = document.querySelectorAll('video');
   if ('IntersectionObserver' in window) { var vo = new IntersectionObserver(function(es){ es.forEach(function(e){ var v = e.target; if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause(); }); }, { threshold: .25 }); vs.forEach(function(v){ v.removeAttribute('autoplay'); vo.observe(v); }); }
