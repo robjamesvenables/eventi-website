@@ -261,7 +261,7 @@ details p{padding:0 0 20px;color:var(--ink);font-size:15.5px;line-height:1.6}
 
 .hs-ph:not(.play) .hs-open,.hs-ph:not(.play) .hs-tap,.hs-ph:not(.play) .hs-me i{animation:none!important}.hs-ph:not(.play) .hs-open{opacity:0;transform:scale(.1)}
 
-.phones.five{gap:16px}.phones.five > div{width:min(18.5%,230px)}.phones.five > div:nth-child(2n){margin-top:46px}
+.phones.five{gap:16px}.phones.five > div{width:min(18.5%,230px)}.phones.five > div:nth-child(2n){margin-top:46px}.phones.five{justify-content:flex-start}@media(min-width:701px){.phones.five{justify-content:center}}
 .door .cap{font-size:14px}
 .kr{padding:110px 0}.kr .copy{max-width:760px;margin:0 auto;text-align:center}.kr .lead{margin-left:auto;margin-right:auto}
 .kr-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px;align-items:start}
@@ -430,24 +430,10 @@ h2{letter-spacing:-1px;line-height:1.1}
   <div class="steps"><div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></i><b>Give them a keyring</b><p>Real wood, your logo, its own QR code.</p></div><div class="step rv"><span class="n">2</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></i><b>Scan it at the door</b><p>Sign them up in 30 seconds. Every visit counts.</p></div><div class="step rv"><span class="n">3</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i><b>Your app is on their phone</b><p>Perks, rewards, events and booking. Saved to their home screen.</p></div><div class="step rv"><span class="n">4</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></i><b>They keep coming back</b><p>You know every guest, and reach them in one tap.</p></div></div>
 </div></section>
 
-<section class="ds-sec white" id="door"><div class="wrap">
-  <div class="ds-head"><div class="kick">At the door</div><h2>Sign up a guest in 30 seconds.</h2><p class="lead">So easy, anyone on your team can do it.</p></div>
-  <div class="ds">
-    <div class="ds-s rv"><div class="ds-h"><span class="n">1</span><b>Scan the keyring</b></div>
-      <div class="ds-scr ds-cam"><div class="ds-qr"><i></i><i></i><i></i><i></i><span></span></div><small>Point your phone at the QR</small></div>
-      <p>New keyring? Mavis asks for a few details.</p></div>
-    <div class="ds-s rv"><div class="ds-h"><span class="n">2</span><b>Type 3 things</b></div>
-      <div class="ds-scr"><div class="ds-f"><em>NAME</em>Sarah Mitchell</div><div class="ds-f"><em>WHATSAPP</em>+62 812 3456 7890</div><div class="ds-f"><em>BIRTHDAY</em>14 June</div><div class="ds-yn"><span class="on">Yes, offers</span><span>No thanks</span></div></div>
-      <p>Then tap Sign up.</p></div>
-    <div class="ds-s rv"><div class="ds-h"><span class="n">3</span><b>Tap one button</b></div>
-      <div class="ds-scr ds-mid"><div class="ds-wab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg><span><b>Send welcome WhatsApp</b><small>With their member card</small></span></div></div>
-      <p>The message is already written for you.</p></div>
-    <div class="ds-s rv"><div class="ds-h"><span class="n">4</span><b>It lands on their phone</b></div>
-      <div class="ds-scr ds-chat"><div class="ds-bub">Hi Sarah! Welcome to The Trans Resort Bali members club 🥂<br><u>Your member card</u></div></div>
-      <p>Their app, with their perks, is one tap away.</p></div>
-    <div class="ds-s ds-done rv"><div class="ds-tick"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <b>Got it? Done.</b><p>Ask "Did it arrive?" and tap <strong>Got it</strong>. Sarah's a member.</p></div>
-  </div>
+<section class="feat white door" id="door"><div class="wrap">
+  <div class="copy"><div class="kick">At the door</div><h2>Sign up a guest in 30 seconds.</h2><p class="lead">So easy, anyone on your team can do it.</p></div>
+  <div class="phones five rv"><div><div class="phone"><img src="/img/club/f-scan.jpg" alt="Staff scan a new Trans keyring" loading="lazy"></div><span class="cap">1. Scan the keyring</span></div><div><div class="phone"><img src="/img/club/d-signup.jpg" alt="Name, WhatsApp and birthday, and yes or no to offers" loading="lazy"></div><span class="cap">2. Type 3 things</span></div><div><div class="phone"><img src="/img/club/d-welcome.jpg" alt="Send welcome WhatsApp, already written" loading="lazy"></div><span class="cap">3. Tap one button</span></div><div><div class="phone"><img src="/img/club/f-wa.jpg" alt="The guest gets their member card on WhatsApp" loading="lazy"></div><span class="cap">4. It lands on their phone</span></div><div><div class="phone"><img src="/img/club/d-done.jpg" alt="Did it arrive? Got it - Sarah is a member" loading="lazy"></div><span class="cap">5. Got it? Done!</span></div></div>
+  <div class="swipe">SWIPE FOR MORE &rarr;</div>
 </div></section>
 
 <section class="feat white"><div class="wrap">
