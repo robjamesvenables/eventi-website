@@ -399,6 +399,16 @@ h2{letter-spacing:-1px;line-height:1.1}
 .nt-bo{display:block;margin:46px auto 0;width:min(100%,300px)!important;text-align:center}
 .nt-bo img{width:100%;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
 @media (max-width:760px){.lk-n small{font-size:9.5px}.lk-n b{font-size:12px}.lk-n p{font-size:11px}.lk-n img{width:30px;height:30px}.nt-on2{width:72%!important;scroll-snap-align:start;align-self:center}.nt-bo{width:78%!important}.lk-t{font-size:44px}}
+
+/* your video section */
+.vd-sec .wrap{grid-template-columns:minmax(0,1fr)!important;text-align:center;max-width:900px}
+.vd-sec .copy{max-width:720px;margin:0 auto}.vd-sec .lead{margin-left:auto;margin-right:auto}
+.vd-a{display:block;color:var(--teal)}
+.vd-vis{display:flex;flex-direction:column;align-items:center;margin-top:34px}
+.vd-ph{position:relative;width:min(340px,78vw)!important}
+.vd-v{position:absolute;left:5.128%;top:26.22%;width:89.74%;height:24.43%;object-fit:cover;border-radius:12px;background:#000}
+
+.grp{display:flex;justify-content:center;margin-top:22px}.grp .phone{width:min(320px,78vw)!important;position:relative!important;right:auto!important;bottom:auto!important}
 </style>
 </head>
 <body>
@@ -424,6 +434,11 @@ h2{letter-spacing:-1px;line-height:1.1}
     </div>
   </div>
 </div></header>
+
+<section class="feat sand vd-sec" id="video"><div class="wrap">
+  <div class="copy"><div class="kick">Your video</div><h2>Your latest reel. <span class="vd-a">The first thing they see.</span></h2><p class="lead">New event, new menu, new season. Swap the video in a minute, and every member sees it the next time they open the app.</p></div>
+  <div class="vd-vis rv"><div class="phone vd-ph"><img src="/img/club/g-top.jpg" alt="The Trans members app with its video at the top" loading="lazy"><video class="vd-v" poster="/img/club/v-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The venue's video playing at the top of the app"><source src="/img/club/v-film.webm" type="video/webm"><source src="/img/club/v-film.mp4" type="video/mp4"></video></div><span class="cap">Plays the moment they open it</span></div>
+</div></section>
 
 <section class="hs-sec white" id="app"><div class="wrap">
   <div class="hs-copy">
@@ -517,6 +532,7 @@ h2{letter-spacing:-1px;line-height:1.1}
     <div class="item"><span class="num">4</span><h3>Switch things on and off.</h3><p>Stamp cards, birthday treats, bring a friend. One switch each.</p><div class="rv lapw"><div class="laptop"><div class="scr"><video poster="/img/club/clip-toggle.jpg?v=2" autoplay muted loop playsinline preload="metadata" aria-label="Switch a perk on, pick the details"><source src="/img/club/clip-toggle.mp4?v=2" type="video/mp4"><source src="/img/club/clip-toggle.webm?v=2" type="video/webm"></video></div></div><div class="laptop-base"></div><span class="cap">Switch a perk on, pick the details</span></div></div>
     <div class="item"><span class="num">5</span><h3>Email and WhatsApp blasts. Free.</h3><p>Pick who gets it. Mavis writes the start for you. Email goes from your own address in batches, WhatsApp one tap per guest, with their name in it.</p>
       <div class="shots rv"><figure><img src="/img/club/m-email.jpg" alt="New email: pick who gets it and what it's about" loading="lazy"><figcaption>Pick who, write it once</figcaption></figure><figure><img src="/img/club/m-batches.jpg" alt="Send from your own email in batches" loading="lazy"><figcaption>From your own email, free</figcaption></figure><figure><img src="/img/club/m-queue.jpg" alt="WhatsApp: one tap per guest, with their name" loading="lazy"><figcaption>WhatsApp, one tap each</figcaption></figure></div></div>
+    <div class="item"><span class="num">6</span><h3>Send to the right people.</h3><p>VIPs, regulars, or guests who haven't been back in a month. Mavis even warns you if they heard from you recently.</p><div class="rv grp"><div class="phone"><img src="/img/club/g-groups.jpg" alt="Who gets it: Everyone, VIPs, Top 5 last month, Not in for 30+ days, Birthdays this month, regulars of each place" loading="lazy"></div></div></div>
   </div>
 </div></section>
 
