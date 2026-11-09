@@ -381,6 +381,24 @@ h2{letter-spacing:-1px;line-height:1.1}
 @media(max-width:980px){.ar .wrap{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:700px){.bo,.ar{padding:76px 0}.bo .row{gap:54px;margin-top:40px}.ar .boxes{grid-template-columns:minmax(0,1fr)}.net .wrap{grid-template-columns:minmax(0,1fr) 120px;gap:18px}.net{padding:54px 0}.mk .mcl{margin-left:6px}}
 @media(max-width:480px){.nav .mk .mcl{display:none}}
+
+/* notifications: in-app pop, lock screen, small turn-on row, back office below */
+.nt-vis{align-items:center!important}
+.nt-lock{position:relative;background:#0B1622}
+.nt-lock .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 20% 10%,#2DD4BF55,transparent 60%),radial-gradient(90% 60% at 90% 90%,#F59E0B66,transparent 60%),linear-gradient(165deg,#0F1E2E 0%,#134E4A 55%,#7C2D12 100%)}
+.lk-t{position:relative;text-align:center;color:#fff;font-weight:800;font-size:54px;letter-spacing:-1.5px;margin-top:22%;line-height:1}
+.lk-d{position:relative;text-align:center;color:rgba(255,255,255,.85);font-weight:600;font-size:13px;margin-top:6px}
+.lk-n{position:relative;margin:22px 9px 0;display:flex;gap:9px;align-items:flex-start;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-radius:16px;padding:10px 11px;color:#0F1E2E;animation:lkpop 6s ease-in-out infinite}
+.lk-n img{width:32px;height:32px;border-radius:8px;flex:none}
+.lk-n small{display:block;font-size:10px;color:#64748B;font-weight:600}.lk-n b{display:block;font-size:12.5px;margin-top:1px}.lk-n p{font-size:11.5px;margin:2px 0 0;color:#334155;line-height:1.3}
+.lk-old{margin-top:8px;opacity:.8;animation:none;transform:scale(.97)}
+@keyframes lkpop{0%,8%{opacity:0;transform:translateY(-14px) scale(.96)}14%,92%{opacity:1;transform:none}100%{opacity:1}}
+.nt-on2{width:min(30%,300px);flex:none;text-align:center}
+.nt-on2 .cap{color:#CCFBF1}
+.nt-on2 img{width:100%;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.3);display:block}
+.nt-bo{display:block;margin:46px auto 0;width:min(100%,300px)!important;text-align:center}
+.nt-bo img{width:100%;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+@media (max-width:760px){.lk-n small{font-size:9.5px}.lk-n b{font-size:12px}.lk-n p{font-size:11px}.lk-n img{width:30px;height:30px}.nt-on2{width:72%!important;scroll-snap-align:start;align-self:center}.nt-bo{width:78%!important}.lk-t{font-size:44px}}
 </style>
 </head>
 <body>
@@ -429,10 +447,12 @@ h2{letter-spacing:-1px;line-height:1.1}
     <div class="nt-pts"><div><b>Free</b>no SMS or WhatsApp costs</div><div><b>Instant</b>straight to their lock screen</div><div><b>Polite</b>Mavis stops you sending too often</div></div>
   </div>
   <div class="nt-vis rv">
-    <div class="nt-ph nt-on"><div class="phone"><img src="/img/club/g-news.jpg" alt="The guest taps Turn on to get the venue's news" loading="lazy"></div><span class="cap">1. They tap Turn on</span></div>
-    <div class="nt-ph"><div class="phone"><img src="/img/club/g-top.jpg" alt="The Trans members app on a phone" loading="lazy"><div class="nt-pop" aria-hidden="true"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div></div><span class="cap">2. It pops up on their phone</span></div>
-    <figure class="nt-sheet"><img src="/img/club/n-sheet.jpg" alt="New notification: pick who gets it, write a title and message, see what they'll see, send" loading="lazy"><figcaption>3. You write it, tap send</figcaption></figure>
+    <div class="nt-ph"><div class="phone"><img src="/img/club/g-top.jpg" alt="The Trans members app on a phone" loading="lazy"><div class="nt-pop" aria-hidden="true"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div></div><span class="cap">1. It pops up while they're in the app</span></div>
+    <div class="nt-ph"><div class="phone nt-lock" role="img" aria-label="The notification on a locked phone"><i class="bg"></i><div class="lk-t">21:30</div><div class="lk-d">Saturday, 27 December</div><div class="lk-n"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div><div class="lk-n lk-old"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · 2h ago</small><b>Sunset hour starts at 5pm 🍹</b></div></div></div><span class="cap">2. Even when their phone is locked</span></div>
+    <div class="nt-on2"><img src="/img/club/g-news-row.jpg" alt="Get our news: Turn on" loading="lazy"><span class="cap">3. They turn it on in one tap. Off any time.</span></div>
   </div>
+  <figure class="nt-sheet nt-bo"><img src="/img/club/n-sheet.jpg" alt="New notification: pick who gets it, write a title and message, see what they'll see, send" loading="lazy"><figcaption>Your team writes it in Mavis and taps send</figcaption></figure>
+</div>
 </div></section>
 
 <section class="how" id="how"><div class="wrap center">
