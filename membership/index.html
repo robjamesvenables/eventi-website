@@ -383,7 +383,7 @@ h2{letter-spacing:-1px;line-height:1.1}
 @media(max-width:480px){.nav .mk .mcl{display:none}}
 
 /* notifications: in-app pop, lock screen, small turn-on row, back office below */
-.nt-vis{align-items:center!important}
+.nt-vis{align-items:center!important;justify-content:center!important}
 .nt-lock{position:relative;background:#0B1622}
 .nt-boph{background:#fff}.nt-boph img{object-fit:contain!important;object-position:top!important;background:#fff}
 .nt-lock .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 20% 10%,#2DD4BF55,transparent 60%),radial-gradient(90% 60% at 90% 90%,#F59E0B66,transparent 60%),linear-gradient(165deg,#0F1E2E 0%,#134E4A 55%,#7C2D12 100%)}
@@ -401,6 +401,7 @@ h2{letter-spacing:-1px;line-height:1.1}
 @media (max-width:760px){.lk-n small{font-size:9.5px}.lk-n b{font-size:12px}.lk-n p{font-size:11px}.lk-n img{width:30px;height:30px}.nt-on2{width:72%!important;scroll-snap-align:start;align-self:center}.nt-bo{width:78%!important}.lk-t{font-size:44px}}
 
 /* your video section */
+.vd-sec{padding:72px 0!important}.hero{padding-bottom:56px!important}.hero .vis{padding-bottom:0!important}@media (max-width:760px){.vd-sec{padding:56px 0!important}}
 .vd-sec .wrap{grid-template-columns:minmax(0,1fr)!important;text-align:center;max-width:900px}
 .vd-sec .copy{max-width:720px;margin:0 auto}.vd-sec .lead{margin-left:auto;margin-right:auto}
 .vd-a{display:block;color:var(--teal)}
@@ -424,7 +425,7 @@ h2{letter-spacing:-1px;line-height:1.1}
     <h1>Know every guest. <span>Reach them in one tap.</span></h1>
     <p class="sub">Your own members app. <span>On a keyring.</span></p>
     <p class="lead">One scan and your venue's own app is on their phone: perks, rewards, events, booking and news. Nothing to download from an app store.</p>
-    <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20to%20see%20the%20Members%20Club" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>Book a demo</a><a class="btn btn-line" href="#team">See the back office</a></div>
+    <div class="cta"><a class="btn btn-gold" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%27d%20like%20to%20see%20the%20Members%20Club" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>Book a demo</a></div>
     <div class="proof"><div><b>Their app</b>with your name on it</div><div><b>1 scan</b>at the door</div><div><b>Notifications</b>free, straight to their phone</div></div>
   </div>
   <div class="vis">
@@ -435,12 +436,12 @@ h2{letter-spacing:-1px;line-height:1.1}
   </div>
 </div></header>
 
-<section class="feat sand vd-sec" id="video"><div class="wrap">
+<section class="feat white vd-sec" id="video"><div class="wrap">
   <div class="copy"><div class="kick">Your video</div><h2>Your latest reel. <span class="vd-a">The first thing they see.</span></h2><p class="lead">New event, new menu, new season. Swap the video in a minute, and every member sees it the next time they open the app.</p></div>
   <div class="vd-vis rv"><div class="phone vd-ph"><img src="/img/club/g-top.jpg" alt="The Trans members app with its video at the top" loading="lazy"><video class="vd-v" poster="/img/club/v-film.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The venue's video playing at the top of the app"><source src="/img/club/v-film.webm" type="video/webm"><source src="/img/club/v-film.mp4" type="video/mp4"></video></div><span class="cap">Plays the moment they open it</span></div>
 </div></section>
 
-<section class="hs-sec white" id="app"><div class="wrap">
+<section class="hs-sec sand" id="app"><div class="wrap">
   <div class="hs-copy">
     <div class="kick">On their phone</div>
     <h2>Your logo. <span>On their home screen.</span></h2>
@@ -462,14 +463,13 @@ h2{letter-spacing:-1px;line-height:1.1}
     <div class="nt-pts"><div><b>Free</b>no SMS or WhatsApp costs</div><div><b>Instant</b>straight to their lock screen</div><div><b>Polite</b>Mavis stops you sending too often</div></div>
   </div>
   <div class="nt-vis rv">
-    <div class="nt-ph"><div class="phone"><img src="/img/club/g-top.jpg" alt="The Trans members app on a phone" loading="lazy"><div class="nt-pop" aria-hidden="true"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div></div><span class="cap">1. It pops up while they're in the app</span></div>
-    <div class="nt-ph"><div class="phone nt-lock" role="img" aria-label="The notification on a locked phone"><i class="bg"></i><div class="lk-t">21:30</div><div class="lk-d">Saturday, 27 December</div><div class="lk-n"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div><div class="lk-n lk-old"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · 2h ago</small><b>Sunset hour starts at 5pm 🍹</b></div></div></div><span class="cap">2. Even when their phone is locked</span></div>
-    <div class="nt-ph"><div class="phone nt-boph"><img src="/img/club/n-sheet.jpg" alt="New notification: pick who gets it, write a title and message, see what they'll see, send" loading="lazy"></div><span class="cap">3. Your team writes it and taps send</span></div>
+    <div class="nt-ph"><div class="phone nt-lock" role="img" aria-label="The notification on a locked phone"><i class="bg"></i><div class="lk-t">21:30</div><div class="lk-d">Saturday, 27 December</div><div class="lk-n"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · now</small><b>New Year's Eve at The 18th 🎆</b><p>Fireworks, DJs and free-flow on the rooftop. Members get 15% off.</p></div></div><div class="lk-n lk-old"><img src="/img/club/trans-icon.png" alt=""><div><small>The Trans Resort Bali · 2h ago</small><b>Sunset hour starts at 5pm 🍹</b></div></div></div><span class="cap">1. It pops up on their phone</span></div>
+    <div class="nt-ph"><div class="phone nt-boph"><img src="/img/club/n-sheet.jpg" alt="New notification: pick who gets it, write a title and message, see what they'll see, send" loading="lazy"></div><span class="cap">2. Your team writes it and taps send</span></div>
   </div>
 </div>
 </div></section>
 
-<section class="how" id="how"><div class="wrap center">
+<section class="how sand" id="how"><div class="wrap center">
   <div class="kick">How it works</div>
   <h2>Four steps. Nothing to download.</h2>
   <div class="steps"><div class="step rv"><span class="n">1</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></i><b>Give them a keyring</b><p>Real wood, your logo, its own QR code.</p></div><div class="step rv"><span class="n">2</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></i><b>Scan it at the door</b><p>Sign them up in 30 seconds. Every visit counts.</p></div><div class="step rv"><span class="n">3</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></i><b>Your app is on their phone</b><p>Perks, rewards, events and booking. Saved to their home screen.</p></div><div class="step rv"><span class="n">4</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></i><b>They keep coming back</b><p>You know every guest, and reach them in one tap.</p></div></div>
