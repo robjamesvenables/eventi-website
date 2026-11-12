@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mavis for The Trans</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0B1622;overflow:hidden;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.slide{position:absolute;width:1920px;height:1080px;transform-origin:center center;opacity:0;transition:opacity .35s ease;pointer-events:none}
+.slide.on{opacity:1;pointer-events:auto}
+.slide img{display:block;width:1920px;height:1080px}
+/* links slide */
+.lk{background:#0F1E2E;color:#F6F3EC;padding:96px 128px;display:flex;flex-direction:column;gap:40px}
+.lk small{font-size:26px;font-weight:600;letter-spacing:4px;color:#C9A24A}
+.lk h2{font-size:64px;font-weight:700;line-height:1.05;margin-top:12px}
+.lk ol{list-style:none;display:flex;flex-direction:column;gap:14px}
+.lk a{display:flex;align-items:center;gap:32px;background:#1B2D40;padding:20px 40px;border-radius:20px;color:inherit;text-decoration:none;transition:background .15s}
+.lk a:hover{background:#243A52}
+.lk .n{font-size:40px;font-weight:800;color:#C4973B;width:48px}
+.lk .t{font-size:36px;font-weight:700;width:560px}
+.lk .u{font-size:28px;color:#BFC8D2}
+.lk .go{margin-left:auto;font-size:34px;color:#C4973B}
+/* controls */
+#bar{position:fixed;right:16px;bottom:14px;display:flex;gap:8px;align-items:center;opacity:.25;transition:opacity .2s;z-index:5}
+#bar:hover{opacity:1}
+#bar button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:10px;padding:8px 12px;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}
+#num{color:#fff;font:600 14px Inter,system-ui,sans-serif;min-width:40px;text-align:center}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="slide"><img src="s1.jpg" alt="Rob Venables, founder of Mavis"></div>
+  <div class="slide"><img src="s2.jpg" alt="How it started: Mavis Team, Club, Padel and Bookings"></div>
+  <div class="slide"><img src="s3.jpg" alt="Twelve reasons Mavis Club works"></div>
+  <div class="slide"><img src="s4.jpg" alt="As simple as 1, 2, 3"></div>
+  <div class="slide"><img src="s5.jpg" alt="Let me show you"></div>
+  <div class="slide lk">
+    <div><small>LINKS</small><h2>Everything for today</h2></div>
+    <ol>
+      <li><a href="./"><span class="n">1</span><span class="t">Mavis for The Trans</span><span class="u">This presentation</span><span class="go">→</span></a></li>
+      <li><a href="qr/" target="_blank"><span class="n">2</span><span class="t">Scan The Trans</span><span class="u">Big-screen QR code</span><span class="go">→</span></a></li>
+      <li><a href="https://app.getmavis.co/k/T7RNSB" target="_blank"><span class="n">3</span><span class="t">Members Club</span><span class="u">The Trans guest app</span><span class="go">→</span></a></li>
+      <li><a href="https://app.getmavis.co/?go=members" target="_blank"><span class="n">4</span><span class="t">Mavis app</span><span class="u">The back office</span><span class="go">→</span></a></li>
+      <li><a href="https://eventi-theta.vercel.app/spa-bookings.html" target="_blank"><span class="n">5</span><span class="t">Spa room bookings</span><span class="u">Mavis Bookings demo</span><span class="go">→</span></a></li>
+      <li><a href="gift/" target="_blank"><span class="n">6</span><span class="t">Keyring gift page</span><span class="u">Before the keyring is set up</span><span class="go">→</span></a></li>
+    </ol>
+  </div>
+</div>
+<div id="bar"><button id="pv" aria-label="Previous slide">‹</button><span id="num"></span><button id="nx" aria-label="Next slide">›</button><button id="fs">Full screen</button><button id="ln">Links</button></div>
+<script>
+(function(){
+  var S=[].slice.call(document.querySelectorAll('.slide')),i=0;
+  function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);S.forEach(function(s){s.style.transform='scale('+k+')'});}
+  function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,j){s.classList.toggle('on',j===i)});document.getElementById('num').textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+  function full(){var d=document.documentElement;if(!document.fullscreenElement){(d.requestFullscreen||d.webkitRequestFullscreen||function(){}).call(d)}else{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}}
+  addEventListener('resize',fit);fit();
+  var h=parseInt((location.hash||'').slice(1),10);show(h>0?h-1:0);
+  addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(i+1)}else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(i-1)}else if(k==='Home')show(0);else if(k==='End')show(S.length-1);else if(k==='f'||k==='F')full()});
+  document.getElementById('stage').addEventListener('click',function(e){if(e.target.closest('a'))return;show(e.clientX<innerWidth/3?i-1:i+1)});
+  var x0=null;addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(d<0?i+1:i-1);x0=null});
+  document.getElementById('pv').onclick=function(e){e.stopPropagation();show(i-1)};
+  document.getElementById('nx').onclick=function(e){e.stopPropagation();show(i+1)};
+  document.getElementById('fs').onclick=function(e){e.stopPropagation();full()};
+  document.getElementById('ln').onclick=function(e){e.stopPropagation();show(S.length-1)};
+})();
+</script>
+</body>
+</html>
