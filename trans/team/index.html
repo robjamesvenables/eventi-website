@@ -82,6 +82,18 @@ button{font-family:inherit;cursor:pointer}
   .role small{font-size:11px}.tabs .lg{display:none}.tabs .sm{display:inline}
   .grp{padding:4px 14px}.edh,.pph{padding:14px}.prow{padding:10px 14px}.note{margin:12px 14px 14px}
 }
+.ov{position:fixed;inset:0;background:rgba(15,30,46,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.ov.show{display:flex}
+.sheet{background:#fff;border-radius:18px;width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.shh{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 6px}.shh b{font-size:18px;font-weight:800}.x{border:0;background:#F1F5F9;width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;color:var(--soft)}
+.shb{padding:8px 20px 4px;display:flex;flex-direction:column;gap:12px}
+.shb label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:700;color:var(--soft);min-width:0}.opt{font-weight:500;color:var(--mute)}
+.shb input{border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;font:500 15px Inter,sans-serif;color:var(--navy);width:100%;min-width:0;outline:0}.shb input:focus{border-color:var(--teal)}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lab{font-size:12.5px;font-weight:700;color:var(--soft);margin-bottom:-4px}
+.rps{display:flex;flex-wrap:wrap;gap:6px}.rp{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:700;color:var(--soft)}.rp.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.hint{font-size:12.5px;color:var(--soft);background:#F8FAFC;border-radius:10px;padding:10px 12px;line-height:1.45}.err{font-size:13px;color:#DC2626;font-weight:600;min-height:2px}
+.shf{display:flex;gap:8px;padding:12px 20px 18px}.cn{border:0;background:#F1F5F9;color:var(--navy);border-radius:12px;padding:13px 16px;font-size:14px;font-weight:700}.ok{flex:1;border:0;background:var(--teal);color:#fff;border-radius:12px;padding:13px 16px;font-size:14px;font-weight:700}
+@media(max-width:860px){.ov{align-items:flex-end;padding:0}.sheet{border-radius:20px 20px 0 0;max-height:92vh}}
 </style>
 </head>
 <body>
@@ -104,6 +116,18 @@ button{font-family:inherit;cursor:pointer}
 
   </main>
 </div>
+<div class="ov" id="addp"><div class="sheet" role="dialog" aria-label="Add a team member">
+  <div class="shh"><b>Add a team member</b><button class="x" onclick="closeAdd()" aria-label="Close">×</button></div>
+  <div class="shb">
+    <div class="two2"><label>First name<input id="af" autocomplete="off" placeholder="e.g. Putu"></label><label>Last name<input id="al" autocomplete="off" placeholder="e.g. Ariani"></label></div>
+    <label>WhatsApp number<input id="aw" inputmode="tel" placeholder="+62 812 ..."></label>
+    <label><span>Email <span class="opt">(optional)</span></span><input id="ae" inputmode="email" placeholder="name@thetrans.com"></label>
+    <div class="lab">Role</div><div class="rps" id="ar"></div>
+    <div class="hint">They get a WhatsApp with a link to set their own password. Their role decides what they can do.</div>
+    <div class="err" id="aerr"></div>
+  </div>
+  <div class="shf"><button class="cn" onclick="closeAdd()">Cancel</button><button class="ok" onclick="saveAdd()">Add and send invite</button></div>
+</div></div>
 <script>
 var ROLES = [
   { id:'mgr', n:'Manager', c:'#0F1E2E', bg:'#E8ECF1', ppl:3 },
@@ -145,6 +169,23 @@ var NOTE = {
   mkt: 'Marketing sends offers and keeps the guest page fresh. They don\'t check guests in.'
 };
 var PEOPLE = { mgr:[['Greta S.'], ['James S.'], ['Alex R.']], gro:[['I Gede Bagus T.'], ['Sarah C.'], ['Made W.'], ['Kadek P.'], ['Tina M.']], fnb:[['John S.'], ['Peter J.'], ['David W.'], ['Luna T.']], mkt:[['Emma E.'], ['Putu A.']] };
+function openAdd(){
+  var o = document.getElementById('addp');
+  document.getElementById('af').value = ''; document.getElementById('al').value = ''; document.getElementById('aw').value = ''; document.getElementById('ae').value = '';
+  document.getElementById('ar').innerHTML = ROLES.map(function(r){ return '<button type="button" class="rp' + (r.id === cur ? ' on' : '') + '" data-v="' + r.id + '">' + r.n + '</button>'; }).join('');
+  [].forEach.call(document.querySelectorAll('#ar .rp'), function(b){ b.onclick = function(){ [].forEach.call(document.querySelectorAll('#ar .rp'), function(x){ x.classList.toggle('on', x === b); }); }; });
+  document.getElementById('aerr').textContent = ''; o.classList.add('show'); setTimeout(function(){ document.getElementById('af').focus(); }, 50);
+}
+document.addEventListener('input', function(e){ if(e.target.closest && e.target.closest('#addp')) document.getElementById('aerr').textContent = ''; });
+function closeAdd(){ document.getElementById('addp').classList.remove('show'); }
+function saveAdd(){
+  var f = document.getElementById('af').value.trim(), l = document.getElementById('al').value.trim(), w = document.getElementById('aw').value.replace(/[^\d+]/g, '');
+  if(!f){ document.getElementById('aerr').textContent = 'Add their first name'; return; }
+  if(w.replace(/\D/g, '').length < 8){ document.getElementById('aerr').textContent = 'Add their WhatsApp number, so they get their login link'; return; }
+  var cap = function(x){ return x.replace(/\b\w/g, function(c){ return c.toUpperCase(); }); };
+  var role = (document.querySelector('#ar .rp.on') || {}).dataset; role = role ? role.v : cur;
+  PEOPLE[role].push([cap(f) + (l ? ' ' + cap(l).charAt(0) + '.' : ''), 1]); cur = role; closeAdd(); draw();
+}
 var ALL = GROUPS.reduce(function(n, g){ return n + g[1].length; }, 0), cur = 'gro';
 function count(id){ return Object.keys(ON[id]).filter(function(k){ return ON[id][k]; }).length; }
 function draw(){
@@ -155,11 +196,8 @@ function draw(){
   document.getElementById('rs').textContent = PEOPLE[cur].length + ' people · ' + count(cur) + ' of ' + ALL + ' switched on';
   document.getElementById('nt').textContent = NOTE[cur];
   document.getElementById('ppl').innerHTML = PEOPLE[cur].map(function(p){ var ini = p[0].split(' ').map(function(w){ return w[0]; }).slice(0, 2).join('');
-    return '<span class="pc"><i style="background:' + r.c + '">' + ini + '</i>' + p[0] + (p[1] ? ' <em>Invite sent ✓</em>' : '') + '</span>'; }).join('') + '<span class="pf" id="pf"><input id="pin" placeholder="Their name" maxlength="30"><button id="pok">Add</button></span><button class="pa" id="padd">+ Add person</button>';
-  var pf = document.getElementById('pf'), pin = document.getElementById('pin'), pa = document.getElementById('padd');
-  pa.onclick = function(){ pa.style.display = 'none'; pf.style.display = 'inline-flex'; pin.focus(); };
-  var go = function(){ var v = pin.value.trim(); if(!v) { pin.focus(); return; } PEOPLE[cur].push([v.replace(/\b\w/g, function(c){ return c.toUpperCase(); }), 1]); draw(); };
-  document.getElementById('pok').onclick = go; pin.onkeydown = function(e){ if(e.key === 'Enter') go(); };
+    return '<span class="pc"><i style="background:' + r.c + '">' + ini + '</i>' + p[0] + (p[1] ? ' <em>Invite sent ✓</em>' : '') + '</span>'; }).join('') + '<button class="pa" id="padd">+ Add person</button>';
+  document.getElementById('padd').onclick = openAdd;
   document.getElementById('perms').innerHTML = GROUPS.map(function(g){
     return '<div class="grp"><div class="gh">' + g[0] + '</div>' + g[1].map(function(p){ var on = !!ON[cur][p[0]];
       return '<div class="pr"><div><b>' + p[1] + '</b><small>' + p[2] + '</small></div><button class="sw' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" data-p="' + p[0] + '" aria-label="' + p[1] + '"></button></div>'; }).join('') + '</div>'; }).join('');
