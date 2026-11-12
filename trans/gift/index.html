@@ -1,68 +1,75 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Keyring Gift Page</title><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html><head><meta charset="utf-8"><title>Keyring Not Active</title><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-:root{--top:#7A1F1F;--acc:#B8923A;--pg:#F7F3EC;--ink:#1B1410}
+:root{--top:#7A1F1F;--acc:#B8923A;--pg:#F7F3EC;--ink:#1B1410;--wa:#25D366}
 *{box-sizing:border-box;margin:0}
 body{font-family:Inter,system-ui,sans-serif;background:var(--pg);color:var(--ink);-webkit-font-smoothing:antialiased}
-.top{background:var(--top);color:#fff;padding:22px 20px 112px;position:relative;overflow:hidden}
+.wrapall{max-width:520px;margin:0 auto}
+.top{background:var(--top);color:#fff;padding:22px 20px 96px;position:relative;overflow:hidden}
 .top:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;border:34px solid rgba(255,255,255,.06)}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:52px;height:52px;border-radius:14px;background:var(--top);object-fit:contain}
 .brand b{display:block;font-weight:900;letter-spacing:.12em;font-size:14px}
 .brand small{display:block;color:var(--acc);font-weight:900;letter-spacing:.2em;font-size:12px;margin-top:3px}
-.tag{display:inline-flex;align-items:center;gap:6px;margin-top:26px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:7px 12px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.08em}
-h1{font-size:38px;line-height:1.02;font-weight:900;margin-top:14px;letter-spacing:-.02em}
+.badge{display:inline-flex;align-items:center;gap:7px;margin-top:26px;background:#FFF4D6;color:#7A4E00;padding:7px 13px;border-radius:99px;font-size:12px;font-weight:900;letter-spacing:.1em}
+.badge i{width:8px;height:8px;border-radius:50%;background:#E0A100;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+h1{font-size:34px;line-height:1.05;font-weight:900;margin-top:14px;letter-spacing:-.02em}
 h1 em{font-style:normal;color:var(--acc)}
-.sub{margin-top:10px;font-size:15.5px;opacity:.85;line-height:1.4}
-.wrap{padding:0 16px;margin-top:-72px;position:relative}
-.key{background:#fff;border-radius:24px;padding:18px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px rgba(60,20,10,.18)}
-.key i{flex:none;animation:lglow 2s ease-in-out infinite;width:56px;height:56px;border-radius:16px;background:var(--acc);display:grid;place-items:center;color:#fff}
-.key b{display:block;font-size:17px;font-weight:900}
-.key span{display:block;font-size:13.5px;color:#6b5f57;margin-top:3px;line-height:1.35}
-.lab{margin:40px 4px 14px;font-size:12px;font-weight:900;letter-spacing:.18em;color:#9a8a7c}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.bx{position:relative;border-radius:22px;padding:16px 15px 16px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(60,20,10,.07)}
-.bx .tk{position:absolute;top:13px;right:13px;width:26px;height:26px;border-radius:50%;background:#1FA463;display:grid;place-items:center;color:#fff}
-.bx .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;margin-bottom:auto;background:rgba(122,31,31,.08);color:var(--top)}
-.bx b{font-size:17px;line-height:1.15;font-weight:900;margin-top:14px}
-.bx small{font-size:12.5px;color:#7d7067;margin-top:4px;line-height:1.3}
-.bx.dark{background:var(--top);color:#fff}.bx.dark .ic{background:rgba(255,255,255,.14);color:#fff}.bx.dark small{color:rgba(255,255,255,.75)}
-.bx.gold{background:var(--acc);color:#fff}.bx.gold .ic{background:rgba(255,255,255,.2);color:#fff}.bx.gold small{color:rgba(255,255,255,.85)}
-.bx.wide{grid-column:span 2;min-height:118px;flex-direction:row;align-items:center;gap:14px;padding-right:50px}
-.bx.wide .ic{margin:0}.bx.wide b{margin-top:0;display:block}.bx.wide small{display:block}
-.lock{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:900;letter-spacing:.1em;margin-top:8px;opacity:.85}
-.dots{display:flex;gap:4px;margin-top:9px}.dots i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.35)}.dots i.on{background:#fff}
-.go{margin:26px 0 0;background:var(--ink);color:#fff;border-radius:24px;padding:22px 20px;text-align:center}
-.go b{display:block;font-size:22px;font-weight:900;line-height:1.15}
-.go span{display:block;margin-top:8px;opacity:.75;font-size:14px;line-height:1.4}
-.go .pill{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--acc);padding:12px 18px;border-radius:99px;font-weight:900;font-size:14.5px}
+.sub{margin-top:10px;font-size:15.5px;opacity:.88;line-height:1.45}
+.wrap{padding:0 16px;margin-top:-62px;position:relative}
+.card{background:#fff;border-radius:24px;padding:20px 18px;box-shadow:0 18px 40px rgba(60,20,10,.16)}
+.card h2{font-size:19px;font-weight:900}
+.card .sm{font-size:13.5px;color:#6b5f57;margin-top:4px}
+.steps{list-style:none;padding:0;margin-top:16px;display:flex;flex-direction:column;gap:14px}
+.steps li{display:flex;gap:14px;align-items:flex-start}
+.steps .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--top);color:#fff;display:grid;place-items:center;font-weight:900;font-size:15px}
+.steps li:last-child .n{background:#1FA463}
+.steps b{display:block;font-size:15.5px;font-weight:800;line-height:1.3}
+.steps span{display:block;font-size:13.5px;color:#6b5f57;margin-top:2px;line-height:1.35}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:16px;padding:16px;font:800 16px Inter,system-ui,sans-serif;text-decoration:none;margin-top:18px}
+.btn.wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.35)}
+.btn.map{background:#F1ECE3;color:var(--ink);margin-top:10px}
+.lab{margin:30px 4px 12px;font-size:12px;font-weight:900;letter-spacing:.18em;color:#9a8a7c}
+.list{background:#fff;border-radius:22px;box-shadow:0 6px 18px rgba(60,20,10,.07);overflow:hidden}
+.it{display:flex;align-items:center;gap:14px;padding:15px 16px;border-bottom:1px solid #F1ECE3}
+.it:last-child{border:0}
+.it .ic{flex:none;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(122,31,31,.08);color:var(--top)}
+.it div{flex:1;min-width:0}.it b{display:block;font-size:15px;font-weight:800}.it small{display:block;font-size:12.5px;color:#7d7067;margin-top:2px}
+.it .lk{flex:none;color:#B9AC9F}
+.note{margin:22px 4px 0;background:#FFF8E8;border:1.5px dashed #E6C977;border-radius:18px;padding:14px 16px;font-size:14px;line-height:1.45;color:#5E4A1E}
+.note b{color:#3E2F0E}
 .foot{text-align:center;color:#a99c90;font-size:12px;padding:22px 0 30px;line-height:1.7}
 .foot b{color:#8d8075}
-.key i svg{animation:lwig 3s ease-in-out infinite;transform-origin:50% 30%}
-@keyframes lglow{0%,100%{box-shadow:0 0 0 0 rgba(184,146,58,.55)}50%{box-shadow:0 0 0 10px rgba(184,146,58,0)}}
-@keyframes lwig{0%,60%,100%{transform:rotate(0) scale(1)}66%{transform:rotate(-22deg) scale(1.15)}72%{transform:rotate(20deg) scale(1.15)}78%{transform:rotate(-16deg) scale(1.1)}84%{transform:rotate(10deg) scale(1.05)}90%{transform:rotate(-4deg)}}
-@media (prefers-reduced-motion:reduce){.key i,.key i svg{animation:none}}
-</style></head><body>
+@media (prefers-reduced-motion:reduce){.badge i{animation:none}}
+</style></head><body><div class="wrapall">
 <div class="top">
-  <div class="brand"><img src="logo.png"><div><b>THE TRANS RESORT BALI</b><small>MEMBERS CLUB</small></div></div>
-  <div class="tag">🎁 A GIFT FOR YOU</div>
-  <h1>You've been given<br>something <em>special.</em></h1>
-  <p class="sub">This keyring is your way into The Trans Members Club.</p>
+  <div class="brand"><img src="logo.png" alt=""><div><b>THE TRANS RESORT BALI</b><small>MEMBERS CLUB</small></div></div>
+  <div class="badge"><i></i>NOT ACTIVATED YET</div>
+  <h1>This keyring isn't<br>set up <em>yet.</em></h1>
+  <p class="sub">It's your pass to The Trans Members Club. Activate it once, and the perks are yours.</p>
 </div>
 <div class="wrap">
-  <div class="key"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></i><div><b>Ready to unlock</b><span>Show it to our team on your next visit. It takes 10 seconds.</span></div></div>
-
-  <div class="lab">WHAT'S WAITING FOR YOU</div>
-  <div class="grid">
-    <div class="bx dark"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></span><b>4 member perks</b><span class="lock">🔒 REVEALED WHEN YOU JOIN</span></div>
-    <div class="bx gold"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></span><b>A free reward</b><small>Collect 10 visits</small><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-    <div class="bx"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><b>First to know</b><small>Events before anyone else</small></div>
-    <div class="bx"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><b>Members-only offers</b><small>Straight to your phone</small></div>
-    <div class="bx"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><b>3 places</b><small>One membership</small></div>
-    <div class="bx"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span><b>A birthday treat</b><small>On us, every year</small></div>
-    <div class="bx wide dark"><span class="tk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div><b>Your own members app</b><small>On your phone. No app store, no password.</small></div></div>
+  <div class="card">
+    <h2>Activate it in 10 seconds</h2>
+    <p class="sm">Next time you're at The Trans:</p>
+    <ol class="steps">
+      <li><span class="n">1</span><div><b>Show this keyring to our team</b><span>At reception, or any of our bars and restaurants</span></div></li>
+      <li><span class="n">2</span><div><b>We scan it and add your name</b><span>Just your name and WhatsApp number</span></div></li>
+      <li><span class="n">✓</span><div><b>That's it, you're a member</b><span>Scan it again any time to open your own members page</span></div></li>
+    </ol>
+    <a class="btn wa" href="https://wa.me/6281138201212?text=Hi!%20I%20have%20a%20Trans%20Members%20Club%20keyring%20(T7RNSB)%20and%20I%27d%20like%20to%20activate%20it." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>WhatsApp us to activate</a>
+    <a class="btn map" href="https://www.google.com/maps/dir/?api=1&destination=The+Trans+Resort+Bali&destination_place_id=ChIJSdIXcT1H0i0R0vTqmwjznss" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Directions to The Trans</a>
   </div>
 
-  <div class="go"><b>Your keyring is your key.</b><span>Bring it on your next visit to The Trans and we'll unlock everything for you.</span><div class="pill">🔑 10 seconds at reception</div></div>
+  <div class="lab">WHAT YOU UNLOCK</div>
+  <div class="list">
+    <div class="it"><span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></span><div><b>4 member perks</b><small>Revealed the moment you join</small></div><svg class="lk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <div class="it"><span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21l1.5-7L2 9.3l7-.8z"/></svg></span><div><b>A free reward</b><small>After 10 visits</small></div><svg class="lk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <div class="it"><span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span><div><b>A birthday treat</b><small>On us, every year</small></div><svg class="lk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <div class="it"><span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><b>Members-only offers and events</b><small>Before anyone else</small></div><svg class="lk" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+  </div>
+
+  <div class="note">🔑 <b>Keep this keyring on your keys.</b> Once it's active, it's your member card at every visit.</div>
   <div class="foot">Keyring T7RNSB<br><b>Powered by Mavis</b></div>
 </div>
-</body></html>
+</div></body></html>
