@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Members Club Admin</title>
+<title>Roles and Permissions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -21,7 +21,7 @@ button{font-family:inherit;cursor:pointer}
 .lk{display:flex;align-items:center;gap:10px;padding:10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#CBD5E1}
 .lk svg{width:17px;height:17px;flex:none}
 .lk.on{background:rgba(255,255,255,.1);color:#fff}
-.main{flex:1;min-width:0;padding:30px 28px 60px;max-width:1100px}
+.main{flex:1;min-width:0;padding:28px 28px 60px;max-width:1000px;margin:0 auto}.sub{margin-bottom:20px}
 .ttl{font-size:24px;font-weight:800}.sub{font-size:13.5px;color:var(--soft);margin-top:3px}
 .chip{display:inline-flex;align-items:center;gap:6px;background:#E6F4F2;color:var(--teal);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700;margin-left:8px;vertical-align:4px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 22px}
@@ -62,7 +62,7 @@ button{font-family:inherit;cursor:pointer}
 .hide{display:none}
 .tabs .sm{display:none}
 /* phone */
-.top{display:none}
+.top{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:12px 20px}.top img{width:32px;height:32px;border-radius:50%;background:#fff}.top b{font-size:14px;font-weight:800}.top small{display:block;font-size:9.5px;letter-spacing:.14em;color:#C9A24A;font-weight:700}
 @media(max-width:860px){
   .sb{display:none}
   .top{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:12px 16px;position:sticky;top:0;z-index:2}
@@ -80,36 +80,12 @@ button{font-family:inherit;cursor:pointer}
 <body>
 <div class="top"><img src="logo.png" alt=""><div><b>The Trans Resort Bali</b><small>MEMBERS CLUB</small></div></div>
 <div class="app">
-  <aside class="sb">
-    <div class="brand"><img src="logo.png" alt=""><div><b>The Trans Resort Bali</b><small>MEMBERS CLUB</small></div></div>
-    <div class="sec">Members Club</div>
-    <div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>Members</div>
-    <div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M4 12h16"/></svg>Scan a member</div>
-    <div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>Guest page</div>
-    <div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Email list</div>
-    <div class="sec">Your team</div>
-    <div class="lk on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Admin Console</div>
-  </aside>
 
   <main class="main">
-    <div class="ttl">Admin Console <span class="chip">Members Club only</span></div>
-    <div class="sub">Who's on your team, and what each person can do in Members Club.</div>
-
-    <div class="stats">
-      <div><b>14</b><span>Team members</span></div>
-      <div><b>4</b><span>Roles</span></div>
-      <div><b>3</b><span>Managers</span></div>
-      <div><b>2</b><span>Waiting to log in</span></div>
-    </div>
-
-    <div class="tabs">
-      <button class="on" data-tab="roles"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="lg">Roles &amp; Permissions</span><span class="sm">Roles</span></button>
-      <button data-tab="people"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>People 14</button>
-    </div>
+    <div class="ttl">Roles &amp; Permissions <span class="chip">Members Club</span></div>
+    <div class="sub">Choose what each role on your team can do. Tap a role, then switch things on or off.</div>
 
     <section id="t-roles">
-      <div class="h">Roles &amp; Permissions</div>
-      <div class="hs">Tap a role to choose what it can do. Only Members Club things are here, nothing else.</div>
       <div class="roles" id="roles"></div>
       <div class="ed">
         <div class="edh"><div><b id="rn"></b><small id="rs"></small></div></div>
@@ -118,12 +94,6 @@ button{font-family:inherit;cursor:pointer}
       </div>
     </section>
 
-    <section id="t-people" class="hide">
-      <div class="pp">
-        <div class="pph"><div><b>Your team</b><small>New people get a login link to set their own password.</small></div><button class="add">+ Add person</button></div>
-        <div id="people"></div>
-      </div>
-    </section>
   </main>
 </div>
 <script>
@@ -181,13 +151,6 @@ function draw(){
   [].forEach.call(document.querySelectorAll('.role'), function(b){ b.onclick = function(){ cur = b.dataset.r; draw(); }; });
   [].forEach.call(document.querySelectorAll('.sw'), function(b){ b.onclick = function(){ if(cur === 'mgr') return; ON[cur][b.dataset.p] = ON[cur][b.dataset.p] ? 0 : 1; draw(); }; });
 }
-var PEOPLE = [['Greta S.', 'mgr'], ['James S.', 'mgr'], ['Alex R.', 'mgr'], ['I Gede Bagus T.', 'gro'], ['Sarah C.', 'gro'], ['Made W.', 'gro'], ['Kadek P.', 'gro'], ['Tina M.', 'gro', 1], ['John S.', 'fnb'], ['Peter J.', 'fnb'], ['David W.', 'fnb'], ['Luna T.', 'fnb', 1], ['Emma E.', 'mkt'], ['Putu A.', 'mkt']];
-document.getElementById('people').innerHTML = PEOPLE.map(function(p){ var r = ROLES.filter(function(x){ return x.id === p[1]; })[0], ini = p[0].split(' ').map(function(w){ return w[0]; }).slice(0, 2).join('');
-  return '<div class="prow"><span class="av" style="background:' + r.c + '">' + ini + '</span><div><b>' + p[0] + (p[2] ? '<span class="wait">Waiting to log in</span>' : '') + '</b><small>The Trans Resort Bali</small></div><span class="pill" style="background:' + r.bg + ';color:' + r.c + '">' + r.n + '</span></div>'; }).join('');
-[].forEach.call(document.querySelectorAll('.tabs button'), function(b){ b.onclick = function(){
-  [].forEach.call(document.querySelectorAll('.tabs button'), function(x){ x.classList.toggle('on', x === b); });
-  document.getElementById('t-roles').classList.toggle('hide', b.dataset.tab !== 'roles');
-  document.getElementById('t-people').classList.toggle('hide', b.dataset.tab !== 'people'); }; });
 draw();
 </script>
 </body>
