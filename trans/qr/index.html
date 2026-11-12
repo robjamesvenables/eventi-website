@@ -24,6 +24,13 @@ h1 em{font-style:normal;color:var(--gold)}
 .tgt i{position:absolute;left:6%;right:6%;height:3px;border-radius:2px;background:#2DD4BF;box-shadow:0 0 14px 2px #2DD4BF;animation:tl 1.6s ease-in-out infinite alternate}
 @keyframes tl{from{top:8%}to{top:90%}}
 @media (prefers-reduced-motion:reduce){.tgt,.tgt i{animation:none}.tgt i{top:50%}}
+@media (max-aspect-ratio:1/1){   /* phone held upright: one under the other */
+  body{overflow:auto;justify-content:flex-start;padding:5vh 16px 6vh;gap:3vh}
+  .row{flex-direction:column;gap:2.5vh}
+  .card img{height:auto;width:min(72vw,42vh)}
+  .kr{height:min(46vh,110vw)}
+  .lab{font-size:18px}.or{font-size:20px}
+}
 </style></head><body>
 <h1>Scan with your phone: <em>The Trans members app</em></h1>
 <div class="row">
