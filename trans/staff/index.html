@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staff Scan Demo</title><meta name="robots" content="noindex">
+<style>
+:root{--navy:#0F1E2E;--teal:#0D9488;--gold:#C9A24A}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--navy);color:#F6F3EC;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3vh;padding:3vh 16px;overflow:hidden;text-align:center}
+small.k{font-size:clamp(12px,1.8vh,18px);font-weight:800;letter-spacing:.2em;color:var(--gold)}
+h1{font-size:clamp(24px,4.4vh,50px);font-weight:900;line-height:1.1;margin-top:.6vh}
+.sub{font-size:clamp(14px,2.2vh,22px);color:#BFC8D2;margin-top:.8vh}
+.row{display:flex;gap:4vw;justify-content:center;align-items:flex-start}
+.c{display:flex;flex-direction:column;align-items:center;gap:1.6vh;width:min(40vw,56vh)}
+.card{background:#fff;border-radius:3.5vh;padding:3vh;box-shadow:0 30px 70px rgba(0,0,0,.4);width:100%}
+.card img{display:block;width:100%;height:auto}
+.tag{display:inline-flex;align-items:center;gap:.8vh;border-radius:999px;padding:.9vh 2vh;font-size:clamp(13px,2vh,20px);font-weight:900;letter-spacing:.08em}
+.tag.ex{background:#D1FAE5;color:#047857}.tag.nw{background:#FEF3C7;color:#92400E}
+.c b{font-size:clamp(18px,3vh,32px);font-weight:900}
+.c p{font-size:clamp(13px,2vh,20px);color:#BFC8D2;line-height:1.35}
+.how{font-size:clamp(13px,2vh,20px);color:#BFC8D2}.how b{color:#fff}
+@media (max-aspect-ratio:1/1){body{overflow:auto;justify-content:flex-start;padding:5vh 16px}.row{flex-direction:column;align-items:center;gap:5vh}.c{width:min(80vw,46vh)}}
+</style></head><body>
+<div><small class="k">MAVIS · STAFF VIEW</small><h1>Scan a member: try it</h1><p class="sub">Open Mavis on your phone, tap <b style="color:#fff">Scan a member</b>, and scan one of these.</p></div>
+<div class="row">
+  <div class="c"><span class="tag ex">● EXISTING MEMBER</span><div class="card"><img src="5NKGZJ.png" alt="QR code for an existing member"></div><b>Sarah · VIP</b><p>Checked in, her perks, what to know, the bill</p></div>
+  <div class="c"><span class="tag nw">● NEW GUEST</span><div class="card"><img src="Z7YBPM.png" alt="QR code for a blank keyring"></div><b>A blank keyring</b><p>Sign up in seconds: name, WhatsApp, offers, birthday</p></div>
+</div>
+</body></html>
