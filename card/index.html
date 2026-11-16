@@ -1,7 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mavis Club</title><meta name="robots" content="noindex">
-<!-- Business card QR lands here and goes straight to the Mavis Club sales page. Change the address below to send cards somewhere else - printed cards never need reprinting. -->
-<meta http-equiv="refresh" content="0;url=/membership/">
-<script>location.replace('/membership/' + location.search);</script>
-<style>body{font-family:Inter,system-ui,sans-serif;background:#0F1E2E;color:#fff;display:grid;place-items:center;height:100vh;margin:0}a{color:#C4973B}</style>
-</head><body><a href="/membership/">Mavis Club</a></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mavis Club</title><meta name="robots" content="noindex"><meta name="theme-color" content="#0F1E2E">
+<!-- The business card QR lands here. Someone with a Mavis box is asked to scan the wooden keyring first (that's the wow),
+     then sent on to the sales page. Anyone without a box taps straight through. Printed cards never need reprinting. -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}html{background:#0F1E2E}
+body{font-family:Inter,system-ui,sans-serif;background:#0F1E2E;color:#fff;min-height:100vh;-webkit-font-smoothing:antialiased}
+.w{max-width:440px;margin:0 auto;padding:22px 20px 30px}
+.top{display:flex;align-items:center;gap:9px;font-weight:900;font-size:20px}.top i{width:30px;height:30px;border-radius:50%;background:#0D9488;display:grid;place-items:center;font-style:normal;font-size:15px}.top em{font-style:normal;color:#C4973B}
+h1{font-size:30px;line-height:1.12;font-weight:900;letter-spacing:-.5px;margin-top:22px}
+.lead{margin-top:10px;color:rgba(255,255,255,.75);font-size:16px;line-height:1.5}
+.pic{position:relative;margin-top:20px;height:380px;border-radius:22px;overflow:hidden;background:#8a6a55 url(/img/card/keyring.jpg) center/cover}
+.pic .kw{position:relative;height:100%;aspect-ratio:1315/1612;margin:0 auto;transform:scale(1.04)}.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic b{position:absolute;left:12px;top:12px;z-index:2;background:#C4973B;color:#2B1D07;font-size:12.5px;font-weight:900;padding:6px 11px;border-radius:99px}
+.qz{position:absolute;left:30.2%;top:59.8%;width:31.8%;height:25.9%;transform:rotate(4.7deg)}
+.qz i{position:absolute;width:24px;height:24px;border:4px solid #2DD4BF;border-radius:4px}
+.qz .c1{left:0;top:0;border-right:0;border-bottom:0}.qz .c2{right:0;top:0;border-left:0;border-bottom:0}.qz .c3{left:0;bottom:0;border-right:0;border-top:0}.qz .c4{right:0;bottom:0;border-left:0;border-top:0}
+.qz .scan{position:absolute;left:4px;right:4px;top:8%;height:3px;background:#2DD4BF;box-shadow:0 0 12px #2DD4BF;border-radius:2px;animation:sc 2.2s ease-in-out infinite alternate}
+@keyframes sc{from{top:8%}to{top:90%}}
+@media (prefers-reduced-motion:reduce){.qz .scan{animation:none;top:50%}}
+.steps{margin-top:18px;display:flex;flex-direction:column;gap:10px}.st{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.07);border-radius:16px;padding:13px 14px;font-weight:700;font-size:15.5px}
+.st i{flex:none;width:30px;height:30px;border-radius:50%;background:#0D9488;display:grid;place-items:center;font-style:normal;font-weight:900}
+.btn{margin-top:20px;display:block;width:100%;text-align:center;background:#C4973B;color:#2B1D07;border:0;border-radius:16px;padding:17px;font:900 16.5px Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.sm{display:block;text-align:center;margin-top:16px;color:rgba(255,255,255,.62);font-size:14px;font-weight:600}
+.ghost{margin-top:12px;display:block;text-align:center;border:2px solid rgba(255,255,255,.25);border-radius:16px;padding:15px;font-weight:800;font-size:15.5px;color:#fff;text-decoration:none}
+.ok{margin:34px auto 0;width:84px;height:84px;border-radius:50%;background:#0D9488;display:grid;place-items:center}
+.c{text-align:center}.list{margin-top:22px;background:rgba(255,255,255,.07);border-radius:18px;padding:4px 16px}.list div{display:flex;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.08);font-size:15px;line-height:1.4}.list div:first-child{border:0}.list em{font-style:normal;color:#5EEAD4;font-weight:900;flex:none}
+#s2{display:none}body.done #s1{display:none}body.done #s2{display:block}
+</style></head><body>
+<div class="w" id="s1">
+  <div class="top"><i>M</i><span>Mavis<em>.</em></span></div>
+  <h1>Thank you for opening your Mavis box</h1>
+  <p class="lead">We made something for your venue. It's waiting on the wooden keyring.</p>
+  <div class="pic"><div class="kw"><img src="/img/card/keyring.jpg" alt="The wooden keyring from your Mavis box, with its QR code"><div class="qz" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><div class="scan"></div></div></div><b>Start here</b></div>
+  <div class="steps">
+    <div class="st"><i>1</i>Take the wooden keyring out of the box</div>
+    <div class="st"><i>2</i>Open your phone camera</div>
+    <div class="st"><i>3</i>Point it at the QR and tap the link</div>
+  </div>
+  <button class="btn" id="done" type="button">I've scanned it &rarr;</button>
+  <a class="sm" href="/membership/">No box? See how Mavis works</a>
+</div>
+<div class="w c" id="s2">
+  <div class="top" style="justify-content:center"><i>M</i><span>Mavis<em>.</em></span></div>
+  <div class="ok"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <h1>That's your venue's app</h1>
+  <p class="lead">Your guests get exactly what you just saw, on their own phone.</p>
+  <div class="list" style="text-align:left">
+    <div><em>01</em>Each member gets a keyring like yours</div>
+    <div><em>02</em>One scan and your app is on their phone</div>
+    <div><em>03</em>Every visit counts, perks and rewards follow</div>
+    <div><em>04</em>You change everything yourself, any time</div>
+  </div>
+  <a class="btn" href="/membership/">See how it works &rarr;</a>
+  <a class="ghost" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%20opened%20my%20box%20and%20have%20a%20question" target="_blank" rel="noopener">Questions? WhatsApp us</a>
+</div>
+<script>
+document.getElementById('done').onclick = function(){ document.body.classList.add('done'); scrollTo(0, 0); try { history.pushState({ s: 2 }, '', '#scanned'); } catch (e) {} };
+window.onpopstate = function(){ document.body.classList.toggle('done', location.hash === '#scanned'); };
+if (location.hash === '#scanned') document.body.classList.add('done');
+</script>
+</body></html>
