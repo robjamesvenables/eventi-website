@@ -10,7 +10,7 @@ body{font-family:Inter,system-ui,sans-serif;background:#0F1E2E;color:#fff;min-he
 .top{display:flex;align-items:center;gap:9px;font-weight:900;font-size:20px}.top i{width:30px;height:30px;border-radius:50%;background:#0D9488;display:grid;place-items:center;font-style:normal;font-size:15px}.top em{font-style:normal;color:#C4973B}
 h1{font-size:30px;line-height:1.12;font-weight:900;letter-spacing:-.5px;margin-top:22px}
 .lead{margin-top:10px;color:rgba(255,255,255,.75);font-size:16px;line-height:1.5}
-.pic{position:relative;margin-top:20px;height:380px;border-radius:22px;overflow:hidden;background:#8a6a55 url(/img/card/keyring.jpg) center/cover}
+.pic{position:relative;margin-top:20px;height:380px;border-radius:22px;overflow:hidden;background:#8a6a55 url(/img/card/keyring-yourlogo.jpg) center/cover}
 .pic .kw{position:relative;height:100%;aspect-ratio:1315/1612;margin:0 auto;transform:scale(1.04)}.pic img{width:100%;height:100%;object-fit:cover;display:block}
 .pic b{position:absolute;left:12px;top:12px;z-index:2;background:#C4973B;color:#2B1D07;font-size:12.5px;font-weight:900;padding:6px 11px;border-radius:99px}
 .qz{position:absolute;left:30.2%;top:59.8%;width:31.8%;height:25.9%;transform:rotate(4.7deg)}
@@ -27,14 +27,25 @@ h1{font-size:30px;line-height:1.12;font-weight:900;letter-spacing:-.5px;margin-t
 .ok{margin:34px auto 0;width:84px;height:84px;border-radius:50%;background:#0D9488;display:grid;place-items:center}
 .c{text-align:center}.list{margin-top:22px;background:rgba(255,255,255,.07);border-radius:18px;padding:4px 16px}.list div{display:flex;gap:12px;padding:13px 0;border-top:1px solid rgba(255,255,255,.08);font-size:15px;line-height:1.4}.list div:first-child{border:0}.list em{font-style:normal;color:#5EEAD4;font-weight:900;flex:none}
 #s2{display:none}body.done #s1{display:none}body.done #s2{display:block}
+.alt{margin-top:12px;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border-radius:16px;padding:10px 12px}
+.alt img{width:54px;height:auto;border-radius:5px;flex:none}.alt img+img{margin-left:-14px;transform:rotate(6deg)}.alt span{font-size:14px;font-weight:700;line-height:1.35;margin-left:6px;color:rgba(255,255,255,.88)}
+h2{margin-top:30px;font-size:22px;font-weight:900;text-align:left}
+.opts{margin-top:12px;display:flex;flex-direction:column;gap:10px;text-align:left}.op{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border-radius:16px;padding:10px}
+.op img{width:96px;height:64px;object-fit:cover;border-radius:10px;flex:none}.op img.cd{object-fit:contain;border-radius:6px}.op b{display:block;font-size:16px;font-weight:900}.op span{display:block;font-size:14px;color:rgba(255,255,255,.72);margin-top:2px}
+.or{margin-top:12px;text-align:left;font-size:14px;color:rgba(255,255,255,.72);line-height:1.45}
+.alt2{margin-top:14px;background:rgba(255,255,255,.07);border-radius:18px;padding:14px 14px 12px}.alt2 p{font-size:15px;font-weight:800;line-height:1.35}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:12px}.two figure{margin:0}.two img{width:100%;display:block;border-radius:9px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.two figcaption{margin-top:8px;font-size:13.5px;font-weight:800;text-align:center;color:rgba(255,255,255,.9)}
+.t2{text-align:left}.t2 figcaption{text-align:left;font-weight:600;color:rgba(255,255,255,.72);line-height:1.35}.t2 figcaption b{display:block;color:#fff;font-size:15.5px;font-weight:900}
+.big{margin-top:12px;background:rgba(255,255,255,.07);border-radius:18px;overflow:hidden;text-align:left}.kimg{height:210px;background:url(/img/card/keyring-yourlogo.jpg) 50% 62%/cover}.bt{padding:12px 14px}.bt b{display:block;font-size:17px;font-weight:900}.bt span{display:block;font-size:14.5px;color:rgba(255,255,255,.72);margin-top:2px}
 </style></head><body>
 <div class="w" id="s1">
   <div class="top"><i>M</i><span>Mavis<em>.</em></span></div>
   <h1>Thank you for opening your Mavis box</h1>
-  <p class="lead">We made something for your venue. It's waiting on the wooden keyring.</p>
-  <div class="pic"><div class="kw"><img src="/img/card/keyring.jpg" alt="The wooden keyring from your Mavis box, with its QR code"><div class="qz" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><div class="scan"></div></div></div><b>Start here</b></div>
+  <div class="pic"><div class="kw"><img src="/img/card/keyring-yourlogo.jpg" alt="The wooden keyring from your Mavis box, with its QR code"><div class="qz" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><div class="scan"></div></div></div><b>Start here</b></div>
+  <div class="alt2"><p>Got a card instead? Same thing, scan the QR on it.</p><div class="two"><figure><img src="/img/card/card-wood.png" alt=""><figcaption>Wooden card</figcaption></figure><figure><img src="/img/card/card-plastic.png" alt=""><figcaption>Plastic card</figcaption></figure></div></div>
   <div class="steps">
-    <div class="st"><i>1</i>Take the wooden keyring out of the box</div>
+    <div class="st"><i>1</i>Take the keyring or card out of the box</div>
     <div class="st"><i>2</i>Open your phone camera</div>
     <div class="st"><i>3</i>Point it at the QR and tap the link</div>
   </div>
@@ -47,11 +58,15 @@ h1{font-size:30px;line-height:1.12;font-weight:900;letter-spacing:-.5px;margin-t
   <h1>That's your venue's app</h1>
   <p class="lead">Your guests get exactly what you just saw, on their own phone.</p>
   <div class="list" style="text-align:left">
-    <div><em>01</em>Each member gets a keyring like yours</div>
+    <div><em>01</em>Each member gets a keyring or card like yours</div>
     <div><em>02</em>One scan and your app is on their phone</div>
     <div><em>03</em>Every visit counts, perks and rewards follow</div>
     <div><em>04</em>You change everything yourself, any time</div>
   </div>
+  <h2>Three ways to carry it</h2>
+  <div class="big"><div class="kimg"></div><div class="bt"><b>Wooden keyring</b><span>On their keys every day. The wow.</span></div></div>
+  <div class="two t2"><figure><img src="/img/card/card-wood.png" alt=""><figcaption><b>Wooden card</b>Feels premium, fits a wallet</figcaption></figure><figure><img src="/img/card/card-plastic.png" alt=""><figcaption><b>Plastic card</b>Your colours, best value</figcaption></figure></div>
+  <p class="or">Or no card at all: a digital card sent straight to their phone. Mix and match, it's your call.</p>
   <a class="btn" href="/app/">See how it works &rarr;</a>
   <a class="ghost" href="https://wa.me/6282145328784?text=Hi%20Mavis%2C%20I%20opened%20my%20box%20and%20have%20a%20question" target="_blank" rel="noopener">Questions? WhatsApp us</a>
 </div>
