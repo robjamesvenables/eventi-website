@@ -1,88 +1,157 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Mavis for The Trans</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Mavis for The Trans</title><link rel="icon" type="image/png" href="/brand/mavis-favicon-v6.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0B1622;overflow:hidden;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-.slide{position:absolute;width:1920px;height:1080px;transform-origin:center center;opacity:0;transition:opacity .35s ease;pointer-events:none}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;background:#0B1622;overflow:hidden;font-family:Inter,system-ui,Arial,sans-serif}
+#stage{position:fixed;inset:0}
+.slide{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;opacity:0;transition:opacity .35s ease;pointer-events:none;overflow:hidden}
 .slide.on{opacity:1;pointer-events:auto}
-.slide img{display:block;width:1920px;height:1080px}
-/* links slide */
-.lk{background:#0F1E2E;color:#F6F3EC;padding:72px 128px;display:flex;flex-direction:column;gap:32px}
-.lk small{font-size:26px;font-weight:600;letter-spacing:4px;color:#C9A24A}
-.lk h2{font-size:64px;font-weight:700;line-height:1.05;margin-top:12px}
-.lk ol{list-style:none;display:flex;flex-direction:column;gap:12px}
-.lk a{display:flex;align-items:center;gap:32px;background:#1B2D40;padding:16px 40px;border-radius:20px;color:inherit;text-decoration:none;transition:background .15s}
-.lk a:hover{background:#243A52}
-.lk .n{font-size:40px;font-weight:800;color:#C4973B;width:48px}
-.lk .t{font-size:36px;font-weight:700;width:560px}
-.lk .u{font-size:28px;color:#BFC8D2}
-.lk .go{margin-left:auto;font-size:34px;color:#C4973B}
-/* controls */
-#bar{position:fixed;right:16px;bottom:14px;display:flex;gap:8px;align-items:center;opacity:.75;transition:opacity .2s;z-index:5}
-#bar:hover{opacity:1}
-#bar button{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:10px;padding:8px 12px;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}
-#num{color:#fff;font:600 14px Inter,system-ui,sans-serif;min-width:40px;text-align:center}
-#bar #nx,#bar #pv{font-size:22px;padding:4px 14px}
-#hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(15,30,46,.85);color:#fff;font:600 15px Inter,system-ui,sans-serif;padding:10px 18px;border-radius:999px;z-index:6;transition:opacity .6s;pointer-events:none}
-/* phones held upright: all slides one under another */
-body.tall{overflow:auto}
-body.tall #stage{position:static;display:block;padding:12px}
-body.tall .slide{position:relative;opacity:1;pointer-events:auto;transform:none!important;width:100%;height:auto;margin:0 0 12px;border-radius:10px;overflow:hidden}
-body.tall .slide img{width:100%;height:auto}
-body.tall .lk{display:none}
-body.tall #bar,body.tall #hint{display:none}
-#more{display:none}
-body.tall #more{display:block;margin:4px 12px 28px;text-align:center;background:#C4973B;color:#0F1E2E;font:700 17px Inter,system-ui,sans-serif;padding:14px;border-radius:12px;text-decoration:none}
-</style>
-</head>
-<body>
-<div id="stage">
-  <div class="slide"><img src="s1.jpg?v=2" alt="Rob Venables, founder of Mavis"></div>
-  <div class="slide"><img src="s2.jpg" alt="How it started: Mavis Team, Club, Padel and Bookings"></div>
-  <div class="slide"><img src="s3.jpg" alt="Twelve reasons Mavis Club works"></div>
-  <div class="slide"><img src="s4.jpg" alt="As simple as 1, 2, 3"></div>
-  <div class="slide"><img src="s5.jpg" alt="Let me show you"></div>
-  <div class="slide lk">
-    <div><small>LINKS</small><h2>Everything for today</h2></div>
-    <ol>
-      <li><a href="./"><span class="n">1</span><span class="t">Mavis for The Trans</span><span class="u">This presentation</span><span class="go">→</span></a></li>
-      <li><a href="qr/" target="_blank"><span class="n">2</span><span class="t">Scan The Trans</span><span class="u">Big-screen QR code</span><span class="go">→</span></a></li>
-      <li><a href="https://app.getmavis.co/k/T7RNSB" target="_blank"><span class="n">3</span><span class="t">Members Club</span><span class="u">The Trans guest app</span><span class="go">→</span></a></li>
-      <li><a href="https://app.getmavis.co/?go=members" target="_blank"><span class="n">4</span><span class="t">Mavis app</span><span class="u">The back office</span><span class="go">→</span></a></li>
-      <li><a href="staff/" target="_blank"><span class="n">5</span><span class="t">Staff scan demo</span><span class="u">Existing member and new guest QR codes</span><span class="go">→</span></a></li>
-      <li><a href="team/" target="_blank"><span class="n">6</span><span class="t">Team roles</span><span class="u">Who can do what in Members Club</span><span class="go">→</span></a></li>
-      <li><a href="https://eventi-theta.vercel.app/spa-bookings.html" target="_blank"><span class="n">7</span><span class="t">Spa room bookings</span><span class="u">Mavis Bookings demo</span><span class="go">→</span></a></li>
-      <li><a href="gift/" target="_blank"><span class="n">8</span><span class="t">Keyring gift page</span><span class="u">Before the keyring is set up</span><span class="go">→</span></a></li>
-    </ol>
-  </div>
+.slide a{text-decoration:underline}
+#bar{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:5;opacity:.25;transition:opacity .2s}#bar:hover{opacity:1}
+#bar button{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer}
+#bar span{color:#fff;font:600 14px Inter,sans-serif;min-width:48px;text-align:center}
+</style></head><body><div id="stage">
+<section class="slide" id="rob" data-transition="fade" style="background:#0F1E2E;color:#F6F3EC;font-family:Inter, Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:Inter, Arial, sans-serif;font-size:64px;font-weight:800;letter-spacing:-1px;color:#F6F3EC"><span style="color:#0D9488">M</span>avis<span style="color:#C4973B">.</span></p>
+<div style="display:flex;flex-direction:column;gap:40px;width:1060px">
+<h1 style="font-family:Inter, Arial, sans-serif;font-size:120px;font-weight:700;line-height:1;color:#F6F3EC">Rob Venables</h1>
+<p style="font-size:40px;color:#C9A24A;font-weight:600;line-height:1.3">Founder of Mavis · Technical Director</p>
+<div style="display:flex;gap:56px">
+<div style="display:flex;flex-direction:column;gap:8px;width:420px">
+<p style="font-family:Inter, Arial, sans-serif;font-size:64px;font-weight:700;color:#F6F3EC">20+ yrs</p>
+<p style="font-size:26px;color:#BFC8D2;line-height:1.4">Project Director: Bank of America, Amazon</p>
 </div>
-<div id="hint">Press → or click to see the next slide</div>
-<a id="more" href="links/">All the links →</a>
-<div id="bar"><button id="pv" aria-label="Previous slide">‹</button><span id="num"></span><button id="nx" aria-label="Next slide">›</button><button id="fs">Full screen</button><button id="ln">Links</button></div>
+<div style="display:flex;flex-direction:column;gap:8px;width:420px">
+<p style="font-family:Inter, Arial, sans-serif;font-size:64px;font-weight:700;color:#F6F3EC">Bali</p>
+<p style="font-size:26px;color:#BFC8D2;line-height:1.4">Three of Bali’s top beach clubs: Luna, Potato Head and Finns</p>
+</div>
+</div>
+</div>
+<p style="font-size:28px;color:#BFC8D2">Prepared for The Trans Hotels · 20 November 2026</p>
+</section>
+
+<section class="slide" id="origin" data-transition="fade" style="background:#0F1E2E;color:#F6F3EC;font-family:Inter, Arial, sans-serif;padding:104px 128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:26px;font-weight:600;letter-spacing:4px;color:#C4973B">WHAT IS MAVIS</p>
+<h2 style="font-family:Inter, Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;color:#F6F3EC">One platform. Three parts.</h2>
+</div>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:22px;background:#1B2D40;padding:28px;border-radius:24px;border:1px solid #2A4058">
+<p style="font-size:48px;font-weight:800;color:#C4973B;line-height:1">1</p>
+<img src="/trans/d/team.jpg" alt="Mavis team dashboard on a phone" style="width:100%;height:440px;object-fit:cover;object-position:top;border-radius:16px;background:#E9E4D8">
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-family:Inter, Arial, sans-serif;font-size:40px;font-weight:700;color:#F6F3EC">Mavis Team</h3>
+<p style="font-size:28px;color:#A9B6C4;line-height:1.35">One app for the whole team</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px;background:#1B2D40;padding:28px;border-radius:24px;border:1px solid #2A4058">
+<p style="font-size:48px;font-weight:800;color:#C4973B;line-height:1">2</p>
+<img src="/trans/d/members.jpg" alt="The Trans Surabaya members app on a phone" style="width:100%;height:440px;object-fit:cover;object-position:top;border-radius:16px;background:#E9E4D8">
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-family:Inter, Arial, sans-serif;font-size:40px;font-weight:700;color:#F6F3EC">Mavis Members</h3>
+<p style="font-size:28px;color:#A9B6C4;line-height:1.35">One app for your guests</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px;background:#1B2D40;padding:28px;border-radius:24px;border:1px solid #2A4058">
+<p style="font-size:48px;font-weight:800;color:#C4973B;line-height:1">3</p>
+<div style="position:relative;width:100%;height:440px;background:#132435;border-radius:16px;overflow:hidden">
+<img src="/trans/d/padel.jpg" alt="Mavis Bookings padel courts, pick your exact court" style="position:absolute;left:18px;top:24px;width:250px;height:300px;object-fit:cover;border-radius:14px;box-shadow:0 12px 26px rgba(15,30,46,0.25);transform:rotate(-6deg)">
+<img src="/trans/d/spa.jpg" alt="Mavis Bookings spa therapist schedule" style="position:absolute;left:220px;top:110px;width:250px;height:300px;object-fit:cover;border-radius:14px;box-shadow:0 14px 30px rgba(15,30,46,0.3);transform:rotate(5deg)">
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<h3 style="font-family:Inter, Arial, sans-serif;font-size:40px;font-weight:700;color:#F6F3EC">Mavis Bookings</h3>
+<p style="font-size:28px;color:#A9B6C4;line-height:1.35">Padel courts, spa rooms and tables</p>
+</div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="ticks" data-transition="fade" style="background:#0F1E2E;color:#F6F3EC;font-family:Inter, Arial, sans-serif;padding:96px 128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:Inter, Arial, sans-serif;font-size:26px;font-weight:600;letter-spacing:4px;color:#C4973B">MAVIS MEMBERS · WHAT IT DOES FOR YOU</p>
+<h2 style="font-family:Inter, Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;color:#F6F3EC">Twelve reasons it works</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4, 1fr);grid-auto-rows:1fr;gap:20px;flex:1">
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Guests come back</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">A real reason to return</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Perks from day one</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Members feel special</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Rewards for visits</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Every visit counts</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Notifications</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Pop up on their phone</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">First to know</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Events before anyone</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Members-only offers</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Straight to their phone</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Guest details, yours</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">Names, phones, birthdays</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">A direct line</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">No OTA in the middle</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">See who visits</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">How often, and where</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">All your hotels</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">One membership</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Your own app</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">No app store needed</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B2D40;padding:24px 20px;border-radius:22px;border:1px solid #2A4058;text-align:center"><svg aria-label="" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><h3 style="font-family:Inter, Arial, sans-serif;font-size:30px;font-weight:700;line-height:1.15;color:#F6F3EC;text-align:center;width:340px">Your team runs it</h3><p style="font-family:Inter, Arial, sans-serif;font-size:24px;color:#A9B6C4;line-height:1.3;text-align:center;width:340px">No tech skills</p></div>
+</div>
+</section>
+
+<section class="slide" id="club" data-transition="fade" style="background:#1C1C1E;color:#F2EEE6;font-family:Inter, Arial, sans-serif;padding:88px 128px 96px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:26px;font-weight:600;letter-spacing:4px;color:#C9A96E">HOW IT WORKS</p>
+<h2 style="font-family:Inter, Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.05;color:#F2EEE6">Three ways to carry it</h2>
+<p style="font-family:Inter, Arial, sans-serif;font-size:32px;color:#B9B3A8;line-height:1.3">One scan opens their members app.</p>
+</div>
+<div style="display:flex;gap:56px;flex:1;align-items:stretch">
+<div style="width:440px;display:flex;flex-direction:column;align-items:center;gap:24px">
+<img src="/trans/d/keyring.webp" alt="Staff scan a Trans Surabaya wooden keyring and the member is checked in" style="width:360px;height:540px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<h3 style="font-size:36px;font-weight:700;color:#F2EEE6;text-align:center"><span style="color:#C9A96E">1</span>  Keyring</h3>
+<p style="font-size:26px;color:#B9B3A8;text-align:center">On their keys, every day</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+<img src="/trans/d/card-wood.png" alt="The Trans Luxury Hotel wooden member card with QR code" style="width:540px;height:341px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<h3 style="font-size:36px;font-weight:700;color:#F2EEE6;text-align:center"><span style="color:#C9A96E">2</span>  Wooden card</h3>
+<p style="font-size:26px;color:#B9B3A8;text-align:center">Natural, slips into a wallet</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+<img src="/trans/d/card-plastic.png" alt="The Trans Luxury Hotel charcoal and gold plastic member card with QR code" style="width:540px;height:341px;object-fit:contain;border:2px solid #5A4C33;border-radius:24px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<h3 style="font-size:36px;font-weight:700;color:#F2EEE6;text-align:center"><span style="color:#C9A96E">3</span>  Plastic card</h3>
+<p style="font-size:26px;color:#B9B3A8;text-align:center">Your colours, your logo</p>
+</div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="scan" data-transition="fade" style="background:#1C1C1E;color:#F2EEE6;font-family:Inter, Arial, sans-serif;padding:96px 128px;display:flex;align-items:center;gap:96px">
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<p style="font-family:Inter, Arial, sans-serif;font-size:26px;font-weight:600;letter-spacing:4px;color:#C9A96E">TRY IT NOW</p>
+<h1 style="font-family:Inter, Arial, sans-serif;font-size:120px;font-weight:800;line-height:1;color:#F2EEE6">Scan me</h1>
+<p style="font-family:Inter, Arial, sans-serif;font-size:36px;color:#B9B3A8;line-height:1.35;width:700px">Point your phone camera at the code. The Trans Surabaya members app opens straight away.</p>
+<p style="font-family:Inter, Arial, sans-serif;font-size:28px;font-weight:600;color:#C9A96E">No download. No sign-up.</p>
+</div>
+<div style="background:#FFFFFF;padding:44px;border-radius:40px;box-shadow:0 30px 70px rgba(0,0,0,0.45)"><img src="/trans/d/qr.png" alt="QR code that opens The Trans Surabaya members app" style="width:720px;height:720px;object-fit:contain"></div>
+
+</section>
+
+<section class="slide" id="links" data-transition="fade" style="background:#0F1E2E;color:#F6F3EC;font-family:Inter, Arial, sans-serif;padding:96px 128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:26px;font-weight:600;letter-spacing:4px;color:#C9A24A">LINKS</p>
+<h2 style="font-family:Inter, Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.05;color:#F6F3EC">Everything for today</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:32px;background:#1B2D40;padding:18px 40px;border-radius:20px"><p style="font-size:40px;font-weight:800;color:#C4973B;width:48px">1</p><h3 style="font-size:36px;font-weight:700;color:#F6F3EC;width:600px">Members app · Surabaya</h3><p style="font-size:28px;color:#BFC8D2"><a target="_blank" rel="noopener" style="color:#D9C08A" href="https://app.getmavis.co/k/T6RSBY">app.getmavis.co/k/T6RSBY</a></p></div>
+<div style="display:flex;align-items:center;gap:32px;background:#1B2D40;padding:18px 40px;border-radius:20px"><p style="font-size:40px;font-weight:800;color:#C4973B;width:48px">2</p><h3 style="font-size:36px;font-weight:700;color:#F6F3EC;width:600px">Members app · Bali</h3><p style="font-size:28px;color:#BFC8D2"><a target="_blank" rel="noopener" style="color:#D9C08A" href="https://app.getmavis.co/k/T7RNSB">app.getmavis.co/k/T7RNSB</a></p></div>
+<div style="display:flex;align-items:center;gap:32px;background:#1B2D40;padding:18px 40px;border-radius:20px"><p style="font-size:40px;font-weight:800;color:#C4973B;width:48px">3</p><h3 style="font-size:36px;font-weight:700;color:#F6F3EC;width:600px">Back office · Members</h3><p style="font-size:28px;color:#BFC8D2"><a target="_blank" rel="noopener" style="color:#D9C08A" href="https://app.getmavis.co/?go=members">app.getmavis.co · log in</a></p></div>
+</div>
+</section>
+
+</div><div id="bar"><button id="pv" aria-label="Previous">&#8249;</button><span id="ct"></span><button id="nx" aria-label="Next">&#8250;</button><button id="fs" aria-label="Full screen">&#x26F6;</button></div>
 <script>
-(function(){
-  var S=[].slice.call(document.querySelectorAll('.slide')),i=0;
-  function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);S.forEach(function(s){s.style.transform='scale('+k+')'});}
-  function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,j){s.classList.toggle('on',j===i)});document.getElementById('num').textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
-  function full(){var d=document.documentElement;if(!document.fullscreenElement){(d.requestFullscreen||d.webkitRequestFullscreen||function(){}).call(d)}else{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}}
-  function mode(){var t=innerHeight>innerWidth&&innerWidth<820;document.body.classList.toggle('tall',t);document.documentElement.style.overflow=t?'auto':'';document.documentElement.style.height=document.body.style.height=t?'auto':'';fit()}
-  addEventListener('resize',mode);mode();
-  setTimeout(function(){var h=document.getElementById('hint');if(h)h.style.opacity=0},4000);
-  var h=parseInt((location.hash||'').slice(1),10);show(h>0?h-1:0);
-  addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(i+1)}else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(i-1)}else if(k==='Home')show(0);else if(k==='End')show(S.length-1);else if(k==='f'||k==='F')full()});
-  document.getElementById('stage').addEventListener('click',function(e){if(e.target.closest('a'))return;show(e.clientX<innerWidth/3?i-1:i+1)});
-  var x0=null;addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(d<0?i+1:i-1);x0=null});
-  document.getElementById('pv').onclick=function(e){e.stopPropagation();show(i-1)};
-  document.getElementById('nx').onclick=function(e){e.stopPropagation();show(i+1)};
-  document.getElementById('fs').onclick=function(e){e.stopPropagation();full()};
-  document.getElementById('ln').onclick=function(e){e.stopPropagation();show(S.length-1)};
+(function(){var S=[].slice.call(document.querySelectorAll('.slide')),i=0,ct=document.getElementById('ct');
+var fit=function(){var k=Math.min(innerWidth/1920,innerHeight/1080);S.forEach(function(s){s.style.transform='translate(-50%,-50%) scale('+k+')';});};
+var go=function(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,j){s.classList.toggle('on',j===i);});ct.textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1));}catch(e){}};
+addEventListener('resize',fit);fit();go((parseInt(location.hash.slice(1),10)||1)-1);
+addEventListener('keydown',function(e){if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>=0){e.preventDefault();go(i+1);}if(['ArrowLeft','PageUp','Backspace'].indexOf(e.key)>=0){e.preventDefault();go(i-1);}if(e.key==='f')fsT();});
+document.getElementById('stage').addEventListener('click',function(e){if(e.target.closest('a'))return;go(e.clientX>innerWidth/3?i+1:i-1);});
+document.getElementById('pv').onclick=function(){go(i-1);};document.getElementById('nx').onclick=function(){go(i+1);};
+var fsT=function(){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();};document.getElementById('fs').onclick=fsT;
 })();
-</script>
-</body>
-</html>
+</script></body></html>
