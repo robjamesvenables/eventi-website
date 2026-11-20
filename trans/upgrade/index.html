@@ -100,7 +100,7 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
     <p class="sub">They scan once in the lobby. Every upgrade after that happens on their phone.</p>
     <div class="steps">
       <div class="st on" id="s0"><i>1</i><div><b>Guest</b><span>Scans the lobby screen. Hotel guide.</span></div></div>
-      <div class="st" id="s1"><i>2</i><div><b>Member</b><span>Gold card, perks and offers.</span></div></div>
+      <div class="st" id="s1"><i>2</i><div><b>Member</b><span>Approved by the hotel. Gold card.</span></div></div>
       <div class="st" id="s2"><i>3</i><div><b>VIP</b><span>Black card, approved by the hotel.</span></div></div>
     </div>
     <button id="restart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button>
@@ -110,14 +110,14 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
     <div class="sbar"><span>9:41</span><span><svg width="44" height="14" viewBox="0 0 44 14" fill="#fff"><rect x="0" y="8" width="3" height="6" rx="1"/><rect x="5" y="5" width="3" height="9" rx="1"/><rect x="10" y="2" width="3" height="12" rx="1"/><rect x="20" y="1" width="20" height="12" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="22.5" y="3.5" width="14" height="7" rx="1.5"/></svg></span></div><div class="isl"></div>
     <div class="scr" id="scr"><img id="img" src="/trans/up/guest.jpg" alt="The Trans Surabaya app"></div>
     <div class="toast" id="toast"></div>
-    <button class="cta g" id="ctaJoin"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Become a member<small>Free. Perks from your next visit</small></div></button>
+    <button class="cta g" id="ctaJoin"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Ask to join<small>Become a member. It's free</small></div></button>
     <button class="cta d hide" id="ctaVip"><svg width="28" height="28" viewBox="0 0 24 24" fill="#E9C46A"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Go VIP<small>Ask the team about VIP</small></div></button>
     <div class="dim" id="dim"></div>
     <div class="sheet" id="shJoin"><div class="grab"></div>
-      <h4>Join the Members Club</h4><p>Free. Your name on every visit, member offers and rewards.</p>
+      <h4>Join the Members Club</h4><p>Free. The team will confirm and let you know.</p>
       <div class="fld"><label>NAME</label><div>Alexander</div></div>
       <div class="fld"><label>WHATSAPP</label><div>+62 812 3456 7890</div></div>
-      <button class="go" id="goJoin">Join now</button></div>
+      <button class="go" id="goJoin">Send request</button></div>
     <div class="sheet" id="shVip"><div class="grab"></div>
       <h4>Become a VIP</h4><p>The team will look at your request and let you know.</p>
       <div class="perk"><i>★</i>Free room upgrade when available</div>
@@ -135,7 +135,7 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
       <div class="boh"><div class="lg">M</div><div><b>Back office</b><span>Members Club · The Trans Surabaya</span></div></div>
       <div class="bol" id="bol"><div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div></div>
     </div>
-    <p class="hint" id="hint">Tap "Become a member" on the phone</p>
+    <p class="hint" id="hint">Tap "Ask to join" on the phone</p>
   </div>
 </div>
 <script>
@@ -155,21 +155,27 @@ function toast(t){var e=$('toast');e.innerHTML=t;e.classList.add('on');setTimeou
 function bo(html){var em=$('em');if(em)em.remove();var d=document.createElement('div');d.className='it';d.innerHTML=html;$('bol').insertBefore(d,$('bol').firstChild);return d;}
 function now(){var d=new Date();return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});}
 
-$('ctaJoin').onclick=function(){dim(true);$('shJoin').classList.add('on');hint('Tap "Join now"');nudge($('goJoin'));};
+$('ctaJoin').onclick=function(){dim(true);$('shJoin').classList.add('on');hint('Tap "Send request"');nudge($('goJoin'));};
 $('goJoin').onclick=function(){
-  $('shJoin').classList.remove('on');$('ctaJoin').classList.add('hide');
-  screen('/trans/up/member.jpg');stage(1);
-  setTimeout(function(){$('popM').classList.add('on');confetti();},450);
-  bo('<div class="av g">A</div><div><b>New member: Alexander</b><p>Joined from the hotel guide. Welcome message sent on WhatsApp.</p><div class="tm">Just now · '+now()+'</div></div>');
-  hint('Alexander is now in the back office');nudge($('okM'));
+  $('shJoin').classList.remove('on');dim(false);$('ctaJoin').classList.add('hide');
+  setTimeout(function(){toast('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Request sent. We\'ll let you know.');},300);
+  var it=bo('<div class="av n">A</div><div style="flex:1"><b>Alexander wants to join</b><p>From the hotel guide · +62 812 3456 7890</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
+  hint('The GRO approves it in the back office');nudge(it.querySelector('.ap'));
+  it.querySelector('.ap').onclick=function(){
+    it.querySelector('.acts').outerHTML='<span class="ok">Approved · now a member</span>';
+    screen('/trans/up/member.jpg');stage(1);
+    setTimeout(function(){dim(true);$('popM').classList.add('on');confetti();},450);
+    hint('Alexander is now a member');nudge($('okM'));
+  };
+  it.querySelector('.no').onclick=function(){it.querySelector('.acts').outerHTML='<span class="ok" style="background:#EEE9DF;color:#6B665E">Not now</span>';$('ctaJoin').classList.remove('hide');hint('Tap "Ask to join" to try again');nudge($('ctaJoin'));};
 };
 $('okM').onclick=function(){$('popM').classList.remove('on');dim(false);setTimeout(function(){$('ctaVip').classList.remove('hide');$('ctaVip').classList.add('pulse');nudge($('ctaVip'));},500);hint('Scroll the app, then tap "Go VIP"');};
 $('ctaVip').onclick=function(){dim(true);$('shVip').classList.add('on');hint('Tap "Ask for VIP"');nudge($('goVip'));};
 $('goVip').onclick=function(){
   $('shVip').classList.remove('on');dim(false);$('ctaVip').classList.add('hide');
   setTimeout(function(){toast('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Request sent. We\'ll let you know.');},300);
-  var it=bo('<div class="av v">A</div><div style="flex:1"><b>Alexander wants to go VIP</b><p>Member since today · 1 visit</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
-  hint('Now approve it in the back office');nudge(it.querySelector('.ap'));
+  var it=bo('<div class="av v">A</div><div style="flex:1"><b>Alexander wants to go VIP</b><p>Member since today</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
+  hint('The GRO approves it in the back office');nudge(it.querySelector('.ap'));
   it.querySelector('.ap').onclick=function(){
     it.querySelector('.acts').outerHTML='<span class="ok">Approved · now VIP</span>';
     screen('/trans/up/vip.jpg');stage(2);
@@ -181,7 +187,7 @@ $('goVip').onclick=function(){
 $('okV').onclick=function(){$('popV').classList.remove('on');dim(false);nudge(null);hint('Done. Tap "Start again" to show it again');};
 $('restart').onclick=function(){['popM','popV','shJoin','shVip'].forEach(function(i){$(i).classList.remove('on');});dim(false);
   $('ctaVip').classList.add('hide');$('ctaJoin').classList.remove('hide');screen('/trans/up/guest.jpg');stage(0);
-  $('bol').innerHTML='<div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div>';hint('Tap "Become a member" on the phone');nudge($('ctaJoin'));};
+  $('bol').innerHTML='<div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div>';hint('Tap "Ask to join" on the phone');nudge($('ctaJoin'));};
 nudge($('ctaJoin'));
 })();
 </script>
