@@ -1,160 +1,285 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>28th Sky Beach Club · Floor plan</title>
+<title>28th Sky Beach Club · Book a spot</title>
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F0E6;--card:#FBF8F2;--ink:#2A2622;--mut:#8C8377;--line:#E4DCCD;--gold:#B8914A;--gold2:#E6C77E;
---z1:#8DAA7E;--z2:#C9A46A;--z3:#C46A4E;--z4:#B07C9E;--z5:#5E8C86}
+:root{--ink:#1F1B17;--mut:#7C746A;--line:#ECE6DC;--gold:#B8914A;--free:#3BE36B;--bk:#E0483E;--sel:#F6D44A;--pw:430px}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
-.wrap{max-width:1320px;margin:0 auto;padding:40px 40px 48px}
-.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.k{font-size:12px;font-weight:700;letter-spacing:4px;color:var(--gold)}
-h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:52px;line-height:1;margin-top:8px;letter-spacing:-.5px}
-.date{display:flex;gap:8px}
-.date button{font:inherit;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;color:var(--mut);cursor:pointer}
-.date button.on{background:var(--ink);border-color:var(--ink);color:#F5F0E6}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
-.chip{font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;font-size:14px;font-weight:600;color:var(--ink);transition:.2s}
-.chip i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-size:12px;font-weight:800}
-.chip span{color:var(--mut);font-weight:500}
-.chip.off{opacity:.4}
-.chip:hover{border-color:#CDBFA8}
-.board{position:relative;margin-top:18px;background:var(--card);border-radius:28px;padding:22px;box-shadow:0 1px 0 rgba(0,0,0,.03),0 30px 60px -30px rgba(80,60,30,.25)}
-svg{display:block;width:100%;height:auto}
+html,body{height:100%;overflow:hidden;background:#2B2620;font-family:Inter,Arial,sans-serif;color:var(--ink)}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+/* map */
+#mapw{position:fixed;inset:0;transition:transform .55s cubic-bezier(.2,.8,.2,1);display:grid;place-items:center}
+body.open #mapw{transform:translateX(calc(var(--pw) / 2)) scale(.78)}
+#mapin{width:min(94vw,calc((100vh - 170px) * 1200 / 700));margin-top:4px;transition:transform .35s ease;transform-origin:center}
+#plan{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}
+button svg,.pill svg,.toast svg,.cap svg,.deal svg{display:inline-block;flex:none}
 .sp{cursor:pointer}
-.sp .b{transition:transform .18s ease,filter .18s;transform-box:fill-box;transform-origin:center}
-.sp:hover .b{transform:scale(1.06)}
-.sp.bk{cursor:default}.sp.bk:hover .b{transform:none}
-.sp.sel .b{filter:drop-shadow(0 0 0 var(--gold)) drop-shadow(0 6px 14px rgba(184,145,74,.55))}
-.sp.dim{opacity:.18}
-.tip{position:absolute;pointer-events:none;background:var(--ink);color:#F5F0E6;border-radius:14px;padding:10px 14px;font-size:13px;line-height:1.35;white-space:nowrap;transform:translate(-50%,calc(-100% - 14px));opacity:0;transition:opacity .15s;z-index:5}
-.tip b{display:block;font-size:14.5px}
-.tip span{color:#C9BFAE}
-.tip:after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;background:var(--ink);transform:translateX(-50%) rotate(45deg);border-radius:2px}
-.tip.on{opacity:1}
-.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:18px;flex-wrap:wrap}
-.leg{display:flex;gap:18px;font-size:13px;color:var(--mut);font-weight:600}
-.leg span{display:inline-flex;align-items:center;gap:7px}
-.leg i{width:14px;height:14px;border-radius:5px;display:inline-block}
-.pick{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px 12px 18px;min-width:420px;min-height:66px}
-.pick .em{color:var(--mut);font-size:14px}
-.pick b{display:block;font-size:16px}
-.pick small{color:var(--mut);font-size:13px}
-.pick .pr{margin-left:auto;text-align:right;font-size:14px;font-weight:700}
-.pick .pr s{display:block;font-size:12px;color:var(--mut);font-weight:500}
-.pick button{font:inherit;border:0;cursor:pointer;background:var(--ink);color:#F5F0E6;border-radius:12px;padding:11px 18px;font-weight:700;font-size:14px}
-@media(max-width:760px){.wrap{padding:22px 14px}h1{font-size:36px}.date{overflow-x:auto;max-width:100%}.date button{flex:none;padding:8px 13px;font-size:13px}.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-14px;margin-right:-14px;padding:0 14px}.chips::-webkit-scrollbar{display:none}.chip{flex:none;font-size:13px}.board{padding:10px;border-radius:18px;overflow-x:auto;-webkit-overflow-scrolling:touch}.board svg{width:900px;max-width:none}.pick{min-width:0;width:100%}.swipe{display:block!important}}
-.swipe{display:none;font-size:12.5px;color:var(--mut);margin-top:8px;text-align:center}
+.sp .o{transition:fill .2s,stroke .2s,stroke-width .2s}
+.sp.free .o{fill:rgba(59,227,107,.10);stroke:var(--free);stroke-width:3.5}
+.sp.free:hover .o{fill:rgba(59,227,107,.28);stroke-width:5}
+.sp.bk .o{fill:rgba(224,72,62,.82);stroke:#B5302A;stroke-width:2.5}
+.sp.sel .o{fill:rgba(246,212,74,.88);stroke:#fff;stroke-width:4}
+.sp.sel{filter:drop-shadow(0 0 10px rgba(246,212,74,.9))}
+.mk{cursor:default}
+/* top bar */
+.top{position:fixed;top:14px;left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:20;pointer-events:none}
+.top>*{pointer-events:auto}
+.pill{background:#fff;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;font-size:14px;font-weight:600}
+.pill img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.pill .dt{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.steps{display:flex;align-items:center;gap:6px;padding:8px 18px;font-size:13.5px;font-weight:600;color:#A79F94}
+.steps span{display:inline-flex;align-items:center;gap:7px}
+.steps span.on{color:var(--ink)}
+.steps span.done{color:var(--gold)}
+.steps i{font-style:normal;color:#D8D0C4}
+.ic{display:flex;gap:8px}
+.ic button{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+/* venue tabs */
+.venues{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:999px;padding:6px;display:flex;gap:6px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:20;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+body.open .venues{transform:translateX(calc(-50% + var(--pw) / 2))}
+.venues button{border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:#4A443C;text-align:center;line-height:1.15}
+.venues button small{display:block;font-size:10.5px;font-weight:700;color:#E08A2E}
+.venues button.on{background:var(--ink);color:#fff}
+.venues button.on small{color:var(--sel)}
+.zoom{position:fixed;right:16px;bottom:16px;background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;flex-direction:column;z-index:20}
+.zoom button{width:48px;height:48px;font-size:24px;font-weight:500}
+.zoom button+button{border-top:1px solid var(--line)}
+.legend{position:fixed;left:16px;bottom:22px;display:flex;gap:14px;background:rgba(255,255,255,.92);border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:600;z-index:19;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:opacity .3s}
+body.open .legend{opacity:0;pointer-events:none}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:5px}
+/* toast */
+.toast{position:fixed;top:78px;left:50%;transform:translate(-50%,-30px);background:#E0483E;color:#fff;border-radius:12px;padding:12px 18px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.3s;z-index:40}
+.toast.ok{background:#1F1B17}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* side panel */
+.panel{position:fixed;left:0;top:0;bottom:0;width:var(--pw);background:#fff;z-index:30;transform:translateX(-102%);transition:transform .55s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:20px 0 50px rgba(0,0,0,.25)}
+body.open .panel{transform:none}
+.pb{flex:1;overflow-y:auto;padding:20px 22px 20px;scrollbar-width:thin}
+.ph{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.ph h2{font-size:24px;font-weight:800;line-height:1.15}
+.ph button{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#8A8278;flex:none}
+.ph button:hover{background:#F4F0EA}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:#F5F1EA;color:#6B6358}
+.tags span.hot{background:var(--ink);color:#fff}
+.tags span.g{background:#EAF6EE;color:#2E7D4B}
+.cap{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:15px;font-weight:700}
+.desc{font-size:14px;color:var(--mut);line-height:1.5;margin-top:6px}
+.gal{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:96px 96px;gap:6px;margin-top:14px;border-radius:14px;overflow:hidden}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal img:first-child{grid-row:1/3}
+h4{font-size:15px;font-weight:800;margin-top:22px}
+.days{display:flex;gap:7px;margin-top:10px}
+.days button{width:58px;border-radius:12px;padding:7px 0;text-align:center;font-size:11px;font-weight:700;border:1.5px solid}
+.days button b{display:block;font-size:17px}
+.days .f{border-color:#9BE3B1;background:#F1FBF4;color:#2E7D4B}
+.days .x{border-color:#F3B1AC;background:#FDF2F1;color:#C0392B}
+.days .on{box-shadow:0 0 0 2px #2E7D4B}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;background:#F5F1EA;border-radius:14px;padding:4px}
+.who button{border-radius:11px;padding:10px;font-size:13.5px;font-weight:700;color:#6B6358}
+.who button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.deal{margin-top:10px;border:1.5px solid var(--ink);border-radius:16px;padding:14px 16px;position:relative}
+.deal .lb{font-size:11.5px;font-weight:800;letter-spacing:1px;color:var(--gold)}
+.deal .pr{font-size:22px;font-weight:800;margin-top:4px}
+.deal .pr s{font-size:14px;color:#A79F94;font-weight:600;margin-left:8px}
+.deal .off{position:absolute;right:14px;top:14px;background:#EAF6EE;color:#2E7D4B;font-size:12px;font-weight:800;padding:4px 9px;border-radius:8px}
+.deal ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:7px}
+.deal li{display:flex;gap:9px;font-size:13.5px;color:#4A443C;align-items:flex-start}
+.deal li svg{flex:none;margin-top:1px}
+.ex{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.ex label{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer;transition:.2s}
+.ex label img{width:46px;height:46px;border-radius:10px;object-fit:cover}
+.ex label b{display:block;font-size:14px}
+.ex label span{font-size:12.5px;color:var(--mut)}
+.ex label i{margin-left:auto;width:30px;height:30px;border-radius:50%;border:1.5px solid #D9D1C4;display:grid;place-items:center;font-style:normal;font-size:18px;font-weight:600;color:#8A8278;flex:none;transition:.2s}
+.ex label.on{border-color:var(--ink)}
+.ex label.on i{background:var(--ink);border-color:var(--ink);color:#fff}
+.gst{display:flex;align-items:center;justify-content:space-between;margin-top:10px;border:1.5px solid var(--line);border-radius:14px;padding:8px 8px 8px 14px;font-size:14px;font-weight:600}
+.gst div{display:flex;align-items:center;gap:12px}
+.gst button{width:34px;height:34px;border-radius:10px;background:#F5F1EA;font-size:19px;font-weight:700}
+.gst b{min-width:20px;text-align:center;font-size:16px}
+.pf{border-top:1px solid var(--line);padding:12px 22px 16px;background:#fff}
+.pf p{font-size:12.5px;color:var(--mut);text-align:center}
+.pf div{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;margin-top:10px}
+.pf button{border-radius:14px;padding:14px;font-weight:800;font-size:15px}
+.pf .a{border:1.5px solid var(--line)}
+.pf .b{background:var(--ink);color:#fff}
+@media (max-width:760px){
+  :root{--pw:100vw}
+  body.open #mapw{transform:none}
+  #mapin{width:860px;max-width:none;margin-top:60px}
+  #mapw{overflow-x:auto;place-items:center start;padding:0 10px}
+  .panel{top:auto;height:78vh;width:100%;border-radius:22px 22px 0 0;transform:translateY(102%)}
+  body.open .panel{transform:none}
+  .steps,.legend{display:none}
+  .venues{bottom:12px;max-width:94vw;overflow-x:auto}
+  body.open .venues{transform:translateX(-50%)}
+  .venues button{flex:none;padding:8px 13px;font-size:13px}
+  .zoom{display:none}
+}
 </style></head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <div><p class="k">THE TRANS SURABAYA · 28TH FLOOR</p><h1>Sky Beach Club</h1></div>
-    <div class="date" id="date"><button class="on">Today</button><button>Tomorrow</button><button>Sat 22</button><button>Sun 23</button></div>
-  </div>
-  <div class="chips" id="chips"></div>
-  <p class="swipe">Swipe the plan sideways to see it all</p><div class="board" id="board"><svg id="plan" viewBox="0 0 1200 700"></svg><div class="tip" id="tip"></div></div>
-  <div class="foot">
-    <div class="leg"><span><i style="background:#fff;box-shadow:inset 0 0 0 2px #CDBFA8"></i>Available</span><span><i style="background:#E7E0D3"></i>Booked</span><span><i style="background:var(--gold2)"></i>Selected</span></div>
-    <div class="pick" id="pick"><span class="em">Tap a lounger, table, cabana or pool</span></div>
-  </div>
+<div id="mapw"><div id="mapin"><svg id="plan" viewBox="0 0 1200 700"></svg></div></div>
+
+<div class="top">
+  <div class="pill"><img src="/trans/plan/img/logo.png" alt=""><div class="dt"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span id="dlab"></span></div></div>
+  <div class="pill steps" id="steps"><span class="on">1 · Choose your spot</span><i>›</i><span>2 · Extras</span><i>›</i><span>3 · Review</span><i>›</i><span>4 · Confirmed</span></div>
+  <div class="ic"><button aria-label="Saved"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button><button aria-label="Profile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button></div>
 </div>
+
+<div class="legend"><span><i style="background:rgba(59,227,107,.2);box-shadow:inset 0 0 0 2px #3BE36B"></i>Free</span><span><i style="background:#E0483E"></i>Booked</span><span><i style="background:#F6D44A"></i>Your pick</span></div>
+<div class="venues"><button class="on"><small>Popular today</small>28th Sky Beach Club</button><button><small>&nbsp;</small>27th Sky Lounge</button><button><small>Sunday brunch</small>Grand Restaurant</button><button><small>&nbsp;</small>The Lounge</button></div>
+<div class="zoom"><button id="zi">+</button><button id="zo">−</button></div>
+<div class="toast" id="toast"></div>
+
+<aside class="panel" id="panel"></aside>
+
 <script>
 (function(){
 var $=function(i){return document.getElementById(i)},NS='http://www.w3.org/2000/svg';
 function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
-var Z={1:{t:'Sun loungers',c:'#8DAA7E',cap:'1–2 guests',p:'Free for hotel guests'},
-       2:{t:'Beach loungers',c:'#C9A46A',cap:'1–2 guests',p:'Free for hotel guests'},
-       3:{t:'Dining tables',c:'#C46A4E',cap:'2–4 guests',p:'Dining only'},
-       4:{t:'Cabanas',c:'#B07C9E',cap:'6–12 guests',p:'IDR 1,000,000',h:'Hotel guests 50% off'},
-       5:{t:'Sunken pools',c:'#5E8C86',cap:'3–8 guests',p:'IDR 2,000,000',h:'Hotel guests 50% off'}};
+var Z={1:{t:'Sun lounger',g:'Sun loungers',cap:2,inP:0,outP:null,d:'A padded lounger right on the infinity pool edge, with a green and white umbrella and the whole city below.',tags:['Poolside','Sunset view'],ph:['dive','beach','umbrella','sunset','poolsq']},
+       2:{t:'Beach lounger',g:'Beach loungers',cap:2,inP:0,outP:null,d:'Toes in the sand, 28 floors up. Our beach loungers sit along the sky beach with the best sunset light.',tags:['Sky beach','Sunset view'],ph:['sunset','beach','cocktail','umbrella','dive']},
+       3:{t:'Dining table',g:'Dining tables',cap:4,inP:-1,outP:-1,d:'A table by the bar for lunch or sunset dinner. Order from the full menu on the day.',tags:['Dining only','Near the bar'],ph:['cocktail','sunset','beach','poolsq','umbrella']},
+       4:{t:'Cabana',g:'Cabanas',cap:12,inP:500000,outP:1000000,d:'Your own shaded cabana for 6 to 12 guests, between the pool and the bar. Perfect for birthdays and long afternoons.',tags:['Private','Shade','Groups'],ph:['beach','umbrella','dive','cocktail','sunset']},
+       5:{t:'Sunken pool',g:'Sunken pools',cap:8,inP:1000000,outP:2000000,d:'A private sunken pool lounge for up to 8 guests. Sit in the water with drinks served to you.',tags:['Private pool','Groups'],ph:['poolsq','sunset','beach','dive','cocktail']}};
 var S=[],i;
-for(i=0;i<11;i++)S.push({id:'L'+(i+1),z:1,k:'lv',x:178+50*i,y:180,w:36,h:94,n:'Sun lounger '+(i+1)});
-for(i=0;i<8;i++)S.push({id:'B'+(i+1),z:2,k:'lh',x:1004,y:286+44*i,w:92,h:30,n:'Beach lounger '+(i+1)});
-[[720,330],[800,330],[880,330],[960,330],[690,410],[650,480],[700,550],[650,620],[810,670],[880,670],[950,670]].forEach(function(p,j){S.push({id:'T'+(j+1),z:3,k:'t',x:p[0],y:p[1],r:19,n:'Table '+(j+1)});});
-for(i=0;i<3;i++)S.push({id:'C'+(i+1),z:4,k:'c',x:178+128*i,y:312,w:114,h:92,n:'Cabana '+(i+1)});
-for(i=0;i<3;i++)S.push({id:'P'+(i+1),z:5,k:'p',x:265+118*i,y:612,r:50,n:'Sunken pool '+(i+1)});
-var solo=0,BK={L2:1,L3:1,L8:1,B2:1,B5:1,T2:1,T6:1,T10:1,C1:1,P2:1},sel=null,off={};
-var svg=$('plan');
+for(i=0;i<11;i++)S.push({id:'L'+(i+1),z:1,k:'lv',x:178+50*i,y:180,w:36,h:94,num:i+1});
+for(i=0;i<8;i++)S.push({id:'B'+(i+1),z:2,k:'lh',x:1004,y:286+44*i,w:92,h:30,num:i+1});
+[[720,330],[800,330],[880,330],[960,330],[690,410],[650,480],[700,550],[650,620],[810,670],[880,670],[950,670]].forEach(function(p,j){S.push({id:'T'+(j+1),z:3,k:'t',x:p[0],y:p[1],r:19,num:j+1});});
+for(i=0;i<3;i++)S.push({id:'C'+(i+1),z:4,k:'c',x:178+128*i,y:312,w:114,h:92,num:i+1});
+for(i=0;i<3;i++)S.push({id:'P'+(i+1),z:5,k:'p',x:265+118*i,y:612,r:50,num:i+1});
+var BY={};S.forEach(function(s){BY[s.id]=s;s.n=Z[s.z].t+' '+s.num;});
+var day=1,who='in',sel=null,gn=2,BK,zoom=1;
+var D=[],dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+for(i=0;i<5;i++){var x=new Date(Date.now()+i*864e5);D.push({d:dn[x.getDay()],n:x.getDate(),m:mn[x.getMonth()]});}
+function rnd(seed){return function(){seed=(seed*9301+49297)%233280;return seed/233280;};}
+var SETS=[['L1','L4','L5','L9','B2','B3','T1','T3','T6','C1','C3','P1','P3'],['L5','L11','B3','B8','T1','T2','T7','T10','C1','C3','P2'],['L2','L3','L8','B1','B5','T4','T9','C3','P1'],['L6','B6','T2','T5','C2'],['L1','L10','B4','T8','P3']];
+function booked(d){var b={};SETS[d].forEach(function(id){b[id]=1;});return b;}
+BK=booked(day);
+function lab(){$('dlab').textContent=(day===0?'Today':D[day].d)+', '+D[day].n+' '+D[day].m+' 2026';}
 
 function draw(){
-  svg.innerHTML='';
+  var svg=$('plan');svg.innerHTML='';
   var d=el('defs',{},svg);
-  d.innerHTML='<pattern id="deck" width="1200" height="14" patternUnits="userSpaceOnUse"><rect width="1200" height="14" fill="#EFE7D9"/><rect y="13" width="1200" height="1" fill="#E6DCCB"/></pattern>'+
-   '<linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCE7E1"/><stop offset="1" stop-color="#C6D8D1"/></linearGradient>'+
-   '<pattern id="sand" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#EADBBE"/><circle cx="2" cy="3" r=".9" fill="#DCC9A4"/><circle cx="7" cy="8" r=".9" fill="#DCC9A4"/></pattern>'+
-   '<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#E7E0D3"/><rect width="2" height="8" fill="#DDD4C4"/></pattern>'+
-   '<filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#5A4630" flood-opacity=".16"/></filter>';
-  // deck
-  el('rect',{x:0,y:0,width:1200,height:700,rx:20,fill:'url(#deck)'},svg);
-  // infinity pool + edge
-  el('rect',{x:30,y:24,width:760,height:122,rx:26,fill:'url(#water)'},svg);
-  el('rect',{x:30,y:134,width:760,height:12,fill:'#B9CEC6',rx:0},svg);
-  for(i=0;i<7;i++)el('path',{d:'M'+(80+i*100)+' '+(60+(i%2)*30)+' q14 -6 28 0 t28 0',stroke:'#fff',opacity:.8,'stroke-width':2.2,fill:'none','stroke-linecap':'round'},svg);
-  txt('INFINITY POOL',410,96,15,'#6E8C84',6);
+  d.innerHTML='<pattern id="deck" width="1200" height="12" patternUnits="userSpaceOnUse"><rect width="1200" height="12" fill="#6E5440"/><rect y="11" width="1200" height="1" fill="#5C4535"/><rect x="0" width="1" height="12" fill="#5C4535" opacity=".0"/></pattern>'+
+   '<linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FD6E3"/><stop offset=".55" stop-color="#3FB4CC"/><stop offset="1" stop-color="#2794B0"/></linearGradient>'+
+   '<radialGradient id="sp" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#8CE0EA"/><stop offset="1" stop-color="#3AA9C2"/></radialGradient>'+
+   '<pattern id="sand" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#E9D7B0"/><circle cx="2" cy="3" r=".9" fill="#D7C192"/><circle cx="7" cy="8" r=".9" fill="#D7C192"/></pattern>'+
+   '<pattern id="stripe" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#F4F1EA"/><rect width="5" height="10" fill="#2F6B55"/></pattern>'+
+   '<filter id="sh" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".35"/></filter>';
+  el('rect',{x:0,y:0,width:1200,height:700,rx:24,fill:'url(#deck)'},svg);
+  // city edge glow
+  el('rect',{x:0,y:0,width:1200,height:700,rx:24,fill:'none',stroke:'#3B2E24','stroke-width':10},svg);
+  // pool
+  el('rect',{x:30,y:24,width:760,height:122,rx:20,fill:'url(#water)'},svg);
+  el('rect',{x:30,y:24,width:760,height:122,rx:20,fill:'none',stroke:'#E9E1D3','stroke-width':6},svg);
+  for(i=0;i<9;i++)el('path',{d:'M'+(70+i*82)+' '+(55+(i%3)*28)+' q12 -6 24 0 t24 0',stroke:'#fff',opacity:.55,'stroke-width':2.2,fill:'none','stroke-linecap':'round'},svg);
+  txt('INFINITY POOL',410,93,14,'rgba(255,255,255,.95)',6,svg);
   // jacuzzi
-  el('rect',{x:30,y:172,width:110,height:236,rx:26,fill:'url(#water)'},svg);
-  el('circle',{cx:85,cy:240,r:3,fill:'#fff',opacity:.9},svg);el('circle',{cx:70,cy:270,r:2,fill:'#fff',opacity:.9},svg);el('circle',{cx:98,cy:300,r:2.5,fill:'#fff',opacity:.9},svg);
-  txt('JACUZZI',85,355,11,'#6E8C84',3);
+  el('rect',{x:30,y:172,width:110,height:236,rx:26,fill:'url(#sp)',stroke:'#E9E1D3','stroke-width':6},svg);
+  for(i=0;i<8;i++)el('circle',{cx:50+((i*37)%80),cy:200+i*24,r:2+(i%3),fill:'#fff',opacity:.8},svg);
+  txt('JACUZZI',85,394,10,'rgba(255,255,255,.95)',3,svg);
   // beach
-  el('rect',{x:1116,y:250,width:84,height:450,fill:'url(#sand)'},svg);
-  el('path',{d:'M1116 250 C1105 330 1126 410 1112 490 S1122 640 1116 700',stroke:'#E1CFAA',fill:'none','stroke-width':2},svg);
-  var bt=txt('BEACH',1160,480,12,'#A8895A',5);bt.setAttribute('transform','rotate(90 1160 480)');
-  // indoor / glass door
-  el('rect',{x:770,y:430,width:200,height:200,rx:16,fill:'#E6DDCD'},svg);
-  el('line',{x1:770,y1:430,x2:770,y2:630,stroke:'#CDBFA8','stroke-width':4,'stroke-linecap':'round'},svg);
-  txt('INDOOR',870,525,11,'#A0957F',4);txt('GLASS DOORS',870,545,9,'#B5AA94',2);
+  el('path',{d:'M1112 240 C1100 330 1124 420 1108 500 S1120 640 1110 700 L1200 700 L1200 240 Z',fill:'url(#sand)'},svg);
+  var bt=txt('SKY BEACH',1162,470,12,'#9C7E4E',5,svg);bt.setAttribute('transform','rotate(90 1162 470)');
+  // umbrellas on beach (decor)
+  [[1150,300],[1160,620]].forEach(function(u){umb(u[0],u[1],22);});
+  // indoor glass
+  el('rect',{x:770,y:430,width:200,height:200,rx:14,fill:'#3A4650',opacity:.85},svg);
+  el('rect',{x:778,y:438,width:184,height:184,rx:10,fill:'none',stroke:'#7E95A3','stroke-width':1.5,opacity:.6},svg);
+  txt('INDOOR',870,527,11,'#C9D6DE',4,svg);txt('GLASS DOORS',870,545,9,'#8FA3AF',2,svg);
   // bar
-  el('circle',{cx:530,cy:490,r:62,fill:'#2A2622',filter:'url(#sh)'},svg);
-  el('circle',{cx:530,cy:490,r:48,fill:'none',stroke:'#B8914A','stroke-width':1.5},svg);
-  for(i=0;i<10;i++){var a=i/10*Math.PI*2;el('circle',{cx:530+Math.cos(a)*76,cy:490+Math.sin(a)*76,r:6,fill:'#D7CCB9'},svg);}
-  txt('BAR',530,496,16,'#E6C77E',5);
+  for(i=0;i<10;i++){var a=i/10*Math.PI*2;el('circle',{cx:530+Math.cos(a)*78,cy:490+Math.sin(a)*78,r:7,fill:'#2B231C',stroke:'#C9A96E','stroke-width':1.5},svg);}
+  el('circle',{cx:530,cy:490,r:62,fill:'#1F1914',filter:'url(#sh)'},svg);
+  el('circle',{cx:530,cy:490,r:50,fill:'none',stroke:'#C9A96E','stroke-width':2},svg);
+  txt('BAR',530,497,17,'#E6C77E',6,svg);
+  // umbrellas between loungers (decor)
+  [[203,170],[453,170],[703,170]].forEach(function(u){umb(u[0]+25,u[1]-6,18);});
   // spots
   S.forEach(function(s){
-    var z=Z[s.z],g=el('g',{class:'sp','data-id':s.id},svg),b=el('g',{class:'b'},g),bk=BK[s.id],fill=bk?'url(#hatch)':'#fff',st=bk?'#D9CFBF':z.c;
-    if(s.k==='lv'||s.k==='lh'){var v=s.k==='lv';
-      el('rect',{x:s.x,y:s.y,width:s.w,height:s.h,rx:9,fill:fill,stroke:st,'stroke-width':2,filter:bk?'':'url(#sh)'},b);
-      if(!bk){el('rect',{x:v?s.x+5:s.x+s.w-19,y:v?s.y+5:s.y+5,width:v?s.w-10:14,height:v?18:s.h-10,rx:5,fill:z.c,opacity:.9},b);
-        for(var t=0;t<3;t++)el('line',v?{x1:s.x+8,x2:s.x+s.w-8,y1:s.y+38+t*14,y2:s.y+38+t*14,stroke:z.c,'stroke-width':1.2,opacity:.35}:{y1:s.y+7,y2:s.y+s.h-7,x1:s.x+14+t*16,x2:s.x+14+t*16,stroke:z.c,'stroke-width':1.2,opacity:.35},b);}
-    } else if(s.k==='t'){
-      [[0,-1],[1,0],[0,1],[-1,0]].forEach(function(o){el('rect',{x:s.x+o[0]*29-7,y:s.y+o[1]*29-7,width:14,height:14,rx:5,fill:bk?'#E2DACB':'#D7CCB9'},b);});
-      el('circle',{cx:s.x,cy:s.y,r:s.r,fill:fill,stroke:st,'stroke-width':2.5,filter:bk?'':'url(#sh)'},b);
-      if(!bk)el('circle',{cx:s.x,cy:s.y,r:5,fill:z.c},b);
-    } else if(s.k==='c'){
-      el('rect',{x:s.x,y:s.y,width:s.w,height:s.h,rx:16,fill:fill,stroke:st,'stroke-width':2,filter:bk?'':'url(#sh)'},b);
-      if(!bk){el('rect',{x:s.x+10,y:s.y+10,width:s.w-20,height:s.h-20,rx:10,fill:'none',stroke:z.c,'stroke-width':1.2,'stroke-dasharray':'3 4',opacity:.6},b);
-        el('rect',{x:s.x+s.w/2-26,y:s.y+s.h/2-16,width:52,height:32,rx:8,fill:z.c,opacity:.9},b);
-        el('rect',{x:s.x+s.w/2-20,y:s.y+s.h/2-10,width:12,height:20,rx:4,fill:'#fff',opacity:.7},b);el('rect',{x:s.x+s.w/2+8,y:s.y+s.h/2-10,width:12,height:20,rx:4,fill:'#fff',opacity:.7},b);}
-    } else {
-      el('circle',{cx:s.x,cy:s.y,r:s.r,fill:fill,stroke:st,'stroke-width':2.5,filter:bk?'':'url(#sh)'},b);
-      if(!bk){el('circle',{cx:s.x,cy:s.y,r:s.r-10,fill:'url(#water)'},b);el('circle',{cx:s.x,cy:s.y,r:s.r-10,fill:'none',stroke:z.c,'stroke-width':1.5,opacity:.6},b);
-        el('path',{d:'M'+(s.x-16)+' '+s.y+' q8 -5 16 0 t16 0',stroke:'#fff','stroke-width':2,fill:'none','stroke-linecap':'round'},b);}
-    }
-    if(!bk){g.addEventListener('click',function(){choose(s.id);});}
-    g.addEventListener('mouseenter',function(){tip(s,true);});g.addEventListener('mouseleave',function(){tip(s,false);});
+    var g=el('g',{class:'sp','data-id':s.id},svg);
+    furn(s,g);
+    var o;
+    if(s.k==='lv'||s.k==='lh')o=el('rect',{class:'o',x:s.x-4,y:s.y-4,width:s.w+8,height:s.h+8,rx:12},g);
+    else if(s.k==='c')o=el('rect',{class:'o',x:s.x-5,y:s.y-5,width:s.w+10,height:s.h+10,rx:18},g);
+    else if(s.k==='t')o=el('circle',{class:'o',cx:s.x,cy:s.y,r:38},g);
+    else o=el('circle',{class:'o',cx:s.x,cy:s.y,r:s.r+6},g);
+    g.addEventListener('click',function(){tap(s.id);});
   });
-  // zone tags
-  [[1,745,227],[4,190,425],[3,612,345],[2,1050,262],[5,148,612]].forEach(function(t){var z=t[0],g=el('g',{},svg);el('circle',{cx:t[1],cy:t[2],r:14,fill:Z[z].c},g);txt(String(z),t[1],t[2]+5,13,'#fff',0,g);});
+  // zone markers
+  [[1,'Sun loungers',740,214],[4,'Cabanas',232,438],[3,'Dining',830,286],[2,'Beach loungers',1050,262],[5,'Sunken pools',380,555]].forEach(function(m){marker(m[0],m[1],m[2],m[3]);});
   paint();
 }
-function txt(t,x,y,s,c,ls,p){var e=el('text',{x:x,y:y,'text-anchor':'middle','font-family':'Inter,Arial','font-weight':700,'font-size':s,fill:c,'letter-spacing':ls||0},p||svg);e.textContent=t;return e;}
-function paint(){[].forEach.call(svg.querySelectorAll('.sp'),function(g){var id=g.getAttribute('data-id'),s=S.filter(function(x){return x.id===id;})[0];var c='sp'+(BK[id]?' bk':'')+(sel===id?' sel':'')+(off[s.z]?' dim':'');g.setAttribute('class',c);
-  if(!BK[id]){var r=g.querySelector('.b > rect, .b > circle:last-of-type');var main=g.querySelector('.b').firstElementChild;if(s.k==='t')main=g.querySelectorAll('.b > circle')[0];main.setAttribute('fill',sel===id?'#F3DFA8':'#fff');main.setAttribute('stroke',sel===id?'#B8914A':Z[s.z].c);main.setAttribute('stroke-width',sel===id?3.5:(s.k==='t'||s.k==='p'?2.5:2));}});
-  var h='';[1,2,3,4,5].forEach(function(z){var n=S.filter(function(s){return s.z===z;}),f=n.filter(function(s){return !BK[s.id];}).length;h+='<button class="chip'+(off[z]?' off':'')+'" data-z="'+z+'"><i style="background:'+Z[z].c+'">'+z+'</i>'+Z[z].t+' <span>'+f+' of '+n.length+' free</span></button>';});
-  $('chips').innerHTML=h;[].forEach.call($('chips').children,function(b){b.onclick=function(){var z=+b.getAttribute('data-z');solo=solo===z?0:z;off={};if(solo)[1,2,3,4,5].forEach(function(k){if(k!==solo)off[k]=1;});paint();};});
+function umb(x,y,r){var g=el('g',{filter:'url(#sh)'},$('plan'));el('circle',{cx:x,cy:y,r:r,fill:'url(#stripe)'},g);el('circle',{cx:x,cy:y,r:r,fill:'none',stroke:'#2F6B55','stroke-width':1.5},g);el('circle',{cx:x,cy:y,r:3,fill:'#E9E1D3'},g);}
+function furn(s,g){
+  if(s.k==='lv'||s.k==='lh'){var v=s.k==='lv';
+    el('rect',{x:s.x,y:s.y,width:s.w,height:s.h,rx:8,fill:'#F4F0E8',filter:'url(#sh)'},g);
+    el('rect',{x:v?s.x+4:s.x+s.w-20,y:v?s.y+4:s.y+4,width:v?s.w-8:16,height:v?20:s.h-8,rx:6,fill:'#E3DACB'},g);
+    el('rect',{x:v?s.x+8:s.x+10,y:v?s.y+32:s.y+9,width:v?s.w-16:s.w-38,height:v?s.h-44:s.h-18,rx:4,fill:'url(#stripe)',opacity:.85},g);
+  } else if(s.k==='t'){
+    [[0,-1],[1,0],[0,1],[-1,0]].forEach(function(o){el('circle',{cx:s.x+o[0]*27,cy:s.y+o[1]*27,r:7,fill:'#E8DFCF',filter:'url(#sh)'},g);});
+    el('circle',{cx:s.x,cy:s.y,r:s.r,fill:'#F4F0E8',filter:'url(#sh)'},g);el('circle',{cx:s.x,cy:s.y,r:s.r-7,fill:'none',stroke:'#D8CDBB','stroke-width':1.5},g);
+  } else if(s.k==='c'){
+    el('rect',{x:s.x,y:s.y,width:s.w,height:s.h,rx:14,fill:'#F4F0E8',filter:'url(#sh)'},g);
+    el('rect',{x:s.x+8,y:s.y+8,width:s.w-16,height:s.h-16,rx:10,fill:'url(#stripe)',opacity:.35},g);
+    el('rect',{x:s.x+18,y:s.y+22,width:s.w-36,height:s.h-44,rx:8,fill:'#FFFDF8'},g);
+    el('rect',{x:s.x+24,y:s.y+28,width:18,height:s.h-56,rx:5,fill:'#E3DACB'},g);el('rect',{x:s.x+s.w-42,y:s.y+28,width:18,height:s.h-56,rx:5,fill:'#E3DACB'},g);
+  } else {
+    el('circle',{cx:s.x,cy:s.y,r:s.r,fill:'#E9E1D3',filter:'url(#sh)'},g);el('circle',{cx:s.x,cy:s.y,r:s.r-8,fill:'url(#sp)'},g);
+    el('path',{d:'M'+(s.x-18)+' '+(s.y-4)+' q9 -5 18 0 t18 0 M'+(s.x-12)+' '+(s.y+10)+' q6 -4 12 0 t12 0',stroke:'#fff','stroke-width':2,fill:'none',opacity:.8,'stroke-linecap':'round'},g);
+  }
 }
-function tip(s,on){var t=$('tip');if(!on){t.classList.remove('on');return;}var z=Z[s.z];
-  t.innerHTML='<b>'+s.n+'</b><span>'+(BK[s.id]?'Booked':z.cap+' · '+z.p)+'</span>';
-  var bb=$('board').getBoundingClientRect(),sb=svg.getBoundingClientRect(),k=sb.width/1200,cx=(s.k==='t'||s.k==='p')?s.x:s.x+s.w/2,cy=(s.k==='t'||s.k==='p')?s.y-s.r:s.y;
-  t.style.left=(sb.left-bb.left+cx*k)+'px';t.style.top=(sb.top-bb.top+cy*k)+'px';t.classList.add('on');}
-function choose(id){sel=sel===id?null:id;paint();var p=$('pick');if(!sel){p.innerHTML='<span class="em">Tap a lounger, table, cabana or pool</span>';return;}
-  var s=S.filter(function(x){return x.id===id;})[0],z=Z[s.z];
-  p.innerHTML='<i style="width:12px;height:40px;border-radius:6px;background:'+z.c+'"></i><div><b>'+s.n+'</b><small>Zone '+s.z+' · '+z.t+' · '+z.cap+'</small></div><div class="pr">'+z.p+(z.h?'<small style="display:block;font-weight:500;color:var(--mut);font-size:12px">'+z.h+'</small>':'')+'</div><button>Book</button>';}
-[].forEach.call($('date').children,function(b){b.onclick=function(){[].forEach.call($('date').children,function(x){x.classList.toggle('on',x===b);});var ids=S.map(function(s){return s.id;});BK={};ids.forEach(function(id){if(Math.random()<.3)BK[id]=1;});sel=null;choose(null);draw();};});
-draw();
+function marker(z,t,x,y){var svg=$('plan'),g=el('g',{class:'mk','pointer-events':'none'},svg),w=t.length*7.6+46;
+  el('rect',{x:x-14,y:y-14,width:w,height:28,rx:14,fill:'rgba(20,16,12,.72)'},g);
+  el('circle',{cx:x,cy:y,r:11,fill:'#fff'},g);var n=txt(String(z),x,y+4.5,12,'#1F1B17',0,g);n.setAttribute('font-weight',800);
+  var l=el('text',{x:x+18,y:y+4.5,'font-family':'Inter,Arial','font-weight':600,'font-size':12.5,fill:'#fff'},g);l.textContent=t;}
+function txt(t,x,y,s,c,ls,p){var e=el('text',{x:x,y:y,'text-anchor':'middle','font-family':'Inter,Arial','font-weight':700,'font-size':s,fill:c,'letter-spacing':ls||0},p);e.textContent=t;return e;}
+function paint(){[].forEach.call($('plan').querySelectorAll('.sp'),function(g){var id=g.getAttribute('data-id');g.setAttribute('class','sp '+(sel===id?'sel':BK[id]?'bk':'free'));});}
+var tt;function toast(m,ok){var t=$('toast');t.className='toast'+(ok?' ok':'');t.innerHTML=(ok?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6D44A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>')+m;
+  requestAnimationFrame(function(){t.classList.add('on');});clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on');},2600);}
+function steps(n){[].forEach.call($('steps').querySelectorAll('span'),function(s,k){s.className=k===n?'on':k<n?'done':'';});}
+function tap(id){var s=BY[id];
+  if(BK[id]&&sel!==id){toast('Sorry, '+s.n+' is booked for '+(day===0?'today':D[day].d+' '+D[day].n)+'. Pick a green one.');return;}
+  sel=id;gn=Math.min(Z[s.z].cap,s.z===4?8:s.z===5?6:2);paint();panel();document.body.classList.add('open');steps(1);}
+function money(n){return 'IDR '+n.toLocaleString('en-US');}
+var CK='<svg width="16" height="16" viewBox="0 0 24 24" fill="#2E7D4B"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function panel(){var s=BY[sel],z=Z[s.z],P=who==='in'?z.inP:z.outP;
+  var av=D.map(function(d,k){var b=booked(k)[s.id];return '<button class="'+(b?'x':'f')+(k===day?' on':'')+'" data-k="'+k+'">'+(k===0?'Today':d.d)+'<b>'+d.n+'</b>'+d.m+'</button>';}).join('');
+  var deal;
+  if(P===null)deal='<div class="deal" style="border-color:#F3B1AC"><div class="lb" style="color:#C0392B">HOTEL GUESTS ONLY</div><p style="font-size:14px;color:#6B6358;margin-top:6px">Loungers are kept for guests staying at The Trans. Visitors can book a cabana, sunken pool or table.</p></div>';
+  else if(P===0)deal='<div class="deal"><div class="lb">HOTEL GUEST</div><div class="pr">Free</div><ul><li>'+CK+'Towels and iced water</li><li>'+CK+'Drinks and food served to your lounger</li><li>'+CK+'Show your room key on arrival</li></ul></div>';
+  else if(P===-1)deal='<div class="deal"><div class="lb">'+(who==='in'?'HOTEL GUEST':'VISITOR')+'</div><div class="pr">No booking fee</div><ul><li>'+CK+'Order from the full menu on the day</li><li>'+CK+'Table held for 15 minutes</li></ul></div>';
+  else deal='<div class="deal">'+(who==='in'?'<span class="off">50% OFF</span>':'')+'<div class="lb">'+(who==='in'?'HOTEL GUEST':'VISITOR')+'</div><div class="pr">'+money(P)+(who==='in'?'<s>'+money(z.outP)+'</s>':'')+'</div><ul><li>'+CK+'Up to '+z.cap+' guests</li><li>'+CK+'Towels, iced water and fruit on arrival</li><li>'+CK+'Pay at the venue on the day</li></ul></div>';
+  var EX=[['Champagne on arrival','A chilled bottle waiting for you','cocktail'],['Birthday set-up','Balloons, cake and a sign','sunset'],['Fruit platter','Fresh tropical fruit','poolsq'],['Extra towels and floats','For the pool','dive']];
+  if(s.z===3)EX=[['Window side','Closest to the view','sunset'],['Birthday cake','With a candle and a song','cocktail']];
+  $('panel').innerHTML='<div class="pb"><div class="ph"><div><h2>'+s.n+'</h2></div><button id="px" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>'+
+   '<div class="tags">'+(s.z===4||s.z===5?'<span class="hot">Popular</span>':'')+z.tags.map(function(t){return '<span>'+t+'</span>';}).join('')+'<span class="g">Zone '+s.z+'</span></div>'+
+   '<div class="cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M17 14c2.4 0 4 1.6 4.6 4.5"/></svg>Up to '+z.cap+' guests</div>'+
+   '<p class="desc">'+z.d+'</p>'+
+   '<div class="gal">'+z.ph.map(function(p){return '<img src="/trans/plan/img/'+p+'.jpg" alt="">';}).join('')+'</div>'+
+   '<h4>Next availability</h4><div class="days" id="pdays">'+av+'</div>'+
+   '<h4>Who\'s booking?</h4><div class="who" id="who"><button data-w="in" class="'+(who==='in'?'on':'')+'">Staying at the hotel</button><button data-w="out" class="'+(who==='out'?'on':'')+'">Visiting</button></div>'+deal+
+   (P===null?'':'<h4>Guests</h4><div class="gst"><span>How many?</span><div><button id="gm">−</button><b id="gn">'+gn+'</b><button id="gp">+</button></div></div>'+
+   '<h4>Make it special</h4><div class="ex" id="ex">'+EX.map(function(e){return '<label><img src="/trans/plan/img/'+e[2]+'.jpg" alt=""><div><b>'+e[0]+'</b><span>'+e[1]+'</span></div><i>+</i></label>';}).join('')+'</div>')+
+   '</div><div class="pf"><p>'+(P===null?'Switch to "Staying at the hotel" to book a lounger':'Nothing to pay now · confirmed on WhatsApp')+'</p><div><button class="a" id="pl">Save</button><button class="b" id="pbk"'+(P===null?' disabled style="opacity:.35;cursor:not-allowed"':'')+'>Book now</button></div></div>';
+  $('px').onclick=close;
+  [].forEach.call($('pdays').children,function(b){b.onclick=function(){var k=+b.getAttribute('data-k');if(b.classList.contains('x')){toast('Sorry, '+s.n+' is booked on '+D[k].d+' '+D[k].n+'.');return;}day=k;BK=booked(day);lab();paint();panel();};});
+  [].forEach.call($('who').children,function(b){b.onclick=function(){who=b.getAttribute('data-w');var y=$('panel').querySelector('.pb').scrollTop;panel();$('panel').querySelector('.pb').scrollTop=y;};});
+  if($('gm')){$('gm').onclick=function(){if(gn>1)$('gn').textContent=--gn;};$('gp').onclick=function(){if(gn<z.cap)$('gn').textContent=++gn;};}
+  if($('ex'))[].forEach.call($('ex').children,function(l){l.onclick=function(){l.classList.toggle('on');l.querySelector('i').textContent=l.classList.contains('on')?'✓':'+';steps(1);};});
+  $('pl').onclick=function(){toast('Saved '+s.n+' for later',true);};
+  $('pbk').onclick=function(){if(P===null)return;BK[sel]=1;var n=s.n;close();steps(3);toast(n+' booked for '+(day===0?'today':D[day].d+' '+D[day].n)+'. Details sent on WhatsApp.',true);setTimeout(function(){steps(0);},2800);};
+}
+function close(){document.body.classList.remove('open');sel=null;paint();steps(0);}
+$('zi').onclick=function(){zoom=Math.min(1.8,zoom+.2);$('mapin').style.transform='scale('+zoom+')';};
+$('zo').onclick=function(){zoom=Math.max(.8,zoom-.2);$('mapin').style.transform='scale('+zoom+')';};
+[].forEach.call(document.querySelectorAll('.venues button'),function(b,k){b.onclick=function(){if(k)toast(b.textContent.replace(/^(Popular today|Sunday brunch)/,'').trim()+' would have its own floor plan here',true);};});
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+lab();draw();
 })();
 </script>
 </body></html>
