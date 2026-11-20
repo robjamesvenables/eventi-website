@@ -48,6 +48,14 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
 .port .left{display:none}
 #mre{display:none;background:none;color:#8E8A82;font-size:17px;font-weight:600;align-items:center;gap:8px;padding:8px}
 .port #mre{display:inline-flex}
+#kr{position:absolute;left:50%;top:34px;width:150px;margin-left:-75px;z-index:27;pointer-events:none;opacity:0;transform-origin:50% 6%;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+#kr.on{animation:krin 1.5s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes krin{0%{opacity:0;transform:translate(260px,-520px) rotate(55deg) scale(.5)}12%{opacity:1}55%{transform:translate(0,14px) rotate(-10deg) scale(1.06)}72%{transform:translate(0,0) rotate(7deg) scale(1)}86%{transform:rotate(-3deg)}100%{opacity:1;transform:rotate(0)}}
+#popM{top:286px;padding-top:62px}
+#popM .ic{display:none}
+.sparkle{position:absolute;left:50%;top:150px;width:260px;height:260px;margin-left:-130px;border-radius:50%;background:radial-gradient(circle,rgba(233,196,106,.55),rgba(233,196,106,0) 65%);z-index:16;opacity:0;pointer-events:none}
+.sparkle.on{animation:spk 1.8s ease-out forwards}
+@keyframes spk{0%{opacity:0;transform:scale(.3)}40%{opacity:1;transform:scale(1.15)}100%{opacity:.55;transform:scale(1)}}
 .dim{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:15;opacity:0;pointer-events:none;transition:opacity .3s}
 .dim.on{opacity:1;pointer-events:auto}
 .sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;background:#FBF8F2;color:#1C1C1E;border-radius:26px 26px 0 0;padding:14px 22px 26px;transform:translateY(105%);transition:transform .35s ease}
@@ -118,7 +126,8 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
     <button class="cta d hide" id="ctaVip"><svg width="28" height="28" viewBox="0 0 24 24" fill="#E9C46A"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Upgrade<small>Become a VIP</small></div></button>
     <div class="dim" id="dim"></div>
     <div class="pop g" id="popM"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#E2C27E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
-      <h4>Congratulations,<br>Alexander!</h4><p>You're now a member of The Trans Surabaya Members Club.</p><button class="bt" id="okM">See my perks</button></div>
+      <h4>Congratulations,<br>Alexander!</h4><p>You're a member now. Here's your keyring. Scan it every visit.</p><button class="bt" id="okM">See my perks</button></div>
+    <div class="sparkle" id="spk"></div><img id="kr" src="/trans/up/keyring.png" alt="The Trans Surabaya members keyring">
     <div class="pop v" id="popV"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="#111"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
       <h4>Welcome to VIP,<br>Alexander</h4><p>Black card. Room upgrades, late check-out and 20% off the spa.</p><button class="bt" id="okV">See my VIP perks</button></div>
   </div><button id="mre"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button></div>
@@ -130,7 +139,7 @@ var $=function(i){return document.getElementById(i)};
 var st=$('stage');
 function fit(){var w=document.documentElement.clientWidth||innerWidth,h=document.documentElement.clientHeight||innerHeight,pt=w<h;document.documentElement.classList.toggle('port',pt);var W=pt?440:1920,H=pt?960:1080,k=Math.min(w/W,h/H);st.style.transform='translate(-50%,-50%) scale('+k+')';}
 addEventListener('resize',fit);fit();
-['/trans/up/member.jpg','/trans/up/vip.jpg'].forEach(function(u){var i=new Image();i.src=u;});
+['/trans/up/member.jpg','/trans/up/vip.jpg','/trans/up/keyring.png'].forEach(function(u){var i=new Image();i.src=u;});
 function stage(n){for(var i=0;i<3;i++){var e=$('s'+i);e.className='st'+(i===n?' on':i<n?' done':'');}}
 function dim(on){$('dim').classList.toggle('on',on);}
 function hint(t){$('hint').textContent=t;}
@@ -144,10 +153,12 @@ function now(){var d=new Date();return d.toLocaleTimeString([], {hour:'numeric',
 $('ctaJoin').onclick=function(){
   $('ctaJoin').classList.add('hide');nudge(null);
   screen('/trans/up/member.jpg');stage(1);
-  setTimeout(function(){dim(true);$('popM').classList.add('on');confetti();nudge($('okM'));},450);
-  hint('Alexander is now a member');
+  setTimeout(function(){dim(true);$('spk').classList.add('on');$('kr').classList.add('on');},400);
+  setTimeout(function(){confetti();},1300);
+  setTimeout(function(){$('popM').classList.add('on');nudge($('okM'));},1500);
+  hint('Alexander gets his keyring. Now a member');
 };
-$('okM').onclick=function(){$('popM').classList.remove('on');dim(false);nudge(null);setTimeout(function(){$('ctaVip').classList.remove('hide');nudge($('ctaVip'));},500);hint('Scroll the app, then tap "Upgrade"');};
+$('okM').onclick=function(){$('popM').classList.remove('on');$('kr').classList.remove('on');$('spk').classList.remove('on');dim(false);nudge(null);setTimeout(function(){$('ctaVip').classList.remove('hide');nudge($('ctaVip'));},500);hint('Scroll the app, then tap "Upgrade"');};
 $('ctaVip').onclick=function(){
   $('ctaVip').classList.add('hide');nudge(null);
   screen('/trans/up/vip.jpg');stage(2);
@@ -156,7 +167,7 @@ $('ctaVip').onclick=function(){
 };
 $('okV').onclick=function(){$('popV').classList.remove('on');dim(false);nudge(null);hint('Done. Tap "Start again" to show it again');};
 $('mre').onclick=function(){$('restart').onclick();};
-$('restart').onclick=function(){[].forEach.call(document.querySelectorAll('.cf'),function(x){x.remove();});['popM','popV'].forEach(function(i){$(i).classList.remove('on');});dim(false);
+$('restart').onclick=function(){[].forEach.call(document.querySelectorAll('.cf'),function(x){x.remove();});['popM','popV','kr','spk'].forEach(function(i){$(i).classList.remove('on');});dim(false);
   $('ctaVip').classList.add('hide');$('ctaJoin').classList.remove('hide');screen('/trans/up/guest.jpg');stage(0);
   hint('Tap "Upgrade" on the phone');nudge($('ctaJoin'));};
 nudge($('ctaJoin'));
