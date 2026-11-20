@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mavis · Sky Beach Club bookings</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#15181C;overflow:hidden}
+body{font-family:Inter,Arial,sans-serif;color:#F2EEE6}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+#stage{position:fixed;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#15181C;display:grid;grid-template-columns:500px 1fr 640px;align-items:center;padding:0 80px 0 100px;gap:20px}
+.port #stage{width:440px;height:960px;grid-template-columns:1fr;padding:0;justify-items:center;align-content:center;gap:14px}
+.port .left,.port .staff{display:none}
+/* left */
+.k{font-size:21px;font-weight:600;letter-spacing:4px;color:#C9A96E}
+h1{font-size:56px;font-weight:800;line-height:1.04;margin-top:12px}
+.sub{font-size:22px;color:#AEB4BB;margin-top:14px;line-height:1.4;max-width:420px}
+.steps{margin-top:40px;display:flex;flex-direction:column;gap:12px}
+.st{display:flex;align-items:center;gap:18px;padding:14px 18px;border-radius:18px;border:1px solid transparent;transition:.35s}
+.st i{font-style:normal;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:22px;background:#252A31;color:#7E858D;flex:none;transition:.35s}
+.st b{display:block;font-size:25px;font-weight:700;color:#7E858D;transition:.35s}
+.st span{display:block;font-size:17px;color:#636A72;margin-top:2px;transition:.35s}
+.st.on{background:#20252B;border-color:#4A4130}.st.on i{background:#C9A96E;color:#15181C}.st.on b{color:#F2EEE6}.st.on span{color:#AEB4BB}
+.st.done i{background:#3A3428;color:#C9A96E}.st.done b{color:#C9C3B8}
+#hint{margin-top:22px;font-size:18px;color:#8E959D;min-height:24px}
+.rs{margin-top:16px;color:#7E858D;font-size:18px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:8px 2px}
+.rs:hover{color:#F2EEE6}
+/* phone */
+.mid{display:flex;flex-direction:column;align-items:center;gap:12px}
+.ph{position:relative;width:384px;height:828px;border-radius:56px;border:12px solid #0A0B0D;box-shadow:0 0 0 2px #343A41,0 40px 80px rgba(0,0,0,.6);overflow:hidden;overflow:clip;background:#10151B}
+.sbar{position:absolute;left:0;right:0;top:0;height:46px;background:#10151B;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 26px 0 30px;color:#fff;font-size:15px;font-weight:700}
+.isl{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:30px;border-radius:20px;background:#0A0B0D;z-index:41}
+.app{position:absolute;left:0;right:0;top:46px;bottom:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;background:#10151B}
+.app::-webkit-scrollbar{display:none}
+.ah{padding:12px 18px 6px;display:flex;align-items:center;gap:12px}
+.ah img{width:42px;height:42px;border-radius:12px;background:#fff;object-fit:contain;padding:3px}
+.ah b{display:block;font-size:12px;letter-spacing:2px;color:#C9A96E;font-weight:800}
+.ah h2{font-size:21px;font-weight:800;line-height:1.1;margin-top:2px}
+.seg{margin:10px 18px 0;background:#1C232B;border-radius:14px;padding:4px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.seg button{border-radius:11px;padding:9px 6px;font-size:14px;font-weight:700;color:#9AA3AD;transition:.25s}
+.seg button.on{background:#F2EEE6;color:#10151B}
+.seg button small{display:block;font-size:11px;font-weight:600;opacity:.7;margin-top:1px}
+.chips{display:flex;gap:7px;padding:12px 18px 0;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid #2A333D;border-radius:12px;padding:7px 11px;text-align:center;font-size:13px;font-weight:700;color:#C4CBD2;transition:.2s}
+.chip small{display:block;font-size:10.5px;font-weight:600;color:#7E8892;letter-spacing:.5px}
+.chip.on{border-color:#C9A96E;background:rgba(201,169,110,.14);color:#F2EEE6}
+.chip.on small{color:#C9A96E}
+.mapw{position:relative;margin:12px 10px 0;border-radius:22px;overflow:hidden;background:#1A222B;box-shadow:inset 0 0 0 1px #26303A}
+.mapw svg{display:block;width:100%;height:auto}
+.leg{display:flex;flex-wrap:wrap;gap:6px 12px;padding:12px 18px 4px;font-size:12px;color:#AEB6BE;font-weight:600}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.zl{padding:8px 14px 24px;display:flex;flex-direction:column;gap:8px}
+.zr{display:flex;align-items:center;gap:12px;background:#18202A;border-radius:14px;padding:11px 13px}
+.zr i{width:10px;height:34px;border-radius:5px;flex:none}
+.zr b{display:block;font-size:14.5px}
+.zr span{display:block;font-size:12px;color:#8E98A2;margin-top:1px}
+.zr em{margin-left:auto;font-style:normal;font-size:13px;font-weight:800;text-align:right;white-space:nowrap}
+.zr em s{display:block;font-size:11px;color:#6E7882;font-weight:600}
+/* svg spots */
+.sp{cursor:pointer;transition:opacity .2s}
+.sp .b{transition:fill .25s,stroke .25s}
+.sp.bk{cursor:default}
+.sp.bk .b{fill:#323C47!important;stroke:#3E4955!important}
+.sp.lock{cursor:not-allowed;opacity:.35}
+.sp.sel .b{fill:#E9C46A!important;stroke:#FFF3C9!important}
+.sp.sel{filter:url(#glow)}
+.sp.mine .b{fill:#C9A96E!important;stroke:#FFF3C9!important}
+.sp.dimz{opacity:.25}
+.pulse{animation:sp 1.4s ease-in-out infinite}
+@keyframes sp{50%{opacity:.55}}
+/* sheet */
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:20;opacity:0;pointer-events:none;transition:opacity .3s}
+.dim.on{opacity:1;pointer-events:auto}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:25;background:#F7F4EE;color:#14191F;border-radius:26px 26px 0 0;padding:12px 20px 24px;transform:translateY(105%);transition:transform .38s cubic-bezier(.2,.9,.3,1)}
+.sheet.on{transform:none}
+.grab{width:44px;height:5px;border-radius:3px;background:#D6D0C4;margin:0 auto 14px}
+.sz{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:1.5px;color:#6B6459}
+.sz i{width:9px;height:9px;border-radius:3px}
+.sheet h3{font-size:25px;font-weight:800;margin-top:6px}
+.sheet .d{font-size:14.5px;color:#6B665E;margin-top:4px}
+.when{display:flex;gap:8px;margin-top:12px}
+.when div{flex:1;background:#fff;border:1.5px solid #E5DFD3;border-radius:12px;padding:8px 11px}
+.when small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1px;color:#9A9488}
+.when b{font-size:15px}
+.gst{display:flex;align-items:center;justify-content:space-between;margin-top:10px;background:#fff;border:1.5px solid #E5DFD3;border-radius:12px;padding:8px 8px 8px 12px}
+.gst small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1px;color:#9A9488}
+.gst b{font-size:15px}
+.gst .ctl{display:flex;align-items:center;gap:12px}
+.gst .ctl button{width:34px;height:34px;border-radius:10px;background:#EEE9DF;font-size:20px;font-weight:700;line-height:1}
+.gst .ctl span{font-size:17px;font-weight:800;min-width:18px;text-align:center}
+.pr{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding:12px 2px 0;border-top:1px dashed #DCD5C7}
+.pr span{font-size:14px;color:#6B665E;font-weight:600}
+.pr b{font-size:20px;font-weight:800}
+.pr s{font-size:13px;color:#A39D92;margin-right:6px;font-weight:600}
+.pr .tag{display:inline-block;background:#E3F1E6;color:#2D7A45;font-size:11.5px;font-weight:800;padding:3px 8px;border-radius:7px;margin-left:6px;vertical-align:3px}
+.ads{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.ads button{border:1.5px solid #E5DFD3;background:#fff;border-radius:10px;padding:7px 10px;font-size:13px;font-weight:700;color:#4A453E}.ads button.on{border-color:#14191F;background:#14191F;color:#F2EEE6}.adl{font-size:10.5px;font-weight:800;letter-spacing:1px;color:#9A9488;margin-top:12px}
+.bi .arr{margin-left:auto;background:#C9A96E;color:#14191F;font-weight:800;font-size:12.5px;padding:7px 11px;border-radius:9px;position:relative}
+.bi em.ar{background:#E3F1E6;color:#2D7A45}.bi em.bkd{background:#EEE9DF;color:#6B665E}
+.note{font-size:12.5px;color:#8A8478;margin-top:6px;line-height:1.4}
+.go{margin-top:14px;width:100%;border-radius:14px;padding:15px;font-weight:800;font-size:17px;background:#14191F;color:#F2EEE6;position:relative}
+.go.gold{background:#C9A96E;color:#14191F}
+.pay{display:flex;flex-direction:column;align-items:center;text-align:center}
+.pay .qr{width:170px;height:170px;margin:14px 0 8px;border-radius:14px;background:#fff;padding:10px;box-shadow:0 0 0 1.5px #E5DFD3}
+.pay .opts{display:flex;gap:8px;margin-top:8px;width:100%}
+.pay .opts div{flex:1;border:1.5px solid #E5DFD3;border-radius:12px;padding:9px;font-size:13px;font-weight:700;background:#fff}
+.pay .opts div.on{border-color:#14191F}
+/* confirmation */
+.ok{position:absolute;inset:46px 0 0;z-index:30;background:linear-gradient(170deg,#1C2530,#0E1218);display:flex;flex-direction:column;align-items:center;padding:34px 22px 22px;text-align:center;opacity:0;pointer-events:none;transform:scale(1.04);transition:opacity .35s,transform .35s}
+.ok.on{opacity:1;pointer-events:auto;transform:none}
+.ok .ck{width:76px;height:76px;border-radius:50%;background:#C9A96E;display:grid;place-items:center;box-shadow:0 0 0 10px rgba(201,169,110,.15),0 0 0 22px rgba(201,169,110,.07)}
+.ok h3{font-size:27px;font-weight:800;margin-top:22px;line-height:1.15}
+.ok p{font-size:14.5px;color:#AEB6BE;margin-top:6px}
+.tk{margin-top:20px;width:100%;background:#F7F4EE;color:#14191F;border-radius:20px;padding:16px;text-align:left;position:relative}
+.tk:before,.tk:after{content:"";position:absolute;top:118px;width:22px;height:22px;border-radius:50%;background:#141A21}
+.tk:before{left:-11px}.tk:after{right:-11px}
+.tk .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:3px 0}
+.tk .r span{color:#7A746A;font-weight:600}.tk .r b{text-align:right}
+.tk .t1{font-size:19px;font-weight:800}
+.tk .t2{font-size:12.5px;color:#7A746A;font-weight:700;letter-spacing:1px}
+.tk .sep{border-top:1.5px dashed #D9D2C4;margin:12px 0 10px}
+.tk .qrr{display:flex;align-items:center;gap:12px}
+.tk .qrr img{width:84px;height:84px}
+.tk .qrr p{color:#6B665E;font-size:12.5px;margin:0;line-height:1.4}
+.ok .done{margin-top:auto;width:100%;border-radius:14px;padding:14px;font-weight:800;font-size:16px;background:#C9A96E;color:#14191F;position:relative}
+.cf{position:absolute;top:30px;width:9px;height:14px;border-radius:2px;z-index:35;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(860px) rotate(720deg)}}
+/* nudge */
+.nudge{position:relative;animation:glow 1.3s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(233,196,106,.9)}60%{box-shadow:0 0 0 14px rgba(233,196,106,0)}}
+.nudge::after{content:"";position:absolute;right:16px;top:50%;width:40px;height:40px;margin-top:-4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff' stroke='%23111' stroke-width='1.3' stroke-linejoin='round'%3E%3Cpath d='M9 11V4.5a1.5 1.5 0 0 1 3 0V10l5.2.9a2 2 0 0 1 1.6 2.3l-.9 5.3A3 3 0 0 1 14.9 21H11a3 3 0 0 1-2.4-1.2L5 15.2a1.5 1.5 0 0 1 2.2-2L9 15z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 4px rgba(0,0,0,.45));animation:tap 1.3s ease-in-out infinite;pointer-events:none;z-index:3}
+@keyframes tap{0%,100%{transform:translate(0,8px) scale(1)}45%{transform:translate(-4px,-2px) scale(.88)}}
+.hand{position:absolute;width:44px;height:44px;z-index:15;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff' stroke='%23111' stroke-width='1.3' stroke-linejoin='round'%3E%3Cpath d='M9 11V4.5a1.5 1.5 0 0 1 3 0V10l5.2.9a2 2 0 0 1 1.6 2.3l-.9 5.3A3 3 0 0 1 14.9 21H11a3 3 0 0 1-2.4-1.2L5 15.2a1.5 1.5 0 0 1 2.2-2L9 15z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 4px rgba(0,0,0,.5));animation:tap 1.3s ease-in-out infinite;display:none}
+/* staff */
+.staff{background:#F4F1EA;color:#14191F;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);align-self:center}
+.sh{background:#14191F;color:#F2EEE6;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.sh .lg{width:36px;height:36px;border-radius:10px;background:#C9A96E;display:grid;place-items:center;color:#14191F;font-weight:900;font-size:18px}
+.sh b{font-size:18px;display:block}.sh span{font-size:13px;color:#AEB4BB}
+.sh .live{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#7FD99A}
+.sh .live i{width:8px;height:8px;border-radius:50%;background:#4CC973;animation:sp 1.4s infinite}
+.smap{padding:14px 16px 6px}
+.smap .mw{border-radius:16px;overflow:hidden;background:#1A222B}
+.smap svg{display:block;width:100%;height:auto}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 16px 4px}
+.stats div{background:#fff;border-radius:12px;padding:9px 12px}
+.stats small{display:block;font-size:11px;font-weight:800;letter-spacing:1px;color:#9A9488}
+.stats b{font-size:19px;font-weight:800}
+.bl{padding:8px 16px 16px;display:flex;flex-direction:column;gap:7px;max-height:300px;overflow:hidden}
+.bi{background:#fff;border-radius:12px;padding:9px 12px;display:flex;align-items:center;gap:11px;font-size:13.5px}
+.bi.new{animation:bin .6s ease;box-shadow:0 0 0 2px #C9A96E}
+@keyframes bin{from{opacity:0;transform:translateY(-10px)}}
+.bi i{width:9px;height:30px;border-radius:5px;flex:none}
+.bi b{display:block;font-size:14px}
+.bi span{color:#7A746A;font-size:12.5px}
+.bi em{margin-left:auto;font-style:normal;font-size:12px;font-weight:800;padding:4px 8px;border-radius:7px;white-space:nowrap}
+.bi em.pd{background:#E3F1E6;color:#2D7A45}.bi em.rm{background:#E7EEF5;color:#2F5D86}.bi em.fr{background:#EEE9DF;color:#6B665E}
+</style></head>
+<body>
+<div id="stage">
+  <div class="left">
+    <p class="k">28TH SKY BEACH CLUB</p>
+    <h1>Book your spot<br>in the sky.</h1>
+    <p class="sub">Their own booking, inside the Trans app. No Chope, no TableCheck. A booking, not a payment. Guests pay on the day, as normal.</p>
+    <div class="steps">
+      <div class="st on" id="s0"><i>1</i><div><b>Pick a spot</b><span>Tap a lounger, table, cabana or pool</span></div></div>
+      <div class="st" id="s1"><i>2</i><div><b>Reserve</b><span>Add extras. Confirmed on WhatsApp</span></div></div>
+      <div class="st" id="s2"><i>3</i><div><b>Reception checks them in</b><span>Tap Arrived. Then it's the normal POS</span></div></div>
+    </div>
+    <p id="hint">Tap a cabana on the map</p>
+    <button class="rs" id="restart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button>
+  </div>
+
+  <div class="mid">
+    <div class="ph" id="ph">
+      <div class="sbar"><span>9:41</span><span><svg width="44" height="14" viewBox="0 0 44 14" fill="#fff"><rect x="0" y="8" width="3" height="6" rx="1"/><rect x="5" y="5" width="3" height="9" rx="1"/><rect x="10" y="2" width="3" height="12" rx="1"/><rect x="20" y="1" width="20" height="12" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="22.5" y="3.5" width="14" height="7" rx="1.5"/></svg></span></div>
+      <div class="isl"></div>
+      <div class="app" id="app">
+        <div class="ah"><img src="/trans/sky/logo.png" alt="" onerror="this.style.display='none'"><div><b>THE TRANS SURABAYA</b><h2>28th Sky Beach Club</h2></div></div>
+        <div class="seg" id="seg"><button class="on" data-m="in">I'm staying here<small>Hotel guest prices</small></button><button data-m="out">Visiting<small>Open to everyone</small></button></div>
+        <div class="chips" id="days"></div>
+        <div class="chips" id="sess" style="padding-top:8px"></div>
+        <div class="mapw"><svg id="map" viewBox="0 0 640 1160"></svg><div class="hand" id="hand"></div></div>
+        <div class="leg"><span><i style="background:#F2EEE6"></i>Free</span><span><i style="background:#323C47"></i>Booked</span><span><i style="background:#E9C46A"></i>Your pick</span></div>
+        <div class="zl" id="zl"></div>
+      </div>
+      <div class="dim" id="dim"></div>
+      <div class="sheet" id="sheet"></div>
+      <div class="ok" id="ok"></div>
+    </div>
+    <button class="rs" id="mre" style="display:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button>
+  </div>
+
+  <div class="staff">
+    <div class="sh"><div class="lg">M</div><div><b>Reception iPad · Bookings</b><span>28th Sky Beach Club · today</span></div><div class="live"><i></i>Live</div></div>
+    <div class="smap"><div class="mw"><svg id="smap" viewBox="0 0 1060 715"></svg></div></div>
+    <div class="stats"><div><small>BOOKINGS</small><b id="stB">0</b></div><div><small>GUESTS</small><b id="stG">0</b></div><div><small>ARRIVED</small><b id="stP">0</b></div></div>
+    <div class="bl" id="bl"></div>
+  </div>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function fit(){var w=document.documentElement.clientWidth||innerWidth,h=document.documentElement.clientHeight||innerHeight,pt=w<h;document.documentElement.classList.toggle('port',pt);$('mre').style.display=pt?'inline-flex':'none';var W=pt?440:1920,H=pt?960:1080,k=Math.min(w/W,h/H);$('stage').style.transform='translate(-50%,-50%) scale('+k+')';}
+addEventListener('resize',fit);fit();
+
+var Z={1:{n:'Zone 1',t:'Sun loungers',c:'#7BD389',cap:'1–2 guests',max:2,inP:0,outP:null},
+       2:{n:'Zone 2',t:'Beach loungers',c:'#5BC0EB',cap:'1–2 guests',max:2,inP:0,outP:null},
+       3:{n:'Zone 3',t:'Dining tables',c:'#E4572E',cap:'2–4 guests',max:4,inP:-1,outP:-1},
+       4:{n:'Zone 4',t:'Cabanas',c:'#D08FD8',cap:'6–12 guests',max:12,inP:500000,outP:1000000},
+       5:{n:'Zone 5',t:'Sunken pools',c:'#F2A98A',cap:'3–8 guests',max:8,inP:1000000,outP:2000000}};
+var S=[],i;
+for(i=0;i<11;i++)S.push({id:'L'+(i+1),z:1,k:'l',x:155+47*i,y:192,w:36,h:98,name:'Sun lounger '+(i+1)});
+for(i=0;i<8;i++)S.push({id:'B'+(i+1),z:2,k:'l',x:968,y:307+46*i,w:84,h:30,name:'Beach lounger '+(i+1)});
+[[745,362],[855,352],[808,404],[910,404],[678,437],[631,489],[696,530],[618,566],[775,682],[842,682],[908,682]].forEach(function(p,j){S.push({id:'T'+(j+1),z:3,k:'t',x:p[0],y:p[1],r:21,name:'Table '+(j+1)});});
+for(i=0;i<3;i++)S.push({id:'C'+(i+1),z:4,k:'c',x:167+119*i,y:335,w:110,h:86,name:'Cabana '+(i+1)});
+for(i=0;i<3;i++)S.push({id:'P'+(i+1),z:5,k:'p',x:372+115*i,y:662,r:50,name:'Sunken pool '+(i+1)});
+var BY={};S.forEach(function(s){BY[s.id]=s;});
+var SEED={L2:1,L3:1,L7:1,L10:1,B1:1,B4:1,B5:1,T2:1,T5:1,T9:1,C1:1,P2:1};
+var LIST0=[{z:4,a:'Sarah Jones · Cabana 1',b:'8 guests · 10:00',e:'Arrived',k:'ar'},{z:5,a:'Room 2203 · Sunken pool 2',b:'6 guests · 11:00',e:'Arrived',k:'ar'},{z:1,a:'Room 1712 · Loungers 2 & 3',b:'2 guests · 09:30',e:'Arrived',k:'ar'},{z:3,a:'Budi Santoso · Table 5',b:'4 guests · 12:30',e:'Booked',k:'bkd'},{z:2,a:'Room 2511 · Beach loungers 4 & 5',b:'2 guests · 13:00',e:'Booked',k:'bkd'}],LIST;
+var st;
+function reset(){st={mode:'in',day:1,sess:0,sel:null,g:2,mine:null,step:0};}
+reset();
+function fmt(n){return 'IDR '+n.toLocaleString('en-US');}
+function price(s,m){var z=Z[s.z],p=m==='in'?z.inP:z.outP;return p;}
+function el(t,a){var e=document.createElementNS('http://www.w3.org/2000/svg',t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+
+function draw(svg,staff){
+  svg.innerHTML='';
+  var defs=el('defs',{});
+  defs.innerHTML='<linearGradient id="pool'+(staff?'s':'')+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2FC1CF"/><stop offset="1" stop-color="#147C93"/></linearGradient><linearGradient id="sand'+(staff?'s':'')+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E9D6AE"/><stop offset="1" stop-color="#D9BF8C"/></linearGradient><pattern id="deck'+(staff?'s':'')+'" width="1060" height="16" patternUnits="userSpaceOnUse"><rect width="1060" height="16" fill="#222B35"/><rect y="15" width="1060" height="1" fill="#1B232C"/></pattern><radialGradient id="sk'+(staff?'s':'')+'" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#3DD3DF"/><stop offset="1" stop-color="#1B8EA4"/></radialGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>';
+  svg.appendChild(defs);
+  var sf=staff?'s':'';
+  var g=el('g',staff?{}:{transform:'translate(715,0) rotate(90)'});
+  svg.appendChild(g);
+  // base
+  g.appendChild(el('rect',{x:-20,y:-40,width:1120,height:800,fill:'url(#deck'+sf+')'}));
+  g.appendChild(el('rect',{x:-20,y:-40,width:700,height:205,fill:'url(#pool'+sf+')'}));
+  for(var w=0;w<6;w++){g.appendChild(el('path',{d:'M'+(20+w*110)+' '+(40+(w%3)*35)+' q 20 -8 40 0 t 40 0',stroke:'rgba(255,255,255,.35)','stroke-width':3,fill:'none','stroke-linecap':'round'}));}
+  g.appendChild(el('rect',{x:-20,y:165,width:700,height:6,fill:'#9FE7EE',opacity:.6}));
+  g.appendChild(el('rect',{x:-20,y:180,width:140,height:240,rx:18,fill:'url(#sk'+sf+')'}));
+  g.appendChild(el('rect',{x:1062,y:250,width:80,height:480,fill:'url(#sand'+sf+')'}));
+  g.appendChild(el('rect',{x:740,y:442,width:200,height:196,rx:8,fill:'#2D3742'}));
+  g.appendChild(el('circle',{cx:520,cy:512,r:60,fill:'#3A2F25',stroke:'#C9A96E','stroke-width':3}));
+  g.appendChild(el('circle',{cx:520,cy:512,r:40,fill:'none',stroke:'rgba(201,169,110,.5)','stroke-width':2,'stroke-dasharray':'4 6'}));
+  // spots
+  S.forEach(function(s){
+    var z=Z[s.z],sp=el('g',{class:'sp','data-id':s.id}),b;
+    if(s.k==='l'){b=el('rect',{class:'b',x:s.x,y:s.y,width:s.w,height:s.h,rx:7,fill:'#F2EEE6',stroke:z.c,'stroke-width':3});sp.appendChild(b);
+      var vert=s.h>s.w;sp.appendChild(el('rect',{x:vert?s.x+5:s.x+s.w-20,y:vert?s.y+5:s.y+5,width:vert?s.w-10:14,height:vert?16:s.h-10,rx:4,fill:z.c,opacity:.55,'pointer-events':'none'}));}
+    else if(s.k==='t'){[[0,-1],[1,0],[0,1],[-1,0]].forEach(function(d){sp.appendChild(el('circle',{cx:s.x+d[0]*29,cy:s.y+d[1]*29,r:6,fill:'#5C6773'}));});
+      b=el('circle',{class:'b',cx:s.x,cy:s.y,r:s.r,fill:'#F2EEE6',stroke:z.c,'stroke-width':4});sp.appendChild(b);}
+    else if(s.k==='c'){b=el('rect',{class:'b',x:s.x,y:s.y,width:s.w,height:s.h,rx:12,fill:'#F2EEE6',stroke:z.c,'stroke-width':4});sp.appendChild(b);
+      sp.appendChild(el('path',{d:'M'+(s.x+12)+' '+(s.y+12)+' L'+(s.x+s.w-12)+' '+(s.y+s.h-12)+' M'+(s.x+s.w-12)+' '+(s.y+12)+' L'+(s.x+12)+' '+(s.y+s.h-12),stroke:z.c,'stroke-width':2.5,opacity:.45,'pointer-events':'none'}));
+      sp.appendChild(el('rect',{x:s.x+s.w/2-18,y:s.y+s.h/2-12,width:36,height:24,rx:5,fill:z.c,opacity:.8,'pointer-events':'none'}));}
+    else {b=el('circle',{class:'b',cx:s.x,cy:s.y,r:s.r,fill:'#F2EEE6',stroke:z.c,'stroke-width':5});sp.appendChild(b);
+      sp.appendChild(el('circle',{cx:s.x,cy:s.y,r:s.r-13,fill:'url(#sk'+sf+')',opacity:.9,'pointer-events':'none'}));}
+    g.appendChild(sp);
+    if(!staff)sp.addEventListener('click',function(){tapSpot(s.id);});
+  });
+  // labels
+  function lab(t,ox,oy,sz,col,rot,w){var x=staff?ox:715-oy,y=staff?oy:ox;var tx=el('text',{x:x,y:y,'text-anchor':'middle','font-family':'Inter,Arial','font-weight':800,'font-size':sz,fill:col,'letter-spacing':w||2});if(rot&&!staff)tx.setAttribute('transform','rotate(-90 '+x+' '+y+')');tx.textContent=t;svg.appendChild(tx);}
+  if(!staff){
+    lab('INFINITY POOL',330,95,26,'rgba(255,255,255,.85)',true,6);
+    lab('JACUZZI',50,300,18,'rgba(255,255,255,.85)',true);
+    lab('BAR',520,520,22,'#E9C46A');
+    lab('GLASS DOOR',840,546,15,'#7E8A96');
+    lab('BEACH',1100,490,20,'#7A5A2A',true,6);
+    zt(1,390,315);zt(4,341,440);zt(3,640,410);zt(2,1010,300);zt(5,488,575);
+  } else {
+    lab('INFINITY POOL',330,92,26,'rgba(255,255,255,.85)',false,6);lab('BAR',520,520,22,'#E9C46A');lab('JACUZZI',50,305,15,'rgba(255,255,255,.85)');
+  }
+  function zt(n,ox,oy){var x=715-oy,y=ox;var gg=el('g',{'pointer-events':'none'});gg.appendChild(el('rect',{x:x-22,y:y-15,width:44,height:30,rx:9,fill:'#10151B',stroke:Z[n].c,'stroke-width':2.5}));var t=el('text',{x:x,y:y+7,'text-anchor':'middle','font-family':'Inter,Arial','font-weight':900,'font-size':19,fill:Z[n].c});t.textContent=n;gg.appendChild(t);svg.appendChild(gg);}
+}
+function paint(){
+  [['map',false],['smap',true]].forEach(function(m){
+    [].forEach.call($(m[0]).querySelectorAll('.sp'),function(g){var id=g.getAttribute('data-id'),s=BY[id],c='sp';
+      if(st.mine===id)c+=' mine'+(m[1]?' pulse':'');else if(SEED[id])c+=' bk';
+      else if(!m[1]&&st.mode==='out'&&Z[s.z].outP===null)c+=' lock';
+      if(!m[1]&&st.sel===id)c+=' sel';
+      g.setAttribute('class',c);});
+  });
+  var zl='';[4,5,3,1,2].forEach(function(n){var z=Z[n],p=st.mode==='in'?z.inP:z.outP,full=z.outP,txt;
+    if(p===null)txt='<em style="color:#6E7882">Hotel guests<small style="display:block;font-size:11px;font-weight:600">only</small></em>';
+    else if(p===0)txt='<em style="color:#7FD99A">Free</em>';
+    else if(p===-1)txt='<em>Free to book<small style="display:block;font-size:11px;color:#6E7882;font-weight:600">order on the day</small></em>';
+    else txt='<em>'+fmt(p)+(st.mode==='in'&&full>p?'<s>was '+fmt(full)+'</s>':'')+'</em>';
+    zl+='<div class="zr"><i style="background:'+z.c+'"></i><div><b>'+z.t+'</b><span>'+z.n+' · '+z.cap+'</span></div>'+txt+'</div>';});
+  $('zl').innerHTML=zl;
+}
+function days(){var h='',d=new Date(),n=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  for(var k=0;k<5;k++){var x=new Date(d.getTime()+k*864e5);h+='<button class="chip'+(k===st.day?' on':'')+'" data-d="'+k+'"><small>'+(k===0?'TODAY':n[x.getDay()].toUpperCase())+'</small>'+x.getDate()+' '+m[x.getMonth()]+'</button>';}
+  $('days').innerHTML=h;[].forEach.call($('days').children,function(b){b.onclick=function(){st.day=+b.getAttribute('data-d');days();};});
+  var ss=[['Day','10am – 5pm'],['Sunset','5pm – 9pm']];h='';ss.forEach(function(s,k){h+='<button class="chip'+(k===st.sess?' on':'')+'" data-s="'+k+'" style="flex:1"><small>'+s[0].toUpperCase()+'</small>'+s[1]+'</button>';});
+  $('sess').innerHTML=h;[].forEach.call($('sess').children,function(b){b.onclick=function(){st.sess=+b.getAttribute('data-s');days();};});
+}
+function dayLabel(){var b=$('days').children[st.day];return b?b.textContent.replace(/^(TODAY|[A-Z]{3})/,function(x){return x==='TODAY'?'Today, ':x.charAt(0)+x.slice(1).toLowerCase()+' ';}):'';}
+function sessLabel(){return st.sess?'Sunset · 5pm – 9pm':'Day · 10am – 5pm';}
+[].forEach.call($('seg').children,function(b){b.onclick=function(){st.mode=b.getAttribute('data-m');[].forEach.call($('seg').children,function(x){x.classList.toggle('on',x===b);});if(st.sel&&Z[BY[st.sel].z].outP===null&&st.mode==='out')closeSheet();paint();};});
+
+function stage(n){for(var k=0;k<3;k++)$('s'+k).className='st'+(k===n?' on':k<n?' done':'');}
+function hint(t){$('hint').textContent=t;}
+function nudge(e){[].forEach.call(document.querySelectorAll('.nudge'),function(x){x.classList.remove('nudge');});if(e)e.classList.add('nudge');}
+function hand(id){var h=$('hand');if(!id){h.style.display='none';return;}var s=BY[id],svg=$('map'),k=svg.getBoundingClientRect().width/640/(+($('stage').style.transform.match(/scale\(([\d.]+)/)||[0,1])[1]);
+  var cx=s.k==='l'||s.k==='c'?s.x+s.w/2:s.x,cy=s.k==='l'||s.k==='c'?s.y+s.h/2:s.y;var x=715-cy,y=cx;var sc=(svg.clientWidth||340)/640;h.style.left=(x*sc-8)+'px';h.style.top=(y*sc-6)+'px';h.style.display='block';}
+function dim(on){$('dim').classList.toggle('on',on);}
+function closeSheet(){$('sheet').classList.remove('on');dim(false);st.sel=null;paint();}
+$('dim').onclick=closeSheet;
+
+function tapSpot(id){var s=BY[id],z=Z[s.z];
+  if(SEED[id]||st.mine===id)return;
+  if(st.mode==='out'&&z.outP===null){hint('Sun loungers are for hotel guests. Switch to "I\'m staying here"');return;}
+  hand(null);st.sel=id;st.g=Math.min(z.max,s.z===4?8:s.z===5?6:2);paint();sheetSpot();stage(1);}
+function sheetSpot(){var s=BY[st.sel],z=Z[s.z],p=price(s,st.mode),pt;
+  if(p===0)pt='<b>Free</b><span class="tag">HOTEL GUEST</span>';
+  else if(p===-1)pt='<b>No charge to book</b>';
+  else pt=(st.mode==='in'?'<s>'+fmt(z.outP)+'</s>':'')+'<b>'+fmt(p)+'</b>'+(st.mode==='in'?'<span class="tag">50% OFF</span>':'');
+  var note=p===-1?'Dining only. Order on the day.':p===0?'Free for hotel guests. Towels included.':'Nothing to pay now. Settled at the venue on the day.';
+  var AD=s.z===3?['Window seat','Birthday cake','Champagne on arrival']:s.z===1||s.z===2?['Fresh coconut','Fruit platter','Extra towels']:['Champagne on arrival','Birthday set-up','Fruit platter','Extra towels'];
+  $('sheet').innerHTML='<div class="grab"></div><div class="sz"><i style="background:'+z.c+'"></i>'+z.n.toUpperCase()+' · '+z.t.toUpperCase()+'</div><h3>'+s.name+'</h3><p class="d">'+z.cap+(s.z===3?' · Dining only':'')+'</p>'+
+   '<div class="when"><div><small>DATE</small><b>'+dayLabel()+'</b></div><div><small>TIME</small><b>'+sessLabel()+'</b></div></div>'+
+   '<div class="gst"><div><small>GUESTS</small><b>'+(st.mode==='in'?'Alexander + guests':'Your group')+'</b></div><div class="ctl"><button id="gm">−</button><span id="gn">'+st.g+'</span><button id="gp">+</button></div></div>'+
+   '<div class="adl">ADD SOMETHING SPECIAL</div><div class="ads" id="ads">'+AD.map(function(x){return '<button>'+x+'</button>';}).join('')+'</div>'+
+   '<div class="pr"><span>'+(p>0?'Price on the day':'Booking')+'</span><div>'+pt+'</div></div><p class="note">'+note+'</p><button class="go" id="goB">Reserve</button>';
+  dim(true);$('sheet').classList.add('on');
+  [].forEach.call($('ads').children,function(x){x.onclick=function(){x.classList.toggle('on');};});
+  $('ads').children[0].classList.add('on');
+  $('gm').onclick=function(){if(st.g>1){st.g--;$('gn').textContent=st.g;}};$('gp').onclick=function(){if(st.g<z.max){st.g++;$('gn').textContent=st.g;}};
+  $('goB').onclick=function(){confirm(p);};
+  nudge($('goB'));hint('Pick an extra if they like, then tap Reserve');
+}
+function confetti(){var ph=$('ph'),c=['#E9C46A','#C9A96E','#fff','#F2D58C','#7BD389','#D08FD8'];for(var k=0;k<44;k++){var d=document.createElement('div');d.className='cf';d.style.left=Math.random()*360+'px';d.style.background=c[k%c.length];d.style.animationDuration=(1.6+Math.random()*1.5)+'s';d.style.animationDelay=(Math.random()*.4)+'s';ph.appendChild(d);(function(d){setTimeout(function(){d.remove();},3600);})(d);}}
+function confirm(p,paid){var s=BY[st.sel],z=Z[s.z];
+  $('sheet').classList.remove('on');dim(false);nudge(null);
+  st.mine=st.sel;st.sel=null;paint();stage(2);
+  var ex=[].map.call(document.querySelectorAll('#ads .on'),function(x){return x.textContent;}).join(', ')||'None';
+  var pay=p===0?'Free · hotel guest':p===-1?'Order on the day':'Pay at the venue';
+  $('ok').innerHTML='<div class="ck"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#14191F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>You\'re booked,<br>Alexander!</h3><p>We\'ve sent the details to your WhatsApp.</p>'+
+   '<div class="tk"><div class="t2">28TH SKY BEACH CLUB</div><div class="t1">'+s.name+'</div><div style="height:8px"></div><div class="r"><span>Date</span><b>'+dayLabel()+'</b></div><div class="r"><span>Time</span><b>'+sessLabel()+'</b></div><div class="r"><span>Guests</span><b>'+st.g+'</b></div><div class="r"><span>Extras</span><b>'+ex+'</b></div><div class="sep"></div><div class="r"><span>Payment</span><b>'+pay+'</b></div><div class="qrr" style="margin-top:10px"><img src="/trans/d/qr.png" alt=""><p>Show this at the 28th. The team takes you straight to your spot.</p></div></div>'+
+   '<button class="done" id="okD">Done</button>';
+  $('ok').classList.add('on');confetti();
+  // staff side
+  LIST.unshift({z:s.z,a:(st.mode==='in'?'Room 2807 · Alexander':'Alexander')+' · '+s.name,b:st.g+' guests · '+(st.sess?'17:00':'10:00')+(ex!=='None'?' · '+ex:''),e:'',k:'new',n:1});
+  staffList();
+  hint('It\'s on the reception iPad. When he arrives, tap Arrived');
+  $('okD').onclick=function(){$('ok').classList.remove('on');nudge(null);$('app').scrollTop=0;};
+  setTimeout(function(){var b=document.querySelector('#bl .arr');if(b)b.classList.add('nudge');},1200);
+}
+function staffList(){var g=0,ar=0,h='';LIST.forEach(function(b,ix){g+=parseInt(b.b,10);if(b.k==='ar')ar++;
+  h+='<div class="bi'+(b.n?' new':'')+'"><i style="background:'+Z[b.z].c+'"></i><div><b>'+b.a+'</b><span>'+b.b+'</span></div>'+(b.k==='new'?'<button class="arr" data-i="'+ix+'">Arrived</button>':'<em class="'+b.k+'">'+b.e+'</em>')+'</div>';b.n=0;});
+  $('bl').innerHTML=h;$('stB').textContent=LIST.length;$('stG').textContent=g;$('stP').textContent=ar;
+  [].forEach.call(document.querySelectorAll('#bl .arr'),function(btn){btn.onclick=function(){var b=LIST[+btn.getAttribute('data-i')];b.k='ar';b.e='Arrived · open on POS';staffList();stage(3);hint('Checked in. From here it\'s their normal POS. Tap "Start again" to show it again');};});
+}
+function start(){reset();LIST=LIST0.map(function(b){return Object.assign({},b);});
+  ['ok','sheet'].forEach(function(x){$(x).classList.remove('on');});dim(false);
+  [].forEach.call($('seg').children,function(x){x.classList.toggle('on',x.getAttribute('data-m')==='in');});
+  draw($('map'),false);draw($('smap'),true);days();paint();staffList();stage(0);hint('Tap a cabana on the map');nudge(null);$('app').scrollTop=0;
+  setTimeout(function(){hand('C2');},300);}
+$('restart').onclick=start;$('mre').onclick=start;
+start();
+})();
+</script>
+</body></html>
