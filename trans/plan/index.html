@@ -110,8 +110,9 @@ h4{font-size:15px;font-weight:800;margin-top:22px}
 @media (max-width:760px){
   :root{--pw:100vw}
   body.open #mapw{transform:none}
-  #mapin{width:860px;max-width:none;margin-top:60px}
-  #mapw{overflow-x:auto;place-items:center start;padding:0 10px}
+  #mapw{display:block;overflow-y:auto;overflow-x:hidden;padding:84px 12px 96px;-webkit-overflow-scrolling:touch}
+  #mapin{width:100%;max-width:520px;margin:0 auto}
+  .pill .dt{white-space:nowrap;font-size:13px;padding:6px 10px}.pill{padding-right:8px}
   .panel{top:auto;height:78vh;width:100%;border-radius:22px 22px 0 0;transform:translateY(102%)}
   body.open .panel{transform:none}
   .steps,.legend{display:none}
@@ -162,7 +163,8 @@ function booked(d){var b={};SETS[d].forEach(function(id){b[id]=1;});return b;}
 BK=booked(day);
 function lab(){$('dlab').textContent=(day===0?'Today':D[day].d)+', '+D[day].n+' '+D[day].m+' 2026';}
 
-function draw(){
+var PORT=false;
+function draw(){PORT=innerWidth<760&&innerWidth<innerHeight;
   var svg=$('plan');svg.innerHTML='';
   var d=el('defs',{},svg);
   d.innerHTML='<pattern id="deck" width="1200" height="12" patternUnits="userSpaceOnUse"><rect width="1200" height="12" fill="#6E5440"/><rect y="11" width="1200" height="1" fill="#5C4535"/><rect x="0" width="1" height="12" fill="#5C4535" opacity=".0"/></pattern>'+
@@ -183,20 +185,20 @@ function draw(){
   el('rect',{x:30,y:24,width:760,height:122,rx:20,fill:'url(#water)'},svg);
   el('rect',{x:30,y:24,width:760,height:122,rx:20,fill:'none',stroke:'#E9E1D3','stroke-width':6},svg);
   for(i=0;i<9;i++)el('path',{d:'M'+(70+i*82)+' '+(55+(i%3)*28)+' q12 -6 24 0 t24 0',stroke:'#fff',opacity:.55,'stroke-width':2.2,fill:'none','stroke-linecap':'round'},svg);
-  txt('INFINITY POOL',410,93,14,'rgba(255,255,255,.95)',6,svg);
+  txt('INFINITY POOL',410,93,14,'rgba(255,255,255,.95)',6,svg).setAttribute('class','keep');
   // jacuzzi
   el('rect',{x:30,y:172,width:110,height:236,rx:26,fill:'url(#sp)',stroke:'#E9E1D3','stroke-width':6},svg);
   for(i=0;i<8;i++)el('circle',{cx:50+((i*37)%80),cy:200+i*24,r:2+(i%3),fill:'#fff',opacity:.8},svg);
-  txt('JACUZZI',85,394,10,'rgba(255,255,255,.95)',3,svg);
+  txt('JACUZZI',PORT?85:85,PORT?290:394,PORT?13:10,'rgba(255,255,255,.95)',3,svg);
   // beach
   el('path',{d:'M1112 240 C1100 330 1124 420 1108 500 S1120 640 1110 700 L1200 700 L1200 240 Z',fill:'url(#sand)'},svg);
-  var bt=txt('SKY BEACH',1162,470,12,'#9C7E4E',5,svg);bt.setAttribute('transform','rotate(90 1162 470)');
+  var bt=txt('SKY BEACH',1162,470,12,'#9C7E4E',5,svg);bt.setAttribute('transform','rotate(90 1162 470)');bt.setAttribute('class','bch');
   // umbrellas on beach (decor)
   [[1150,300],[1160,620]].forEach(function(u){umb(u[0],u[1],22);});
   // indoor glass
   el('rect',{x:770,y:420,width:200,height:176,rx:14,fill:'#3A4650',opacity:.85},svg);
   el('rect',{x:778,y:428,width:184,height:160,rx:10,fill:'none',stroke:'#7E95A3','stroke-width':1.5,opacity:.6},svg);
-  txt('INDOOR',870,505,11,'#C9D6DE',4,svg);txt('GLASS DOORS',870,523,9,'#8FA3AF',2,svg);
+  txt('INDOOR',870,505,11,'#C9D6DE',4,svg);if(!PORT)txt('GLASS DOORS',870,523,9,'#8FA3AF',2,svg);
   // bar
   for(i=0;i<10;i++){var a=i/10*Math.PI*2;el('circle',{cx:530+Math.cos(a)*78,cy:490+Math.sin(a)*78,r:7,fill:'#2B231C',stroke:'#C9A96E','stroke-width':1.5},svg);}
   el('circle',{cx:530,cy:490,r:62,fill:'#1F1914',filter:'url(#sh)'},svg);
@@ -217,6 +219,10 @@ function draw(){
   });
   // zone markers
   [[1,'Sun loungers',740,214],[4,'Cabanas',232,438],[3,'Dining',830,286],[2,'Beach loungers',1050,262],[5,'Sunken pools',380,555]].forEach(function(m){marker(m[0],m[1],m[2],m[3]);});
+  if(PORT){var root=el('g',{transform:'translate(700,0) rotate(90)'},svg);[].slice.call(svg.childNodes).forEach(function(n){if(n!==root&&n.nodeName!=='defs')root.appendChild(n);});svg.setAttribute('viewBox','0 0 700 1200');
+    [].forEach.call(root.querySelectorAll('text'),function(t){if(t.closest('.mk'))return;var c=t.getAttribute('class');if(c==='keep')return;if(c==='bch'){t.setAttribute('transform','rotate(-90 1162 470)');return;}t.setAttribute('transform','rotate(-90 '+t.getAttribute('x')+' '+t.getAttribute('y')+')');});
+    [].forEach.call(root.querySelectorAll('.mk'),function(m){m.setAttribute('transform','rotate(-90 '+m.getAttribute('data-x')+' '+m.getAttribute('data-y')+')');});
+  } else svg.setAttribute('viewBox','0 0 1200 700');
   paint();
 }
 function umb(x,y,r){var g=el('g',{filter:'url(#sh)'},$('plan'));el('circle',{cx:x,cy:y,r:r,fill:'url(#stripe)'},g);el('circle',{cx:x,cy:y,r:r,fill:'none',stroke:'#2F6B55','stroke-width':1.5},g);el('circle',{cx:x,cy:y,r:3,fill:'#E9E1D3'},g);}
@@ -257,7 +263,7 @@ function furn(s,g){
     el('path',{d:'M'+(s.x-14)+' '+(s.y-3)+' q7 -4 14 0 t14 0 M'+(s.x-9)+' '+(s.y+8)+' q4.5 -3 9 0 t9 0',stroke:'#fff','stroke-width':2,fill:'none',opacity:.8,'stroke-linecap':'round'},g);
   }
 }
-function marker(z,t,x,y){var svg=$('plan'),g=el('g',{class:'mk','pointer-events':'none'},svg),w=t.length*7.6+46;
+function marker(z,t,x,y){var svg=$('plan'),g=el('g',{class:'mk','pointer-events':'none','data-x':x,'data-y':y},svg),w=t.length*7.6+46;
   el('rect',{x:x-14,y:y-14,width:w,height:28,rx:14,fill:'rgba(20,16,12,.72)'},g);
   el('circle',{cx:x,cy:y,r:11,fill:'#fff'},g);var n=txt(String(z),x,y+4.5,12,'#1F1B17',0,g);n.setAttribute('font-weight',800);
   var l=el('text',{x:x+18,y:y+4.5,'font-family':'Inter,Arial','font-weight':600,'font-size':12.5,fill:'#fff'},g);l.textContent=t;}
@@ -303,7 +309,7 @@ $('zi').onclick=function(){zoom=Math.min(1.8,zoom+.2);$('mapin').style.transform
 $('zo').onclick=function(){zoom=Math.max(.8,zoom-.2);$('mapin').style.transform='scale('+zoom+')';};
 [].forEach.call(document.querySelectorAll('.venues button'),function(b,k){b.onclick=function(){if(k)toast(b.textContent.replace(/^(Popular today|Sunday brunch)/,'').trim()+' would have its own floor plan here',true);};});
 addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-lab();draw();
+lab();draw();var lp=PORT;addEventListener('resize',function(){var np=innerWidth<760&&innerWidth<innerHeight;if(np!==lp){lp=np;draw();}});
 })();
 </script>
 </body></html>
