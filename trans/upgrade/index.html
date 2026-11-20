@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mavis · Upgrade path</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#141416;overflow:hidden}
+body{font-family:Inter,Arial,sans-serif;color:#F2EEE6}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#1C1C1E;display:grid;grid-template-columns:560px 1fr 560px;align-items:center;padding:0 90px}
+button{font:inherit;cursor:pointer;border:0}
+/* left */
+.k{font-size:22px;font-weight:600;letter-spacing:4px;color:#C9A96E}
+h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
+.sub{font-size:24px;color:#B9B3A8;margin-top:14px;line-height:1.35;max-width:430px}
+.steps{margin-top:46px;display:flex;flex-direction:column;gap:14px}
+.st{display:flex;align-items:center;gap:20px;padding:16px 20px;border-radius:18px;border:1px solid transparent;transition:.35s}
+.st i{font-style:normal;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:24px;background:#2A2A2D;color:#8E8A82;flex:none;transition:.35s}
+.st b{display:block;font-size:28px;font-weight:700;color:#8E8A82;transition:.35s}
+.st span{display:block;font-size:19px;color:#6F6B65;margin-top:2px;transition:.35s}
+.st.on{background:#26262A;border-color:#4A4130}.st.on i{background:#C9A96E;color:#1C1C1E}.st.on b{color:#F2EEE6}.st.on span{color:#B9B3A8}
+.st.done i{background:#3A3428;color:#C9A96E}.st.done b{color:#C9C3B8}
+#restart{margin-top:30px;background:none;color:#8E8A82;font-size:19px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:10px 4px}
+#restart:hover{color:#F2EEE6}
+/* phone */
+.mid{display:flex;justify-content:center}
+.ph{position:relative;width:384px;height:828px;border-radius:56px;border:12px solid #0B0B0C;box-shadow:0 0 0 2px #3A3A3D,0 40px 80px rgba(0,0,0,.55);overflow:hidden;background:#F4F1EA}
+.sbar{position:absolute;left:0;right:0;top:0;height:46px;background:#1C1C1E;z-index:12;display:flex;align-items:center;justify-content:space-between;padding:0 26px 0 30px;color:#fff;font-size:15px;font-weight:700}
+.scr{position:absolute;left:0;right:0;bottom:0;top:46px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.scr::-webkit-scrollbar{display:none}
+.scr img{display:block;width:360px}
+.isl{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:30px;border-radius:20px;background:#0B0B0C;z-index:30}
+.cta{position:absolute;left:14px;right:14px;bottom:18px;z-index:10;border-radius:18px;padding:15px 16px;font-weight:800;font-size:19px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 28px rgba(0,0,0,.4);text-align:left;transition:transform .35s,opacity .35s}
+.cta small{display:block;font-weight:600;font-size:14px;margin-top:1px}
+.cta.g{background:#C9A96E;color:#1C1C1E}.cta.g small{opacity:.75}
+.cta.d{background:#0B0B0C;color:#F2EEE6}.cta.d small{color:#E9C46A}
+.cta.hide{transform:translateY(130%);opacity:0;pointer-events:none}
+.cta.pulse{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 12px 28px rgba(0,0,0,.4),0 0 0 0 rgba(201,169,110,.55)}50%{box-shadow:0 12px 28px rgba(0,0,0,.4),0 0 0 12px rgba(201,169,110,0)}}
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:15;opacity:0;pointer-events:none;transition:opacity .3s}
+.dim.on{opacity:1;pointer-events:auto}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;background:#FBF8F2;color:#1C1C1E;border-radius:26px 26px 0 0;padding:14px 22px 26px;transform:translateY(105%);transition:transform .35s ease}
+.sheet.on{transform:none}
+.sheet .grab{width:44px;height:5px;border-radius:3px;background:#D8D2C6;margin:0 auto 18px}
+.sheet h4{font-size:24px;font-weight:800}
+.sheet p{font-size:15.5px;color:#6B665E;margin-top:6px;line-height:1.4}
+.fld{margin-top:14px;border:1.5px solid #E2DCD0;border-radius:14px;padding:10px 14px;background:#fff}
+.fld label{display:block;font-size:12px;font-weight:700;letter-spacing:1px;color:#9A9488}
+.fld div{font-size:18px;font-weight:600;margin-top:2px}
+.sheet .go{margin-top:18px;width:100%;border-radius:14px;padding:15px;font-weight:800;font-size:18px;background:#1C1C1E;color:#F2EEE6}
+.sheet .go.vip{background:#0B0B0C;color:#E9C46A}
+.sheet .perk{display:flex;gap:10px;align-items:center;font-size:15.5px;font-weight:600;margin-top:10px}
+.sheet .perk i{width:30px;height:30px;border-radius:50%;background:#F1E7D2;display:grid;place-items:center;flex:none}
+.pop{position:absolute;left:20px;right:20px;top:190px;z-index:25;border-radius:26px;padding:30px 22px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.55);transform:scale(.6);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,1.4,.4,1),opacity .25s}
+.pop.on{transform:none;opacity:1;pointer-events:auto}
+.pop.g{background:linear-gradient(160deg,#E2C27E,#C9A24A);color:#1C1C1E}
+.pop.v{background:linear-gradient(160deg,#1E1E1E,#050505);color:#fff;border:1px solid #6B5A33}
+.pop .ic{width:72px;height:72px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center}
+.pop.g .ic{background:#1C1C1E}.pop.v .ic{background:#E9C46A}
+.pop h4{font-size:28px;font-weight:800;line-height:1.12}
+.pop p{font-size:16.5px;margin-top:10px;line-height:1.4;opacity:.85}
+.pop.v p{color:#E9C46A;opacity:1}
+.pop .bt{margin-top:20px;width:100%;border-radius:14px;padding:14px;font-weight:800;font-size:17px}
+.pop.g .bt{background:#1C1C1E;color:#F2EEE6}.pop.v .bt{background:#E9C46A;color:#111}
+.toast{position:absolute;left:16px;right:16px;top:56px;z-index:28;background:#1C1C1E;color:#F2EEE6;border-radius:16px;padding:13px 16px;font-size:15.5px;font-weight:600;display:flex;gap:10px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4);transform:translateY(-300%);opacity:0;transition:transform .4s ease,opacity .3s}
+.toast.on{transform:none;opacity:1}
+.cf{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;z-index:26;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(720deg)}}
+/* back office */
+.bo{background:#F4F1EA;color:#1C1C1E;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);width:470px;justify-self:end}
+.boh{background:#1C1C1E;color:#F2EEE6;padding:18px 22px;display:flex;align-items:center;gap:12px}
+.boh .lg{width:38px;height:38px;border-radius:10px;background:#C9A96E;display:grid;place-items:center;color:#1C1C1E;font-weight:900;font-size:19px}
+.boh b{font-size:19px;display:block}.boh span{font-size:14px;color:#B9B3A8}
+.bol{padding:18px;display:flex;flex-direction:column;gap:12px;min-height:420px}
+.bol .em{color:#9A9488;font-size:17px;text-align:center;margin-top:120px;line-height:1.5}
+.it{background:#fff;border-radius:16px;padding:15px 16px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,.06);animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(-12px)}}
+.it .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:17px;flex:none}
+.it .av.g{background:#F1E7D2;color:#8A6A2A}.it .av.v{background:#1C1C1E;color:#E9C46A}.it .av.n{background:#E7EEF5;color:#2F5D86}
+.it b{font-size:17px;display:block}.it p{font-size:15px;color:#6B665E;margin-top:2px;line-height:1.35}
+.it .tm{font-size:13px;color:#9A9488;margin-top:4px}
+.it .acts{display:flex;gap:8px;margin-top:10px}
+.it .ap{background:#C9A96E;color:#1C1C1E;font-weight:800;font-size:15.5px;padding:9px 18px;border-radius:10px;animation:pulse 2s ease-in-out infinite}
+.it .no{background:#EEE9DF;color:#6B665E;font-weight:700;font-size:15.5px;padding:9px 14px;border-radius:10px}
+.it .ok{display:inline-block;margin-top:8px;background:#E3F1E6;color:#2D7A45;font-weight:700;font-size:14px;padding:5px 10px;border-radius:8px}
+.hint{font-size:16px;color:#8E8A82;text-align:center;margin-top:14px;width:470px;justify-self:end}
+</style></head>
+<body>
+<div id="stage">
+  <div>
+    <p class="k">UPGRADE PATH</p>
+    <h1>From guest<br>to VIP.<br>Same app.</h1>
+    <p class="sub">They scan once in the lobby. Every upgrade after that happens on their phone.</p>
+    <div class="steps">
+      <div class="st on" id="s0"><i>1</i><div><b>Guest</b><span>Scans the lobby screen. Hotel guide.</span></div></div>
+      <div class="st" id="s1"><i>2</i><div><b>Member</b><span>Gold card, perks and offers.</span></div></div>
+      <div class="st" id="s2"><i>3</i><div><b>VIP</b><span>Black card, approved by the hotel.</span></div></div>
+    </div>
+    <button id="restart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button>
+  </div>
+
+  <div class="mid"><div class="ph" id="ph">
+    <div class="sbar"><span>9:41</span><span><svg width="44" height="14" viewBox="0 0 44 14" fill="#fff"><rect x="0" y="8" width="3" height="6" rx="1"/><rect x="5" y="5" width="3" height="9" rx="1"/><rect x="10" y="2" width="3" height="12" rx="1"/><rect x="20" y="1" width="20" height="12" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="22.5" y="3.5" width="14" height="7" rx="1.5"/></svg></span></div><div class="isl"></div>
+    <div class="scr" id="scr"><img id="img" src="/trans/up/guest.jpg" alt="The Trans Surabaya app"></div>
+    <div class="toast" id="toast"></div>
+    <button class="cta g pulse" id="ctaJoin"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Become a member<small>Free. Perks from your next visit</small></div></button>
+    <button class="cta d hide" id="ctaVip"><svg width="28" height="28" viewBox="0 0 24 24" fill="#E9C46A"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Go VIP<small>Ask the team about VIP</small></div></button>
+    <div class="dim" id="dim"></div>
+    <div class="sheet" id="shJoin"><div class="grab"></div>
+      <h4>Join the Members Club</h4><p>Free. Your name on every visit, member offers and rewards.</p>
+      <div class="fld"><label>NAME</label><div>Alexander</div></div>
+      <div class="fld"><label>WHATSAPP</label><div>+62 812 3456 7890</div></div>
+      <button class="go" id="goJoin">Join now</button></div>
+    <div class="sheet" id="shVip"><div class="grab"></div>
+      <h4>Become a VIP</h4><p>The team will look at your request and let you know.</p>
+      <div class="perk"><i>★</i>Free room upgrade when available</div>
+      <div class="perk"><i>★</i>Late check-out until 4pm</div>
+      <div class="perk"><i>★</i>20% off at the spa</div>
+      <button class="go vip" id="goVip">Ask for VIP</button></div>
+    <div class="pop g" id="popM"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#E2C27E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
+      <h4>Congratulations,<br>Alexander!</h4><p>You're now a member of The Trans Surabaya Members Club.</p><button class="bt" id="okM">See my perks</button></div>
+    <div class="pop v" id="popV"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="#111"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
+      <h4>Welcome to VIP,<br>Alexander</h4><p>Black card. Room upgrades, late check-out and 20% off the spa.</p><button class="bt" id="okV">See my VIP perks</button></div>
+  </div></div>
+
+  <div>
+    <div class="bo">
+      <div class="boh"><div class="lg">M</div><div><b>Back office</b><span>Members Club · The Trans Surabaya</span></div></div>
+      <div class="bol" id="bol"><div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div></div>
+    </div>
+    <p class="hint" id="hint">Tap "Become a member" on the phone</p>
+  </div>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var st=$('stage');
+function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='translate(-50%,-50%) scale('+k+')';}
+addEventListener('resize',fit);fit();
+['/trans/up/member.jpg','/trans/up/vip.jpg'].forEach(function(u){var i=new Image();i.src=u;});
+function stage(n){for(var i=0;i<3;i++){var e=$('s'+i);e.className='st'+(i===n?' on':i<n?' done':'');}}
+function dim(on){$('dim').classList.toggle('on',on);}
+function hint(t){$('hint').textContent=t;}
+function screen(src){var s=$('scr');s.style.transition='opacity .25s';s.style.opacity=0;setTimeout(function(){$('img').src=src;s.scrollTop=0;s.style.opacity=1;},250);}
+function confetti(){var ph=$('ph'),c=['#E9C46A','#C9A96E','#fff','#F2D58C','#B8913F'];for(var i=0;i<46;i++){var d=document.createElement('div');d.className='cf';d.style.left=Math.random()*360+'px';d.style.background=c[i%c.length];d.style.animationDuration=(1.6+Math.random()*1.6)+'s';d.style.animationDelay=(Math.random()*.5)+'s';ph.appendChild(d);(function(d){setTimeout(function(){d.remove();},3800);})(d);}}
+function toast(t){var e=$('toast');e.innerHTML=t;e.classList.add('on');setTimeout(function(){e.classList.remove('on');},3200);}
+function bo(html){var em=$('em');if(em)em.remove();var d=document.createElement('div');d.className='it';d.innerHTML=html;$('bol').insertBefore(d,$('bol').firstChild);return d;}
+function now(){var d=new Date();return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});}
+
+$('ctaJoin').onclick=function(){dim(true);$('shJoin').classList.add('on');hint('Tap "Join now"');};
+$('goJoin').onclick=function(){
+  $('shJoin').classList.remove('on');$('ctaJoin').classList.add('hide');
+  screen('/trans/up/member.jpg');stage(1);
+  setTimeout(function(){$('popM').classList.add('on');confetti();},450);
+  bo('<div class="av g">A</div><div><b>New member: Alexander</b><p>Joined from the hotel guide. Welcome message sent on WhatsApp.</p><div class="tm">Just now · '+now()+'</div></div>');
+  hint('Alexander is now in the back office');
+};
+$('okM').onclick=function(){$('popM').classList.remove('on');dim(false);setTimeout(function(){$('ctaVip').classList.remove('hide');$('ctaVip').classList.add('pulse');},500);hint('Scroll the app, then tap "Go VIP"');};
+$('ctaVip').onclick=function(){dim(true);$('shVip').classList.add('on');hint('Tap "Ask for VIP"');};
+$('goVip').onclick=function(){
+  $('shVip').classList.remove('on');dim(false);$('ctaVip').classList.add('hide');
+  setTimeout(function(){toast('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Request sent. We\'ll let you know.');},300);
+  var it=bo('<div class="av v">A</div><div style="flex:1"><b>Alexander wants to go VIP</b><p>Member since today · 1 visit</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
+  hint('Now approve it in the back office');
+  it.querySelector('.ap').onclick=function(){
+    it.querySelector('.acts').outerHTML='<span class="ok">Approved · now VIP</span>';
+    screen('/trans/up/vip.jpg');stage(2);
+    setTimeout(function(){dim(true);$('popV').classList.add('on');confetti();},450);
+    hint('Alexander is now a VIP');
+  };
+  it.querySelector('.no').onclick=function(){it.querySelector('.acts').outerHTML='<span class="ok" style="background:#EEE9DF;color:#6B665E">Not now</span>';$('ctaVip').classList.remove('hide');hint('Tap "Go VIP" to try again');};
+};
+$('okV').onclick=function(){$('popV').classList.remove('on');dim(false);hint('Done. Tap "Start again" to show it again');};
+$('restart').onclick=function(){['popM','popV','shJoin','shVip'].forEach(function(i){$(i).classList.remove('on');});dim(false);
+  $('ctaVip').classList.add('hide');$('ctaJoin').classList.remove('hide');screen('/trans/up/guest.jpg');stage(0);
+  $('bol').innerHTML='<div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div>';hint('Tap "Become a member" on the phone');};
+})();
+</script>
+</body></html>
