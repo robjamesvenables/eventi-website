@@ -6,9 +6,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#141416;overflow:hidden}
+html,body{height:100%;background:#1C1C1E;overflow:hidden}
 body{font-family:Inter,Arial,sans-serif;color:#F2EEE6}
-#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#1C1C1E;display:grid;grid-template-columns:820px 1fr;align-items:center;padding:0 120px 0 150px}
+#stage{position:fixed;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#1C1C1E;display:grid;grid-template-columns:820px 1fr;align-items:center;padding:0 120px 0 150px}
 button{font:inherit;cursor:pointer;border:0}
 /* left */
 .k{font-size:22px;font-weight:600;letter-spacing:4px;color:#C9A96E}
@@ -24,8 +24,8 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
 #restart{margin-top:30px;background:none;color:#8E8A82;font-size:19px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:10px 4px}
 #restart:hover{color:#F2EEE6}
 /* phone */
-.mid{display:flex;justify-content:center}
-.ph{position:relative;width:384px;height:828px;border-radius:56px;border:12px solid #0B0B0C;box-shadow:0 0 0 2px #3A3A3D,0 40px 80px rgba(0,0,0,.55);overflow:hidden;background:#F4F1EA}
+.mid{display:flex;flex-direction:column;align-items:center;gap:14px}
+.ph{position:relative;width:384px;height:828px;border-radius:56px;border:12px solid #0B0B0C;box-shadow:0 0 0 2px #3A3A3D,0 40px 80px rgba(0,0,0,.55);overflow:hidden;overflow:clip;background:#F4F1EA}
 .sbar{position:absolute;left:0;right:0;top:0;height:46px;background:#1C1C1E;z-index:12;display:flex;align-items:center;justify-content:space-between;padding:0 26px 0 30px;color:#fff;font-size:15px;font-weight:700}
 .scr{position:absolute;left:0;right:0;bottom:0;top:46px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
 .scr::-webkit-scrollbar{display:none}
@@ -44,6 +44,10 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
 .nudge::after{content:"";position:absolute;right:18px;top:50%;width:46px;height:46px;margin-top:-6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff' stroke='%23111' stroke-width='1.3' stroke-linejoin='round'%3E%3Cpath d='M9 11V4.5a1.5 1.5 0 0 1 3 0V10l5.2.9a2 2 0 0 1 1.6 2.3l-.9 5.3A3 3 0 0 1 14.9 21H11a3 3 0 0 1-2.4-1.2L5 15.2a1.5 1.5 0 0 1 2.2-2L9 15z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 4px rgba(0,0,0,.45));animation:tap 1.3s ease-in-out infinite;pointer-events:none;z-index:3}
 .it .ap.nudge::after{right:-36px;width:36px;height:36px;margin-top:-6px}
 @keyframes tap{0%,100%{transform:translate(0,8px) scale(1)}45%{transform:translate(-4px,-2px) scale(.88)}}
+.port #stage{width:440px;height:960px;grid-template-columns:1fr;padding:0;justify-items:center;align-content:center;gap:18px}
+.port .left{display:none}
+#mre{display:none;background:none;color:#8E8A82;font-size:17px;font-weight:600;align-items:center;gap:8px;padding:8px}
+.port #mre{display:inline-flex}
 .dim{position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:15;opacity:0;pointer-events:none;transition:opacity .3s}
 .dim.on{opacity:1;pointer-events:auto}
 .sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;background:#FBF8F2;color:#1C1C1E;border-radius:26px 26px 0 0;padding:14px 22px 26px;transform:translateY(105%);transition:transform .35s ease}
@@ -94,7 +98,7 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
 </style></head>
 <body>
 <div id="stage">
-  <div>
+  <div class="left">
     <p class="k">UPGRADE PATH</p>
     <h1>From guest<br>to VIP.<br>Same app.</h1>
     <p class="sub">One scan in the lobby. The same app grows with them, from hotel guide to members club to VIP.</p><p class="hint" id="hint" style="margin-top:22px;font-size:19px;color:#8E8A82">Tap "Upgrade" on the phone</p>
@@ -117,14 +121,14 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
       <h4>Congratulations,<br>Alexander!</h4><p>You're now a member of The Trans Surabaya Members Club.</p><button class="bt" id="okM">See my perks</button></div>
     <div class="pop v" id="popV"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="#111"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
       <h4>Welcome to VIP,<br>Alexander</h4><p>Black card. Room upgrades, late check-out and 20% off the spa.</p><button class="bt" id="okV">See my VIP perks</button></div>
-  </div></div>
+  </div><button id="mre"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button></div>
 
 </div>
 <script>
 (function(){
 var $=function(i){return document.getElementById(i)};
 var st=$('stage');
-function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='translate(-50%,-50%) scale('+k+')';}
+function fit(){var w=document.documentElement.clientWidth||innerWidth,h=document.documentElement.clientHeight||innerHeight,pt=w<h;document.documentElement.classList.toggle('port',pt);var W=pt?440:1920,H=pt?960:1080,k=Math.min(w/W,h/H);st.style.transform='translate(-50%,-50%) scale('+k+')';}
 addEventListener('resize',fit);fit();
 ['/trans/up/member.jpg','/trans/up/vip.jpg'].forEach(function(u){var i=new Image();i.src=u;});
 function stage(n){for(var i=0;i<3;i++){var e=$('s'+i);e.className='st'+(i===n?' on':i<n?' done':'');}}
@@ -151,6 +155,7 @@ $('ctaVip').onclick=function(){
   hint('Alexander is now a VIP');
 };
 $('okV').onclick=function(){$('popV').classList.remove('on');dim(false);nudge(null);hint('Done. Tap "Start again" to show it again');};
+$('mre').onclick=function(){$('restart').onclick();};
 $('restart').onclick=function(){[].forEach.call(document.querySelectorAll('.cf'),function(x){x.remove();});['popM','popV'].forEach(function(i){$(i).classList.remove('on');});dim(false);
   $('ctaVip').classList.add('hide');$('ctaJoin').classList.remove('hide');screen('/trans/up/guest.jpg');stage(0);
   hint('Tap "Upgrade" on the phone');nudge($('ctaJoin'));};
