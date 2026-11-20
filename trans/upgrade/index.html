@@ -8,7 +8,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#141416;overflow:hidden}
 body{font-family:Inter,Arial,sans-serif;color:#F2EEE6}
-#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#1C1C1E;display:grid;grid-template-columns:560px 1fr 560px;align-items:center;padding:0 90px}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#1C1C1E;display:grid;grid-template-columns:820px 1fr;align-items:center;padding:0 120px 0 150px}
 button{font:inherit;cursor:pointer;border:0}
 /* left */
 .k{font-size:22px;font-weight:600;letter-spacing:4px;color:#C9A96E}
@@ -90,18 +90,18 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
 .it .ap{background:#C9A96E;color:#1C1C1E;font-weight:800;font-size:15.5px;padding:9px 18px;border-radius:10px;animation:pulse 2s ease-in-out infinite}
 .it .no{background:#EEE9DF;color:#6B665E;font-weight:700;font-size:15.5px;padding:9px 14px;border-radius:10px}
 .it .ok{display:inline-block;margin-top:8px;background:#E3F1E6;color:#2D7A45;font-weight:700;font-size:14px;padding:5px 10px;border-radius:8px}
-.hint{font-size:16px;color:#8E8A82;text-align:center;margin-top:14px;width:470px;justify-self:end}
+.hint{text-align:left}
 </style></head>
 <body>
 <div id="stage">
   <div>
     <p class="k">UPGRADE PATH</p>
     <h1>From guest<br>to VIP.<br>Same app.</h1>
-    <p class="sub">They scan once in the lobby. Every upgrade after that happens on their phone.</p>
+    <p class="sub">One scan in the lobby. The same app grows with them, from hotel guide to members club to VIP.</p><p class="hint" id="hint" style="margin-top:22px;font-size:19px;color:#8E8A82">Tap "Upgrade" on the phone</p>
     <div class="steps">
       <div class="st on" id="s0"><i>1</i><div><b>Guest</b><span>Scans the lobby screen. Hotel guide.</span></div></div>
-      <div class="st" id="s1"><i>2</i><div><b>Member</b><span>Approved by the hotel. Gold card.</span></div></div>
-      <div class="st" id="s2"><i>3</i><div><b>VIP</b><span>Black card, approved by the hotel.</span></div></div>
+      <div class="st" id="s1"><i>2</i><div><b>Member</b><span>Gold card, perks and offers.</span></div></div>
+      <div class="st" id="s2"><i>3</i><div><b>VIP</b><span>Black card, bigger perks.</span></div></div>
     </div>
     <button id="restart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Start again</button>
   </div>
@@ -110,33 +110,15 @@ h1{font-size:60px;font-weight:800;line-height:1.04;margin-top:12px}
     <div class="sbar"><span>9:41</span><span><svg width="44" height="14" viewBox="0 0 44 14" fill="#fff"><rect x="0" y="8" width="3" height="6" rx="1"/><rect x="5" y="5" width="3" height="9" rx="1"/><rect x="10" y="2" width="3" height="12" rx="1"/><rect x="20" y="1" width="20" height="12" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="22.5" y="3.5" width="14" height="7" rx="1.5"/></svg></span></div><div class="isl"></div>
     <div class="scr" id="scr"><img id="img" src="/trans/up/guest.jpg" alt="The Trans Surabaya app"></div>
     <div class="toast" id="toast"></div>
-    <button class="cta g" id="ctaJoin"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Ask to join<small>Become a member. It's free</small></div></button>
-    <button class="cta d hide" id="ctaVip"><svg width="28" height="28" viewBox="0 0 24 24" fill="#E9C46A"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Go VIP<small>Ask the team about VIP</small></div></button>
+    <button class="cta g" id="ctaJoin"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C1C1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Upgrade<small>Become a member</small></div></button>
+    <button class="cta d hide" id="ctaVip"><svg width="28" height="28" viewBox="0 0 24 24" fill="#E9C46A"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg><div>Upgrade<small>Become a VIP</small></div></button>
     <div class="dim" id="dim"></div>
-    <div class="sheet" id="shJoin"><div class="grab"></div>
-      <h4>Join the Members Club</h4><p>Free. The team will confirm and let you know.</p>
-      <div class="fld"><label>NAME</label><div>Alexander</div></div>
-      <div class="fld"><label>WHATSAPP</label><div>+62 812 3456 7890</div></div>
-      <button class="go" id="goJoin">Send request</button></div>
-    <div class="sheet" id="shVip"><div class="grab"></div>
-      <h4>Become a VIP</h4><p>The team will look at your request and let you know.</p>
-      <div class="perk"><i>★</i>Free room upgrade when available</div>
-      <div class="perk"><i>★</i>Late check-out until 4pm</div>
-      <div class="perk"><i>★</i>20% off at the spa</div>
-      <button class="go vip" id="goVip">Ask for VIP</button></div>
     <div class="pop g" id="popM"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#E2C27E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
       <h4>Congratulations,<br>Alexander!</h4><p>You're now a member of The Trans Surabaya Members Club.</p><button class="bt" id="okM">See my perks</button></div>
     <div class="pop v" id="popV"><div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="#111"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 11H5z"/></svg></div>
       <h4>Welcome to VIP,<br>Alexander</h4><p>Black card. Room upgrades, late check-out and 20% off the spa.</p><button class="bt" id="okV">See my VIP perks</button></div>
   </div></div>
 
-  <div>
-    <div class="bo">
-      <div class="boh"><div class="lg">M</div><div><b>Back office</b><span>Members Club · The Trans Surabaya</span></div></div>
-      <div class="bol" id="bol"><div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div></div>
-    </div>
-    <p class="hint" id="hint">Tap "Ask to join" on the phone</p>
-  </div>
 </div>
 <script>
 (function(){
@@ -155,39 +137,23 @@ function toast(t){var e=$('toast');e.innerHTML=t;e.classList.add('on');setTimeou
 function bo(html){var em=$('em');if(em)em.remove();var d=document.createElement('div');d.className='it';d.innerHTML=html;$('bol').insertBefore(d,$('bol').firstChild);return d;}
 function now(){var d=new Date();return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});}
 
-$('ctaJoin').onclick=function(){dim(true);$('shJoin').classList.add('on');hint('Tap "Send request"');nudge($('goJoin'));};
-$('goJoin').onclick=function(){
-  $('shJoin').classList.remove('on');dim(false);$('ctaJoin').classList.add('hide');
-  setTimeout(function(){toast('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Request sent. We\'ll let you know.');},300);
-  var it=bo('<div class="av n">A</div><div style="flex:1"><b>Alexander wants to join</b><p>From the hotel guide · +62 812 3456 7890</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
-  hint('The GRO approves it in the back office');nudge(it.querySelector('.ap'));
-  it.querySelector('.ap').onclick=function(){
-    it.querySelector('.acts').outerHTML='<span class="ok">Approved · now a member</span>';
-    screen('/trans/up/member.jpg');stage(1);
-    setTimeout(function(){dim(true);$('popM').classList.add('on');confetti();},450);
-    hint('Alexander is now a member');nudge($('okM'));
-  };
-  it.querySelector('.no').onclick=function(){it.querySelector('.acts').outerHTML='<span class="ok" style="background:#EEE9DF;color:#6B665E">Not now</span>';$('ctaJoin').classList.remove('hide');hint('Tap "Ask to join" to try again');nudge($('ctaJoin'));};
+$('ctaJoin').onclick=function(){
+  $('ctaJoin').classList.add('hide');nudge(null);
+  screen('/trans/up/member.jpg');stage(1);
+  setTimeout(function(){dim(true);$('popM').classList.add('on');confetti();nudge($('okM'));},450);
+  hint('Alexander is now a member');
 };
-$('okM').onclick=function(){$('popM').classList.remove('on');dim(false);setTimeout(function(){$('ctaVip').classList.remove('hide');$('ctaVip').classList.add('pulse');nudge($('ctaVip'));},500);hint('Scroll the app, then tap "Go VIP"');};
-$('ctaVip').onclick=function(){dim(true);$('shVip').classList.add('on');hint('Tap "Ask for VIP"');nudge($('goVip'));};
-$('goVip').onclick=function(){
-  $('shVip').classList.remove('on');dim(false);$('ctaVip').classList.add('hide');
-  setTimeout(function(){toast('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E9C46A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Request sent. We\'ll let you know.');},300);
-  var it=bo('<div class="av v">A</div><div style="flex:1"><b>Alexander wants to go VIP</b><p>Member since today</p><div class="acts"><button class="ap">Approve</button><button class="no">Not now</button></div></div>');
-  hint('The GRO approves it in the back office');nudge(it.querySelector('.ap'));
-  it.querySelector('.ap').onclick=function(){
-    it.querySelector('.acts').outerHTML='<span class="ok">Approved · now VIP</span>';
-    screen('/trans/up/vip.jpg');stage(2);
-    setTimeout(function(){dim(true);$('popV').classList.add('on');confetti();},450);
-    hint('Alexander is now a VIP');nudge($('okV'));
-  };
-  it.querySelector('.no').onclick=function(){it.querySelector('.acts').outerHTML='<span class="ok" style="background:#EEE9DF;color:#6B665E">Not now</span>';$('ctaVip').classList.remove('hide');hint('Tap "Go VIP" to try again');nudge($('ctaVip'));};
+$('okM').onclick=function(){$('popM').classList.remove('on');dim(false);nudge(null);setTimeout(function(){$('ctaVip').classList.remove('hide');nudge($('ctaVip'));},500);hint('Scroll the app, then tap "Upgrade"');};
+$('ctaVip').onclick=function(){
+  $('ctaVip').classList.add('hide');nudge(null);
+  screen('/trans/up/vip.jpg');stage(2);
+  setTimeout(function(){dim(true);$('popV').classList.add('on');confetti();nudge($('okV'));},450);
+  hint('Alexander is now a VIP');
 };
 $('okV').onclick=function(){$('popV').classList.remove('on');dim(false);nudge(null);hint('Done. Tap "Start again" to show it again');};
-$('restart').onclick=function(){['popM','popV','shJoin','shVip'].forEach(function(i){$(i).classList.remove('on');});dim(false);
+$('restart').onclick=function(){[].forEach.call(document.querySelectorAll('.cf'),function(x){x.remove();});['popM','popV'].forEach(function(i){$(i).classList.remove('on');});dim(false);
   $('ctaVip').classList.add('hide');$('ctaJoin').classList.remove('hide');screen('/trans/up/guest.jpg');stage(0);
-  $('bol').innerHTML='<div class="em" id="em">Nothing yet.<br>New members and VIP requests show up here.</div>';hint('Tap "Ask to join" on the phone');nudge($('ctaJoin'));};
+  hint('Tap "Upgrade" on the phone');nudge($('ctaJoin'));};
 nudge($('ctaJoin'));
 })();
 </script>
