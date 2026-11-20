@@ -149,7 +149,7 @@ var Z={1:{t:'Sun lounger',g:'Sun loungers',cap:2,inP:0,outP:null,d:'A padded lou
 var S=[],i;
 for(i=0;i<11;i++)S.push({id:'L'+(i+1),z:1,k:'lv',x:174+50*i,y:174,w:40,h:110,num:i+1});
 for(i=0;i<8;i++)S.push({id:'B'+(i+1),z:2,k:'lh',x:990,y:282+44*i,w:114,h:38,num:i+1});
-[[700,336],[780,336],[860,336],[940,336],[680,414],[650,488],[700,560],[650,632],[810,668],[885,668],[960,668]].forEach(function(p,j){S.push({id:'T'+(j+1),z:3,k:'t',x:p[0],y:p[1],r:16,num:j+1});});
+[[700,336],[780,336],[860,336],[940,336],[680,414],[650,488],[700,560],[650,632],[800,652],[885,652],[970,652]].forEach(function(p,j){S.push({id:'T'+(j+1),z:3,k:'t',x:p[0],y:p[1],r:16,num:j+1});});
 for(i=0;i<3;i++)S.push({id:'C'+(i+1),z:4,k:'c',x:178+128*i,y:312,w:114,h:92,num:i+1});
 for(i=0;i<3;i++)S.push({id:'P'+(i+1),z:5,k:'p',x:265+118*i,y:612,r:50,num:i+1});
 var BY={};S.forEach(function(s){BY[s.id]=s;s.n=Z[s.z].t+' '+s.num;});
@@ -194,9 +194,9 @@ function draw(){
   // umbrellas on beach (decor)
   [[1150,300],[1160,620]].forEach(function(u){umb(u[0],u[1],22);});
   // indoor glass
-  el('rect',{x:770,y:430,width:200,height:200,rx:14,fill:'#3A4650',opacity:.85},svg);
-  el('rect',{x:778,y:438,width:184,height:184,rx:10,fill:'none',stroke:'#7E95A3','stroke-width':1.5,opacity:.6},svg);
-  txt('INDOOR',870,527,11,'#C9D6DE',4,svg);txt('GLASS DOORS',870,545,9,'#8FA3AF',2,svg);
+  el('rect',{x:770,y:420,width:200,height:176,rx:14,fill:'#3A4650',opacity:.85},svg);
+  el('rect',{x:778,y:428,width:184,height:160,rx:10,fill:'none',stroke:'#7E95A3','stroke-width':1.5,opacity:.6},svg);
+  txt('INDOOR',870,505,11,'#C9D6DE',4,svg);txt('GLASS DOORS',870,523,9,'#8FA3AF',2,svg);
   // bar
   for(i=0;i<10;i++){var a=i/10*Math.PI*2;el('circle',{cx:530+Math.cos(a)*78,cy:490+Math.sin(a)*78,r:7,fill:'#2B231C',stroke:'#C9A96E','stroke-width':1.5},svg);}
   el('circle',{cx:530,cy:490,r:62,fill:'#1F1914',filter:'url(#sh)'},svg);
