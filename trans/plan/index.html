@@ -141,6 +141,8 @@ h4{font-size:15px;font-weight:800;margin-top:22px}
   .pf{padding:10px 18px calc(12px + env(safe-area-inset-bottom))}
   body.open .panel{transform:none}
   .steps,.legend,.zoom{display:none}
+  .toast{left:12px;right:12px;top:66px;transform:translateY(-30px);justify-content:center;text-align:left;z-index:41}
+  .toast.on{transform:none}
   .venues{bottom:12px;left:10px;right:10px;transform:none;max-width:none;overflow-x:auto;scrollbar-width:none;justify-content:flex-start}
   .venues::-webkit-scrollbar{display:none}
   body.open .venues{transform:none}
@@ -299,8 +301,8 @@ function txt(t,x,y,s,c,ls,p){var e=el('text',{x:x,y:y,'text-anchor':'middle','fo
 function paint(){[].forEach.call($('plan').querySelectorAll('.sp'),function(g){var id=g.getAttribute('data-id');g.setAttribute('class','sp '+(sel===id?'sel':BK[id]?'bk':'free'));});chips();}
 var PH=function(){return innerWidth<=760;};
 var ZC={1:[460,230],2:[1050,470],3:[820,500],4:[300,360],5:[380,612]};
-function chips(){var c=$('zch');if(!c)return;c.innerHTML=[1,2,4,5,3].map(function(z){var f=S.filter(function(s){return s.z===z&&!BK[s.id];}).length;return '<button data-z="'+z+'"><i>'+z+'</i>'+Z[z].g+' <em>'+f+' free</em></button>';}).join('');
-  [].forEach.call(c.children,function(b){b.onclick=function(){go(+b.getAttribute('data-z'));};});}
+function chips(){var c=$('zch');if(!c)return;var sl=c.scrollLeft;c.innerHTML=[1,2,4,5,3].map(function(z){var f=S.filter(function(s){return s.z===z&&!BK[s.id];}).length;return '<button data-z="'+z+'"><i>'+z+'</i>'+Z[z].g+' <em>'+f+' free</em></button>';}).join('');
+  [].forEach.call(c.children,function(b){b.onclick=function(){go(+b.getAttribute('data-z'));};});c.scrollLeft=sl;}
 function go(z){var w=$('mapw'),svg=$('plan'),k=svg.getBoundingClientRect().width/1200,x=ZC[z][0]*k+10-w.clientWidth/2;w.scrollTo({left:Math.max(0,x),behavior:'smooth'});
   [].forEach.call(svg.querySelectorAll('.sp'),function(g){if(BY[g.getAttribute('data-id')].z===z&&!BK[g.getAttribute('data-id')]){g.animate([{opacity:1},{opacity:.35},{opacity:1},{opacity:.35},{opacity:1}],{duration:1200,delay:350});}});hide();}
 function hide(){var h=$('hint');if(h)h.classList.add('off');}
