@@ -26,6 +26,8 @@ body{min-height:100vh}
 .btns{display:flex;gap:8px;margin-top:auto;padding-top:12px}
 .btns a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:44px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none}
 .bk{background:#1C1C1C;color:#fff}.eq{background:#fff;color:#0F1E2E;border:1.5px solid #CBD5E1}.eq svg{color:#16A34A}
+.more{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:12px;background:#1C1C1C;color:#fff;font-weight:800;font-size:14.5px}.more span{color:#C9A46A;font-size:17px}
+.rmb p{margin-bottom:14px!important}
 .hint{font-size:12.5px;color:#8A8378;margin:6px 2px 0}
 /* room page */
 .pg{position:fixed;inset:0;z-index:20;background:#EEEAE4;overflow-y:auto;transform:translateY(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);max-width:440px;margin:0 auto}
@@ -61,7 +63,7 @@ body{min-height:100vh}
 <div class="w">
   <div class="lab" id="title">Rooms &amp; Suites</div>
   <div class="rwrap"><div class="rmr" id="row"></div><button class="ar l" data-for="row" data-d="-1" aria-label="Previous">‹</button><button class="ar r" data-for="row" data-d="1" aria-label="Next">›</button></div>
-  <div class="hint">Swipe for more · tap a room to see it</div>
+  <div class="hint">Swipe to see all rooms</div>
 </div>
 </div>
 <div class="pg" id="pg"></div>
@@ -92,7 +94,7 @@ function img(n){ return 'img/' + n + '.jpg'; }
 function enq(r){ return 'https://wa.me/' + WA + '?text=' + encodeURIComponent("Hi, it's Alexander, member T6RSBY. I'd like to ask about the " + r.name + '.'); }
 function btns(r){ return '<a class="bk" href="' + BOOK + '" target="_blank" rel="noopener">Book</a><a class="eq" href="' + enq(r) + '" target="_blank" rel="noopener">' + WAI + 'Enquire</a>'; }
 document.getElementById('row').innerHTML = ROOMS.map(function(r, i){
-  return '<div class="rmc" data-i="' + i + '"><img src="' + img(r.imgs[0]) + '" alt=""><div class="rmb"><b>' + esc(r.name) + '</b><p>' + esc(r.line) + '</p><div class="btns">' + btns(r) + '</div></div></div>';
+  return '<div class="rmc" data-i="' + i + '"><img src="' + img(r.imgs[0]) + '" alt=""><div class="rmb"><b>' + esc(r.name) + '</b><p>' + esc(r.line) + '</p><div class="more">See more <span>→</span></div></div></div>';
 }).join('');
 var pg = document.getElementById('pg'), bar = document.getElementById('bar');
 function open(i){
@@ -121,7 +123,6 @@ document.addEventListener('click', function(e){   // arrows: move one card / one
   el.scrollBy({ left: step * +a.dataset.d, behavior: 'smooth' });
 });
 document.getElementById('row').addEventListener('click', function(e){
-  if (e.target.closest('a')) return;
   var c = e.target.closest('.rmc'); if (c) open(+c.dataset.i);
 });
 </script>
