@@ -42,7 +42,7 @@ body{min-height:100vh}
 .pw h1{margin:0;font-size:27px;font-weight:900;letter-spacing:-.5px}.sub{color:#64748B;font-size:14px;margin:6px 0 0;line-height:1.45}
 .gal{display:flex;gap:8px;overflow-x:auto;margin:18px -18px 0;padding:0 18px 2px;scrollbar-width:none}.gal::-webkit-scrollbar{display:none}
 .gal img{flex:none;width:112px;height:84px;object-fit:cover;border-radius:12px;border:2px solid transparent;cursor:pointer}.gal img.on{border-color:#1C1C1C}
-.ben{margin-top:20px;padding:12px 0;border-top:1px solid #D8D2C8;border-bottom:1px solid #D8D2C8;display:flex;gap:10px;align-items:center;font-size:14px;font-weight:700}
+.ben{margin-top:20px;padding:10px 0;border-top:1px solid #D8D2C8;border-bottom:1px solid #D8D2C8;font-size:14px;font-weight:700}.ben div{display:flex;gap:10px;align-items:center;padding:4px 0}
 .ben i{font-style:normal;color:#C9A46A;font-size:16px}
 .s{margin-top:22px}.s h3{margin:0 0 8px;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9A7B45;display:flex;align-items:center;gap:10px}
 .s h3:after{content:'';flex:1;height:1px;background:#D8D2C8}
@@ -74,22 +74,25 @@ body{min-height:100vh}
 var BOOK = 'https://www.transhotelgroup.com/hotel_overview/45';
 var WA = '6281118888055';   // reservations, from the hotel's website
 var WAI = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>';
-var PREMIER = [
-  ['The room', ['Floor-to-ceiling windows', 'Living / sitting area', 'Electric power curtains', 'Air-conditioned', 'Non-smoking', 'Connecting rooms (some rooms)']],
-  ['Bed', ['Pillowtop mattress, featherbed and duvet', 'Fresh linen', '1 rollaway bed or crib allowed']],
-  ['Bathroom', ['Luxurious marble bathroom', 'Separate bathtub and shower', 'Bidet and hair dryer', '2 robes, 2 pairs of slippers', 'Acqua di Parma shampoo, conditioner and body wash']],
-  ['Food & drink', ['Complimentary bottled water', 'Complimentary coffee and tea', 'Mini fridge and kettle', 'Instant hot water']],
-  ['Work & entertainment', ['55" Smart TV', 'International channels', 'Free high-speed Wi-Fi', 'Writing desk', 'Dual-voltage outlets', '2 phones']],
-  ['Also in the room', ['Sofa and bed stool', 'In-room safe', 'Iron and ironing board', 'Alarm clock']],
-  ['Services', ['24-hour STAR service', 'Laundry and dry cleaning', '24-hour Fitness Centre']],
-  ['Accessible rooms', ['Mobility-accessible rooms, with roll-in showers, available'], 1]
-];
+// Room details from the hotel's own website (thetranshotelsurabaya.com, 23 Nov). All rooms share most of it.
+function details(o){
+  return [
+    ['The room', ['Floor-to-ceiling windows', 'Living / sitting area', 'Electric power curtains', 'Air-conditioned', 'Non-smoking'].concat(o.connect ? ['Connecting rooms (some rooms)'] : [])],
+    ['Bed', ['Pillowtop mattress, featherbed and duvet', 'Fresh linen', '1 rollaway bed or crib allowed']],
+    ['Bathroom', ['Luxurious marble bathroom', 'Separate bathtub and shower', 'Bidet and hair dryer', '2 robes, 2 pairs of slippers', 'Acqua di Parma shampoo, conditioner and body wash']],
+    ['Food & drink', ['Complimentary bottled water', 'Complimentary coffee and tea', 'Mini fridge and kettle', 'Instant hot water']],
+    ['Work & entertainment', ['55" Smart TV', 'International channels', 'Free high-speed Wi-Fi', 'Writing desk', 'Dual-voltage outlets', '2 phones']],
+    ['Also in the room', ['Sofa and bed stool', 'In-room safe', 'Iron and ironing board', 'Alarm clock']],
+    ['Services', ['24-hour STAR service', 'Laundry and dry cleaning', '24-hour Fitness Centre']]
+  ].concat(o.access ? [['Accessible rooms', ['Mobility-accessible rooms, with roll-in showers, available'], 1]] : []);
+}
+var ADP = 'Acqua di Parma luxurious amenities', VIEW = 'Panoramic city view', CLUB = 'Afternoon tea and evening cocktails at The 27th Sky Lounge';
 var ROOMS = [
-  { name: 'Premier Room', line: 'Effortless comfort in refined contemporary elegance', imgs: ['premier-1', 'premier-2', 'premier-3', 'premier-4', 'premier-5', 'premier-6', 'premier-7', 'premier-8', 'premier-9', 'premier-10'], benefit: 'Acqua di Parma luxurious amenities', details: PREMIER },
-  { name: 'Executive Room', line: 'Spacious comfort with panoramic views', imgs: ['executive', 'bath', 'view'] },
-  { name: 'Club Premier Room', line: 'Where elevated comfort meets exclusive privileges', imgs: ['club-premier', 'bath', 'amenities'] },
-  { name: 'Executive Club Room', line: 'An elevated stay with exclusive Club privileges', imgs: ['executive-club', 'bath', 'view'] },
-  { name: 'Presidential Suite', line: 'An iconic expression of luxury at its finest', imgs: ['presidential', 'bath', 'tray'] }
+  { name: 'Premier Room', line: 'Effortless comfort in refined contemporary elegance', imgs: ['premier-1', 'premier-2', 'premier-3', 'premier-4', 'premier-5', 'premier-6', 'premier-7', 'premier-8', 'premier-9', 'premier-10'], benefits: [ADP], details: details({ connect: 1, access: 1 }) },
+  { name: 'Executive Room', line: 'Elevated comfort with corner views and enhanced natural light', imgs: ['executive', 'bath', 'view'], benefits: [ADP, VIEW], details: details({}) },
+  { name: 'Club Premier Room', line: 'Where elevated comfort meets exclusive privileges', imgs: ['club-premier', 'bath', 'amenities'], benefits: [ADP, CLUB], details: details({}) },
+  { name: 'Executive Club Room', line: 'Enhanced space and views with exclusive Club privileges', imgs: ['executive-club', 'bath', 'view'], benefits: [ADP, VIEW, CLUB], details: details({}) },
+  { name: 'Presidential Suite', line: 'An iconic expression of luxury at its finest', imgs: ['presidential'], benefits: [ADP, VIEW, 'Club Lounge access'], details: details({ connect: 1 }) }
 ];
 function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
 function img(n){ return 'img/' + n + '.jpg'; }
@@ -106,7 +109,7 @@ function open(i){
     '<div class="cnt" id="cnt">1 / ' + r.imgs.length + '</div><button class="ar l" data-for="sl" data-d="-1" aria-label="Previous photo">‹</button><button class="ar r" data-for="sl" data-d="1" aria-label="Next photo">›</button></div>' +
     '<div class="pw"><h1>' + esc(r.name) + '</h1><div class="sub">' + esc(r.line) + '.</div>' +
     '<div class="gal" id="gal">' + r.imgs.map(function(n, k){ return '<img src="img/t-' + n + '.jpg" data-k="' + k + '"' + (k ? '' : ' class="on"') + ' alt="">'; }).join('') + '</div>' +
-    (r.benefit ? '<div class="ben"><i>★</i>' + esc(r.benefit) + '</div>' : '') +
+    ((r.benefits || []).length ? '<div class="ben">' + r.benefits.map(function(b){ return '<div><i>★</i>' + esc(b) + '</div>'; }).join('') + '</div>' : '') +
     (r.details ? r.details.map(function(s){ return '<div class="s' + (s[2] ? ' one' : '') + '"><h3>' + esc(s[0]) + '</h3><ul>' + s[1].map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>'; }).join('')
       : '<div class="soon">Full room details coming soon.</div>') + '</div>';
   bar.innerHTML = btns(r);
