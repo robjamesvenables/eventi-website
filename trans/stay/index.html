@@ -50,12 +50,17 @@ body{min-height:100vh}
 .bar{position:fixed;left:0;right:0;bottom:0;max-width:440px;margin:0 auto;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:#EEEAE4;display:flex;gap:10px;box-shadow:0 -6px 16px rgba(0,0,0,.07);z-index:21;transform:translateY(110%);transition:transform .32s}
 .bar.on{transform:none}
 .bar a{height:52px;font-size:16px;border-radius:14px}
+/* computer with a mouse: left/right arrows (no swiping) */
+.rwrap,.hero{position:relative}
+.ar{display:none;position:absolute;top:38%;width:42px;height:42px;border-radius:50%;border:0;background:#1C1C1C;color:#fff;font-size:26px;line-height:1;cursor:pointer;z-index:3;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.ar.l{left:-6px}.ar.r{right:-6px}.hero .ar{top:calc(50% - 21px);background:rgba(0,0,0,.55)}.hero .ar.l{left:12px}.hero .ar.r{right:12px}
+@media (hover:hover) and (pointer:fine){.ar{display:grid;place-items:center}}
 </style></head>
 <body><div class="app">
 <div class="top"><img src="img/logo.png" alt="The Trans Luxury Hotel Surabaya"><span class="mock">PREVIEW</span></div>
 <div class="w">
   <div class="lab" id="title">Rooms &amp; Suites</div>
-  <div class="rmr" id="row"></div>
+  <div class="rwrap"><div class="rmr" id="row"></div><button class="ar l" data-for="row" data-d="-1" aria-label="Previous">‹</button><button class="ar r" data-for="row" data-d="1" aria-label="Next">›</button></div>
   <div class="hint">Swipe for more · tap a room to see it</div>
 </div>
 </div>
@@ -94,7 +99,7 @@ function open(i){
   var r = ROOMS[i];
   pg.innerHTML = '<div class="hero"><div class="slides" id="sl">' + r.imgs.map(function(n){ return '<img src="' + img(n) + '" alt="">'; }).join('') + '</div>' +
     '<button class="x" id="x" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>' +
-    '<div class="cnt" id="cnt">1 / ' + r.imgs.length + '</div></div>' +
+    '<div class="cnt" id="cnt">1 / ' + r.imgs.length + '</div><button class="ar l" data-for="sl" data-d="-1" aria-label="Previous photo">‹</button><button class="ar r" data-for="sl" data-d="1" aria-label="Next photo">›</button></div>' +
     '<div class="pw"><h1>' + esc(r.name) + '</h1><div class="sub">' + esc(r.line) + '.</div>' +
     '<div class="gal" id="gal">' + r.imgs.map(function(n, k){ return '<img src="' + img(n) + '" data-k="' + k + '"' + (k ? '' : ' class="on"') + ' alt="">'; }).join('') + '</div>' +
     (r.benefit ? '<div class="ben"><i>★</i>' + esc(r.benefit) + '</div>' : '') +
@@ -103,13 +108,18 @@ function open(i){
   bar.innerHTML = btns(r);
   pg.scrollTop = 0; pg.classList.add('on'); bar.classList.add('on');
   var sl = document.getElementById('sl'), th = document.querySelectorAll('#gal img'), cnt = document.getElementById('cnt');
-  sl.addEventListener('scroll', function(){ var k = Math.round(sl.scrollLeft / sl.clientWidth); cnt.textContent = (k + 1) + ' / ' + r.imgs.length; th.forEach(function(t, j){ t.classList.toggle('on', j === k); }); });
+  sl.addEventListener('scroll', function(){ var k = Math.round(sl.scrollLeft / sl.clientWidth); cnt.textContent = (k + 1) + ' / ' + r.imgs.length; th.forEach(function(t, j){ t.classList.toggle('on', j === k); }); var g = document.getElementById('gal'), t = th[k]; if (t) g.scrollTo({ left: t.offsetLeft - g.clientWidth / 2 + t.offsetWidth / 2, behavior: 'smooth' }); });
   th.forEach(function(t){ t.onclick = function(){ sl.scrollTo({ left: sl.clientWidth * +t.dataset.k, behavior: 'smooth' }); }; });
   document.getElementById('x').onclick = function(){ history.back(); };
   history.pushState({ room: i }, '');
 }
 function close(){ pg.classList.remove('on'); bar.classList.remove('on'); }
 window.addEventListener('popstate', close);
+document.addEventListener('click', function(e){   // arrows: move one card / one photo
+  var a = e.target.closest('.ar'); if (!a) return;
+  var el = document.getElementById(a.dataset.for), step = a.dataset.for === 'row' ? el.querySelector('.rmc').offsetWidth + 12 : el.clientWidth;
+  el.scrollBy({ left: step * +a.dataset.d, behavior: 'smooth' });
+});
 document.getElementById('row').addEventListener('click', function(e){
   if (e.target.closest('a')) return;
   var c = e.target.closest('.rmc'); if (c) open(+c.dataset.i);
